@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。 #####样例：    Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只">
+<meta name="description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。  样例：   Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只要A在选取">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018icpc南京A题">
 <meta property="og:url" content="http://yoursite.com/2018/10/15/2018icpc南京A题/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。 #####样例：    Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只">
+<meta property="og:description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。  样例：   Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只要A在选取">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T01:20:08.939Z">
+<meta property="og:updated_time" content="2018-10-15T01:22:36.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018icpc南京A题">
-<meta name="twitter:description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。 #####样例：    Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只">
+<meta name="twitter:description" content="A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。  样例：   Input Output     1 1 A   9 3 A    第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只要A在选取">
 
 
 
@@ -299,9 +299,8 @@
       
 
       
-        <p>A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。</p>
-<p>#####样例：</p>
-<table>
+        <p>A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。 </p>
+<h5 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h5><table>
 <thead>
 <tr>
 <th>Input</th>
@@ -320,8 +319,7 @@
 </tbody>
 </table>
 <p>第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA<br>第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只要A在选取的时候，使得剩下的段为对称的，那每次B选取一段，A便选取相之对称的段，则A必获得胜利。所以我们考虑，当<strong>K&gt;=2</strong>时，我们不管N为多大，我们都可使得A获得胜利（当N&lt;=2,A直接取完，当N&gt;2时，若N为奇数，我们在序列中间取1，使得剩下的段为对称的，若N为偶数，在中间取2使得段落变为对称），当k为1时，我们只需判断N的奇偶性便可确定谁最终胜利。</p>
-<p>#####代码如下：</p>
-<figure class="highlight plain"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">	int n,k;</span><br><span class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;k))</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&gt;=2)</span><br><span class="line">				printf(&quot;Adrien\n&quot;);</span><br><span class="line">		else </span><br><span class="line">				if(n&amp;1)</span><br><span class="line">					printf(&quot;Adrien\n&quot;);</span><br><span class="line">				else</span><br><span class="line">					printf(&quot;Austin\n&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h5><figure class="highlight plain"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">	int n,k;</span><br><span class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;k))</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&gt;=2)</span><br><span class="line">				printf(&quot;Adrien\n&quot;);</span><br><span class="line">		else </span><br><span class="line">				if(n&amp;1)</span><br><span class="line">					printf(&quot;Adrien\n&quot;);</span><br><span class="line">				else</span><br><span class="line">					printf(&quot;Austin\n&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -405,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -448,6 +455,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#样例："><span class="nav-number">1.</span> <span class="nav-text">样例：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码如下："><span class="nav-number">2.</span> <span class="nav-text">代码如下：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
