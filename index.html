@@ -239,6 +239,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/51nod-1744-codeforce-143c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hyt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huyutuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/23/51nod-1744-codeforce-143c/" itemprop="url">51nod-1744 codeforce-143c</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-23T20:29:46+08:00">
+                2019-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>题目：</strong><br>羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。</p>
+<p>   在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一个面的食物，一个面的食物指的是紧贴着某个面食物。所以剩下只有 （𝐴−1）×（𝐵−2）×（𝐶−2） 块食物。为了隐藏罪证，小偷们把剩下的食物块，全部打乱，散落在小屋的四周。所以村长忘记了原来A，B，C到底是多少。</p>
+<p>现在给定n，表示剩下的食物数量。计算可能最小和最大被偷走的食物数量。</p>
+<p>样例解释：</p>
+<p>在样例中，如果原来的数量为32＝2×4×4，现在的数量是4＝（2-1）×（4-2）×（4-2），则被偷走的是32-4＝28块。<br>如果原来的数量为45＝5×3×3，现在的数量是4＝（5-1）×（3-2）×（3-2），则被偷走的是45-4＝41块。</p>
+<p><strong>解法：</strong><br>暴力遍历所有方法即可</p>
+<p>ps：初始想法错误，初始想法是想找方差最小的ABC，即为MIN；1，1，n即为MAX；并且abc中与1相乘的越大，最终得到的结果越小，此想法为错误的。最终选择了暴力的做法。复杂度为n的2/3次方</p>
+<figure class="highlight plain"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    long long a[3];</span><br><span class="line">    long long Min = 9999999999999999, Max = 0;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    long long x = pow(n, 1.0/3);</span><br><span class="line">    for(int i = 1; i &lt;= x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int p = n;</span><br><span class="line">        if(p % i == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            p /= i;</span><br><span class="line">            a[0] = i;</span><br><span class="line">            int k = sqrt(p);</span><br><span class="line">            for(int j = 1; j &lt;= k; j++)&#123;</span><br><span class="line">                if(p % j == 0)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[1] = j;</span><br><span class="line">                    a[2] = p/a[1];</span><br><span class="line">                    //printf(&quot;%lld %lld %lld\n&quot;, a[0], a[1], a[2]);</span><br><span class="line">                    Min = min(Min,(a[0]+1)*(a[1]+2)*(a[2]+2));</span><br><span class="line">                    Min = min(Min,(a[1]+1)*(a[0]+2)*(a[2]+2));</span><br><span class="line">                    Min = min(Min,(a[2]+1)*(a[1]+2)*(a[0]+2));</span><br><span class="line">                    Max = max(Max,(a[0]+1)*(a[1]+2)*(a[2]+2));</span><br><span class="line">                    Max = max(Max,(a[1]+1)*(a[0]+2)*(a[2]+2));</span><br><span class="line">                    Max = max(Max,(a[2]+1)*(a[1]+2)*(a[0]+2));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld %lld\n&quot;, Min - n, Max - n);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/k8s初体验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -866,7 +993,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -883,6 +1010,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
