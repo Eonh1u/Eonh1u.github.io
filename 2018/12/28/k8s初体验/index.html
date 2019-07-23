@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="huyutuo">
 <meta property="og:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-28T10:06:18.745Z">
+<meta property="og:updated_time" content="2019-07-23T12:49:58.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s初体验">
 <meta name="twitter:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
@@ -332,7 +332,7 @@
 
       
         <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
-<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。</p>
+<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。<br><a id="more"></a></p>
 <h3 id="2-Docker与Pod"><a href="#2-Docker与Pod" class="headerlink" title="2.Docker与Pod"></a>2.Docker与Pod</h3><p>Docker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker中进行编写，同时在运行docker的系统中不需要配置任何环境，我们只需要创建一个包含此hello-world的镜像的docker进行运行，便可以，然后运行结束之后，系统与原来的一样，不含任何杂质。<br>Pod是k8s进行操作的最小单位，意思是k8s进行调度时，便是对pod的分配进行调度。<br>在一个Pod中可以含有多个Pod，Pod的结构可以由用户自己编写，可以简单的理解为Pod时需要运行的程序，在Pod中的多个Docker便是程序的的组成。在一个Pod中的多个Docker共享Pod中的资源，并且多个Docker之间可以进行localhost访问。</p>
 <h3 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h3><p>可以这么简单的理解，现在我们定义了一个可以计算a+b的Pod，并且将Pod运行在了多个Node中（一个Node中对应一个a+b的Pod），其中每个node中的Pod程序都是完全相同的，这就是副本。但是程序相同的Pod具有不同的ip，为了方便执行程序，我们用Service将Pod进行绑定，当我们指明要执行a+b这个Service时，k8s将会自动的找到相应的Node去调用Pod来执行。</p>
 <h3 id="4-label"><a href="#4-label" class="headerlink" title="4.label"></a>4.label</h3><p>可以将label理解为简单的表格，通过此表格我们可以根据不同的值，找到相对应的Pod，Node等结构，同时在label中也记录了结构之间的关系，例如，Pod与Node的对应关系。</p>

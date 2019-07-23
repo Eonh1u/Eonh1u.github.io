@@ -477,17 +477,15 @@
 
       
         
-          
-            <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
-<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。</p>
-<h3 id="2-Docker与Pod"><a href="#2-Docker与Pod" class="headerlink" title="2.Docker与Pod"></a>2.Docker与Pod</h3><p>Docker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker中进行编写，同时在运行docker的系统中不需要配置任何环境，我们只需要创建一个包含此hello-world的镜像的docker进行运行，便可以，然后运行结束之后，系统与原来的一样，不含任何杂质。<br>Pod是k8s进行操作的最小单位，意思是k8s进行调度时，便是对pod的分配进行调度。<br>在一个Pod中可以含有多个Pod，Pod的结构可以由用户自己编写，可以简单的理解为Pod时需要运行的程序，在Pod中的多个Docker便是程序的的组成。在一个Pod中的多个Docker共享Pod中的资源，并且多个Docker之间可以进行localhost访问。</p>
-<h3 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h3><p>可以这么简单的理解，现在我们定义了一个可以计算a+b的Pod，并且将Pod运行在了多个Node中（一个Node中对应一个a+b的Pod），其中每个node中的Pod程序都是完全相同的，这就是副本。但是程序相同的Pod具有不同的ip，为了方便执行程序，我们用Service将Pod进行绑定，当我们指明要执行a+b这个Service时，k8s将会自动的找到相应的Node去调用Pod来执行。</p>
-<h3 id="4-label"><a href="#4-label" class="headerlink" title="4.label"></a>4.label</h3><p>可以将label理解为简单的表格，通过此表格我们可以根据不同的值，找到相对应的Pod，Node等结构，同时在label中也记录了结构之间的关系，例如，Pod与Node的对应关系。</p>
-<h3 id="5-Replication-Controller"><a href="#5-Replication-Controller" class="headerlink" title="5.Replication Controller"></a>5.Replication Controller</h3><p>目前的了解还不是很清楚，可以大概的认为，RC是一个请求执行程序的要求，在其中包含了Pod的组成即任务的要求，还有Pod需要运行的副本的数量等信息。</p>
-<p>下面将k8s一次执行的流程进行简单的描述：<br>1.我们通过kubectl命令通过API Server提交一个创建RC的的请求，在请求的过程中，该请求记录被记录在etcd中<br>2.提交请求的过程中，Controller Manager通过API Server得到了此请求的信息，发现现在并没有此RC的Pod实例，于是便根据RC中的Pod描述，创建一个Pod对象，并且也将此过程通过API Server记录在etcd中。<br>3.在Controller Manager创建对象完成后，Scheduler便通过一系列计算选择一个Node节点，并将此Pod放置在此Node中，并且也将此结果通过API Server记录在etcd中。<br>4.调度结果出来后，被选择的Node节点从API Server中得到自己被选中的信息，便按照Pod的定义，在本地进行执行，并且一直负责，直到该Pod的结束。</p>
-<p>从这个简单流程中，我们可以知道，API Server为所有部件的连接桥，负责信息的交流，同时在过程中产生的信息以及关系都会通过API Server记录在etcd中。</p>
-
-          
+          <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
+<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/28/k8s初体验/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -626,10 +624,14 @@
 
       
         
-          
-            <p>&#160; &#160; &#160; &#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。<br>&#160; &#160; &#160; &#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)<br>&#160; &#160; &#160; &#160;利用递推的思想我们可以实现O(N)的复杂度。<br>&#160; &#160; &#160; &#160;推理的思路如下：<br>&#160; &#160; &#160; &#160;我们第一次淘汰的人的下标很容易得出，即 <strong>x1=(k-1)%n</strong>  (这个式子我们可以通通过几个简单的例子得到，例如n=4,k=5;n=4,k=5;n=3,k=1;这三个例子可以验证我们得到的式子的正确性）<br>&#160; &#160; &#160; &#160;那我们得到了x1，怎么计算第二次的？假设我们第一次时，k&lt;n<br>则数列初始状态为0,1,2,3,4,…n-1，第一次淘汰掉k-1，则剩下0,1,2,3..k-2,k,..n-1;，我们将剩下的人重新排序，以第一次淘汰结束后的k为0，则状态变为n-k,n-k+1,n-k+2,n-k+3..n-2,0,..n-1..n-k-1;<br>人的标号范围变为0～n-2<br>&#160; &#160; &#160; &#160;那我们在第二次的标号规则下，淘汰的人的标号为<br><strong>x2=(x1+k-1)%(n-1)</strong><br>&#160; &#160; &#160; &#160;我们知道最后一次淘汰的，在最后一次的标号规则下，编号即为0<br>我们记f(i)为第i次淘汰的人在第i次淘汰时的编号，则f(0)=0<br>我们所需要做的是，通过f(i-1)推出f(i)，通过上面的对照表，我们可以得到<br><strong>f(i)=(f(i-1)+k)%n</strong><br>应该也是可以从 <strong>x2=(x1+k-1)%(n-1)</strong> 此公式得出，但目前。。。我还不会推。<br>所以我们可以通过递推最终得到f(n)，即最后一次被淘汰的人的编号。</p>
-
-          
+          <p>&#160; &#160; &#160; &#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。<br>&#160; &#160; &#160; &#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)<br>&#160; &#160; &#160; &#160;利用递推的思想我们可以实现O(N)的复杂度。<br>&#160; &#160; &#160; &#160;推理的思路如下：<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/17/约瑟夫环-递推/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -768,8 +770,7 @@
 
       
         
-          
-            <p>A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。<br><strong>样例：</strong></p>
+          <p>A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。<br><strong>样例：</strong></p>
 <table>
 <thead>
 <tr>
@@ -788,9 +789,13 @@
 </tr>
 </tbody>
 </table>
-<p>第一遍读题出现了错误，理解为序列会进行合并，采取了不理智的做法，直接吃了一发WA<br>第二遍读懂题目，发现是个基础的博弈，因为是A先选取，所以只要A在选取的时候，使得剩下的段为对称的，那每次B选取一段，A便选取相之对称的段，则A必获得胜利。所以我们考虑，当<strong>K&gt;=2</strong>时，我们不管N为多大，我们都可使得A获得胜利（当N&lt;=2,A直接取完，当N&gt;2时，若N为奇数，我们在序列中间取1，使得剩下的段为对称的，若N为偶数，在中间取2使得段落变为对称），当k为1时，我们只需判断N的奇偶性便可确定谁最终胜利。<br><strong>代码如下：</strong></p>
-<figure class="highlight plain"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">	int n,k;</span><br><span class="line">	while(~scanf(&quot;%d%d&quot;,&amp;n,&amp;k))</span><br><span class="line">	&#123;</span><br><span class="line">		if(k&gt;=2)</span><br><span class="line">				printf(&quot;Adrien\n&quot;);</span><br><span class="line">		else </span><br><span class="line">				if(n&amp;1)</span><br><span class="line">					printf(&quot;Adrien\n&quot;);</span><br><span class="line">				else</span><br><span class="line">					printf(&quot;Austin\n&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/15/2018icpc南京A题/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
