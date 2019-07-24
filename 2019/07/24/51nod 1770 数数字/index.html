@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="新的路开始了">
+<meta name="description" content="题目：统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。 样例解释： 3333333333*3=9999999999，里面有10个9。">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Start">
-<meta property="og:url" content="http://yoursite.com/2018/09/14/woo/index.html">
+<meta property="og:title" content="51nod-1770">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/51nod 1770 数数字/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="新的路开始了">
+<meta property="og:description" content="题目：统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。 样例解释： 3333333333*3=9999999999，里面有10个9。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T13:17:38.743Z">
+<meta property="og:updated_time" content="2019-07-24T10:36:45.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Start">
-<meta name="twitter:description" content="新的路开始了">
+<meta name="twitter:title" content="51nod-1770">
+<meta name="twitter:description" content="题目：统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。 样例解释： 3333333333*3=9999999999，里面有10个9。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/14/woo/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/07/24/51nod 1770 数数字/"/>
 
 
 
 
 
-  <title>Start | huyutuo</title>
+  <title>51nod-1770 | huyutuo</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/woo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/51nod 1770 数数字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Start</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-1770</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-14T15:12:03+08:00">
-                2018-09-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-24T18:32:46+08:00">
+                2019-07-24
               </time>
             
 
@@ -304,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NoEnd/" itemprop="url" rel="index">
-                    <span itemprop="name">NoEnd</span>
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
                   </a>
                 </span>
 
@@ -341,7 +342,11 @@
       
 
       
-        <p><em>新的路开始了</em></p>
+        <p><strong>题目：</strong><br>统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。</p>
+<p>样例解释：</p>
+<p>3333333333*3=9999999999，里面有10个9。<br><a id="more"></a></p>
+<p><strong>解法：</strong><br>打表可以得到，相乘的结果最多有4个不同的数字，如果n比较小暴力即可，如果n比较大的话，先求出这4个数字（可能有相同），然后根据n的大小得出。<br>结果的表示方法sl*re  l可能有多位。</p>
+<figure class="highlight plain"><figcaption><span><stdio.h></stdio.h></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t = 0;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">    while(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        int a,b,d,n;</span><br><span class="line">        scanf(&quot;%d%d%d%d&quot;, &amp;a, &amp;b, &amp;d, &amp;n);</span><br><span class="line">        if(n &lt; 5)&#123;</span><br><span class="line">            int now = 1;</span><br><span class="line">            n--;</span><br><span class="line">            while(n--)</span><br><span class="line">            &#123;</span><br><span class="line">                now = now * 10 + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            int sum = a*now * b;</span><br><span class="line">            int ans = 0;</span><br><span class="line">            while(sum)</span><br><span class="line">            &#123;</span><br><span class="line">                if(sum % 10 == d)</span><br><span class="line">                    ans++;</span><br><span class="line">                sum /= 10;</span><br><span class="line">            &#125;</span><br><span class="line">            printf(&quot;%d\n&quot;,ans);</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            int num = a*11111*b;</span><br><span class="line">            int now = a * b;</span><br><span class="line">            int len;</span><br><span class="line">            if(now &gt;= 10)</span><br><span class="line">                len = 1;</span><br><span class="line">            else</span><br><span class="line">                len = 0;</span><br><span class="line">            //printf(&quot;%d\n&quot;,num);</span><br><span class="line">            int s,l,r,e;</span><br><span class="line">            e = num % 10;</span><br><span class="line">            num /= 10;</span><br><span class="line">            r = num %10;</span><br><span class="line">            num /= 10;</span><br><span class="line">            l = num % 10;</span><br><span class="line">            num /= 10;</span><br><span class="line">            while(num &gt; 10)</span><br><span class="line">                num /= 10;</span><br><span class="line">            s = num;</span><br><span class="line">            int sum = 0;</span><br><span class="line">            if(d == s)</span><br><span class="line">                sum++;</span><br><span class="line">            if(d == r)</span><br><span class="line">                sum++;</span><br><span class="line">            if(d == l)</span><br><span class="line">                sum += n-3+len;</span><br><span class="line">            if(d == e)</span><br><span class="line">                sum++;</span><br><span class="line">            printf(&quot;%d\n&quot;,sum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -357,6 +362,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
 
       
       
@@ -366,15 +377,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/23/51nod-1744-codeforce-143c/" rel="next" title="51nod-1744 codeforce-143c">
+                <i class="fa fa-chevron-left"></i> 51nod-1744 codeforce-143c
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/15/2018icpc南京A题/" rel="prev" title="2018icpc南京A题">
-                2018icpc南京A题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
