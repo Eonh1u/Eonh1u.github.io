@@ -249,6 +249,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/51nod-1886-叠加串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hyt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huyutuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/27/51nod-1886-叠加串/" itemprop="url">51nod-1886-叠加串</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-27T23:01:26+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天周六，偷个懒选了个非常easy 的题目<br>题目：<br>有一个字符串S，下标从1开始，初始为S=”0”。现在开始调用fun函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    for(i=0;i&lt;100000;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp=change(S);</span><br><span class="line">       </span><br><span class="line">        S=S+&quot;0&quot;+tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">change(s)</span><br><span class="line">&#123;</span><br><span class="line">    for(i=1;i&lt;=s.length();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s[i]==&apos;0&apos;)s[i]=&apos;1&apos;;</span><br><span class="line">        else s[i]=&apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    i=1;</span><br><span class="line">    j=s.length();</span><br><span class="line"> </span><br><span class="line">    while(i&lt;=j)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp=s[i];</span><br><span class="line">        s[i]=s[j];</span><br><span class="line">        s[j]=tmp;</span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在有若干个查询，每一个查询有一个整数n，我们想知道字符串S第n位是什么。<br>解法：<br>通过找规律可以找到串是在每个2^n的地方都反对称的，所以进行递归进行处理即<br>可，2^n的位置即为0<br>代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int solve(long long a, int flag)</span><br><span class="line">&#123;</span><br><span class="line">    if(a &lt;= 3)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a == 3)</span><br><span class="line">            return abs(1 - flag);</span><br><span class="line">        else</span><br><span class="line">            return abs(0 - flag);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        //printf(&quot;a  %lld\n&quot;, a);</span><br><span class="line">        int i = 0;</span><br><span class="line">        long long p = a;</span><br><span class="line">        while(p != 1)&#123;</span><br><span class="line">            p /= 2;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        long long now = 1;</span><br><span class="line">        while(i--)</span><br><span class="line">            now *= 2;</span><br><span class="line">        if(now == a)</span><br><span class="line">            return abs(0-flag);</span><br><span class="line">        flag = abs(1 - flag);</span><br><span class="line">        return solve(2 * now - a,flag);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;t);</span><br><span class="line">    while(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        long long a;</span><br><span class="line">        scanf(&quot;%lld&quot;, &amp;a);</span><br><span class="line">        printf(&quot;%d\n&quot;, solve(a,0));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/51nod-1877-打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1474,7 +1617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
