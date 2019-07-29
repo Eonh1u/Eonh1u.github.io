@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta name="description" content="题目:&amp;emsp;工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="约瑟夫环-递推">
-<meta property="og:url" content="http://yoursite.com/2018/10/17/约瑟夫环-递推/index.html">
+<meta property="og:title" content="51nod-1889-制铁棒">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/51nod-1889-制铁棒/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta property="og:description" content="题目:&amp;emsp;工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T12:50:03.894Z">
+<meta property="og:updated_time" content="2019-07-29T13:59:07.990Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="约瑟夫环-递推">
-<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta name="twitter:title" content="51nod-1889-制铁棒">
+<meta name="twitter:description" content="题目:&amp;emsp;工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/17/约瑟夫环-递推/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/07/29/51nod-1889-制铁棒/"/>
 
 
 
 
 
-  <title>约瑟夫环-递推 | huyutuo</title>
+  <title>51nod-1889-制铁棒 | huyutuo</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/约瑟夫环-递推/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/51nod-1889-制铁棒/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">约瑟夫环-递推</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-1889-制铁棒</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T20:16:34+08:00">
-                2018-10-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-29T21:53:52+08:00">
+                2019-07-29
               </time>
             
 
@@ -341,8 +342,8 @@
       
 
       
-        <p>&#160; &#160; &#160; &#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。<br>&#160; &#160; &#160; &#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)<br>&#160; &#160; &#160; &#160;利用递推的思想我们可以实现O(N)的复杂度。<br>&#160; &#160; &#160; &#160;推理的思路如下：<br><a id="more"></a><br>&#160; &#160; &#160; &#160;我们第一次淘汰的人的下标很容易得出，即 <strong>x1=(k-1)%n</strong>  (这个式子我们可以通通过几个简单的例子得到，例如n=4,k=5;n=4,k=5;n=3,k=1;这三个例子可以验证我们得到的式子的正确性）<br>&#160; &#160; &#160; &#160;那我们得到了x1，怎么计算第二次的？假设我们第一次时，k&lt;n<br>则数列初始状态为0,1,2,3,4,…n-1，第一次淘汰掉k-1，则剩下0,1,2,3..k-2,k,..n-1;，我们将剩下的人重新排序，以第一次淘汰结束后的k为0，则状态变为n-k,n-k+1,n-k+2,n-k+3..n-2,0,..n-1..n-k-1;<br>人的标号范围变为0～n-2<br>&#160; &#160; &#160; &#160;那我们在第二次的标号规则下，淘汰的人的标号为<br><strong>x2=(x1+k-1)%(n-1)</strong><br>&#160; &#160; &#160; &#160;我们知道最后一次淘汰的，在最后一次的标号规则下，编号即为0<br>我们记f(i)为第i次淘汰的人在第i次淘汰时的编号，则f(0)=0<br>我们所需要做的是，通过f(i-1)推出f(i)，通过上面的对照表，我们可以得到<br><strong>f(i)=(f(i-1)+k)%n</strong><br>应该也是可以从 <strong>x2=(x1+k-1)%(n-1)</strong> 此公式得出，但目前。。。我还不会推。<br>所以我们可以通过递推最终得到f(n)，即最后一次被淘汰的人的编号。</p>
-
+        <p><strong>题目:</strong><br>&emsp;工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。<br><a id="more"></a><br><strong>输入</strong><br>&emsp;单组测试数据。<br>&emsp;第一行给出两个整数n(1 &lt;= n&lt;= 10000)和m(1 &lt;= m&lt; = 10000)。<br>接下来n行给出原始铁棒的长度L[1],L[2],L[3],…,L[n] ，(1&lt;=L[i]&lt;=100,000)。以米为单位，精确到小数点后两位。<br><strong>输出</strong><br>&emsp;输出一个小数表示答案，精确到小数点后两位。<br><strong>输入样例</strong><br>样例输入1<br>4 11<br>8.02<br>7.43<br>4.57<br>5.39<br><strong>输出样例</strong><br>样例输出1<br>2.00<br><strong>解法：</strong><br>&emsp;二分分情况讨论即可，因为题目有小数点限制，这里我直接*100  最后/100处理了这个情况<br>ps:(每天没时间刷题555555，选个一眼题找找手感，二分的边界情况还是有点乱，改天整理一下）<br><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int n,m;</span><br><span class="line">int a[100010];</span><br><span class="line">bool c(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x == 0)</span><br><span class="line">        return true;</span><br><span class="line">    long long sum = 0;</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">        sum += a[i]/x;</span><br><span class="line">    return sum &gt;= m;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        double s;</span><br><span class="line">        scanf(&quot;%lf&quot;, &amp;s);</span><br><span class="line">        a[i] = s*100;</span><br><span class="line">    &#125;</span><br><span class="line">    int l = 1, r = 10000000;</span><br><span class="line">    for(int i = 0; i &lt; 200; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int m = (l+r)/2;</span><br><span class="line">        if(c(m))</span><br><span class="line">            l = m;</span><br><span class="line">        else</span><br><span class="line">            r = m - 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if(c(r))</span><br><span class="line">        printf(&quot;%.2f\n&quot;,r*1.0/100);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;%.2f\n&quot;,l*1.0/100);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -357,6 +358,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
 
       
       
@@ -366,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/2018icpc南京A题/" rel="next" title="2018icpc南京A题">
-                <i class="fa fa-chevron-left"></i> 2018icpc南京A题
+              <a href="/2019/07/28/51nod-1740-蜂巢迷宫/" rel="next" title="51nod-1740 蜂巢迷宫">
+                <i class="fa fa-chevron-left"></i> 51nod-1740 蜂巢迷宫
               </a>
             
           </div>
@@ -375,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/28/k8s初体验/" rel="prev" title="k8s初体验">
-                k8s初体验 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
