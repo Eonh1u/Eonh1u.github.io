@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。输入第一行：1个数n（1 &amp;lt; n &amp;lt;= 1000），表示树的节点数量。后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &amp;lt;= x, y &amp;lt;= n）。输出输出1个数，表示这棵树有多少个叶子节点。输入样例51 21 3">
+<meta name="description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="51nod-2423-叶子节点的数量">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/51nod-2423-叶子节点的数量/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。输入第一行：1个数n（1 &amp;lt; n &amp;lt;= 1000），表示树的节点数量。后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &amp;lt;= x, y &amp;lt;= n）。输出输出1个数，表示这棵树有多少个叶子节点。输入样例51 21 3">
+<meta property="og:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-30T15:09:20.528Z">
+<meta property="og:updated_time" content="2019-07-31T13:37:19.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="51nod-2423-叶子节点的数量">
-<meta name="twitter:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。输入第一行：1个数n（1 &amp;lt; n &amp;lt;= 1000），表示树的节点数量。后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &amp;lt;= x, y &amp;lt;= n）。输出输出1个数，表示这棵树有多少个叶子节点。输入样例51 21 3">
+<meta name="twitter:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。例如： 1─2─4─5└─3 其中3和5是叶子节点，输出2。">
 
 
 
@@ -344,7 +344,7 @@
       
         <p>题目：<br>给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。<br>例如：</p>
 <p>1─2─4─5<br>└─3</p>
-<p>其中3和5是叶子节点，输出2。<br>输入<br>第一行：1个数n（1 &lt; n &lt;= 1000），表示树的节点数量。<br>后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &lt;= x, y &lt;= n）。<br>输出<br>输出1个数，表示这棵树有多少个叶子节点。<br>输入样例<br>5<br>1 2<br>1 3<br>2 4<br>4 5<br>输出样例<br>2<br>解法：<br>记录是否有子节点即可，最后没有子节点的即为叶子节点<br>ps(加班没时间，，，写了个水题，签到）<br>代码：</p>
+<p>其中3和5是叶子节点，输出2。<br><a id="more"></a><br>输入<br>第一行：1个数n（1 &lt; n &lt;= 1000），表示树的节点数量。<br>后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &lt;= x, y &lt;= n）。<br>输出<br>输出1个数，表示这棵树有多少个叶子节点。<br>输入样例<br>5<br>1 2<br>1 3<br>2 4<br>4 5<br>输出样例<br>2<br>解法：<br>记录是否有子节点即可，最后没有子节点的即为叶子节点<br>ps(加班没时间，，，写了个水题，签到）<br>代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int a[1010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    int p = n -1 ;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    while(p--)</span><br><span class="line">    &#123;</span><br><span class="line">        int s,e;</span><br><span class="line">        scanf(&quot;%d%d&quot;, &amp;s, &amp;e);</span><br><span class="line">        a[s]++;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 1; i &lt;= n; i++)</span><br><span class="line">        if(a[i] == 0)  </span><br><span class="line">            ans++;</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
