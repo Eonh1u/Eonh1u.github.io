@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ACM,ppp," />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=210^5,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。输入样例6 9 21 3 3 7 4 2输出样例54解法：去">
-<meta name="keywords" content="ACM,ppp">
+<meta name="description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=2*10^5 ,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="51nod-2530-最大输出">
 <meta property="og:url" content="http://yoursite.com/2019/08/07/51nod-2530-最大输出/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=210^5,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。输入样例6 9 21 3 3 7 4 2输出样例54解法：去">
+<meta property="og:description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=2*10^5 ,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-07T11:13:56.220Z">
+<meta property="og:updated_time" content="2019-08-07T11:16:25.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="51nod-2530-最大输出">
-<meta name="twitter:description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=210^5,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。输入样例6 9 21 3 3 7 4 2输出样例54解法：去">
+<meta name="twitter:description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=2*10^5 ,1&amp;lt;=m,k&amp;lt;=10^9)第二行n个数a[1…n]，(1&amp;lt;=a[i]&amp;lt;=10^9)输出一个数，表示最大值。">
 
 
 
@@ -343,7 +343,7 @@
 
       
         <p>题目：<br>给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。</p>
-<p>输入<br>第一行3个数n,m,k，(2&lt;=n&lt;=2<em>10^5,1&lt;=m,k&lt;=10^9)<br>第二行n个数a[1…n]，(1&lt;=a[i]&lt;=10^9)<br>输出<br>一个数，表示最大值。<br>输入样例<br>6 9 2<br>1 3 3 7 4 2<br>输出样例<br>54<br>解法：<br>去top2，每次都是top1\</em>k+top2,剩余的不足k就只去top1<br>代码：</p>
+<p>输入<br>第一行3个数n,m,k，(2&lt;=n&lt;=2*10^5 ,1&lt;=m,k&lt;=10^9)<br>第二行n个数a[1…n]，(1&lt;=a[i]&lt;=10^9)<br>输出<br>一个数，表示最大值。<br><a id="more"></a><br>输入样例<br>6 9 2<br>1 3 3 7 4 2<br>输出样例<br>54<br>解法：<br>去top2，每次都是top1*k+top2,剩余的不足k就只去top1<br>代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int s[200010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,k;</span><br><span class="line">    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;k);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;s[i]);</span><br><span class="line">    sort(s, s+n);</span><br><span class="line">    int s1 = s[n - 1];</span><br><span class="line">    int s2 = s[n - 2];</span><br><span class="line">    long long p = s1*k + s2;</span><br><span class="line">    long long ans = m/(k+1)*p + m%(k+1)*s1;</span><br><span class="line">    printf(&quot;%lld\n&quot;,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -362,7 +362,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ACM-ppp/" rel="tag"># ACM,ppp</a>
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
           
         </div>
       
@@ -477,7 +477,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

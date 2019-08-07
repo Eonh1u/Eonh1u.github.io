@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031#">
+<meta name="description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1393 01相等串">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/1393-01相等串/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031#">
+<meta property="og:description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T13:55:19.685Z">
+<meta property="og:updated_time" content="2019-08-07T11:14:47.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1393 01相等串">
-<meta name="twitter:description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031#">
+<meta name="twitter:description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2">
 
 
 
@@ -343,7 +343,7 @@
 
       
         <p>题目：<br>给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。</p>
-<p>一个字符串，只包含01，长度不超过1000000。<br>输出<br>一行一个整数，最长的0与1的个数相等的子串的长度。<br>输入样例<br>1011<br>输出样例<br>2<br>解法：<br>用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。<br>代码：</p>
+<p>一个字符串，只包含01，长度不超过1000000。<br>输出<br>一行一个整数，最长的0与1的个数相等的子串的长度。<br>输入样例<br>1011<br>输出样例<br>2<br><a id="more"></a><br>解法：<br>用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。<br>代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">char a[1000010];</span><br><span class="line">vector&lt;int&gt; p[2000010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%s&quot;,a + 1);</span><br><span class="line">    int l = strlen(a + 1);</span><br><span class="line">    int sum = 0;</span><br><span class="line">    int Max = -999999999;</span><br><span class="line">    int Min = 999999999;</span><br><span class="line">    p[1000000].push_back(0);</span><br><span class="line">    for(int i = 1; i &lt;= l; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i] == &apos;0&apos;)</span><br><span class="line">            sum++;</span><br><span class="line">        else</span><br><span class="line">            sum--;</span><br><span class="line">        Max = max(sum, Max);</span><br><span class="line">        Min = min(sum, Min);</span><br><span class="line">        p[sum + 1000000].push_back(i); </span><br><span class="line">    &#125;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    </span><br><span class="line">    //printf(&quot;%d %d\n&quot;, Min, Max);</span><br><span class="line">    for(int i = Min + 1000000; i &lt;= Max + 1000000; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ans = max(p[i][p[i].size() - 1]-p[i][0], ans);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>ps：懒惰又差点战胜了我  加油</p>
 
@@ -482,7 +482,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
