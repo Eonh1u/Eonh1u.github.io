@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="占坑。。。明天更。。。加油！！">
+<meta name="description" content="占坑。。。明天更。。。加油！！ps:00:53点交一发小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&amp;lt;j&amp;lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。 输入第一行输入一个正整数n，表示数组a中元素个数；第二行n个非负整数，表示a中元素，以空格隔开；其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。输出输出一个数，">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="51nod-2497-数三角形">
 <meta property="og:url" content="http://yoursite.com/2019/08/09/51nod-2497-数三角形/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="占坑。。。明天更。。。加油！！">
+<meta property="og:description" content="占坑。。。明天更。。。加油！！ps:00:53点交一发小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&amp;lt;j&amp;lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。 输入第一行输入一个正整数n，表示数组a中元素个数；第二行n个非负整数，表示a中元素，以空格隔开；其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。输出输出一个数，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-09T15:07:56.009Z">
+<meta property="og:updated_time" content="2019-08-09T16:54:58.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="51nod-2497-数三角形">
-<meta name="twitter:description" content="占坑。。。明天更。。。加油！！">
+<meta name="twitter:description" content="占坑。。。明天更。。。加油！！ps:00:53点交一发小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&amp;lt;j&amp;lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。 输入第一行输入一个正整数n，表示数组a中元素个数；第二行n个非负整数，表示a中元素，以空格隔开；其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。输出输出一个数，">
 
 
 
@@ -342,8 +342,9 @@
       
 
       
-        <p>占坑。。。明天更。。。加油！！</p>
-
+        <p>占坑。。。明天更。。。加油！！<br>ps:00:53点交一发<br>小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&lt;j&lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。</p>
+<p>输入<br>第一行输入一个正整数n，表示数组a中元素个数；<br>第二行n个非负整数，表示a中元素，以空格隔开；<br>其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。<br>输出<br>输出一个数，表示满足题意的三元组个数<br>输入样例<br>4<br>2 2 3 4<br>输出样例<br>3<br>解法：后缀记录一下每个数出现的次数，复杂度n^2，中间因为sum数组开小了wa了一发<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int p[1010];</span><br><span class="line">int sum[2010];</span><br><span class="line">int a[1010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    for(int i = n - 1; i &gt;= 0; i--)&#123;</span><br><span class="line">        if(a[i] == 0)</span><br><span class="line">            continue;</span><br><span class="line">        for(int j = a[i]; j &lt;=2005; j++)</span><br><span class="line">            sum[j]++;</span><br><span class="line">        for(int j = i - 1; j &gt;= 0; j--)&#123;</span><br><span class="line">            if(a[j] == 0)</span><br><span class="line">                continue;</span><br><span class="line">            int l = abs(a[i] - a[j]);</span><br><span class="line">            int r = a[i] + a[j];</span><br><span class="line">            int s = sum[r - 1] - sum[l];</span><br><span class="line">           // printf(&quot;%d %d s: %d \n&quot;,sum[r-1],sum[l],s);</span><br><span class="line">            if(a[i] &gt; l &amp;&amp; a[i] &lt; r)</span><br><span class="line">                s--;</span><br><span class="line">               // printf(&quot;%d %d %d\n&quot;,l,r,s);</span><br><span class="line">            if(s &gt; 0)</span><br><span class="line">                ans += s;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
