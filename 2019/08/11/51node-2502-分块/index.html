@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta name="description" content="题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="约瑟夫环-递推">
-<meta property="og:url" content="http://yoursite.com/2018/10/17/约瑟夫环-递推/index.html">
+<meta property="og:title" content="51node-2502-分块">
+<meta property="og:url" content="http://yoursite.com/2019/08/11/51node-2502-分块/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta property="og:description" content="题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T12:50:03.894Z">
+<meta property="og:updated_time" content="2019-08-11T15:00:13.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="约瑟夫环-递推">
-<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)&amp;#160; &amp;#160; &amp;#160; &amp;#160;利用递推的思想我们可以实现O(">
+<meta name="twitter:title" content="51node-2502-分块">
+<meta name="twitter:description" content="题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/17/约瑟夫环-递推/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/11/51node-2502-分块/"/>
 
 
 
 
 
-  <title>约瑟夫环-递推 | huyutuo</title>
+  <title>51node-2502-分块 | huyutuo</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/约瑟夫环-递推/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/51node-2502-分块/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">约瑟夫环-递推</h1>
+          <h1 class="post-title" itemprop="name headline">51node-2502-分块</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T20:16:34+08:00">
-                2018-10-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-11T22:55:18+08:00">
+                2019-08-11
               </time>
             
 
@@ -341,8 +342,14 @@
       
 
       
-        <p>&#160; &#160; &#160; &#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。<br>&#160; &#160; &#160; &#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)<br>&#160; &#160; &#160; &#160;利用递推的思想我们可以实现O(N)的复杂度。<br>&#160; &#160; &#160; &#160;推理的思路如下：<br><a id="more"></a><br>&#160; &#160; &#160; &#160;我们第一次淘汰的人的下标很容易得出，即 <strong>x1=(k-1)%n</strong>  (这个式子我们可以通通过几个简单的例子得到，例如n=4,k=5;n=4,k=5;n=3,k=1;这三个例子可以验证我们得到的式子的正确性）<br>&#160; &#160; &#160; &#160;那我们得到了x1，怎么计算第二次的？假设我们第一次时，k&lt;n<br>则数列初始状态为0,1,2,3,4,…n-1，第一次淘汰掉k-1，则剩下0,1,2,3..k-2,k,..n-1;，我们将剩下的人重新排序，以第一次淘汰结束后的k为0，则状态变为n-k,n-k+1,n-k+2,n-k+3..n-2,0,..n-1..n-k-1;<br>人的标号范围变为0～n-2<br>&#160; &#160; &#160; &#160;那我们在第二次的标号规则下，淘汰的人的标号为<br><strong>x2=(x1+k-1)%(n-1)</strong><br>&#160; &#160; &#160; &#160;我们知道最后一次淘汰的，在最后一次的标号规则下，编号即为0<br>我们记f(i)为第i次淘汰的人在第i次淘汰时的编号，则f(0)=0<br>我们所需要做的是，通过f(i-1)推出f(i)，通过上面的对照表，我们可以得到<br><strong>f(i)=(f(i-1)+k)%n</strong><br>应该也是可以从 <strong>x2=(x1+k-1)%(n-1)</strong> 此公式得出，但目前。。。我还不会推。<br>所以我们可以通过递推最终得到f(n)，即最后一次被淘汰的人的编号。</p>
-
+        <p>题目：<br>小b有个长度为n的数组a，她想将这个数组排序。</p>
+<p>然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。</p>
+<p>请问你最多能把a分成多少块。<br><a id="more"></a></p>
+<p>保证a为0…n-1的一个排列。</p>
+<p>样例解释：</p>
+<p>将a分成2块或者更多块，都无法得到所需的结果。<br>例如，分成 [4, 3], [2, 1, 0] ，排序得到的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。</p>
+<p>输入<br>第一行一个数n；<br>第二行n个数表示a[i]，以空格隔开。<br>n&lt;=10<br>输出<br>输出一个数表示划分块的数量<br>输入样例<br>5<br>4 3 2 1 0<br>输出样例<br>1<br>解法：每个数字排序前排序后的下标为一段线段，相交的线段何为一段，最后求出剩下线段的个数即可。<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[10];</span><br><span class="line">struct point</span><br><span class="line">&#123;</span><br><span class="line">    int num;</span><br><span class="line">    int index;</span><br><span class="line">    int sor;</span><br><span class="line">&#125;;</span><br><span class="line">bool cmp(point a, point b)</span><br><span class="line">&#123;</span><br><span class="line">    return a.num &lt; b.num;</span><br><span class="line">&#125;</span><br><span class="line">point p[10];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;p[i].num);</span><br><span class="line">        p[i].index = i;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(p, p + n, cmp);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">        p[i].sor = i;</span><br><span class="line">    for(int i = 1; i &lt; n ;i++)&#123;</span><br><span class="line">        for(int j = i - 1;j &gt;= 0; j--)&#123;</span><br><span class="line">           // printf(&quot;i:%d %d %d   j: %d %d %d\n&quot;,i,p[i].index,p[i].sor,j,p[j].index,p[j].sor);</span><br><span class="line">            int il = min(p[i].index, p[i].sor);</span><br><span class="line">            int ir = max(p[i].index, p[i].sor);</span><br><span class="line">            int jl = min(p[j].index, p[j].sor);</span><br><span class="line">            int jr = max(p[j].index, p[j].sor);</span><br><span class="line">            bool flag = false;</span><br><span class="line">            if(il == jl || ir == jr)</span><br><span class="line">                flag =  true;</span><br><span class="line">            if(il &lt; jl &amp;&amp; ir &gt; jl)</span><br><span class="line">                flag = true;</span><br><span class="line">            if(jl &lt; il &amp;&amp; jr &gt; il)</span><br><span class="line">                flag = true;</span><br><span class="line">            int Min = min(min(p[i].index,p[j].index), min(p[i].sor,p[j].sor));</span><br><span class="line">            int Max = max(max(p[i].index,p[j].index), max(p[i].sor,p[j].sor));</span><br><span class="line">            if(flag)</span><br><span class="line">            &#123;</span><br><span class="line">                for(int k = 0; k &lt; i; k++)&#123;</span><br><span class="line">                    if(p[i].index == p[k].index &amp;&amp; p[i].sor == p[k].sor)&#123;</span><br><span class="line">                        p[k].index = Min;</span><br><span class="line">                        p[k].sor = Max;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                p[i].index = Min;</span><br><span class="line">                p[i].sor = Max;</span><br><span class="line">                for(int k = 0; k &lt; j; k++)&#123;</span><br><span class="line">                    if(p[j].index == p[k].index &amp;&amp; p[j].sor == p[k].sor)&#123;</span><br><span class="line">                        p[k].index = Min;</span><br><span class="line">                        p[k].sor = Max;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                p[j].index = Min;</span><br><span class="line">                p[j].sor = Max;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    set&lt;int&gt; s;</span><br><span class="line">   // for(int i = 0; i &lt; n; i++)</span><br><span class="line">        //printf(&quot;%d %d %d\n&quot;,i,p[i].index,p[i].sor);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">        s.insert(p[i].index);</span><br><span class="line">    printf(&quot;%d\n&quot;, s.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -357,6 +364,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
 
       
       
@@ -366,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/2018icpc南京A题/" rel="next" title="2018icpc南京A题">
-                <i class="fa fa-chevron-left"></i> 2018icpc南京A题
+              <a href="/2019/08/11/51nod-2627-树的深度大小/" rel="next" title="51nod-2627-树的深度大小">
+                <i class="fa fa-chevron-left"></i> 51nod-2627-树的深度大小
               </a>
             
           </div>
@@ -375,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/28/k8s初体验/" rel="prev" title="k8s初体验">
-                k8s初体验 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
