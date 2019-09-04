@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="show me the code">
+<meta name="description" content="最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&amp;lt;algorith">
 <meta property="og:type" content="article">
 <meta property="og:title" content="待更新">
-<meta property="og:url" content="http://yoursite.com/2019/08/14/待更新/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/2673-最短路径/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="show me the code">
+<meta property="og:description" content="最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&amp;lt;algorith">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T15:21:26.715Z">
+<meta property="og:updated_time" content="2019-09-04T13:27:43.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="待更新">
-<meta name="twitter:description" content="show me the code">
+<meta name="twitter:description" content="最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&amp;lt;algorith">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/14/待更新/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/14/2673-最短路径/"/>
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/待更新/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/2673-最短路径/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -319,7 +319,8 @@
       
 
       
-        
+        <p>最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int to;</span><br><span class="line">    long long  len;</span><br><span class="line">    bool  operator&lt;(const Node &amp;a) const</span><br><span class="line">    &#123;</span><br><span class="line">        return len  &gt; a.len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">bool isUsed[510];</span><br><span class="line">long long ans[510];</span><br><span class="line">vector&lt;Node&gt; NodeQueue[510];</span><br><span class="line">void addEdge(int s, int e, int len)</span><br><span class="line">&#123;</span><br><span class="line">    NodeQueue[s].push_back((Node)&#123;e,len&#125;);</span><br><span class="line">    NodeQueue[e].push_back((Node)&#123;s,len&#125;);</span><br><span class="line">&#125;</span><br><span class="line">int n,m;</span><br><span class="line">priority_queue&lt;Node&gt; PriNodeQueue;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);</span><br><span class="line">    while(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        int s, e, len;</span><br><span class="line">        scanf(&quot;%d%d%d&quot;,&amp;s, &amp;e, &amp;len);</span><br><span class="line">        if(s != e)</span><br><span class="line">            addEdge(s, e, len);</span><br><span class="line">    &#125;</span><br><span class="line">    int s, t;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;s, &amp;t);</span><br><span class="line">    for(int i = 0; i &lt; 505; i++)</span><br><span class="line">        ans[i] = 999999999999;</span><br><span class="line">    ans[s] = 0;</span><br><span class="line">    PriNodeQueue.push((Node)&#123;s,0&#125;);</span><br><span class="line">    while(!PriNodeQueue.empty())&#123;</span><br><span class="line">        Node now = PriNodeQueue.top();</span><br><span class="line">        PriNodeQueue.pop();</span><br><span class="line">        int u = now.to;</span><br><span class="line">        if(!isUsed[u])&#123;</span><br><span class="line">            isUsed[u] = true;</span><br><span class="line">            for(int i = 0; i &lt; NodeQueue[u].size(); i++)&#123;</span><br><span class="line">                if(!isUsed[NodeQueue[u][i].to])&#123;</span><br><span class="line">                    int v = NodeQueue[u][i].to;</span><br><span class="line">                    int len = NodeQueue[u][i].len;</span><br><span class="line">                    if(ans[v] &gt; ans[u] + len)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans[v] = ans[u] + len;</span><br><span class="line">                        PriNodeQueue.push((Node)&#123;v,ans[v]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld&quot;,ans[t]);</span><br><span class="line">    return 0;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
