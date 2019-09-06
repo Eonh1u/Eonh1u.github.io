@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/待更2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/2678-凌波微步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/15/待更2/" itemprop="url">待更2</a></h1>
+                <a class="post-title-link" href="/2019/08/15/2678-凌波微步/" itemprop="url">凌波微步</a></h1>
         
 
         <div class="post-meta">
@@ -293,6 +293,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -323,7 +345,9 @@
       
         
           
-            
+            <p>题目：<br>你在一个二维空间里的(𝑥𝑀𝑒,𝑦𝑀𝑒)位置，你的家在(𝑥𝐻𝑜𝑚𝑒,𝑦𝐻𝑜𝑚𝑒)位置。每一秒钟你可以选择从你当前位置向上下左右四个方向之一移动一个单位。你现在归心似箭，觉得这么走很慢，所幸你有技能“凌波微步”，在这片二维空间中，有3对传送门，每一对传送门以(𝑥𝑠,𝑦𝑠,𝑥𝑡,𝑦𝑡)的形式给出，表示你到达(𝑥𝑠,𝑦𝑠)点就可以发动“凌波微步”技能，花费10秒钟到达(𝑥𝑡,𝑦𝑡)点，相反你也可以花费10秒钟从(𝑥𝑡,𝑦𝑡)点发动“凌波微步”技能到达(𝑥𝑠,𝑦𝑠)点。“凌波微步”技能可以无限多次发动，但只能在所给出的3对传送门之间使用。请问你回家最短用时多少秒。</p>
+<p>输入<br>输入第一行4个整数，依次是xMe、yMe、xHome、yHome，表示当前你的位置和你家的位置。<br>接下来三行，每行描述一对传送门(xs, ys, xt, yt)，含义见题面（0 &lt;= xi, yi &lt;= 10^9）<br>输出<br>输出仅一行，包含一个整数表示回家的最少用时<br>输入样例<br>0 0 20 20<br>1 1 18 20<br>1000 1003 1000 1004<br>1000 1005 1000 1006<br>输出样例<br>14<br>解法:<br>最短路径的一个变形，就坐标映射为点就可以<br>代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int to;</span><br><span class="line">    long long  len;</span><br><span class="line">    bool  operator&lt;(const Node &amp;a) const</span><br><span class="line">    &#123;</span><br><span class="line">        return len  &gt; a.len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">struct xy</span><br><span class="line">&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    bool  operator&lt;(const xy &amp;a) const</span><br><span class="line">    &#123;</span><br><span class="line">        if(x == a.x)</span><br><span class="line">            return y &lt; a.y;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return x &lt; a.x;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">bool isUsed[510];</span><br><span class="line">long long ans[510];</span><br><span class="line">vector&lt;Node&gt; NodeQueue[510];</span><br><span class="line">void addEdge(int s, int e, int len)</span><br><span class="line">&#123;</span><br><span class="line">    NodeQueue[s].push_back((Node)&#123;e,len&#125;);</span><br><span class="line">    NodeQueue[e].push_back((Node)&#123;s,len&#125;);</span><br><span class="line">&#125;</span><br><span class="line">map&lt;xy,int&gt; m;</span><br><span class="line">priority_queue&lt;Node&gt; PriNodeQueue;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int sum = 0;</span><br><span class="line">    int xme, yme, xhome, yhome;</span><br><span class="line">    scanf(&quot;%d%d%d%d&quot;, &amp;xme, &amp;yme, &amp;xhome, &amp;yhome);</span><br><span class="line">    m[(xy)&#123;xme,yme&#125;] = sum++;</span><br><span class="line">    m[(xy)&#123;xhome,yhome&#125;] = sum++;</span><br><span class="line">    addEdge(0,1,abs(xme-xhome) + abs(yme - yhome));</span><br><span class="line">    for(int i = 1; i &lt; 4; i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        int x1,y1,x2,y2;</span><br><span class="line">        scanf(&quot;%d%d%d%d&quot;, &amp;x1, &amp;y1, &amp;x2, &amp;y2);</span><br><span class="line">        map&lt;xy,int&gt; :: iterator it;</span><br><span class="line">        if(m.find((xy)&#123;x1,y1&#125;) == m.end())&#123;</span><br><span class="line">            sum++;</span><br><span class="line">            for(it = m.begin(); it != m.end(); it++)</span><br><span class="line">            &#123;</span><br><span class="line">                int v = (*it).second;</span><br><span class="line">                addEdge(sum,v,abs(x1-(*it).first.x) + abs(y1-(*it).first.y));</span><br><span class="line">            &#125;</span><br><span class="line">            m[(xy)&#123;x1,y1&#125;] = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        if(m.find((xy)&#123;x2,y2&#125;) == m.end())</span><br><span class="line">        &#123;</span><br><span class="line">            sum++;</span><br><span class="line">            for(it = m.begin(); it != m.end(); it++)</span><br><span class="line">            &#123;</span><br><span class="line">                int v = (*it).second;</span><br><span class="line">                addEdge(sum,v,abs(x2-(*it).first.x) + abs(y2-(*it).first.y));</span><br><span class="line">            &#125;</span><br><span class="line">            m[(xy)&#123;x2,y2&#125;] = sum;</span><br><span class="line">        &#125;</span><br><span class="line">        int l = abs(x1-x2) + abs(y1-y2);</span><br><span class="line">        addEdge(m[(xy)&#123;x1,y1&#125;],m[(xy)&#123;x2,y2&#125;],min(10,l));</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; 10; i++)</span><br><span class="line">        ans[i] = 9999999999;</span><br><span class="line">    ans[0] = 0;</span><br><span class="line">    PriNodeQueue.push((Node)&#123;0,0&#125;);</span><br><span class="line">    while(!PriNodeQueue.empty())&#123;</span><br><span class="line">        Node now = PriNodeQueue.top();</span><br><span class="line">        PriNodeQueue.pop();</span><br><span class="line">        int u = now.to;</span><br><span class="line">        if(!isUsed[u])&#123;</span><br><span class="line">            isUsed[u] = true;</span><br><span class="line">           // printf(&quot;%d %d\n&quot;,u,ans[u]);</span><br><span class="line">            for(int i = 0; i &lt; NodeQueue[u].size(); i++)&#123;</span><br><span class="line">                if(!isUsed[NodeQueue[u][i].to])&#123;</span><br><span class="line">                    int v = NodeQueue[u][i].to;</span><br><span class="line">                    int len = NodeQueue[u][i].len;</span><br><span class="line">                    if(ans[v] &gt; ans[u] + len)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans[v] = ans[u] + len;</span><br><span class="line">                        PriNodeQueue.push((Node)&#123;v,ans[v]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld&quot;,ans[1]);</span><br><span class="line">    return 0;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -390,7 +414,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/14/2673-最短路径/" itemprop="url">待更新</a></h1>
+                <a class="post-title-link" href="/2019/08/14/2673-最短路径/" itemprop="url">2673-最短路径</a></h1>
         
 
         <div class="post-meta">
@@ -412,6 +436,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
