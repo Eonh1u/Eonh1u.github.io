@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta name="description" content="今天在ucas oj上面尝试做了两道题 river：二分即可DescriptionTwo lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun.">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="k8s初体验">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/k8s初体验/index.html">
+<meta property="og:title" content="ucas river and Longest Ordered Subsequence">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta property="og:description" content="今天在ucas oj上面尝试做了两道题 river：二分即可DescriptionTwo lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T12:49:58.904Z">
+<meta property="og:updated_time" content="2019-09-08T14:54:20.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="k8s初体验">
-<meta name="twitter:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta name="twitter:title" content="ucas river and Longest Ordered Subsequence">
+<meta name="twitter:description" content="今天在ucas oj上面尝试做了两道题 river：二分即可DescriptionTwo lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun.">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/k8s初体验/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/"/>
 
 
 
 
 
-  <title>k8s初体验 | huyutuo</title>
+  <title>ucas river and Longest Ordered Subsequence | huyutuo</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/k8s初体验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">k8s初体验</h1>
+          <h1 class="post-title" itemprop="name headline">ucas river and Longest Ordered Subsequence</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T17:51:47+08:00">
-                2018-12-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-08T22:50:47+08:00">
+                2019-09-08
               </time>
             
 
@@ -304,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/k8s/" itemprop="url" rel="index">
-                    <span itemprop="name">k8s</span>
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
                   </a>
                 </span>
 
@@ -341,15 +342,18 @@
       
 
       
-        <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
-<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。<br><a id="more"></a></p>
-<h3 id="2-Docker与Pod"><a href="#2-Docker与Pod" class="headerlink" title="2.Docker与Pod"></a>2.Docker与Pod</h3><p>Docker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker中进行编写，同时在运行docker的系统中不需要配置任何环境，我们只需要创建一个包含此hello-world的镜像的docker进行运行，便可以，然后运行结束之后，系统与原来的一样，不含任何杂质。<br>Pod是k8s进行操作的最小单位，意思是k8s进行调度时，便是对pod的分配进行调度。<br>在一个Pod中可以含有多个Pod，Pod的结构可以由用户自己编写，可以简单的理解为Pod时需要运行的程序，在Pod中的多个Docker便是程序的的组成。在一个Pod中的多个Docker共享Pod中的资源，并且多个Docker之间可以进行localhost访问。</p>
-<h3 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h3><p>可以这么简单的理解，现在我们定义了一个可以计算a+b的Pod，并且将Pod运行在了多个Node中（一个Node中对应一个a+b的Pod），其中每个node中的Pod程序都是完全相同的，这就是副本。但是程序相同的Pod具有不同的ip，为了方便执行程序，我们用Service将Pod进行绑定，当我们指明要执行a+b这个Service时，k8s将会自动的找到相应的Node去调用Pod来执行。</p>
-<h3 id="4-label"><a href="#4-label" class="headerlink" title="4.label"></a>4.label</h3><p>可以将label理解为简单的表格，通过此表格我们可以根据不同的值，找到相对应的Pod，Node等结构，同时在label中也记录了结构之间的关系，例如，Pod与Node的对应关系。</p>
-<h3 id="5-Replication-Controller"><a href="#5-Replication-Controller" class="headerlink" title="5.Replication Controller"></a>5.Replication Controller</h3><p>目前的了解还不是很清楚，可以大概的认为，RC是一个请求执行程序的要求，在其中包含了Pod的组成即任务的要求，还有Pod需要运行的副本的数量等信息。</p>
-<p>下面将k8s一次执行的流程进行简单的描述：<br>1.我们通过kubectl命令通过API Server提交一个创建RC的的请求，在请求的过程中，该请求记录被记录在etcd中<br>2.提交请求的过程中，Controller Manager通过API Server得到了此请求的信息，发现现在并没有此RC的Pod实例，于是便根据RC中的Pod描述，创建一个Pod对象，并且也将此过程通过API Server记录在etcd中。<br>3.在Controller Manager创建对象完成后，Scheduler便通过一系列计算选择一个Node节点，并将此Pod放置在此Node中，并且也将此结果通过API Server记录在etcd中。<br>4.调度结果出来后，被选择的Node节点从API Server中得到自己被选中的信息，便按照Pod的定义，在本地进行执行，并且一直负责，直到该Pod的结束。</p>
-<p>从这个简单流程中，我们可以知道，API Server为所有部件的连接桥，负责信息的交流，同时在过程中产生的信息以及关系都会通过API Server记录在etcd中。</p>
-
+        <p>今天在ucas oj上面尝试做了两道题</p>
+<h1 id="river：二分即可"><a href="#river：二分即可" class="headerlink" title="river：二分即可"></a>river：二分即可</h1><p>Description<br>Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help.<br><a id="more"></a><br>The width of the river is an integer L((1≤L≤1,000,000,000). We treat the river as a one-dimensional line segment,with two endpoints A (two frog’s home) and B (the other side of the river). Among the river, there are N stones (0≤N≤50,000). The distance from the i-th stone to side A is Di (0&lt;Di&lt;L). Alice would like to remove M stones in the river (0≤M≤N) so that with the rest of the stones, the minimum distance among all possible jumps for Bob is the largest.</p>
+<p>Input<br>Each instance contains two lines. The first line contains three integers L, N and M. The second line gives the positions of N stones. No two stones share the same position.</p>
+<p>30% test cases guarantee that N &lt; 20.<br>Output<br>For each instance, output a single line with a single integer which is the maximum of the minimum distance among all possible jumps after removing M stones. In the example, Alice should remove stones with distance 2 and 14. After removing these two stones, the minimum distance of jumps is 4, and there are two jumps with distance 4: from 17 to 21, and from 21 to 25.</p>
+<p>Sample Input<br>25 5 2<br>2 14 11 21 17<br>Sample Output<br>4<br><strong>代码:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[50010];</span><br><span class="line">int L,n,k;</span><br><span class="line">bool c(int x)</span><br><span class="line">&#123;</span><br><span class="line">    int now = 0;</span><br><span class="line">    int p = 0;</span><br><span class="line">    for(int i = 0; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i] - now &gt;= x)</span><br><span class="line">        &#123;</span><br><span class="line">            now = a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            p++;</span><br><span class="line">            if(p &gt; k)</span><br><span class="line">                return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    scanf(&quot;%d%d%d&quot;, &amp;L, &amp;n, &amp;k);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    a[n] = L;</span><br><span class="line">    sort(a, a + n + 1);</span><br><span class="line">    int l = 1, r = L;</span><br><span class="line">    for(int i = 0; i &lt; 200; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        //printf(&quot;%d %d\n&quot;, l, r);</span><br><span class="line">        int m = (l + r)/2;</span><br><span class="line">        if(c(m))</span><br><span class="line">            l = m;</span><br><span class="line">        else</span><br><span class="line">            r = m -1;</span><br><span class="line">    &#125;</span><br><span class="line">    if(c(r))</span><br><span class="line">     printf(&quot;%d\n&quot;, r);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\n&quot;, l);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Longest-Ordered-Subsequence-nlogn"><a href="#Longest-Ordered-Subsequence-nlogn" class="headerlink" title="Longest Ordered Subsequence: nlogn"></a>Longest Ordered Subsequence: nlogn</h1><p> Description<br>A numeric sequence of aiai is ordered if a1&lt;a2&lt;⋯&lt;aNa1&lt;a2&lt;⋯&lt;aN. Let the subsequence of the given numeric sequence (a1,a2,…,aN)(a1,a2,…,aN) be any sequence (ai1,ai2,…,aiK)(ai1,ai2,…,aiK), where 1&lt;=i1&lt;i2&lt;⋯&lt;iK&lt;=N1&lt;=i1&lt;i2&lt;⋯&lt;iK&lt;=N. For example, sequence (1,7,3,5,9,4,8)(1,7,3,5,9,4,8) has ordered subsequences, e. g., (1,7)(1,7), (3,4,8)(3,4,8) and many others. All longest ordered subsequences are of length 44, e. g., (1,3,5,8)(1,3,5,8).</p>
+<p>Your program, when given the numeric sequence, must find the length of its longest ordered subsequence.</p>
+<p>Input<br>The first line of input contains the length of sequence N. The second line contains the elements of sequence - N integers in the range from 0 to 10000 each, separated by spaces. 1 &lt;= N &lt;= 1000. But there is one test case with N = 1000000.</p>
+<p>Output<br>Output file must contain a single integer - the length of the longest ordered subsequence of the given sequence.</p>
+<p>Sample Input<br>7<br>1 7 3 5 9 4 8<br>Sample Output<br>4<br><strong>代码：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int MAX = 1000010;</span><br><span class="line">int a[MAX];</span><br><span class="line">int dp[MAX];</span><br><span class="line">int inf = 99999999;</span><br><span class="line">int n;</span><br><span class="line">void solve()</span><br><span class="line">&#123;</span><br><span class="line">    fill(dp, dp + n, inf);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        *lower_bound(dp, dp + n, a[i]) = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, lower_bound(dp, dp + n, inf) - dp);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">    solve();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -364,6 +368,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
 
       
       
@@ -373,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/17/约瑟夫环-递推/" rel="next" title="约瑟夫环-递推">
-                <i class="fa fa-chevron-left"></i> 约瑟夫环-递推
+              <a href="/2019/09/07/2518-和为S/" rel="next" title="2518-和为S">
+                <i class="fa fa-chevron-left"></i> 2518-和为S
               </a>
             
           </div>
@@ -382,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/23/51nod-1744-codeforce-143c/" rel="prev" title="51nod-1744 codeforce-143c">
-                51nod-1744 codeforce-143c <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Master与Node"><span class="nav-number">1.</span> <span class="nav-text">1.Master与Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Docker与Pod"><span class="nav-number">2.</span> <span class="nav-text">2.Docker与Pod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Service"><span class="nav-number">3.</span> <span class="nav-text">3.Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-label"><span class="nav-number">4.</span> <span class="nav-text">4.label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Replication-Controller"><span class="nav-number">5.</span> <span class="nav-text">5.Replication Controller</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#river：二分即可"><span class="nav-number">1.</span> <span class="nav-text">river：二分即可</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Longest-Ordered-Subsequence-nlogn"><span class="nav-number">2.</span> <span class="nav-text">Longest Ordered Subsequence: nlogn</span></a></li></ol></div>
             
 
           </div>
