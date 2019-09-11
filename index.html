@@ -252,6 +252,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/ucas-Alice-s-Food/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hyt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huyutuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/11/ucas-Alice-s-Food/" itemprop="url">ucas Alice's Food</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-11T23:11:02+08:00">
+                2019-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>题目：<br>问题描述<br>面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就是所吃食物的营养价值总和不能少于x, 而美味指数总和不能少于y. 精明的 Alice 当然想省下钱来明天再吃一顿, 所以她想花最少的钱实现她的目标.</p>
+<p>所以 Alice 来求助同班的天才程序员 Bob, 就是你啦. 她告诉你 n 种食物的营养价值, 美味指数和价格, 以及她的目标 x 和 y. 你要告诉她最少要花多少钱才能达到目标.</p>
+<p>输入<br>从标准文件输入, 第一行包括两个整数x和y, 由一个空格隔开(1&lt;=x&lt;=21,1&lt;=y&lt;=79)，表示 Alice 今晚的营养目标和美味目标。第二行包括一个整数n(1&lt;=n&lt;=1000)表示可选择的食物数量. 以下n行包括每种食物的描述：第i+2行包括三个整数xi、yi、pi,(1&lt;=xi&lt;=21,1&lt;=yi&lt;=79,1&lt;=pi&lt;=800)，分别为该种食物的营养价值, 美味指数和价格.</p>
+<p>输出<br>你的程序应该输出一个整数，表示所选食物的最小总价格, 且其营养价值总和不小于x, 美味指数总和不小于y.</p>
+<p>输入样例<br>5 60<br>5<br>3 36 120<br>10 25 129<br>5 50 250<br>1 45 130<br>4 20 119<br>输出样例<br>249<br>题解：01背包的变形，dp[i][j]代表营养价值为i，美味指数为j时的最小价格，因为必须满足营养价值与美味指数的要求，因此在状态转移时，dp[i][j]必须是有实际意义的值，因为x&lt;=21 y&lt;=79，因此dp数组的大小最多为dp[2<em>21][2</em>79],循环得到dp的值之后，选取最优的解即可。<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int dp[55][205];</span><br><span class="line">int xi[1010];</span><br><span class="line">int yi[1010];</span><br><span class="line">int pi[1010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;x, &amp;y);</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d%d%d&quot;, &amp;xi[i], &amp;yi[i], &amp;pi[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; 50; i++)</span><br><span class="line">        for(int j = 0; j &lt; 200; j++)</span><br><span class="line">            dp[i][j] = 99999999;</span><br><span class="line">    dp[0][0] = 0;</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        for(int x = 50; x - xi[i] &gt;= 0; x--)&#123;</span><br><span class="line">            for(int y = 200; y - yi[i] &gt;= 0; y--)&#123;</span><br><span class="line">                if(dp[x-xi[i]][y-yi[i]] != 99999999)&#123;</span><br><span class="line">                    dp[x][y] = min(dp[x][y], dp[x-xi[i]][y-yi[i]] + pi[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    int ans = 99999999;</span><br><span class="line">    for(int i = x; i &lt; 50; i++)</span><br><span class="line">        for(int j = y; j &lt; 200; j++)</span><br><span class="line">            ans = min(ans, dp[i][j]);</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/1906-字段统计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1556,154 +1702,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/11/51node-2502-分块/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="hyt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="huyutuo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/11/51node-2502-分块/" itemprop="url">51node-2502-分块</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-11T22:55:18+08:00">
-                2019-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>题目：<br>小b有个长度为n的数组a，她想将这个数组排序。</p>
-<p>然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。</p>
-<p>请问你最多能把a分成多少块。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/11/51node-2502-分块/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,7 +1756,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

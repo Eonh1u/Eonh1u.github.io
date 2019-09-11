@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ACM," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta name="description" content="题目：问题描述面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就">
+<meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="k8s初体验">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/k8s初体验/index.html">
+<meta property="og:title" content="ucas Alice&#39;s Food">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/ucas-Alice-s-Food/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta property="og:description" content="题目：问题描述面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T12:49:58.904Z">
+<meta property="og:updated_time" content="2019-09-11T15:20:01.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="k8s初体验">
-<meta name="twitter:description" content="此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，">
+<meta name="twitter:title" content="ucas Alice&#39;s Food">
+<meta name="twitter:description" content="题目：问题描述面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/k8s初体验/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/11/ucas-Alice-s-Food/"/>
 
 
 
 
 
-  <title>k8s初体验 | huyutuo</title>
+  <title>ucas Alice's Food | huyutuo</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/k8s初体验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/ucas-Alice-s-Food/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">k8s初体验</h1>
+          <h1 class="post-title" itemprop="name headline">ucas Alice's Food</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T17:51:47+08:00">
-                2018-12-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-11T23:11:02+08:00">
+                2019-09-11
               </time>
             
 
@@ -304,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/k8s/" itemprop="url" rel="index">
-                    <span itemprop="name">k8s</span>
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
                   </a>
                 </span>
 
@@ -341,15 +342,12 @@
       
 
       
-        <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
-<h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。<br><a id="more"></a></p>
-<h3 id="2-Docker与Pod"><a href="#2-Docker与Pod" class="headerlink" title="2.Docker与Pod"></a>2.Docker与Pod</h3><p>Docker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker中进行编写，同时在运行docker的系统中不需要配置任何环境，我们只需要创建一个包含此hello-world的镜像的docker进行运行，便可以，然后运行结束之后，系统与原来的一样，不含任何杂质。<br>Pod是k8s进行操作的最小单位，意思是k8s进行调度时，便是对pod的分配进行调度。<br>在一个Pod中可以含有多个Pod，Pod的结构可以由用户自己编写，可以简单的理解为Pod时需要运行的程序，在Pod中的多个Docker便是程序的的组成。在一个Pod中的多个Docker共享Pod中的资源，并且多个Docker之间可以进行localhost访问。</p>
-<h3 id="3-Service"><a href="#3-Service" class="headerlink" title="3.Service"></a>3.Service</h3><p>可以这么简单的理解，现在我们定义了一个可以计算a+b的Pod，并且将Pod运行在了多个Node中（一个Node中对应一个a+b的Pod），其中每个node中的Pod程序都是完全相同的，这就是副本。但是程序相同的Pod具有不同的ip，为了方便执行程序，我们用Service将Pod进行绑定，当我们指明要执行a+b这个Service时，k8s将会自动的找到相应的Node去调用Pod来执行。</p>
-<h3 id="4-label"><a href="#4-label" class="headerlink" title="4.label"></a>4.label</h3><p>可以将label理解为简单的表格，通过此表格我们可以根据不同的值，找到相对应的Pod，Node等结构，同时在label中也记录了结构之间的关系，例如，Pod与Node的对应关系。</p>
-<h3 id="5-Replication-Controller"><a href="#5-Replication-Controller" class="headerlink" title="5.Replication Controller"></a>5.Replication Controller</h3><p>目前的了解还不是很清楚，可以大概的认为，RC是一个请求执行程序的要求，在其中包含了Pod的组成即任务的要求，还有Pod需要运行的副本的数量等信息。</p>
-<p>下面将k8s一次执行的流程进行简单的描述：<br>1.我们通过kubectl命令通过API Server提交一个创建RC的的请求，在请求的过程中，该请求记录被记录在etcd中<br>2.提交请求的过程中，Controller Manager通过API Server得到了此请求的信息，发现现在并没有此RC的Pod实例，于是便根据RC中的Pod描述，创建一个Pod对象，并且也将此过程通过API Server记录在etcd中。<br>3.在Controller Manager创建对象完成后，Scheduler便通过一系列计算选择一个Node节点，并将此Pod放置在此Node中，并且也将此结果通过API Server记录在etcd中。<br>4.调度结果出来后，被选择的Node节点从API Server中得到自己被选中的信息，便按照Pod的定义，在本地进行执行，并且一直负责，直到该Pod的结束。</p>
-<p>从这个简单流程中，我们可以知道，API Server为所有部件的连接桥，负责信息的交流，同时在过程中产生的信息以及关系都会通过API Server记录在etcd中。</p>
-
+        <p>题目：<br>问题描述<br>面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就是所吃食物的营养价值总和不能少于x, 而美味指数总和不能少于y. 精明的 Alice 当然想省下钱来明天再吃一顿, 所以她想花最少的钱实现她的目标.</p>
+<p>所以 Alice 来求助同班的天才程序员 Bob, 就是你啦. 她告诉你 n 种食物的营养价值, 美味指数和价格, 以及她的目标 x 和 y. 你要告诉她最少要花多少钱才能达到目标.</p>
+<p>输入<br>从标准文件输入, 第一行包括两个整数x和y, 由一个空格隔开(1&lt;=x&lt;=21,1&lt;=y&lt;=79)，表示 Alice 今晚的营养目标和美味目标。第二行包括一个整数n(1&lt;=n&lt;=1000)表示可选择的食物数量. 以下n行包括每种食物的描述：第i+2行包括三个整数xi、yi、pi,(1&lt;=xi&lt;=21,1&lt;=yi&lt;=79,1&lt;=pi&lt;=800)，分别为该种食物的营养价值, 美味指数和价格.</p>
+<p>输出<br>你的程序应该输出一个整数，表示所选食物的最小总价格, 且其营养价值总和不小于x, 美味指数总和不小于y.</p>
+<p>输入样例<br>5 60<br>5<br>3 36 120<br>10 25 129<br>5 50 250<br>1 45 130<br>4 20 119<br>输出样例<br>249<br>题解：01背包的变形，dp[i][j]代表营养价值为i，美味指数为j时的最小价格，因为必须满足营养价值与美味指数的要求，因此在状态转移时，dp[i][j]必须是有实际意义的值，因为x&lt;=21 y&lt;=79，因此dp数组的大小最多为dp[2<em>21][2</em>79],循环得到dp的值之后，选取最优的解即可。<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int dp[55][205];</span><br><span class="line">int xi[1010];</span><br><span class="line">int yi[1010];</span><br><span class="line">int pi[1010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;x, &amp;y);</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d%d%d&quot;, &amp;xi[i], &amp;yi[i], &amp;pi[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; 50; i++)</span><br><span class="line">        for(int j = 0; j &lt; 200; j++)</span><br><span class="line">            dp[i][j] = 99999999;</span><br><span class="line">    dp[0][0] = 0;</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        for(int x = 50; x - xi[i] &gt;= 0; x--)&#123;</span><br><span class="line">            for(int y = 200; y - yi[i] &gt;= 0; y--)&#123;</span><br><span class="line">                if(dp[x-xi[i]][y-yi[i]] != 99999999)&#123;</span><br><span class="line">                    dp[x][y] = min(dp[x][y], dp[x-xi[i]][y-yi[i]] + pi[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    int ans = 99999999;</span><br><span class="line">    for(int i = x; i &lt; 50; i++)</span><br><span class="line">        for(int j = y; j &lt; 200; j++)</span><br><span class="line">            ans = min(ans, dp[i][j]);</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -364,6 +362,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
 
       
       
@@ -373,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/17/约瑟夫环-递推/" rel="next" title="约瑟夫环-递推">
-                <i class="fa fa-chevron-left"></i> 约瑟夫环-递推
+              <a href="/2019/09/11/1906-字段统计/" rel="next" title="1906-字段统计">
+                <i class="fa fa-chevron-left"></i> 1906-字段统计
               </a>
             
           </div>
@@ -382,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/23/51nod-1744-codeforce-143c/" rel="prev" title="51nod-1744 codeforce-143c">
-                51nod-1744 codeforce-143c <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -437,17 +437,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,22 +512,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Master与Node"><span class="nav-number">1.</span> <span class="nav-text">1.Master与Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Docker与Pod"><span class="nav-number">2.</span> <span class="nav-text">2.Docker与Pod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Service"><span class="nav-number">3.</span> <span class="nav-text">3.Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-label"><span class="nav-number">4.</span> <span class="nav-text">4.label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Replication-Controller"><span class="nav-number">5.</span> <span class="nav-text">5.Replication Controller</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
