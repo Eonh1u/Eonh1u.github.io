@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ACM," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="题目:有一个字符串S，长度为n，现在要对其作变换。变换的规则如下：对于第i（1&amp;lt;=i&amp;lt;=n）个字符，可以保持不变，或者变换为第i-1个字符（如果有的话）或者第i+1个字符（如果有的话）。 请计算一下最多可以变换出多少种不同的字符串，最后总数对 1000000007(109+7) 取余后输出。">
-<meta name="keywords" content="ACM">
+<meta name="description" content="show me the code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod-1884-变换字符串">
-<meta property="og:url" content="http://yoursite.com/2019/08/12/51nod-1884-变换字符串/index.html">
+<meta property="og:title" content="dai">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/dai/index.html">
 <meta property="og:site_name" content="huyutuo">
-<meta property="og:description" content="题目:有一个字符串S，长度为n，现在要对其作变换。变换的规则如下：对于第i（1&amp;lt;=i&amp;lt;=n）个字符，可以保持不变，或者变换为第i-1个字符（如果有的话）或者第i+1个字符（如果有的话）。 请计算一下最多可以变换出多少种不同的字符串，最后总数对 1000000007(109+7) 取余后输出。">
+<meta property="og:description" content="show me the code">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-12T13:34:42.151Z">
+<meta property="og:updated_time" content="2019-09-19T15:04:18.622Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod-1884-变换字符串">
-<meta name="twitter:description" content="题目:有一个字符串S，长度为n，现在要对其作变换。变换的规则如下：对于第i（1&amp;lt;=i&amp;lt;=n）个字符，可以保持不变，或者变换为第i-1个字符（如果有的话）或者第i+1个字符（如果有的话）。 请计算一下最多可以变换出多少种不同的字符串，最后总数对 1000000007(109+7) 取余后输出。">
+<meta name="twitter:title" content="dai">
+<meta name="twitter:description" content="show me the code">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/12/51nod-1884-变换字符串/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/19/dai/"/>
 
 
 
 
 
-  <title>51nod-1884-变换字符串 | huyutuo</title>
+  <title>dai | huyutuo</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/51nod-1884-变换字符串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/dai/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hyt">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">51nod-1884-变换字符串</h1>
+          <h1 class="post-title" itemprop="name headline">dai</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T21:20:11+08:00">
-                2019-08-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T23:04:18+08:00">
+                2019-09-19
               </time>
             
 
@@ -292,28 +291,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,14 +319,7 @@
       
 
       
-        <p>题目:<br>有一个字符串S，长度为n，现在要对其作变换。变换的规则如下：对于第i（1&lt;=i&lt;=n）个字符，可以保持不变，或者变换为第i-1个字符（如果有的话）或者第i+1个字符（如果有的话）。</p>
-<p>请计算一下最多可以变换出多少种不同的字符串，最后总数对 1000000007(109+7) 取余后输出。<br><a id="more"></a></p>
-<p>样例解释：</p>
-<p>样例1中，变换出来的字符串是aa, ag, ga,和 gg。</p>
-<p>样例2中，只能变换出aa。</p>
-<p>输入<br>多组测试数据。<br>第一行有一个整数T（1 ≤ T ≤ 128），表示测试数据的数目。<br>接下来有T组数据。<br>每一数据给出一个字符串S（1&lt;=|S|&lt;=1000，只由小写字母组成）。<br>输出<br>对于每一组数据，输出一个整数表示答案，占一行。<br>输入样例<br>样例输入1<br>2<br>ag<br>aa<br>输出样例<br>样例输出1<br>4<br>1<br>解法：<br>统计每个位置可以变得个数，然后相乘即可<br>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">long long mod = 1e9 + 7;</span><br><span class="line">long long solve(string s)</span><br><span class="line">&#123;</span><br><span class="line">    int l = s.length();</span><br><span class="line">    long long ans = 1;</span><br><span class="line">    for(int i = 0; i &lt; l; i++)&#123;</span><br><span class="line">        set&lt;char&gt; c;</span><br><span class="line">        if(i - 1 &gt;= 0)</span><br><span class="line">            c.insert(s[i - 1]);</span><br><span class="line">        c.insert(s[i]);</span><br><span class="line">        if(i + 1 &lt; l)</span><br><span class="line">            c.insert(s[i + 1]);</span><br><span class="line">        ans = (ans * c.size()) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">    while(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        string s;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        printf(&quot;%lld\n&quot;,solve(s));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;he</span><br></pre></td></tr></table></figure>
-
+        
       
     </div>
     
@@ -364,12 +334,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ACM/" rel="tag"># ACM</a>
-          
-        </div>
-      
 
       
       
@@ -379,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/11/51node-2502-分块/" rel="next" title="51node-2502-分块">
-                <i class="fa fa-chevron-left"></i> 51node-2502-分块
+              <a href="/2019/09/18/51nod-1065-最小正字段和/" rel="next" title="51nod-1065-最小正字段和">
+                <i class="fa fa-chevron-left"></i> 51nod-1065-最小正字段和
               </a>
             
           </div>
@@ -388,10 +352,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/13/51nod-2562-阿克曼函数/" rel="prev" title="51nod-2562-阿克曼函数">
-                51nod-2562-阿克曼函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
