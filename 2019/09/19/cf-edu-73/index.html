@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ACM," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。 A题：##题目：A. 2048 Gametime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou are playing a variation of">
+<meta name="keywords" content="ACM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf-edu-73">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/cf-edu-73/index.html">
+<meta property="og:site_name" content="huyutuo">
+<meta property="og:description" content="昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。 A题：##题目：A. 2048 Gametime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou are playing a variation of">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/image.jpg">
+<meta property="og:updated_time" content="2019-09-20T09:02:38.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cf-edu-73">
+<meta name="twitter:description" content="昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。 A题：##题目：A. 2048 Gametime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou are playing a variation of">
+<meta name="twitter:image" content="http://yoursite.com/images/image.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/19/cf-edu-73/"/>
+
+
+
+
+
+  <title>cf-edu-73 | huyutuo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">huyutuo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/cf-edu-73/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hyt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huyutuo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">cf-edu-73</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T23:04:18+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。</p>
+<h1 id="A题："><a href="#A题：" class="headerlink" title="A题："></a>A题：</h1><p>##题目：<br>A. 2048 Game<br>time limit per test1 second<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You are playing a variation of game 2048. Initially you have a multiset 𝑠 of 𝑛 integers. Every integer in this multiset is a power of two.</p>
+<p>You may perform any number (possibly, zero) operations with this multiset.</p>
+<p>During each operation you choose two equal integers from 𝑠, remove them from 𝑠 and insert the number equal to their sum into 𝑠.</p>
+<p>For example, if 𝑠={1,2,1,1,4,2,2} and you choose integers 2 and 2, then the multiset becomes {1,1,1,4,4,2}.</p>
+<p>You win if the number 2048 belongs to your multiset. For example, if 𝑠={1024,512,512,4} you can win as follows: choose 512 and 512, your multiset turns into {1024,1024,4}. Then choose 1024 and 1024, your multiset turns into {2048,4} and you win.</p>
+<p>You have to determine if you can win this game.</p>
+<p>You have to answer 𝑞 independent queries.</p>
+<p>Input<br>The first line contains one integer 𝑞 (1≤𝑞≤100) – the number of queries.</p>
+<p>The first line of each query contains one integer 𝑛 (1≤𝑛≤100) — the number of elements in multiset.</p>
+<p>The second line of each query contains 𝑛 integers 𝑠1,𝑠2,…,𝑠𝑛 (1≤𝑠𝑖≤229) — the description of the multiset. It is guaranteed that all elements of the multiset are powers of two.</p>
+<p>Output<br>For each query print YES if it is possible to obtain the number 2048 in your multiset, and NO otherwise.</p>
+<p>You may print every letter in any case you want (so, for example, the strings yEs, yes, Yes and YES will all be recognized as positive answer).</p>
+<p>Example<br>inputCopy<br>6<br>4<br>1024 512 64 512<br>1<br>2048<br>3<br>64 512 2<br>2<br>4096 4<br>7<br>2048 2 2048 2048 2048 2048 2048<br>2<br>2048 4096<br>outputCopy<br>YES<br>YES<br>NO<br>NO<br>YES<br>YES<br>Note<br>In the first query you can win as follows: choose 512 and 512, and 𝑠 turns into {1024,64,1024}. Then choose 1024 and 1024, and 𝑠 turns into {2048,64} and you win.</p>
+<p>In the second query 𝑠 contains 2048 initially.</p>
+<p>##解法：<br>统计数组中小于等于2048的数字，计算出sum，若sum&gt;=2048,则肯定能够凑齐2048</p>
+<p>##代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">long long s[110];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;t);</span><br><span class="line">    int n;</span><br><span class="line">    while(t--)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">        long long ans = 0;</span><br><span class="line">        for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">            long long a;</span><br><span class="line">            scanf(&quot;%lld&quot;, &amp;a);</span><br><span class="line">            if(a &lt;= 2048)</span><br><span class="line">            ans += a;</span><br><span class="line">        &#125;</span><br><span class="line">        if(ans &gt;= 2048)</span><br><span class="line">            printf(&quot;YES\n&quot;);</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;NO\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B题："><a href="#B题：" class="headerlink" title="B题："></a>B题：</h1><p>##题目：<br>B. Knights<br>time limit per test1 second<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br> a chess board with 𝑛 rows and 𝑛 columns. Initially all cells of the board are empty, and you have to put a white or a black knight into each cell of the board.</p>
+<p>A knight is a chess piece that can attack a piece in cell (𝑥2, 𝑦2) from the cell (𝑥1, 𝑦1) if one of the following conditions is met:</p>
+<p>|𝑥1−𝑥2|=2 and |𝑦1−𝑦2|=1, or<br>|𝑥1−𝑥2|=1 and |𝑦1−𝑦2|=2.<br>Here are some examples of which cells knight can attack. In each of the following pictures, if the knight is currently in the blue cell, it can attack all red cells (and only them).<br><img src="/images/image.jpg" alt=""></p>
+<p>A duel of knights is a pair of knights of different colors such that these knights attack each other. You have to put a knight (a white one or a black one) into each cell in such a way that the number of duels is maximum possible.</p>
+<p>Input<br>The first line contains one integer 𝑛 (3≤𝑛≤100) — the number of rows (and columns) in the board.</p>
+<p>Output<br>Print 𝑛 lines with 𝑛 characters in each line. The 𝑗-th character in the 𝑖-th line should be W, if the cell (𝑖, 𝑗) contains a white knight, or B, if it contains a black knight. The number of duels should be maximum possible. If there are multiple optimal answers, print any of them.</p>
+<p>Example<br>inputCopy<br>3<br>outputCopy<br>WBW<br>BBB<br>WBW<br>Note<br>In the first example, there are 8 duels:</p>
+<p>the white knight in (1, 1) attacks the black knight in (3, 2);<br>the white knight in (1, 1) attacks the black knight in (2, 3);<br>the white knight in (1, 3) attacks the black knight in (3, 2);<br>the white knight in (1, 3) attacks the black knight in (2, 1);<br>the white knight in (3, 1) attacks the black knight in (1, 2);<br>the white knight in (3, 1) attacks the black knight in (2, 3);<br>the white knight in (3, 3) attacks the black knight in (1, 2);<br>the white knight in (3, 3) attacks the black knight in (2, 1).</p>
+<p>##解法：<br>WB交叉输出即可</p>
+<p>##代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        for(int j = 0; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if((i + j) % 2 == 0)</span><br><span class="line">                printf(&quot;W&quot;);</span><br><span class="line">            else</span><br><span class="line">                printf(&quot;B&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C题"><a href="#C题" class="headerlink" title="C题"></a>C题</h1><p>##题目：<br>C. Perfect Team<br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You may have already known that a standard ICPC team consists of exactly three members. The perfect team however has more restrictions. A student can have some specialization: coder or mathematician. She/he can have no specialization, but can’t have both at the same time.</p>
+<p>So the team is considered perfect if it includes at least one coder, at least one mathematician and it consists of exactly three members.</p>
+<p>You are a coach at a very large university and you know that 𝑐 of your students are coders, 𝑚 are mathematicians and 𝑥 have no specialization.</p>
+<p>What is the maximum number of full perfect teams you can distribute them into?</p>
+<p>Note that some students can be left without a team and each student can be a part of no more than one team.</p>
+<p>You are also asked to answer 𝑞 independent queries.</p>
+<p>Input<br>The first line contains a single integer 𝑞 (1≤𝑞≤104) — the number of queries.</p>
+<p>Each of the next 𝑞 lines contains three integers 𝑐, 𝑚 and 𝑥 (0≤𝑐,𝑚,𝑥≤108) — the number of coders, mathematicians and students without any specialization in the university, respectively.</p>
+<p>Note that the no student is both coder and mathematician at the same time.</p>
+<p>Output<br>Print 𝑞 integers — the 𝑖-th of them should be the answer to the 𝑖 query in the order they are given in the input. The answer is the maximum number of full perfect teams you can distribute your students into.</p>
+<p>Example<br>inputCopy<br>6<br>1 1 1<br>3 6 0<br>0 0 0<br>0 1 1<br>10 1 10<br>4 4 1<br>outputCopy<br>1<br>3<br>0<br>0<br>1<br>3<br>Note<br>In the first example here are how teams are formed:</p>
+<p>the only team of 1 coder, 1 mathematician and 1 without specialization;<br>1.all three teams consist of 1 coder and 2 mathematicians;<br>2.no teams can be formed;<br>3.no teams can be formed;<br>4.one team consists of 1 coder, 1 mathematician and 1 without 5.specialization, the rest aren’t able to form any team;<br>6.one team consists of 1 coder, 1 mathematician and 1 without specialization, one consists of 2 coders and 1 mathematician and one consists of 1 coder and 2 mathematicians.</p>
+<p>##解法：<br>首先统计sum，得到sum/3，即能分得队伍的最大值，然后取c,m的最小值，最后再取两个值中的最小值。</p>
+<p>##代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;t);</span><br><span class="line">    while(t--)&#123;</span><br><span class="line">        long long a, b, c;</span><br><span class="line">        scanf(&quot;%lld%lld%lld&quot;, &amp;a, &amp;b, &amp;c);</span><br><span class="line">        long long ans = (a +b + c)/3;</span><br><span class="line">        long long p = min(a,b);</span><br><span class="line">        ans = min(p, ans);</span><br><span class="line">        printf(&quot;%lld\n&quot;, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/18/51nod-1065-最小正字段和/" rel="next" title="51nod-1065-最小正字段和">
+                <i class="fa fa-chevron-left"></i> 51nod-1065-最小正字段和
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="hyt" />
+            
+              <p class="site-author-name" itemprop="name">hyt</p>
+              <p class="site-description motion-element" itemprop="description">show me the code</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huyutuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A题："><span class="nav-number">1.</span> <span class="nav-text">A题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B题："><span class="nav-number">2.</span> <span class="nav-text">B题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C题"><span class="nav-number">3.</span> <span class="nav-text">C题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hyt</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
