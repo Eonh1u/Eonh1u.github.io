@@ -252,6 +252,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/51nod-1649-齐头并进/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huring">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/24/51nod-1649-齐头并进/" itemprop="url">51nod-1649-齐头并进</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-24T22:36:25+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>在一个叫奥斯汀的城市，有n个小镇（从1到n编号），这些小镇通过m条双向火车铁轨相连。当然某些小镇之间也有公路相连。为了保证每两个小镇之间的人可以方便的相互访问，市长就在那些没有铁轨直接相连的小镇之间建造了公路。在两个直接通过公路或者铁路相连的小镇之间移动，要花费一个小时的时间。</p>
+<p>现在有一辆火车和一辆汽车同时从小镇1出发。他们都要前往小镇n，但是他们中途不能同时停在同一个小镇（但是可以同时停在小镇n）。火车只能走铁路，汽车只能走公路。</p>
+<p>现在请来为火车和汽车分别设计一条线路；所有的公路或者铁路可以被多次使用。使得火车和汽车尽可能快的到达小镇n。即要求他们中最后到达小镇n的时间要最短。输出这个最短时间。(最后火车和汽车可以同时到达小镇n，也可以先后到达。)</p>
+<h2 id="样例解释："><a href="#样例解释：" class="headerlink" title="样例解释："></a>样例解释：</h2><p>在样例中，火车可以按照 1⟶3⟶4 行驶，汽车 1⟶2⟶4 按照行驶，经过2小时后他们同时到过小镇4。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>单组测试数据。<br>第一行有两个整数n 和 m (2≤n≤400, 0≤m≤n*(n-1)/2) ，表示小镇的数目和铁轨的数目。<br>接下来m行，每行有两个整数u 和 v，表示u和v之间有一条铁路。(1≤u,v≤n, u≠v)。<br>输入中保证两个小镇之间最多有一条铁路直接相连。<br>输出<br>输出一个整数，表示答案，如果没有合法的路线规划，输出-1。<br>输入样例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4 2</span><br><span class="line">1 3</span><br><span class="line">3 4</span><br></pre></td></tr></table></figure>
+<p>输出样例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法:"></a>解法:</h1><p>两次最短路取最大值即可。</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int to;</span><br><span class="line">    long long  len;</span><br><span class="line">    bool  operator&lt;(const Node &amp;a) const</span><br><span class="line">    &#123;</span><br><span class="line">        return len  &gt; a.len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">bool isUsed[510];</span><br><span class="line">long long ans[510];</span><br><span class="line">vector&lt;Node&gt; NodeQueue[510];</span><br><span class="line">set&lt;int&gt; sto[510];</span><br><span class="line">void addEdge(int s, int e, int len)</span><br><span class="line">&#123;</span><br><span class="line">    NodeQueue[s].push_back((Node)&#123;e,len&#125;);</span><br><span class="line">    NodeQueue[e].push_back((Node)&#123;s,len&#125;);</span><br><span class="line">&#125;</span><br><span class="line">int n,m;</span><br><span class="line">priority_queue&lt;Node&gt; PriNodeQueue;</span><br><span class="line">long long len(int s, int t)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i = 0; i &lt; 505; i++)</span><br><span class="line">        ans[i] = 999999999999;</span><br><span class="line">    ans[s] = 0;</span><br><span class="line">    PriNodeQueue.push((Node)&#123;s,0&#125;);</span><br><span class="line">    while(!PriNodeQueue.empty())&#123;</span><br><span class="line">        Node now = PriNodeQueue.top();</span><br><span class="line">        PriNodeQueue.pop();</span><br><span class="line">        int u = now.to;</span><br><span class="line">        if(!isUsed[u])&#123;</span><br><span class="line">            isUsed[u] = true;</span><br><span class="line">            for(int i = 0; i &lt; NodeQueue[u].size(); i++)&#123;</span><br><span class="line">                if(!isUsed[NodeQueue[u][i].to])&#123;</span><br><span class="line">                    int v = NodeQueue[u][i].to;</span><br><span class="line">                    int len = NodeQueue[u][i].len;</span><br><span class="line">                    if(ans[v] &gt; ans[u] + len)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans[v] = ans[u] + len;</span><br><span class="line">                        PriNodeQueue.push((Node)&#123;v,ans[v]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans[t];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);</span><br><span class="line">    while(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        int s, e, len;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;s, &amp;e);</span><br><span class="line">        sto[s].insert(e);</span><br><span class="line">        sto[e].insert(s);</span><br><span class="line">        addEdge(s, e, 1);</span><br><span class="line">    &#125;</span><br><span class="line">    long long ans1 =  len(1,n);</span><br><span class="line">    fill(isUsed, isUsed + 510, 0);</span><br><span class="line">    for(int i = 0; i &lt; 510; i++)</span><br><span class="line">        NodeQueue[i].clear();</span><br><span class="line">    for(int i = 1; i &lt;= n; i++)</span><br><span class="line">        for(int j = 1; j &lt;= n; j++)</span><br><span class="line">                if(i != j &amp;&amp; sto[i].find(j) == sto[i].end())</span><br><span class="line">                    addEdge(i,j,1);</span><br><span class="line">    </span><br><span class="line">    long long ans2 = len(1,n);</span><br><span class="line">    long long ans = max(ans1, ans2);</span><br><span class="line">    if(ans != 999999999999)</span><br><span class="line">         printf(&quot;%lld\n&quot;, ans);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;-1&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/cf-587-div3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1563,155 +1713,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/10/1880-单词纠错/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="huring">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/10/1880-单词纠错/" itemprop="url">51nod-1880-单词纠错</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-10T22:47:29+08:00">
-                2019-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>题目：<br>现在大多数的文本编辑器都的单词究错功能，即你输入的单词不能够在词典中找到的话，他就会建议你修改，然后给出几个候选项。</p>
-<p>现在我们就要来写一个生成候选项的算法。</p>
-<p>具体算法是这样的，如果输入的单词能够在字典中找到，那么就不用推荐，否则就在字典中找那些能够通过修改一个字母得到目标单词的选项作为推荐。</p>
-<p>修改一个字母包括删除一个字母，添加一个字母，以及把单词中的某个位置的字母进行替换。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/10/1880-单词纠错/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1766,7 +1767,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
