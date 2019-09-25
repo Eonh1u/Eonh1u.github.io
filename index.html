@@ -252,6 +252,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/51nod-2206-低买高卖/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huring">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/25/51nod-2206-低买高卖/" itemprop="url">51nod-2206-低买高卖</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-25T20:24:24+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h1><p>考虑股票市场，一共有n天。<br>对于第i天，B君知道股票的价格是每单位a[i]元<br>在每一天，B君可以选择买入一个单位的股票，卖出一个单位的股票，或者什么都不做。<br>刚开始B君有无穷多的钱，但是没有任何股票。<br>问n天之后B君最多可以赚多少钱。<br>(1 &lt;= n &lt;= 200000)<br>(1 &lt;= a[i] &lt;= 10000)</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行一个整数n表示天数。<br>接下来一行n个整数，表示每天的价钱。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>一行一个整数表示最多可以赚的钱数。<br>输入样例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">10 5 4 7 9 12 6 2 10</span><br></pre></td></tr></table></figure>
+<p>输出样例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20</span><br></pre></td></tr></table></figure>
+<h1 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h1><p>利用优先队列建立最小堆，遍历时，每次首先push当前a[i]两次，取堆中的最小值，若堆中最小值为a[i]，相当于未进行操作。<br>下面解释一下为何要push两次<br>1.堆里面存储的值，相当于已经买的股票，因此第一次push可以认为购买了当天的股票。<br>2.从堆中取出最小值之后，ans加上当前a[i]与堆中最小元素的差值，此时第二次push的a[i]可以认为是堆中最小元素的一个跳板，以备以后出现利润更高的天数。<br>例子：1 3 9<br>day1: &lt;1,1&gt;  <1> ans = 0<br>day2: &lt;1,3,3&gt; &lt;3,3&gt; ans = 2<br>day3: &lt;3,3,9,9&gt; &lt;3,9,9&gt; ans = 2+9-3 = 8<br>根据上述例子，我们可以看到在第三天时，取到了堆中最小的元素3，此时的元素3是由元素1变化而来的，最终的ans为8，即1-&gt;3  3-&gt;9 ,可以认为1-&gt;9 即第一天买入，第二天不进行操作，第三天卖出。而当第三天结束时，我们可以看到仍有一个元素3存在，这就是假设购入了第二天的股票，以备后面的进行比较。<br>第二个例子：1 3 9 10<br>day1：&lt;1,1&gt; <1> ans = 0<br>day2:&lt;1,3,3&gt; &lt;3,3&gt; ans = 2<br>day3:&lt;3,3,9,9&gt; &lt;3,9,9&gt; ans = 8<br>day4：&lt;3,9,9,10,10&gt; &lt;9,9,10,10&gt; ans = 15<br>可以看出在day2结束时&lt;3,3&gt; 一个为元素1转化而来，一个为元素3，分别在day3，day4被选取。</1></1></p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 200010;</span><br><span class="line">int a[maxn];</span><br><span class="line">priority_queue&lt;int&gt; s;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    long long ans = 0;</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">        s.push(-a[i]);</span><br><span class="line">        s.push(-a[i]);</span><br><span class="line">        ans += a[i] + s.top();</span><br><span class="line">        s.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/51nod-1649-齐头并进/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1566,153 +1715,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/1906-字段统计/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="huring">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/11/1906-字段统计/" itemprop="url">1906-字段统计</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-11T19:49:30+08:00">
-                2019-09-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。</p>
-<p>输入<br>单组测试数据。<br>第一行两个整数L和k。（L&gt;=1，1&lt;=k&lt;=26,k^L&lt;=2*10^7）<br>第二行一个字符串S。（1&lt;=|S|&lt;=1000000）<br>输出<br>输出一个整数表示答案。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/11/1906-字段统计/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1767,7 +1769,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
