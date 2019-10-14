@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。 例如： 1─2─4─5└─3 其中节点5的子树只包括节点5，Size = 1。节点4的子树包括节点4，5，Size = 2。节点1的子树包括节点1，2，3，4，5，Size = 5。 求以所有节点为根的子树的Size之和。上面例子中，节">
+<meta name="description" content="题目：小b有n张牌。  现在她想把牌分组，使得每组都是长度为W的顺子，即由连续W个数组成。 请问小b能做到吗？">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod-2281-树的size之和">
-<meta property="og:url" content="http://yoursite.com/2019/08/02/51nod-2281-树的size之和/index.html">
+<meta property="og:title" content="51nod-2510-顺子">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/51nod-2510-顺子/index.html">
 <meta property="og:site_name" content="huring">
-<meta property="og:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。 例如： 1─2─4─5└─3 其中节点5的子树只包括节点5，Size = 1。节点4的子树包括节点4，5，Size = 2。节点1的子树包括节点1，2，3，4，5，Size = 5。 求以所有节点为根的子树的Size之和。上面例子中，节">
+<meta property="og:description" content="题目：小b有n张牌。  现在她想把牌分组，使得每组都是长度为W的顺子，即由连续W个数组成。 请问小b能做到吗？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-02T15:24:37.665Z">
+<meta property="og:updated_time" content="2019-10-14T15:40:32.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod-2281-树的size之和">
-<meta name="twitter:description" content="题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。 例如： 1─2─4─5└─3 其中节点5的子树只包括节点5，Size = 1。节点4的子树包括节点4，5，Size = 2。节点1的子树包括节点1，2，3，4，5，Size = 5。 求以所有节点为根的子树的Size之和。上面例子中，节">
+<meta name="twitter:title" content="51nod-2510-顺子">
+<meta name="twitter:description" content="题目：小b有n张牌。  现在她想把牌分组，使得每组都是长度为W的顺子，即由连续W个数组成。 请问小b能做到吗？">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/02/51nod-2281-树的size之和/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/14/51nod-2510-顺子/"/>
 
 
 
 
 
-  <title>51nod-2281-树的size之和 | huring</title>
+  <title>51nod-2510-顺子 | huring</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/51nod-2281-树的size之和/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/51nod-2510-顺子/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huring">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">51nod-2281-树的size之和</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-2510-顺子</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-02T23:21:36+08:00">
-                2019-08-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T23:37:52+08:00">
+                2019-10-14
               </time>
             
 
@@ -342,15 +342,15 @@
       
 
       
-        <p>题目：<br>给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。</p>
-<p>例如：</p>
-<p>1─2─4─5<br>└─3</p>
-<p>其中节点5的子树只包括节点5，Size = 1。节点4的子树包括节点4，5，Size = 2。节点1的子树包括节点1，2，3，4，5，Size = 5。</p>
-<p>求以所有节点为根的子树的Size之和。上面例子中，节点1到5，对应的Size分别为5，3，1，2，1，所有Size的和 = 5 + 3 + 1 + 2 + 1 = 12<br><a id="more"></a></p>
-<p>输入<br>第一行：1个数n（1 &lt; n &lt;= 1000），表示树的节点数量。<br>后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &lt;= x, y &lt;= n）。<br>输出<br>输出1个数，表示以所有节点为根的子树的Size之和。<br>输入样例<br>5<br>1 2<br>1 3<br>2 4<br>4 5<br>输出样例<br>12</p>
-<p>解法:<br>暴力递归求解就可以，数据量再大的话可以加一下记忆化搜索。<br>每日划水5555555<br>代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">vector&lt;int&gt;  s[10010];</span><br><span class="line">bool f[10010];</span><br><span class="line">int t[10010];</span><br><span class="line">using namespace std;</span><br><span class="line">int c(int x)</span><br><span class="line">&#123;</span><br><span class="line">    int sum = 1;</span><br><span class="line">    for(int i = 0; i &lt; s[x].size(); i++)</span><br><span class="line">        sum += c(s[x][i]);</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    int p = n - 1;</span><br><span class="line">    while(p--)</span><br><span class="line">    &#123;</span><br><span class="line">        int a,b;</span><br><span class="line">        scanf(&quot;%d%d&quot;, &amp;a, &amp;b);</span><br><span class="line">        f[b] = true;</span><br><span class="line">        s[a].push_back(b);</span><br><span class="line">    &#125;</span><br><span class="line">    int sum = 0;</span><br><span class="line">    for(int i = 1; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += c(i);</span><br><span class="line">        &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>小b有n张牌。 </p>
+<p>现在她想把牌分组，使得每组都是长度为W的顺子，即由连续W个数组成。</p>
+<p>请问小b能做到吗？<br><a id="more"></a></p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行输入一个数n，表示手牌张数；<br>第二行输入n个非负整数，表示每张牌的数字，以空格隔开；<br>第三行输入一个数，表示每组大小W；<br>其中1≤W≤n≤10000，任意牌的数字hand[i]满足0≤hand[i]≤10^9</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>可以分组，输出“true”；<br>不能分组，输出“false”。</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">1 2 3 6 2 3 4 7 8</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true</span><br></pre></td></tr></table></figure>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>用map记录出现的数，每次取剩下的最小的数，然后删除相应的连续的数，当出现为负数的时候，则为false</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">map&lt;int,int&gt; m;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    int MAX = 0;</span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        int a;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a);</span><br><span class="line">        MAX = max(a,MAX);</span><br><span class="line">        m[a]++;</span><br><span class="line">    &#125;</span><br><span class="line">    int q;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;q);</span><br><span class="line">    if(n%q != 0)&#123;</span><br><span class="line">        printf(&quot;false&quot;);</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    map&lt;int,int&gt; ::iterator it;</span><br><span class="line">    while(n)&#123;</span><br><span class="line">        /*for(it = m.begin(); it != m.end(); it++)&#123;</span><br><span class="line">            printf(&quot;%d %d\n&quot;, it-&gt;first, it-&gt;second);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n\n&quot;);*/</span><br><span class="line">        int p_1 = m.begin()-&gt;first;</span><br><span class="line">        int p_2 = m.begin()-&gt;second;</span><br><span class="line">        if(p_1 + q - 1 &gt; MAX)&#123;</span><br><span class="line">             printf(&quot;false&quot;);</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 1; i &lt; q; i++)&#123;</span><br><span class="line">            if(m.find(i+p_1) == m.end())&#123;</span><br><span class="line">                printf(&quot;false&quot;);</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">            m[i+p_1] -= p_2;</span><br><span class="line">            if(m[i+p_1] &lt; 0)&#123;</span><br><span class="line">                printf(&quot;false&quot;);</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if(m[i + p_1] == 0)&#123;</span><br><span class="line">                //pair&lt;int,int&gt; a(i+p_1,0); </span><br><span class="line">                m.erase(i+p_1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        m.erase(p_1);</span><br><span class="line">        n -= p_2 * q;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;true&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -380,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/51node-2067-n皇后/" rel="next" title="51node-2067-n皇后">
-                <i class="fa fa-chevron-left"></i> 51node-2067-n皇后
+              <a href="/2019/10/14/51nod-2500-后面第一个大于/" rel="next" title="51nod-2500-后面第一个大于">
+                <i class="fa fa-chevron-left"></i> 51nod-2500-后面第一个大于
               </a>
             
           </div>
@@ -389,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/03/51nod-2651-区间和的和/" rel="prev" title="51nod-2651-区间和的和">
-                51nod-2651-区间和的和 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,8 +440,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -519,6 +524,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.3.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">1.4.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解法"><span class="nav-number">2.</span> <span class="nav-text">解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
