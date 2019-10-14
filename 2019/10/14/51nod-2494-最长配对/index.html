@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&amp;gt;=0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有">
+<meta name="description" content="题目：小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。 输入第一行一个正整数n，表示数组长度，其中0＜n≤50000；第二行n个0或1，以空格隔开。 输出输出一个数，表示最长区间的长度">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod-1925-进制转换">
-<meta property="og:url" content="http://yoursite.com/2019/10/12/51nod-1925-进制转换/index.html">
+<meta property="og:title" content="51nod-2494-最长配对">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/51nod-2494-最长配对/index.html">
 <meta property="og:site_name" content="huring">
-<meta property="og:description" content="题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&amp;gt;=0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有">
+<meta property="og:description" content="题目：小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。 输入第一行一个正整数n，表示数组长度，其中0＜n≤50000；第二行n个0或1，以空格隔开。 输出输出一个数，表示最长区间的长度">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-12T13:39:31.755Z">
+<meta property="og:updated_time" content="2019-10-14T03:07:02.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod-1925-进制转换">
-<meta name="twitter:description" content="题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&amp;gt;=0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有">
+<meta name="twitter:title" content="51nod-2494-最长配对">
+<meta name="twitter:description" content="题目：小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。 输入第一行一个正整数n，表示数组长度，其中0＜n≤50000；第二行n个0或1，以空格隔开。 输出输出一个数，表示最长区间的长度">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/12/51nod-1925-进制转换/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/14/51nod-2494-最长配对/"/>
 
 
 
 
 
-  <title>51nod-1925-进制转换 | huring</title>
+  <title>51nod-2494-最长配对 | huring</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/51nod-1925-进制转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/51nod-2494-最长配对/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huring">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">51nod-1925-进制转换</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-2494-最长配对</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-12T19:01:05+08:00">
-                2019-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T10:58:26+08:00">
+                2019-10-14
               </time>
             
 
@@ -342,15 +342,13 @@
       
 
       
-        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&gt;=0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。</p>
-<p>比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有作为最低非0位出现，所以不符合要求，正确的转换是10120。<br><a id="more"></a></p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>多组测试数据。<br>第一行有一个整数T（1&lt;=T&lt;=5），表示测试数据的数目。<br>接下来T行，每行一个整数n（0&lt;=n&lt;=1000000000）。</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每一个n，输出它的变进制表示。</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><p>样例输入1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<p>输出样例<br>样例输出1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td></tr></table></figure></p>
-<h1 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h1><p>暴力即可</p>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll POW(ll n, ll m)</span><br><span class="line">&#123;</span><br><span class="line">    ll ans = 1;</span><br><span class="line">    for(int i = 0; i &lt; m; i++)</span><br><span class="line">        ans *= n;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;t);</span><br><span class="line">    while(t--)&#123;</span><br><span class="line">        ll n,p;</span><br><span class="line">        scanf(&quot;%lld&quot;, &amp;n);</span><br><span class="line">        if(n == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                printf(&quot;0\n&quot;);</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">        queue&lt;int&gt; q;</span><br><span class="line">        for(int i = 0; i &lt; 40; i++)&#123;</span><br><span class="line">            while(!q.empty())</span><br><span class="line">                q.pop();</span><br><span class="line">            p = n - 2*POW(2,i) + 2;</span><br><span class="line">            for(int j = 35; j &gt;= 1; j--)</span><br><span class="line">            &#123;</span><br><span class="line">                if(j == i)&#123;</span><br><span class="line">                    q.push(2);</span><br><span class="line">                    if(p != 0)&#123;</span><br><span class="line">                        p = -1;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;</span><br><span class="line">                if(p &gt;= POW(2,j) - 1)&#123;</span><br><span class="line">                    p -= POW(2,j) - 1;</span><br><span class="line">                    q.push(1);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    q.push(0);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(p == 0)&#123;</span><br><span class="line">                while(q.front() == 0)&#123;</span><br><span class="line">                    q.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                while(!q.empty())&#123;</span><br><span class="line">                    printf(&quot;%d&quot;,q.front());</span><br><span class="line">                    q.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行一个正整数n，表示数组长度，其中0＜n≤50000；<br>第二行n个0或1，以空格隔开。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>输出一个数，表示最长区间的长度<br><a id="more"></a></p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">0 1 0</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+<h1 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h1><p>将0当做-1处理，处理前缀和，记录前缀和相同的位置，计算出前缀和相同位置的最长距离。</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[1000010];</span><br><span class="line">vector&lt;int&gt; p[2000010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i = 1; i &lt;=n; i++)</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">    int sum = 0;</span><br><span class="line">    int Max = -999999999;</span><br><span class="line">    int Min = 999999999;</span><br><span class="line">    p[1000000].push_back(0);</span><br><span class="line">    for(int i = 1; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i] == 0)</span><br><span class="line">            sum++;</span><br><span class="line">        else</span><br><span class="line">            sum--;</span><br><span class="line">        Max = max(sum, Max);</span><br><span class="line">        Min = min(sum, Min);</span><br><span class="line">        p[sum + 1000000].push_back(i); </span><br><span class="line">    &#125;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    </span><br><span class="line">    //printf(&quot;%d %d\n&quot;, Min, Max);</span><br><span class="line">    for(int i = Min + 1000000; i &lt;= Max + 1000000; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ans = max(p[i][p[i].size() - 1]-p[i][0], ans);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -380,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/12/51nod-1506-最小字典序/" rel="next" title="51nod-1506-最小字典序">
-                <i class="fa fa-chevron-left"></i> 51nod-1506-最小字典序
+              <a href="/2019/10/14/51nod-2484-小b和排序/" rel="next" title="51nod-2484-小b和排序">
+                <i class="fa fa-chevron-left"></i> 51nod-2484-小b和排序
               </a>
             
           </div>
@@ -389,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/12/51nod-2462-铺设道路/" rel="prev" title="51nod-2462-铺设道路">
-                51nod-2462-铺设道路 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.3.</span> <span class="nav-text">输入样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解法："><span class="nav-number">2.</span> <span class="nav-text">解法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.3.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">1.4.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解法："><span class="nav-number">2.</span> <span class="nav-text">解法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
             
 
           </div>
