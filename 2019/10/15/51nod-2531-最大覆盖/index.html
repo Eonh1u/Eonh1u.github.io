@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http://www.51nod.com/Challenge/Problem.html#problemId=1740">
+<meta name="description" content="题目：现在有 𝑛 个位置 1…𝑛 。 给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。 输入第一行两个数n,q(3&amp;lt;=n,q&amp;lt;=5000)。接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&amp;lt;=x&amp;lt;=r[i]的位置x。">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod-1740 蜂巢迷宫">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/51nod-1740-蜂巢迷宫/index.html">
+<meta property="og:title" content="51nod-2531-最大覆盖">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/51nod-2531-最大覆盖/index.html">
 <meta property="og:site_name" content="huring">
-<meta property="og:description" content="题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http://www.51nod.com/Challenge/Problem.html#problemId=1740">
+<meta property="og:description" content="题目：现在有 𝑛 个位置 1…𝑛 。 给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。 输入第一行两个数n,q(3&amp;lt;=n,q&amp;lt;=5000)。接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&amp;lt;=x&amp;lt;=r[i]的位置x。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T14:46:32.121Z">
+<meta property="og:updated_time" content="2019-10-15T12:28:41.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod-1740 蜂巢迷宫">
-<meta name="twitter:description" content="题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http://www.51nod.com/Challenge/Problem.html#problemId=1740">
+<meta name="twitter:title" content="51nod-2531-最大覆盖">
+<meta name="twitter:description" content="题目：现在有 𝑛 个位置 1…𝑛 。 给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。 输入第一行两个数n,q(3&amp;lt;=n,q&amp;lt;=5000)。接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&amp;lt;=x&amp;lt;=r[i]的位置x。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/28/51nod-1740-蜂巢迷宫/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/15/51nod-2531-最大覆盖/"/>
 
 
 
 
 
-  <title>51nod-1740 蜂巢迷宫 | huring</title>
+  <title>51nod-2531-最大覆盖 | huring</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/51nod-1740-蜂巢迷宫/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/51nod-2531-最大覆盖/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huring">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">51nod-1740 蜂巢迷宫</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-2531-最大覆盖</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-28T22:43:23+08:00">
-                2019-07-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-15T20:27:01+08:00">
+                2019-10-15
               </time>
             
 
@@ -342,10 +342,14 @@
       
 
       
-        <p>题目：<br>有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。</p>
-<p>艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。<br>图片贴不上 这里附上原题目的链接：<br><a href="http://www.51nod.com/Challenge/Problem.html#problemId=1740" target="_blank" rel="noopener">http://www.51nod.com/Challenge/Problem.html#problemId=1740</a><br><a id="more"></a><br>题解：<br>找规律即可（好久没刷题 太菜了 debug找了好久）<br>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    long long n;</span><br><span class="line">    scanf(&quot;%lld&quot;, &amp;n);</span><br><span class="line">    if(n == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;0 0&quot;);</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">   // for(int i = 1; i &lt; 20; i++)&#123;</span><br><span class="line">     //   n = i;</span><br><span class="line">    n++;</span><br><span class="line">    long long len = 1;</span><br><span class="line">    long long sum = len;</span><br><span class="line">    while(sum &lt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += len*6;</span><br><span class="line">        len++;</span><br><span class="line">    &#125;</span><br><span class="line">    long long now = n -1 - (len - 1)*(len-2)*3;</span><br><span class="line">    //printf(&quot;now %d\n&quot;,now);</span><br><span class="line">    long long  Time = now / (len - 1);</span><br><span class="line">    now %= len - 1;</span><br><span class="line">    long long x ,y;</span><br><span class="line">   // printf(&quot;%d %d\n&quot;,Time, len);</span><br><span class="line">    if(Time == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        x = 2 * (len - 1);</span><br><span class="line">        y = 0;</span><br><span class="line">        while(now--)</span><br><span class="line">            x--,y+=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(Time == 1)</span><br><span class="line">    &#123;</span><br><span class="line">        x = len - 1;</span><br><span class="line">        y = 2*(len - 1);</span><br><span class="line">        while(now--)</span><br><span class="line">            x-=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(Time == 2)</span><br><span class="line">    &#123;</span><br><span class="line">        x = 1 - len;</span><br><span class="line">        y = 2*(len - 1);</span><br><span class="line">        while(now--)</span><br><span class="line">            x--,y-=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(Time == 3)</span><br><span class="line">    &#123;</span><br><span class="line">        x = 2*(1-len);</span><br><span class="line">        y = 0;</span><br><span class="line">        while(now--)</span><br><span class="line">            x++,y-=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(Time == 4)</span><br><span class="line">    &#123;</span><br><span class="line">        x = 1-len;</span><br><span class="line">        y = 2*(1 - len);</span><br><span class="line">        while(now--)</span><br><span class="line">            x+=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(Time == 5)</span><br><span class="line">    &#123;</span><br><span class="line">        x = len - 1;</span><br><span class="line">        y = 2*(1 - len);</span><br><span class="line">        while(now--)</span><br><span class="line">            x++,y+=2;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        x = 2*(len - 1);</span><br><span class="line">        y = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld %lld\n&quot;,x,y);</span><br><span class="line">  //  &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>现在有 𝑛 个位置 1…𝑛 。</p>
+<p>给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行两个数n,q(3&lt;=n,q&lt;=5000)。<br>接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&lt;=x&lt;=r[i]的位置x。<br><a id="more"></a> </p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>一个数表示最大值。</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">4 3</span><br><span class="line">1 1</span><br><span class="line">2 2</span><br><span class="line">3 4</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+<h1 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h1><p>暴力即可</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct point&#123;</span><br><span class="line">    int l,r;</span><br><span class="line">&#125;;</span><br><span class="line">point p[5010];</span><br><span class="line">int sum[5010];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,q;</span><br><span class="line">    scanf(&quot;%d%d&quot;, &amp;n, &amp;q);</span><br><span class="line">    for(int i = 0; i &lt; q; i++)</span><br><span class="line">        scanf(&quot;%d%d&quot;, &amp;p[i].l, &amp;p[i].r);</span><br><span class="line">    int now = 0;</span><br><span class="line">    for(int i = 0; i &lt; q; i++)</span><br><span class="line">        for(int j = p[i].l; j &lt;= p[i].r; j++)&#123;</span><br><span class="line">            if(sum[j] == 0)</span><br><span class="line">                now++;</span><br><span class="line">            sum[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    int MIN = 99999;</span><br><span class="line">    int o = 0;</span><br><span class="line">    for(int i = 0; i &lt; q; i++)&#123;</span><br><span class="line">        int s = 0;</span><br><span class="line">        for(int j = p[i].l; j &lt;= p[i].r; j++)&#123;</span><br><span class="line">            sum[j]--;</span><br><span class="line">            if(sum[j] == 0)</span><br><span class="line">                s++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(s &lt; MIN)</span><br><span class="line">            o = i;</span><br><span class="line">        MIN = min(MIN,s);</span><br><span class="line">        for(int j = p[i].l; j &lt;= p[i].r; j++)&#123;</span><br><span class="line">            sum[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    now -= MIN;</span><br><span class="line">    MIN = 9999;</span><br><span class="line">    for(int i = p[o].l; i &lt;= p[o].r; i++)</span><br><span class="line">        sum[i]--;</span><br><span class="line">    for(int i = 0; i &lt; q; i++)&#123;</span><br><span class="line">        if(i  == o)</span><br><span class="line">            continue;</span><br><span class="line">        int s = 0;</span><br><span class="line">        for(int j = p[i].l; j &lt;= p[i].r; j++)&#123;</span><br><span class="line">            sum[j]--;</span><br><span class="line">            if(sum[j] == 0)</span><br><span class="line">                s++;</span><br><span class="line">        &#125;</span><br><span class="line">        MIN = min(MIN,s);</span><br><span class="line">        for(int j = p[i].l; j &lt;= p[i].r; j++)&#123;</span><br><span class="line">            sum[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;, now - MIN);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -375,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/27/51nod-1886-叠加串/" rel="next" title="51nod-1886-叠加串">
-                <i class="fa fa-chevron-left"></i> 51nod-1886-叠加串
+              <a href="/2019/10/15/51nod-2523-小b删列/" rel="next" title="51nod-2523-小b删列">
+                <i class="fa fa-chevron-left"></i> 51nod-2523-小b删列
               </a>
             
           </div>
@@ -384,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/29/51nod-1889-制铁棒/" rel="prev" title="51nod-1889-制铁棒">
-                51nod-1889-制铁棒 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,8 +439,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -514,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入样例"><span class="nav-number">1.3.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例"><span class="nav-number">1.4.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解："><span class="nav-number">2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
