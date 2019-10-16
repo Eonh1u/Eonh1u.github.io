@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目:2656 阿克曼函数1.0 秒  131,072.0 KB 5 分 1级题阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&amp;lt;=3，n&amp;lt;=30。 函数的定义为：𝑎𝑘𝑚(𝑚,𝑛)=⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚=0)(𝑚&amp;gt;0,𝑛=0)(𝑚&amp;gt;">
+<meta name="description" content="题目：小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的： 1、一对括号价值一分（比如”()”得一分） 2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如”()()”价值为1+1=2） 3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如">
 <meta name="keywords" content="ACM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod-2562-阿克曼函数">
-<meta property="og:url" content="http://yoursite.com/2019/08/13/51nod-2562-阿克曼函数/index.html">
+<meta property="og:title" content="51nod-2594-括号之价">
+<meta property="og:url" content="http://yoursite.com/2019/10/16/51nod-2594-括号之价/index.html">
 <meta property="og:site_name" content="huring">
-<meta property="og:description" content="题目:2656 阿克曼函数1.0 秒  131,072.0 KB 5 分 1级题阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&amp;lt;=3，n&amp;lt;=30。 函数的定义为：𝑎𝑘𝑚(𝑚,𝑛)=⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚=0)(𝑚&amp;gt;0,𝑛=0)(𝑚&amp;gt;">
+<meta property="og:description" content="题目：小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的： 1、一对括号价值一分（比如”()”得一分） 2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如”()()”价值为1+1=2） 3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-06T15:46:06.500Z">
+<meta property="og:updated_time" content="2019-10-16T14:00:13.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod-2562-阿克曼函数">
-<meta name="twitter:description" content="题目:2656 阿克曼函数1.0 秒  131,072.0 KB 5 分 1级题阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&amp;lt;=3，n&amp;lt;=30。 函数的定义为：𝑎𝑘𝑚(𝑚,𝑛)=⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚=0)(𝑚&amp;gt;0,𝑛=0)(𝑚&amp;gt;">
+<meta name="twitter:title" content="51nod-2594-括号之价">
+<meta name="twitter:description" content="题目：小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的： 1、一对括号价值一分（比如”()”得一分） 2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如”()()”价值为1+1=2） 3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/13/51nod-2562-阿克曼函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/16/51nod-2594-括号之价/"/>
 
 
 
 
 
-  <title>51nod-2562-阿克曼函数 | huring</title>
+  <title>51nod-2594-括号之价 | huring</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/51nod-2562-阿克曼函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/51nod-2594-括号之价/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huring">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">51nod-2562-阿克曼函数</h1>
+          <h1 class="post-title" itemprop="name headline">51nod-2594-括号之价</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T22:24:14+08:00">
-                2019-08-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-16T21:43:51+08:00">
+                2019-10-16
               </time>
             
 
@@ -342,9 +342,19 @@
       
 
       
-        <p>题目:<br>2656 阿克曼函数<br>1.0 秒  131,072.0 KB 5 分 1级题<br>阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&lt;=3，n&lt;=30。</p>
-<p>函数的定义为：<br>𝑎𝑘𝑚(𝑚,𝑛)=⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚=0)(𝑚&gt;0,𝑛=0)(𝑚&gt;0,𝑛&gt;0)<br><a id="more"></a><br>输入<br>两个整数 m n<br>输出<br>一个整数，akm(m,n)的结果<br>输入样例<br>1 1<br>输出样例<br>3<br>解法：递归记忆化即可，注意数组范围，数组的大小<br>代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">int a[13][1000000];</span><br><span class="line">int f(int m,int n)</span><br><span class="line">&#123;</span><br><span class="line">    if(a[m][n] != 0)&#123;</span><br><span class="line">        return a[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">    if(m == 0)</span><br><span class="line">        return a[m][n] = n + 1;</span><br><span class="line">    else if(n == 0)</span><br><span class="line">        return a[m][n] = f(m - 1, 1);</span><br><span class="line">    else if(m &gt; 0 &amp;&amp; n &gt; 0)</span><br><span class="line">        return a[m][n] = f(m - 1,f(m,n - 1));</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;n, &amp;m);</span><br><span class="line">    printf(&quot;%d&quot;,f(n,m));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的：</p>
+<p>1、一对括号价值一分（比如”()”得一分）</p>
+<p>2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如”()()”价值为1+1=2）</p>
+<p>3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如”((()))”价值为1*2*2=4）</p>
+<p>下课了，qz看到小Y写的括号序列，他一眼就推测出了规则并得到了括号序列的价值。那么问题来了，小Y写下的括号序列的价值是多少呢？</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>一个只包含’(‘和’)’的合法的括号序列S，代表小Y写下的括号序列，一个合法的括号序列是这样定义的:<br>1、（）是合法的括号序列<br>2、若字符串A和B是合法的括号序列，那么AB也是合法的括号序列<br>3、若字符串A是合法的括号序列，那么(A)也是合法的括号序列</p>
+<p>2&lt;= |S| &lt;=50</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>一个字符串S，代表小Y所写的括号序列</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(()(()))</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
+<h1 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h1><p>用栈进行处理，对‘(’加一个num属性，记录当‘(‘出栈时所增加的值，如果当一’(‘出栈时，栈不为空，则将此位置的num加至最近的字符。</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">char s[55];</span><br><span class="line">struct point&#123;</span><br><span class="line">    char c;</span><br><span class="line">    int num;</span><br><span class="line">&#125;;</span><br><span class="line">point p[55];</span><br><span class="line">stack&lt;point&gt; sta;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%s&quot;, s);</span><br><span class="line">    int len = strlen(s);</span><br><span class="line">    int ans = 0;</span><br><span class="line">    for(int i = 0; i &lt; len; i++)&#123;</span><br><span class="line">        if(s[i] == &apos;(&apos;)&#123;</span><br><span class="line">            point a;</span><br><span class="line">            a.c = &apos;(&apos;;</span><br><span class="line">            a.num = 0;</span><br><span class="line">            sta.push(a);</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            point now = sta.top();</span><br><span class="line">            sta.pop();</span><br><span class="line">            if(sta.empty())&#123;</span><br><span class="line">                if(now.num == 0)</span><br><span class="line">                    now.num = 1;</span><br><span class="line">                ans += now.num;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                point a = sta.top();</span><br><span class="line">                sta.pop();</span><br><span class="line">                if(now.num == 0)</span><br><span class="line">                    a.num += 2;</span><br><span class="line">                else&#123;</span><br><span class="line">                    a.num += now.num*2;</span><br><span class="line">                &#125;</span><br><span class="line">                sta.push(a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -374,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/51nod-1884-变换字符串/" rel="next" title="51nod-1884-变换字符串">
-                <i class="fa fa-chevron-left"></i> 51nod-1884-变换字符串
+              <a href="/2019/10/15/51nod-2531-最大覆盖/" rel="next" title="51nod-2531-最大覆盖">
+                <i class="fa fa-chevron-left"></i> 51nod-2531-最大覆盖
               </a>
             
           </div>
@@ -383,10 +393,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/14/2673-最短路径/" rel="prev" title="2673-最短路径">
-                2673-最短路径 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,6 +528,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例"><span class="nav-number">1.2.1.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例"><span class="nav-number">1.2.2.</span> <span class="nav-text">输出样例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解："><span class="nav-number">2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">3.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
