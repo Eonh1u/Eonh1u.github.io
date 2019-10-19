@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ACM," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="A:Stones题目：Alice is playing with some stones. Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains �">
+<meta name="keywords" content="ACM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf-593-div2">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/cf-593-div2/index.html">
+<meta property="og:site_name" content="huring">
+<meta property="og:description" content="A:Stones题目：Alice is playing with some stones. Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains �">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-19T07:07:55.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cf-593-div2">
+<meta name="twitter:description" content="A:Stones题目：Alice is playing with some stones. Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains �">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/19/cf-593-div2/"/>
+
+
+
+
+
+  <title>cf-593-div2 | huring</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">huring</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/cf-593-div2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huring">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">cf-593-div2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-19T14:51:00+08:00">
+                2019-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="A-Stones"><a href="#A-Stones" class="headerlink" title="A:Stones"></a>A:Stones</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>Alice is playing with some stones.</p>
+<p>Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains 𝑐 stones.</p>
+<p>Each time she can do one of two operations:</p>
+<p>take one stone from the first heap and two stones from the second heap (this operation can be done only if the first heap contains at least one stone and the second heap contains at least two stones);<br><a id="more"></a><br>take one stone from the second heap and two stones from the third heap (this operation can be done only if the second heap contains at least one stone and the third heap contains at least two stones).<br>She wants to get the maximum number of stones, but she doesn’t know what to do. Initially, she has 0 stones. Can you help her?</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains one integer 𝑡 (1≤𝑡≤100)  — the number of test cases. Next 𝑡 lines describe test cases in the following format:</p>
+<p>Line contains three non-negative integers 𝑎, 𝑏 and 𝑐, separated by spaces (0≤𝑎,𝑏,𝑐≤100) — the number of stones in the first, the second and the third heap, respectively.</p>
+<p>In hacks it is allowed to use only one test case in the input, so 𝑡=1 should be satisfied.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Print 𝑡 lines, the answers to the test cases in the same order as in the input. The answer to the test case is the integer  — the maximum possible number of stones that Alice can take after making some operations.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3 4 5</span><br><span class="line">1 0 5</span><br><span class="line">5 3 2</span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">0</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>For the first test case in the first test, Alice can take two stones from the second heap and four stones from the third heap, making the second operation two times. Then she can take one stone from the first heap and two stones from the second heap, making the first operation one time. The summary number of stones, that Alice will take is 9. It is impossible to make some operations to take more than 9 stones, so the answer is 9.</p>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>b与c能进行多少操作就取多少，然后剩下的b与a看能够取多少，然后取。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;t);</span><br><span class="line">    while(t--)&#123;</span><br><span class="line">        int a,b,c;</span><br><span class="line">        scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);</span><br><span class="line">        int ans = 0;</span><br><span class="line">        if(b &lt; c/2)&#123;</span><br><span class="line">            ans = b * 3;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            ans += c/2 * 3;</span><br><span class="line">            b -= c/2;</span><br><span class="line">            if(a &lt; b/2)</span><br><span class="line">                ans += a * 3;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ans += b/2 *3;</span><br><span class="line">            &#125;</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B：Alice-and-the-List-of-Presents"><a href="#B：Alice-and-the-List-of-Presents" class="headerlink" title="B：Alice and the List of Presents"></a>B：Alice and the List of Presents</h1><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>Alice got many presents these days. So she decided to pack them into boxes and send them to her friends.</p>
+<p>There are 𝑛 kinds of presents. Presents of one kind are identical (i.e. there is no way to distinguish two gifts of the same kind). Presents of different kinds are different (i.e. that is, two gifts of different kinds are distinguishable). The number of presents of each kind, that Alice has is very big, so we can consider Alice has an infinite number of gifts of each kind.</p>
+<p>Also, there are 𝑚 boxes. All of them are for different people, so they are pairwise distinct (consider that the names of 𝑚 friends are written on the boxes). For example, putting the first kind of present into the first box but not into the second box, is different from putting the first kind of present into the second box but not into the first box.</p>
+<p>Alice wants to pack presents with the following rules:</p>
+<p>She won’t pack more than one present of each kind into the same box, so each box should contain presents of different kinds (i.e. each box contains a subset of 𝑛 kinds, empty boxes are allowed);<br>For each kind at least one present should be packed into some box.<br>Now Alice wants to know how many different ways to pack the presents exists. Please, help her and calculate this number. Since the answer can be huge, output it by modulo 109+7.</p>
+<p>See examples and their notes for clarification.</p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><p>The first line contains two integers 𝑛 and 𝑚, separated by spaces (1≤𝑛,𝑚≤109) — the number of kinds of presents and the number of boxes that Alice has.</p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>Print one integer  — the number of ways to pack the presents with Alice’s rules, calculated by modulo 109+7</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 3</span><br></pre></td></tr></table></figure></p>
+<p>output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure></p>
+<p>input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 2</span><br></pre></td></tr></table></figure></p>
+<p>output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure></p>
+<h3 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h3><p>In the first example, there are seven ways to pack presents:<br>{1}{}{}<br>{}{1}{}<br>{}{}{1}<br>{1}{1}{}<br>{}{1}{1}<br>{1}{}{1}<br>{1}{1}{1}<br>In the second example there are nine ways to pack presents:<br>{}{1,2}<br>{1}{2}<br>{1}{1,2}<br>{2}{1}<br>{2}{1,2}<br>{1,2}{}<br>{1,2}{1}<br>{1,2}{2}<br>{1,2}{1,2}<br>For example, the way {2}{2} is wrong, because presents of the first kind should be used in the least one box.</p>
+<h2 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h2><p>pow(pow(2,m)-1),n) + 快速幂</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const long long mod = 1e9+7;</span><br><span class="line">long long mi(long long x, long long z)</span><br><span class="line">&#123;</span><br><span class="line">    long long ans = 1;</span><br><span class="line">    long long now = x;</span><br><span class="line">    while(z)</span><br><span class="line">    &#123;</span><br><span class="line">        if(z &amp; 1)</span><br><span class="line">            ans  = (ans * now) %mod;</span><br><span class="line">        z &gt;&gt;= 1;</span><br><span class="line">        now = (now * now) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    long long  n,m;</span><br><span class="line">    scanf(&quot;%lld%lld&quot;, &amp;n, &amp;m);</span><br><span class="line">    long long now = (mi(2,m) - 1 + mod) % mod;</span><br><span class="line">    long long ans = (mi(now,n)) % mod;</span><br><span class="line">    printf(&quot;%lld\n&quot;, ans);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-Labs"><a href="#C-Labs" class="headerlink" title="C:Labs"></a>C:Labs</h1><h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>In order to do some research, 𝑛2 labs are built on different heights of a mountain. Let’s enumerate them with integers from 1 to 𝑛2, such that the lab with the number 1 is at the lowest place, the lab with the number 2 is at the second-lowest place, …, the lab with the number 𝑛2 is at the highest place.</p>
+<p>To transport water between the labs, pipes are built between every pair of labs. A pipe can transport at most one unit of water at a time from the lab with the number 𝑢 to the lab with the number 𝑣 if 𝑢&gt;𝑣.</p>
+<p>Now the labs need to be divided into 𝑛 groups, each group should contain exactly 𝑛 labs. The labs from different groups can transport water to each other. The sum of units of water that can be sent from a group 𝐴 to a group 𝐵 is equal to the number of pairs of labs (𝑢,𝑣) such that the lab with the number 𝑢 is from the group 𝐴, the lab with the number 𝑣 is from the group 𝐵 and 𝑢&gt;𝑣. Let’s denote this value as 𝑓(𝐴,𝐵) (i.e. 𝑓(𝐴,𝐵) is the sum of units of water that can be sent from a group 𝐴 to a group 𝐵).</p>
+<p>For example, if 𝑛=3 and there are 3 groups 𝑋, 𝑌 and 𝑍: 𝑋={1,5,6},𝑌={2,4,9} and 𝑍={3,7,8}. In this case, the values of 𝑓 are equal to:</p>
+<p>𝑓(𝑋,𝑌)=4 because of 5→2, 5→4, 6→2, 6→4,<br>𝑓(𝑋,𝑍)=2 because of 5→3, 6→3,<br>𝑓(𝑌,𝑋)=5 because of 2→1, 4→1, 9→1, 9→5, 9→6,<br>𝑓(𝑌,𝑍)=4 because of 4→3, 9→3, 9→7, 9→8,<br>𝑓(𝑍,𝑋)=7 because of 3→1, 7→1, 7→5, 7→6, 8→1, 8→5, 8→6,<br>𝑓(𝑍,𝑌)=5 because of 3→2, 7→2, 7→4, 8→2, 8→4.<br>Please, divide labs into 𝑛 groups with size 𝑛, such that the value min𝑓(𝐴,𝐵) over all possible pairs of groups 𝐴 and 𝐵 (𝐴≠𝐵) is maximal.</p>
+<p>In other words, divide labs into 𝑛 groups with size 𝑛, such that minimum number of the sum of units of water that can be transported from a group 𝐴 to a group 𝐵 for every pair of different groups 𝐴 and 𝐵 (𝐴≠𝐵) as big as possible.</p>
+<p>Note, that the example above doesn’t demonstrate an optimal division, but it demonstrates how to calculate the values 𝑓 for some division.</p>
+<p>If there are many optimal divisions, you can find any.</p>
+<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><p>The only line contains one number 𝑛 (2≤𝑛≤300).</p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>Output 𝑛 lines:</p>
+<p>In the 𝑖-th line print 𝑛 numbers, the numbers of labs of the 𝑖-th group, in any order you want.</p>
+<p>If there are multiple answers, that maximize the minimum number of the sum of units of water that can be transported from one group the another, you can print any.</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><p>input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<p>output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 8 5</span><br><span class="line">9 3 4</span><br><span class="line">7 6 1</span><br></pre></td></tr></table></figure></p>
+<h3 id="Note-2"><a href="#Note-2" class="headerlink" title="Note"></a>Note</h3><p>In the first test we can divide 9 labs into groups {2,8,5},{9,3,4},{7,6,1}.</p>
+<p>From the first group to the second group we can transport 4 units of water (8→3,8→4,5→3,5→4).</p>
+<p>From the first group to the third group we can transport 5 units of water (2→1,8→7,8→6,8→1,5→1).</p>
+<p>From the second group to the first group we can transport 5 units of water (9→2,9→8,9→5,3→2,4→2).</p>
+<p>From the second group to the third group we can transport 5 units of water (9→7,9→6,9→1,3→1,4→1).</p>
+<p>From the third group to the first group we can transport 4 units of water (7→2,7→5,6→2,6→5).</p>
+<p>From the third group to the second group we can transport 4 units of water (7→3,7→4,6→3,6→4).</p>
+<p>The minimal number of the sum of units of water, that can be transported from one group to another is equal to 4. It can be proved, that it is impossible to make a better division.</p>
+<h2 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h2><p>每次取数组的两边以及中间位置。</p>
+<h2 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    if(n % 2 == 0)&#123;</span><br><span class="line">        int  p = n*n;</span><br><span class="line">        for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">            for(int j = 1; j &lt;= n/2; j++)</span><br><span class="line">                printf(&quot;%d %d &quot;, i * (n/2) + j,p + 1 -(i * (n/2) + j));</span><br><span class="line">            printf(&quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        int l = 0,r = 0,s = 0;</span><br><span class="line">        int mid = (1 + n*n)/2;</span><br><span class="line">        int p = n * n;</span><br><span class="line">        for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">            for(int j = 1; j &lt;= n/2; j++)</span><br><span class="line">                printf(&quot;%d %d &quot;, i * (n/2) + j,p + 1 -(i * (n/2) + j));</span><br><span class="line">            if(s == 0)</span><br><span class="line">                &#123;</span><br><span class="line">                    printf(&quot;%d\n&quot;,mid);</span><br><span class="line">                    s = 1;</span><br><span class="line">                &#125;</span><br><span class="line">            else if(l == r)&#123;</span><br><span class="line">                l++;</span><br><span class="line">                printf(&quot;%d\n&quot;,mid - l);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                r++;</span><br><span class="line">                printf(&quot;%d\n&quot;,mid + r);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/19/cf-Global-Round-5/" rel="next" title="cf-Global Round 5">
+                <i class="fa fa-chevron-left"></i> cf-Global Round 5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="huring" />
+            
+              <p class="site-author-name" itemprop="name">huring</p>
+              <p class="site-description motion-element" itemprop="description">show me the code</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huyutuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Stones"><span class="nav-number">1.</span> <span class="nav-text">A:Stones</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目："><span class="nav-number">1.1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.1.3.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">1.1.4.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解："><span class="nav-number">1.2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">1.3.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B：Alice-and-the-List-of-Presents"><span class="nav-number">2.</span> <span class="nav-text">B：Alice and the List of Presents</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目：-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">2.1.3.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-1"><span class="nav-number">2.1.4.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解：-1"><span class="nav-number">2.2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码：-1"><span class="nav-number">2.3.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Labs"><span class="nav-number">3.</span> <span class="nav-text">C:Labs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目：-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-2"><span class="nav-number">3.1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note-2"><span class="nav-number">3.1.4.</span> <span class="nav-text">Note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解：-2"><span class="nav-number">3.2.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码：-2"><span class="nav-number">3.3.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huring</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
