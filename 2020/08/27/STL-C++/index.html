@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ACM," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,19 @@
 
 
 
-<meta name="description" content="Problem DescriptionRecall the problem of finding the number of inversions. As in the course, we are given a sequence of nn numbers a1,a2,⋯,ana1,a2,⋯,an, and we define an inversion to be a pair i&amp;lt;ji">
-<meta name="keywords" content="ACM">
+<meta name="description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="逆序对数变形">
-<meta property="og:url" content="http://yoursite.com/2019/09/09/逆序对数变形/index.html">
+<meta property="og:title" content="STL-C++">
+<meta property="og:url" content="http://yoursite.com/2020/08/27/STL-C++/index.html">
 <meta property="og:site_name" content="huring">
-<meta property="og:description" content="Problem DescriptionRecall the problem of finding the number of inversions. As in the course, we are given a sequence of nn numbers a1,a2,⋯,ana1,a2,⋯,an, and we define an inversion to be a pair i&amp;lt;ji">
+<meta property="og:description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-12T14:00:32.756Z">
+<meta property="og:image" content="http://yoursite.com/2020/08/27/STL-C++/a.jpg">
+<meta property="og:updated_time" content="2020-08-27T10:25:51.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="逆序对数变形">
-<meta name="twitter:description" content="Problem DescriptionRecall the problem of finding the number of inversions. As in the course, we are given a sequence of nn numbers a1,a2,⋯,ana1,a2,⋯,an, and we define an inversion to be a pair i&amp;lt;ji">
+<meta name="twitter:title" content="STL-C++">
+<meta name="twitter:description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/27/STL-C++/a.jpg">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/09/逆序对数变形/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/27/STL-C++/"/>
 
 
 
 
 
-  <title>逆序对数变形 | huring</title>
+  <title>STL-C++ | huring</title>
   
 
 
@@ -253,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/逆序对数变形/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/STL-C++/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huring">
@@ -270,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">逆序对数变形</h1>
+          <h1 class="post-title" itemprop="name headline">STL-C++</h1>
         
 
         <div class="post-meta">
@@ -282,8 +283,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-09T23:16:22+08:00">
-                2019-09-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-27T18:18:06+08:00">
+                2020-08-27
               </time>
             
 
@@ -292,28 +293,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,13 +321,15 @@
       
 
       
-        <p>Problem Description<br>Recall the problem of finding the number of inversions. As in the course, we are given a sequence of nn numbers a1,a2,⋯,ana1,a2,⋯,an, and we define an inversion to be a pair i&lt;ji<j such="" that="" ai="">ajai&gt;aj.<br><a id="more"></a></j></p>
-<p>We motivated the problem of counting inversions as a good measure of how different two orderings are. However, one might feel that this measure is too sensitive. Let’s call a pair a significant inversion if i&lt;ji<j and="" ai="">3ajai&gt;3aj. Give an O(nlogn)O(nlog⁡n) algorithm to count the number of significant inversions between two orderings.</j></p>
-<p>The array contains N elements (1&lt;=N&lt;=100,000). All elements are in the range from 1 to 1,000,000,000.</p>
-<p>Input<br>The first line contains one integer N, indicating the size of the array. The second line contains N elements in the array.</p>
-<p>50% test cases guarantee that N &lt; 1000.<br>Output<br>Output a single integer which is the number of pairs of significant inversions.</p>
-<p>Sample Inout<br>6<br>13 8 5 3 2 1<br>Sample Output<br>6<br>解法:标准的逆序对数上加了一点变化，ai&gt;aj*3 才算做逆序对数，因此在merge之前扫一遍就行计算逆序对的数量，然后加起来，将merge与计算逆序对数分开。<br>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using  namespace std;</span><br><span class="line">long long t[100010];</span><br><span class="line">long long  a[100010];</span><br><span class="line">long long sum=0;</span><br><span class="line">void solve(int l,int r)</span><br><span class="line">&#123;</span><br><span class="line">    //printf(&quot;%d %d\n&quot;,l,r);</span><br><span class="line">    if(r-l&lt;2)</span><br><span class="line">    &#123;</span><br><span class="line">        if(r - l == 1 &amp;&amp; a[l] &gt; 3 * a[r])</span><br><span class="line">            sum++;</span><br><span class="line">        if(r-l  ==  1 &amp;&amp;  a[l] &gt; a[r])&#123;</span><br><span class="line">            swap(a[l], a[r]);</span><br><span class="line">        &#125;</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    int m = (l + r) &gt;&gt; 1;</span><br><span class="line">    solve(l , m);</span><br><span class="line">    solve(m+1 , r);</span><br><span class="line">    int now  = m-l+1;</span><br><span class="line">    int sz = l, sy = m+1;</span><br><span class="line">    int i = m, j = r;</span><br><span class="line">   while (i &gt;= l &amp;&amp; j &gt; m) &#123;</span><br><span class="line">       if(a[i] &gt; (long long) 3 * a[j]) &#123; </span><br><span class="line">           sum += j - m;</span><br><span class="line">           i--;</span><br><span class="line">       &#125;else&#123;</span><br><span class="line">           j--;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">    for(int i = 0; i &lt; r - l + 1; i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        if(sz &lt;= m &amp;&amp; sy &lt;= r)</span><br><span class="line">            &#123;</span><br><span class="line">                if(a[sz] &gt; a[sy])&#123;</span><br><span class="line">                    t[i] = a[sy];</span><br><span class="line">                    sy++; </span><br><span class="line">                    //sum += now;</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    t[i] = a[sz];</span><br><span class="line">                    sz++; </span><br><span class="line">                    now--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        else if(sz == m+1)</span><br><span class="line">        &#123;</span><br><span class="line">            while(sy &lt;= r)</span><br><span class="line">            &#123;</span><br><span class="line">                t[i] = a[sy];</span><br><span class="line">                sy++; i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            while(sz &lt;= m)</span><br><span class="line">            &#123;</span><br><span class="line">                t[i] = a[sz];</span><br><span class="line">                sz++;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i= l ; i &lt;= r; i++)</span><br><span class="line">        a[i] = t[i-l];</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    for(int i = 1; i &lt;=n; i++)</span><br><span class="line">        scanf(&quot;%lld&quot;,&amp;a[i]);</span><br><span class="line">    solve(1,n);</span><br><span class="line">    printf(&quot;%lld\n&quot;,sum);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="STL-C"><a href="#STL-C" class="headerlink" title="STL-C++"></a>STL-C++</h1><p>本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。</p>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><h3 id="vector定义"><a href="#vector定义" class="headerlink" title="vector定义"></a>vector定义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class _Ty,</span><br><span class="line">    class _Ax&gt;</span><br><span class="line">    class vector</span><br><span class="line">        : public _Vector_val&lt;_Ty, _Ax&gt;</span><br><span class="line">    &#123;   // varying size array of values</span><br><span class="line">public:</span><br><span class="line">    /********/</span><br><span class="line">protected:</span><br><span class="line">    pointer _Myfirst;   // pointer to beginning of array</span><br><span class="line">    pointer _Mylast;    // pointer to current end of sequence</span><br><span class="line">    pointer _Myend; // pointer to end of array</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<p>vector底层采用的数据结构是一段连续的线性空间，vector可以当做被封装之后的数组，提供了一些方法使得我们更好的对数组进行操作。<br>_Myfirst代表数组的第一个元素的首地址<br>_Mylast代表数组的最后一个元素的末尾字节地址<br>_Myend代表vector整个容器所占内存空间的末尾空间</p>
+<h3 id="capacity-与size"><a href="#capacity-与size" class="headerlink" title="capacity()与size()"></a>capacity()与size()</h3><p>size()返回vector中目前的元素个数<br>capacity()返回目前vector中容量大小<br>简单点可以认为<br>size = _Mylast - _Myfirst<br>capacity =  _Myend - _Myfirst</p>
+<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p>当_Mylast == _Myend时，会引起vector的扩容，vector中扩容方式为每次2倍空间增长(普遍为2倍，貌似还有1.5倍)<br>在新增数据的时候，会分配一块更大的内存，将原来的数据拷贝至新内存空间，然后将旧内存空间释放掉，然后再插入新的元素。值得注意是，在对vector操作时如果引起了vector中空间重新配置，则先前的迭代器失效。<br>如果采用常数的扩容方式时扩容操作的均摊时间复杂度为O(N)，而采用倍数增长的方式则可以使得均摊的复杂度变为O(1),这里大家可以举一些例子算一下，不在赘述。<br>为什么采用2倍的方式进行扩容而不是3倍，4倍，这里参考知乎的一个回答：<br><img src="a.jpg" alt=""></p>
+<p>这里也有讨论扩容因子K（即每次扩容的倍数)对于时间以及空间上的影响:<br>从时间上考虑K越大越好，从空间考虑K越小越好<br>我们来看一下K = 2时的情况。<br>每次扩容后capacity的情况如下：1，2，4，8，16，32 ……..<br>当我们释放了4的空间，我们寻找8的新空间，再次扩容，释放8，寻找16。。<br>仔细分析，第5次扩容时，需要寻找16的新空间，第4次释放了8，第3次释放了4，第2次释放了2，第1次释放了1，所以 1 + 2 + 4 + 8 = 15  &lt; 16，也就意味着，之前释放的空间，永远无法被下一次的扩容利用，这对内存与cache是非常不友好的。<br>我们再来看一下K = 1.5的情况。<br>每次扩容之后capacity的情况为：1，2，3，4，6，9，13，19，28 ……<br>再按刚才的思路分析一遍，1 + 2 &gt;= 3;  2 + 3 + 4 &gt;= 6;  6 + 9 &gt;= 13 …….<br>所以，当K为1.5时，显然对内存和cache要友好很多，至少从容量上来说，是存在重复利用的可能性的。</p>
+<h3 id="push-back-与emplace-back"><a href="#push-back-与emplace-back" class="headerlink" title="push_back()与emplace_back()"></a>push_back()与emplace_back()</h3><p>push_back与emplace_back作用都是将一个元素放入vector末尾，但是emplace_back效率要比push_back高。<br>push_back放入元素时，会首先执构造函数，然后将构造好的元素拷贝或者移动到vector中，而emplace_back则是在vector的内存空间中直接创建元素，省去了拷贝或者移动的消耗。（拷贝或者移动与push_back()中是左值还是右值有关,左值为拷贝，右值为移动)</p>
+<h3 id="vector元素存放位置"><a href="#vector元素存放位置" class="headerlink" title="vector元素存放位置"></a>vector元素存放位置</h3><p>vector中元素存放位置在堆上，被分配到栈上的元素在被push_back或者emplace_back时都会被放到堆上，如果想让vector中存储栈上的元素，可以将vector中的元素设置为原来元素的指针</p>
+
       
     </div>
     
@@ -363,12 +344,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ACM/" rel="tag"># ACM</a>
-          
-        </div>
-      
 
       
       
@@ -378,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/" rel="next" title="ucas river and Longest Ordered Subsequence">
-                <i class="fa fa-chevron-left"></i> ucas river and Longest Ordered Subsequence
+              <a href="/2020/07/09/剖析/" rel="next" title="剖析">
+                <i class="fa fa-chevron-left"></i> 剖析
               </a>
             
           </div>
@@ -387,10 +362,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/10/1880-单词纠错/" rel="prev" title="51nod-1880-单词纠错">
-                51nod-1880-单词纠错 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -442,8 +413,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#STL-C"><span class="nav-number">1.</span> <span class="nav-text">STL-C++</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">1.1.</span> <span class="nav-text">vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">vector定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#capacity-与size"><span class="nav-number">1.1.2.</span> <span class="nav-text">capacity()与size()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容"><span class="nav-number">1.1.3.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-back-与emplace-back"><span class="nav-number">1.1.4.</span> <span class="nav-text">push_back()与emplace_back()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector元素存放位置"><span class="nav-number">1.1.5.</span> <span class="nav-text">vector元素存放位置</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
