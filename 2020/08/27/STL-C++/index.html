@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-C++">
 <meta property="og:url" content="http://yoursite.com/2020/08/27/STL-C++/index.html">
@@ -87,7 +88,7 @@
 <meta property="og:description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2020/08/27/STL-C++/a.jpg">
-<meta property="og:updated_time" content="2020-08-27T10:25:51.275Z">
+<meta property="og:updated_time" content="2020-08-27T10:29:42.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-C++">
 <meta name="twitter:description" content="STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&amp;lt;class _Ty,    class _Ax&amp;gt;">
@@ -294,6 +295,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -323,6 +346,7 @@
       
         <h1 id="STL-C"><a href="#STL-C" class="headerlink" title="STL-C++"></a>STL-C++</h1><p>本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。</p>
 <h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><h3 id="vector定义"><a href="#vector定义" class="headerlink" title="vector定义"></a>vector定义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class _Ty,</span><br><span class="line">    class _Ax&gt;</span><br><span class="line">    class vector</span><br><span class="line">        : public _Vector_val&lt;_Ty, _Ax&gt;</span><br><span class="line">    &#123;   // varying size array of values</span><br><span class="line">public:</span><br><span class="line">    /********/</span><br><span class="line">protected:</span><br><span class="line">    pointer _Myfirst;   // pointer to beginning of array</span><br><span class="line">    pointer _Mylast;    // pointer to current end of sequence</span><br><span class="line">    pointer _Myend; // pointer to end of array</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>vector底层采用的数据结构是一段连续的线性空间，vector可以当做被封装之后的数组，提供了一些方法使得我们更好的对数组进行操作。<br>_Myfirst代表数组的第一个元素的首地址<br>_Mylast代表数组的最后一个元素的末尾字节地址<br>_Myend代表vector整个容器所占内存空间的末尾空间</p>
 <h3 id="capacity-与size"><a href="#capacity-与size" class="headerlink" title="capacity()与size()"></a>capacity()与size()</h3><p>size()返回vector中目前的元素个数<br>capacity()返回目前vector中容量大小<br>简单点可以认为<br>size = _Mylast - _Myfirst<br>capacity =  _Myend - _Myfirst</p>
 <h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p>当_Mylast == _Myend时，会引起vector的扩容，vector中扩容方式为每次2倍空间增长(普遍为2倍，貌似还有1.5倍)<br>在新增数据的时候，会分配一块更大的内存，将原来的数据拷贝至新内存空间，然后将旧内存空间释放掉，然后再插入新的元素。值得注意是，在对vector操作时如果引起了vector中空间重新配置，则先前的迭代器失效。<br>如果采用常数的扩容方式时扩容操作的均摊时间复杂度为O(N)，而采用倍数增长的方式则可以使得均摊的复杂度变为O(1),这里大家可以举一些例子算一下，不在赘述。<br>为什么采用2倍的方式进行扩容而不是3倍，4倍，这里参考知乎的一个回答：<br><img src="a.jpg" alt=""></p>
@@ -343,6 +367,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+        </div>
       
 
       
@@ -453,7 +483,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -464,7 +494,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
