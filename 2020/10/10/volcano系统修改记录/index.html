@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huring">
 <meta property="og:description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &amp;gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-10T11:42:58.563Z">
+<meta property="og:updated_time" content="2020-10-10T11:54:56.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="volcano ECS开机逻辑修改记录">
 <meta name="twitter:description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &amp;gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前">
@@ -342,7 +342,7 @@
       
 
       
-        <h1 id="修改ECS开机逻辑问题记录"><a href="#修改ECS开机逻辑问题记录" class="headerlink" title="修改ECS开机逻辑问题记录"></a>修改ECS开机逻辑问题记录</h1><h2 id="修改原因"><a href="#修改原因" class="headerlink" title="修改原因"></a>修改原因</h2><p>之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。<br>假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前只考虑单机作业), 即新开启的ECS必须满足R3 &gt;= R1, 这样看来，之前的开机逻辑是存在问题的，在实际中我们也碰到了这种情况。<br>所以我们需要将ECS开机逻辑进行更改。</p>
+        <h1 id="修改ECS开机逻辑问题记录"><a href="#修改ECS开机逻辑问题记录" class="headerlink" title="修改ECS开机逻辑问题记录"></a>修改ECS开机逻辑问题记录</h1><h2 id="修改原因"><a href="#修改原因" class="headerlink" title="修改原因"></a>修改原因</h2><p>之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。<br>假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前只考虑单机作业), 即新开启的ECS必须满足R3 &gt;= R1, 这样看来，之前的开机逻辑是存在问题的，在实际中我们也碰到了这种情况。<br>所以我们需要将ECS开机逻辑进行更改。<br><a id="more"></a></p>
 <h2 id="开机逻辑设计"><a href="#开机逻辑设计" class="headerlink" title="开机逻辑设计"></a>开机逻辑设计</h2><p>将开机逻辑移至enqueue的下一个阶段，allocate。<br>allocate阶段当初在进行分配node前会获取node列表，获取node列表时会只选择开启的node节点<br><code>allNodes := util.GetReadyNodeList(ssn.Nodes)</code><br>将此部分进行更改为返回所有的节点<br><code>allNodes := util.GetAllNodeList(ssn.Nodes)</code></p>
 <p>在predicate筛选阶段，因为对于未开启节点，在predicate阶段有几种方式都会将未开启的节点过滤，因此再此只判断node节点资源能够满足task要求，能够满足判断通过node筛选</p>
 <p>prioritize阶段对通过predicate筛选节点进行打分，选择最合适的节点。因为之前在此阶段的节点都是已经开启的节点，现在未开启的节点加入进来，需要对打分进行一些修改，目前我们修改打分机制使得优先选择已经开启的节点</p>
