@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="huring">
 <meta property="og:description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &amp;gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-10T11:54:56.479Z">
+<meta property="og:updated_time" content="2020-11-19T03:18:15.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="volcano ECS开机逻辑修改记录">
 <meta name="twitter:description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &amp;gt;= R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前">
