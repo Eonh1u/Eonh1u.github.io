@@ -252,6 +252,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/30/nccl-test-环境/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="huring">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/12/30/nccl-test-环境/" itemprop="url">nccl test 环境</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-30T10:59:43+08:00">
+                2020-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/此生最痛苦的配环境/" itemprop="url" rel="index">
+                    <span itemprop="name">此生最痛苦的配环境</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在之前的服务器上发现安装的nccl，不能正确的运行nccl test测试，在尝试了多种方法之后，发现需要重新编译安装nccl</p>
+<p><a href="https://github.com/nvidia/nccl" target="_blank" rel="noopener">https://github.com/nvidia/nccl</a></p>
+<p>按照官方github上说明进行编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install build-essential devscripts debhelper fakeroot -y </span><br><span class="line">make -j pkg.debian.build</span><br><span class="line">dpkg -i build/pkg/deb/*.deb</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/12/30/nccl-test-环境/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/23/leetcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -490,13 +639,14 @@
 
       
         
-          
-            <p>若执行ssh-add /path/to/xxx.pem是出现这个错误:Could not open a connection to your authentication agent，则先执行如下命令即可：<br>　　ssh-agent bash<br>然后执行ssh-add xxx.pem<br>如果出现ssh “permissions are too open” error，则执行chmod命令修改xx.pem文件权限<br>chmod 400 ~/.ssh/id_rsa   或者 chmod 600 ~/.ssh/id_rsa</p>
-<p>这样配置之后，有可能每次进来终端，都需要重新运行上述命令才能够连接上服务器<br>所以在/etc/bash.bashrc 末尾添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">if [ -f ~/.agent.env ];then</span><br><span class="line">    . ~/.agent.env &gt;/dev/null</span><br><span class="line">    if ! kill -0  $SSH_AGENT_PID &gt;/dev/null 2&gt;&amp;1; then</span><br><span class="line">            echo &quot; stale agent file found. Spawning new agent....&quot;</span><br><span class="line">            eval `ssh-agent | tee ~/.agent.env `</span><br><span class="line">        if [[ $? -eq 0 ]] ;then</span><br><span class="line">            echo &quot;agent ok!&quot;</span><br><span class="line">        fi</span><br><span class="line">            ssh-add &apos;xxxx.xx&apos; # your private key</span><br><span class="line">            if [[ $? -eq 0 ]] ; then</span><br><span class="line">            echo &quot;key add ok!&quot;</span><br><span class="line">        fi</span><br><span class="line">    fi</span><br><span class="line">else</span><br><span class="line">    eval ` ssh-agent |tee ~/.agent.env` &gt;/dev/null 2&gt;&amp;1</span><br><span class="line">    if [[ $? -eq 0 ]] ;then</span><br><span class="line">       echo &quot;agent ok!&quot;</span><br><span class="line">    fi</span><br><span class="line">    ssh-add &apos;xxxx.xx&apos; # your private key</span><br><span class="line">    if [[ $? -eq 0 ]] ; then</span><br><span class="line">       echo &quot;key add ok!&quot;</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<p>在有些服务器上修改/etc/bash.bashrc不生效，可以在 /etc/profile.d/路径下添加sh文件，文件内容如上，这样便可以进行ssh无密码登录服务器</p>
-
-          
+          <p>若执行ssh-add /path/to/xxx.pem是出现这个错误:Could not open a connection to your authentication agent，则先执行如下命令即可：<br>　　ssh-agent bash<br>然后执行ssh-add xxx.pem<br>如果出现ssh “permissions are too open” error，则执行chmod命令修改xx.pem文件权限<br>chmod 400 ~/.ssh/id_rsa   或者 chmod 600 ~/.ssh/id_rsa<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/15/ssh-私钥连接服务器记录/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1556,154 +1706,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/cf-Global-Round-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="huring">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="huring">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/19/cf-Global-Round-5/" itemprop="url">cf-Global Round 5</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-19T13:25:01+08:00">
-                2019-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="A-Balanced-Rating-Changes"><a href="#A-Balanced-Rating-Changes" class="headerlink" title="A:Balanced Rating Changes"></a>A:Balanced Rating Changes</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.</p>
-<p>Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.</p>
-<p>There are two conditions though:<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/19/cf-Global-Round-5/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,7 +1760,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1780,7 +1782,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
