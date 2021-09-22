@@ -1,85 +1,28 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html lang="">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="show me the code">
+  <meta name="description" content="show me the code">
 <meta property="og:type" content="website">
 <meta property="og:title" content="huring">
 <meta property="og:url" content="http://yoursite.com/page/7/index.html">
@@ -90,38 +33,18 @@
 <meta name="twitter:card" content="summary">
 
 
+<link rel="canonical" href="http://yoursite.com/page/7/">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'default'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/page/7/"/>
-
-
-
-
 
   <title>huring</title>
   
@@ -131,132 +54,162 @@
 
 
 
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
 
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
 
-  
-  
-    
-  
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+</head>
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">huring</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">huring</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
+
+
+
+
+
+</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
   
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-  
-</nav>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">huring</p>
+  <div class="site-description" itemprop="description">show me the code</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
 
 
 
- </div>
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+      
+      
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -264,146 +217,80 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" itemprop="url">51nod-1740 蜂巢迷宫</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-28T22:43:23+08:00">
-                2019-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" class="post-title-link" itemprop="url">51nod-1740 蜂巢迷宫</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
 
-          
-            
-          
+      <time title="Created: 2019-07-28 22:43:23 / Modified: 22:46:32" itemprop="dateCreated datePublished" datetime="2019-07-28T22:43:23+08:00">2019-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>题目：<br>有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。</p>
 <p>艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。<br>图片贴不上 这里附上原题目的链接：<br><a target="_blank" rel="noopener" href="http://www.51nod.com/Challenge/Problem.html#problemId=1740">http://www.51nod.com/Challenge/Problem.html#problemId=1740</a></p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -411,145 +298,85 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/" itemprop="url">51nod-1886-叠加串</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-27T23:01:26+08:00">
-                2019-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/" class="post-title-link" itemprop="url">51nod-1886-叠加串</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2019-07-27 23:01:26" itemprop="dateCreated datePublished" datetime="2019-07-27T23:01:26+08:00">2019-07-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:08" itemprop="dateModified" datetime="2020-11-18T10:24:08+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>今天周六，偷个懒选了个非常easy 的题目<br>题目：<br>有一个字符串S，下标从1开始，初始为S=”0”。现在开始调用fun函数。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -557,145 +384,85 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/" itemprop="url">51nod 1877 打包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T23:22:25+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/" class="post-title-link" itemprop="url">51nod 1877 打包</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2019-07-26 23:22:25" itemprop="dateCreated datePublished" datetime="2019-07-26T23:22:25+08:00">2019-07-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:06" itemprop="dateModified" datetime="2020-11-18T10:24:06+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>题目：<br>又到了一年毕业季，Noder也从学校毕业了。现在Noder要把东西进行打包，打包完成后，Noder的所有东西都被装进了若干个长方体形状的收纳盒中，这些收纳盒的高都是1024，底座是正方形且边长都是1到6之间的整数。现在Noder要进行搬家了，他有一辆车，这个车子的后备箱是一个长方体，高为1024，底座为边长是6的正方形，那么Noder想知道，他最少要运几趟才能把他所有的东西运完呢？</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -703,147 +470,87 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/" itemprop="url">51nod 奥林匹克年</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T23:07:02+08:00">
-                2019-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/" class="post-title-link" itemprop="url">51nod 奥林匹克年</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2019-07-25 23:07:02" itemprop="dateCreated datePublished" datetime="2019-07-25T23:07:02+08:00">2019-07-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:26:20" itemprop="dateModified" datetime="2020-11-18T10:26:20+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p><strong>题目：</strong><br>奥林匹克竞赛从1989年开始举行，每一个奥林匹克年都会有一个缩写IAO’y， y表示那一年的最后几位数字。 组织者会取一个之前未被用过的缩写来表示该年份，而且要尽可能的短。</p>
 <p>例如，前三个奥林匹克年是1989，1990和1991，他们对应的缩写是IAO’9， IAO’0 和IAO’1，而2015的缩写是IAO’15，因为IAO’5已经被1995用过了。</p>
 <p>现在给出一个缩写，请判断这个是代表哪一年的。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/51nod%201770%20%E6%95%B0%E6%95%B0%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -851,147 +558,87 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/24/51nod%201770%20%E6%95%B0%E6%95%B0%E5%AD%97/" itemprop="url">51nod-1770</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-24T18:32:46+08:00">
-                2019-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/24/51nod%201770%20%E6%95%B0%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">51nod-1770</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2019-07-24 18:32:46" itemprop="dateCreated datePublished" datetime="2019-07-24T18:32:46+08:00">2019-07-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:26:20" itemprop="dateModified" datetime="2020-11-18T10:26:20+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p><strong>题目：</strong><br>统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。</p>
 <p>样例解释：</p>
 <p>3333333333*3=9999999999，里面有10个9。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/24/51nod%201770%20%E6%95%B0%E6%95%B0%E5%AD%97/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/24/51nod%201770%20%E6%95%B0%E6%95%B0%E5%AD%97/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/51nod-1744-codeforce-143c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -999,146 +646,80 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/23/51nod-1744-codeforce-143c/" itemprop="url">51nod-1744 codeforce-143c</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-23T20:29:46+08:00">
-                2019-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2019/07/23/51nod-1744-codeforce-143c/" class="post-title-link" itemprop="url">51nod-1744 codeforce-143c</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
 
-          
-            
-          
+      <time title="Created: 2019-07-23 20:29:46 / Modified: 21:43:42" itemprop="dateCreated datePublished" datetime="2019-07-23T20:29:46+08:00">2019-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p><strong>题目：</strong><br>羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。</p>
 <p>   在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一个面的食物，一个面的食物指的是紧贴着某个面食物。所以剩下只有 （𝐴−1）×（𝐵−2）×（𝐶−2） 块食物。为了隐藏罪证，小偷们把剩下的食物块，全部打乱，散落在小屋的四周。所以村长忘记了原来A，B，C到底是多少。
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/23/51nod-1744-codeforce-143c/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2019/07/23/51nod-1744-codeforce-143c/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1146,146 +727,86 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/" itemprop="url">k8s初体验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T17:51:47+08:00">
-                2018-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/k8s/" itemprop="url" rel="index">
-                    <span itemprop="name">k8s</span>
-                  </a>
-                </span>
+            <a href="/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/" class="post-title-link" itemprop="url">k8s初体验</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2018-12-28 17:51:47" itemprop="dateCreated datePublished" datetime="2018-12-28T17:51:47+08:00">2018-12-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:01" itemprop="dateModified" datetime="2020-11-18T10:24:01+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/k8s/" itemprop="url" rel="index"><span itemprop="name">k8s</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。</p>
 <h3 id="1-Master与Node"><a href="#1-Master与Node" class="headerlink" title="1.Master与Node"></a>1.Master与Node</h3><p>Master与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。<br>Master的作用是：对整个集群进行调度，并提供系统进行操作的接口<br>Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-%E9%80%92%E6%8E%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1293,145 +814,85 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-%E9%80%92%E6%8E%A8/" itemprop="url">约瑟夫环-递推</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T20:16:34+08:00">
-                2018-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2018/10/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-%E9%80%92%E6%8E%A8/" class="post-title-link" itemprop="url">约瑟夫环-递推</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2018-10-17 20:16:34" itemprop="dateCreated datePublished" datetime="2018-10-17T20:16:34+08:00">2018-10-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:02" itemprop="dateModified" datetime="2020-11-18T10:24:02+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>&#160; &#160; &#160; &#160;约瑟夫环问题：有n个人围成一个圈，标号分别为0～n-1，从第一个人开始从1进行数数，数到k的人淘汰出圈外，求最后一个被淘汰的人的编号。<br>&#160; &#160; &#160; &#160;之前比较暴力的解法就是用线性结构模拟环，模拟淘汰的过程，复杂度为O(NK)<br>&#160; &#160; &#160; &#160;利用递推的思想我们可以实现O(N)的复杂度。<br>&#160; &#160; &#160; &#160;推理的思路如下：</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-%E9%80%92%E6%8E%A8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/10/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF-%E9%80%92%E6%8E%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/2018icpc%E5%8D%97%E4%BA%ACA%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1439,85 +900,50 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/2018icpc%E5%8D%97%E4%BA%ACA%E9%A2%98/" itemprop="url">2018icpc南京A题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-15T08:43:07+08:00">
-                2018-10-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
+            <a href="/2018/10/15/2018icpc%E5%8D%97%E4%BA%ACA%E9%A2%98/" class="post-title-link" itemprop="url">2018icpc南京A题</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2018-10-15 08:43:07" itemprop="dateCreated datePublished" datetime="2018-10-15T08:43:07+08:00">2018-10-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:04" itemprop="dateModified" datetime="2020-11-18T10:24:04+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
           <p>A题题意：有一长度为N的连续序列，A与B交替从序列中取一段连续序列，每次取的序列长度为1-K，当某个人进行选择时，序列为空，则另一人获得胜利，A先进行选择，输入获胜者。<br><strong>样例：</strong></p>
 <table>
 <thead>
@@ -1536,64 +962,39 @@
 </tr>
 </tbody></table>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/15/2018icpc%E5%8D%97%E4%BA%ACA%E9%A2%98/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2018/10/15/2018icpc%E5%8D%97%E4%BA%ACA%E9%A2%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
       
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/woo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1601,400 +1002,132 @@
     </span>
 
     
+    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/14/woo/" itemprop="url">Start</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-14T15:12:03+08:00">
-                2018-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <h2 class="post-title" itemprop="name headline">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NoEnd/" itemprop="url" rel="index">
-                    <span itemprop="name">NoEnd</span>
-                  </a>
-                </span>
+            <a href="/2018/09/14/woo/" class="post-title-link" itemprop="url">Start</a>
+        </h2>
 
-                
-                
-              
-            </span>
-          
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-          
-            
-          
+      <time title="Created: 2018-09-14 15:12:03" itemprop="dateCreated datePublished" datetime="2018-09-14T15:12:03+08:00">2018-09-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:24:57" itemprop="dateModified" datetime="2020-11-18T10:24:57+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/NoEnd/" itemprop="url" rel="index"><span itemprop="name">NoEnd</span></a>
+        </span>
+    </span>
 
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
+          <p><em>新的路开始了</em></p>
 
-      
-      
-
-      
-        
-          
-            <p><em>新的路开始了</em></p>
-
-          
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
         <div class="post-eof"></div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-    
-  </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
   </nav>
 
 
 
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
       
 
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">70</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/huyutuo" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">huring</span>
-
-  
-</div>
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+    </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      
 
+      
 
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huring</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
+    </div>
+  </footer>
 
-
-
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
 
 
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -2013,16 +1146,8 @@
 
 
 
-  
 
-  
 
-  
-
-  
-  
-
-  
 
   
 

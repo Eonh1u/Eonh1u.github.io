@@ -1,85 +1,28 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<html lang="">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="ACM," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。">
+  <meta name="description" content="题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="51nod-1593-物理地址查询">
 <meta property="og:url" content="http://yoursite.com/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/index.html">
@@ -93,38 +36,18 @@
 <meta name="twitter:card" content="summary">
 
 
+<link rel="canonical" href="http://yoursite.com/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/">
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'default'
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2019/09/12/51nod-1593-物理地址查询/"/>
-
-
-
-
 
   <title>51nod-1593-物理地址查询 | huring</title>
   
@@ -134,131 +57,163 @@
 
 
 
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
 
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
 
-  
-  
-    
-  
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+</head>
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">huring</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">huring</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
+
+
+
+
+
+</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
   
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-  
-</nav>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">huring</p>
+  <div class="site-description" itemprop="description">show me the code</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
 
 
 
- </div>
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="default">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="huring">
+      <meta itemprop="description" content="show me the code">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -266,428 +221,143 @@
     </span>
 
     
+    
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          51nod-1593-物理地址查询
+        </h1>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">51nod-1593-物理地址查询</h1>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-12T21:54:52+08:00">
-                2019-09-12
-              </time>
-            
+      <time title="Created: 2019-09-12 21:54:52" itemprop="dateCreated datePublished" datetime="2019-09-12T21:54:52+08:00">2019-09-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-18 10:26:20" itemprop="dateModified" datetime="2020-11-18T10:26:20+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ACM/" itemprop="url" rel="index"><span itemprop="name">ACM</span></a>
+        </span>
+    </span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+  
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <p>题目:<br>在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。<br>现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。</p>
 <p>输入的网络保证所有的计算机之间是可以相互通信的。</p>
 <span id="more"></span>
 <p>输入<br>单组测试数据。<br>第一行有一个整数n(1 &lt;= n &lt;= 100)。<br>接下来输入一个邻接矩阵A，A的大小是n x n。里面的元素要么是一个非负整数，或者是一个字符x。如果A[i][j]是x那么第i台计算机和第j台计算机没有直接相连。否则表示信号在第i台计算机和第j台计算机之间传播需要A[i][j]的时间。<br>自己发给自己是不需要时间的所以对于所有的 1 &lt;= i &lt;= n，A[i][i] = 0。输入的网络是一个无向图，所以A[i][j] = A[j][i]。那么只需要输入矩阵的下三角部分即可。<br>那么接下来给出n-1行，<br>第一行有一个整数表示A[2][1]。<br>第二行有两个整数表示A[3][1]和A[3][2]。<br>。。。<br>第n-1行有n-1个整数A[n][1],A[n][2], A[n][3]… A[n][n-1]。<br>0&lt;=A[i][j]&lt;=100。<br>输出<br>输出一个整数表示答案。<br>输入样例<br>样例输入1<br>5<br>50<br>30 5<br>100 20 50<br>10 x x 10<br>输出样例<br>样例输出1<br>35<br>解法：最短路裸题<br>代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include &lt;cstdlib&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct Node</span><br><span class="line">&#123;</span><br><span class="line">    int to;</span><br><span class="line">    long long  len;</span><br><span class="line">    bool  operator&lt;(const Node &amp;a) const</span><br><span class="line">    &#123;</span><br><span class="line">        return len  &gt; a.len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">bool isUsed[510];</span><br><span class="line">long long ans[510];</span><br><span class="line">vector&lt;Node&gt; NodeQueue[510];</span><br><span class="line">void addEdge(int s, int e, int len)</span><br><span class="line">&#123;</span><br><span class="line">    NodeQueue[s].push_back((Node)&#123;e,len&#125;);</span><br><span class="line">    NodeQueue[e].push_back((Node)&#123;s,len&#125;);</span><br><span class="line">&#125;</span><br><span class="line">int n;</span><br><span class="line">priority_queue&lt;Node&gt; PriNodeQueue;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    for(int i  =  2; i &lt;= n; i++)</span><br><span class="line">        for(int j = 1; j &lt; i; j++)&#123;</span><br><span class="line">            string s;</span><br><span class="line">            cin &gt;&gt; s;</span><br><span class="line">            if(s != &quot;x&quot;)&#123;</span><br><span class="line">            int len = atoi(s.c_str());</span><br><span class="line">            //printf(&quot;%d\n&quot;, len);</span><br><span class="line">            addEdge(i,j,len);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    for(int i = 0; i &lt; 505; i++)</span><br><span class="line">        ans[i] = 999999999999;</span><br><span class="line">    ans[1] = 0;</span><br><span class="line">    PriNodeQueue.push((Node)&#123;1,0&#125;);</span><br><span class="line">    while(!PriNodeQueue.empty())&#123;</span><br><span class="line">        Node now = PriNodeQueue.top();</span><br><span class="line">        PriNodeQueue.pop();</span><br><span class="line">        int u = now.to;</span><br><span class="line">        if(!isUsed[u])&#123;</span><br><span class="line">            isUsed[u] = true;</span><br><span class="line">            for(int i = 0; i &lt; NodeQueue[u].size(); i++)&#123;</span><br><span class="line">                if(!isUsed[NodeQueue[u][i].to])&#123;</span><br><span class="line">                    int v = NodeQueue[u][i].to;</span><br><span class="line">                    int len = NodeQueue[u][i].len;</span><br><span class="line">                    if(ans[v] &gt; ans[u] + len)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans[v] = ans[u] + len;</span><br><span class="line">                        PriNodeQueue.push((Node)&#123;v,ans[v]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    long long a = 0;</span><br><span class="line">    for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">        //printf(&quot;%d\n&quot;, ans[i]);</span><br><span class="line">        a = max(a, ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld&quot;, a);</span><br><span class="line">    return 0;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ACM/" rel="tag"># ACM</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/09/11/ucas-Alice-s-Food/" rel="next" title="ucas Alice's Food">
-                <i class="fa fa-chevron-left"></i> ucas Alice's Food
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/ACM/" rel="tag"># ACM</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/16/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/" rel="prev" title="51nod-2488-矩形面积并的面积">
-                51nod-2488-矩形面积并的面积 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">70</span>
-                  <span class="site-state-item-name">posts</span>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/11/ucas-Alice-s-Food/" rel="prev" title="ucas Alice's Food">
+                  <i class="fa fa-chevron-left"></i> ucas Alice's Food
                 </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/huyutuo" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
             </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">huring</span>
-
-  
-</div>
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
+            <div class="post-nav-item">
+                <a href="/2019/09/16/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/" rel="next" title="51nod-2488-矩形面积并的面积">
+                  51nod-2488-矩形面积并的面积 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
+  </article>
+  
+  
   
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+    </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      
 
+      
 
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huring</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
+    </div>
+  </footer>
 
-
-
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
 
 
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -706,16 +376,8 @@
 
 
 
-  
 
-  
 
-  
-
-  
-  
-
-  
 
   
 
