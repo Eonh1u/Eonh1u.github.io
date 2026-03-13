@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>cf-Global Round 5 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These ratin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf-Global Round 5">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These ratin">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-10-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.923Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "cf-Global Round 5",
+  "url": "https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-10-18T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.923Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cf-Global Round 5',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">cf-Global Round 5</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">cf-Global Round 5</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-10-18T16:00:00.000Z" title="发表于 2019-10-19 00:00:00">2019-10-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.923Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="A-Balanced-Rating-Changes"><a href="#A-Balanced-Rating-Changes" class="headerlink" title="A:Balanced Rating Changes"></a>A:Balanced Rating Changes</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.</p>
+<p>Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.</p>
+<p>There are two conditions though:</p>
+<p>For each participant 𝑖, their modified rating change 𝑏𝑖 must be integer, and as close to 𝑎𝑖&#x2F;2 as possible. It means that either 𝑏𝑖&#x3D;⌊𝑎𝑖&#x2F;2⌋ or 𝑏𝑖&#x3D;⌈𝑎𝑖&#x2F;2⌉. In particular, if 𝑎𝑖 is even, 𝑏𝑖&#x3D;𝑎𝑖2. Here ⌊𝑥⌋ denotes rounding down to the largest integer not greater than 𝑥, and ⌈𝑥⌉ denotes rounding up to the smallest integer not smaller than 𝑥.<br>The modified rating changes must be perfectly balanced — their sum must be equal to 0.<br>Can you help with that?</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤13845), denoting the number of participants.</p>
+<p>Each of the next 𝑛 lines contains a single integer 𝑎𝑖 (−336≤𝑎𝑖≤1164), denoting the rating change of the 𝑖-th participant.</p>
+<p>The sum of all 𝑎𝑖 is equal to 0.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output 𝑛 integers 𝑏𝑖, each denoting the modified rating change of the 𝑖-th participant in order of input.</p>
+<p>For any 𝑖, it must be true that either 𝑏𝑖&#x3D;⌊𝑎𝑖&#x2F;2⌋ or 𝑏𝑖&#x3D;⌈𝑎𝑖&#x2F;2⌉. The sum of all 𝑏𝑖 must be equal to 0.</p>
+<p>If there are multiple solutions, print any. We can show that a solution exists for any valid input.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">3<br>10<br>-5<br>-5<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">5<br>-2<br>-3<br></code></pre></td></tr></table></figure>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">7<br>-7<br>-29<br>0<br>3<br>24<br>-29<br>38<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">-3<br>-15<br>0<br>2<br>12<br>-15<br>19<br></code></pre></td></tr></table></figure>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>统计正数与负数的奇数之差，然后在输出时进行处理即可。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;string&gt;<br>#include&lt;string.h&gt;<br>#include&lt;stack&gt;<br>#include&lt;queue&gt;<br>#include&lt;set&gt;<br>#include&lt;map&gt;<br>int a[20010];<br>int main()<br>&#123;<br>    int n;<br>    scanf(&quot;%d&quot;, &amp;n);<br>    int sum1 =0;<br>    int sum2 =0;<br>    for(int i = 0; i &lt; n; i++)&#123;<br>        scanf(&quot;%d&quot;, &amp;a[i]);<br>        if(a[i] &gt; 0 &amp;&amp; a[i] % 2 == 1)<br>            sum1++;<br>        if(a[i] &lt; 0 &amp;&amp; a[i] % 2 == -1)<br>            sum2++;<br>    &#125;<br>    if(sum1 &lt; sum2)&#123;<br>        sum1 = (sum2 - sum1) / 2;<br>        for(int i = 0; i &lt; n; i++)&#123;<br>            if(a[i] &lt; 0 &amp;&amp; a[i]%2 == -1 &amp;&amp; sum1 &gt; 0)&#123;<br>                printf(&quot;%d\n&quot;,a[i]/2 - 1);<br>                sum1--;<br>            &#125;<br>            else<br>            &#123;<br>                printf(&quot;%d\n&quot;,a[i]/2);<br>            &#125;<br>            <br>        &#125;<br>    &#125;<br>    else<br>    &#123;<br>        sum1 = (sum1 - sum2) / 2;<br>        for(int i = 0; i &lt; n; i++)&#123;<br>            if(a[i] &gt; 0 &amp;&amp; a[i]%2 == 1 &amp;&amp; sum1 &gt; 0)&#123;<br>                printf(&quot;%d\n&quot;,a[i]/2 + 1);<br>                sum1--;<br>            &#125;<br>            else<br>            &#123;<br>                printf(&quot;%d\n&quot;,a[i]/2);<br>            &#125;<br>            <br>        &#125;<br>    &#125;<br>    return 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="B：-Balanced-Tunnel"><a href="#B：-Balanced-Tunnel" class="headerlink" title="B： Balanced Tunnel"></a>B： Balanced Tunnel</h1><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>Consider a tunnel on a one-way road. During a particular day, 𝑛 cars numbered from 1 to 𝑛 entered and exited the tunnel exactly once. All the cars passed through the tunnel at constant speeds.</p>
+<p>A traffic enforcement camera is mounted at the tunnel entrance. Another traffic enforcement camera is mounted at the tunnel exit. Perfectly balanced.</p>
+<p>Thanks to the cameras, the order in which the cars entered and exited the tunnel is known. No two cars entered or exited at the same time.</p>
+<p>Traffic regulations prohibit overtaking inside the tunnel. If car 𝑖 overtakes any other car 𝑗 inside the tunnel, car 𝑖 must be fined. However, each car can be fined at most once.</p>
+<p>Formally, let’s say that car 𝑖 definitely overtook car 𝑗 if car 𝑖 entered the tunnel later than car 𝑗 and exited the tunnel earlier than car 𝑗. Then, car 𝑖 must be fined if and only if it definitely overtook at least one other car.</p>
+<p>Find the number of cars that must be fined.</p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤105), denoting the number of cars.</p>
+<p>The second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛), denoting the ids of cars in order of entering the tunnel. All 𝑎𝑖 are pairwise distinct.</p>
+<p>The third line contains 𝑛 integers 𝑏1,𝑏2,…,𝑏𝑛 (1≤𝑏𝑖≤𝑛), denoting the ids of cars in order of exiting the tunnel. All 𝑏𝑖 are pairwise distinct.</p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>Output the number of cars to be fined.</p>
+<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">5<br>3 5 2 1 4<br>4 3 2 5 1<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">2<br></code></pre></td></tr></table></figure>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">7<br>5 2 3 6 7 1 4<br>2 3 6 7 1 4 5<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">6<br></code></pre></td></tr></table></figure>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">2<br>1 2<br>1 2<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">0<br></code></pre></td></tr></table></figure>
+<h2 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h2><p>此代码用的归并排序进行处理，复杂度为nlogn 有复杂度为n的方法，以后补上。进行归并排布时，出现逆序时，将偏大的数字进行记录就可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;string&gt;<br>#include&lt;string.h&gt;<br>#include&lt;stack&gt;<br>#include&lt;queue&gt;<br>#include&lt;set&gt;<br>#include&lt;map&gt;<br>using namespace std;<br>int p[100010];<br>int t[100010];<br>int a[100010];<br>int used[100010];<br>int sum=0;<br>void solve(int l,int r)<br>&#123;<br>    //printf(&quot;%d %d\n&quot;,l,r);<br>    if(r-l&lt;2)<br>    &#123;<br>        if(r-l  ==  1 &amp;&amp;  a[l] &gt; a[r])&#123;<br>            if(!used[a[l]])&#123;<br>               // printf(&quot;%d %d\n&quot;,a[l],a[r]);<br>                used[a[l]] = 1;<br>               // printf(&quot;2 used %d = true\n&quot;,a[l]);<br>                sum++;<br>            &#125;<br>            swap(a[l], a[r]);<br>        &#125;<br>        return ;<br>    &#125;<br>    int m = (l + r) &gt;&gt; 1;<br>    solve(l , m);<br>    solve(m+1 , r);<br>    int now  = m-l+1;<br>    int sz = l, sy = m+1;<br>   /* for(int i = l; i &lt;= r;i++)<br>        printf(&quot;%d &quot;, a[i]);<br>    printf(&quot;\n%d\n&quot;,used[6]);<br>    printf(&quot;\n&quot;);*/<br>    for(int i = 0; i &lt; r - l + 1; i++)<br>    &#123;   <br>       // printf(&quot; i:%d used %d %d\n&quot;,i,a[sz],used[a[sz]]);<br>        if(sz &lt;= m &amp;&amp; sy &lt;= r)<br>            &#123;<br>                if(a[sz] &gt; a[sy])&#123;<br>                    t[i] = a[sy];<br>                    sy++; <br>                    if(!used[a[sz]])&#123;<br>                        //printf(&quot;%d %d\n&quot;,a[sz],a[sy-1]);<br>                        sum++;<br>                        used[a[sz]] = 1;<br>                       // printf(&quot;used %d %d\n&quot;,a[sz],used[a[sz]]);<br>                       // printf(&quot;sy r %d %d\n&quot;, sy,r);<br>                    &#125;<br>                &#125;<br>                else<br>                &#123;<br>                    t[i] = a[sz];<br>                    if(sy != m + 1 &amp;&amp; !used[a[sz]])<br>                    &#123;<br>                        sum++;<br>                        used[a[sz]] = 1;<br>                    &#125;<br>                    sz++; <br>                    now--;<br>                &#125;<br>            &#125;<br>        else if(sz == m+1)<br>        &#123;<br>            while(sy &lt;= r)<br>            &#123;<br>                t[i] = a[sy];<br>                sy++; i++;<br>            &#125;<br>        &#125;<br>        else<br>        &#123;<br>           // printf(&quot;sz  %d\n&quot;,a[sz]);<br>          //  printf(&quot;used %d %d \n&quot;,a[sz],used[a[sz]]);<br>            while(sz &lt;= m)<br>            &#123;<br>                t[i] = a[sz];<br>               // printf(&quot;sz  %d\n&quot;,a[sz]);<br>              //  printf(&quot;used %d %d \n&quot;,a[sz],used[a[sz]]);<br>                if(used[a[sz]] == 0)&#123;<br>                    sum++;<br>                    used[a[sz]] = 1;<br>                 &#125;<br>                sz++;<br>                i++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    for(int i= l ; i &lt;= r; i++)<br>        a[i] = t[i-l];<br>   <br>&#125;<br>int main()<br>&#123;<br>    int n;<br>    scanf(&quot;%d&quot;, &amp;n);<br>    for(int i = 1; i &lt;= n; i++)&#123;<br>        int now ;<br>        scanf(&quot;%d&quot;, &amp;now);<br>        p[now] = i;<br>    &#125;<br>    for(int i = 1; i &lt;= n; i++)&#123;<br>        scanf(&quot;%d&quot;, &amp;a[i]);<br>        a[i] = p[a[i]];<br>    &#125;<br>    solve(1,n);<br>    printf(&quot;%d\n&quot;, sum);<br>    return 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="C：Balanced-Removals-Easier"><a href="#C：Balanced-Removals-Easier" class="headerlink" title="C：Balanced Removals (Easier)"></a>C：Balanced Removals (Easier)</h1><h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>This is an easier version of the problem. In this version, 𝑛≤2000.</p>
+<p>There are 𝑛 distinct points in three-dimensional space numbered from 1 to 𝑛. The 𝑖-th point has coordinates (𝑥𝑖,𝑦𝑖,𝑧𝑖). The number of points 𝑛 is even.</p>
+<p>You’d like to remove all 𝑛 points using a sequence of 𝑛2 snaps. In one snap, you can remove any two points 𝑎 and 𝑏 that have not been removed yet and form a perfectly balanced pair. A pair of points 𝑎 and 𝑏 is perfectly balanced if no other point 𝑐 (that has not been removed yet) lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏.</p>
+<p>Formally, point 𝑐 lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏 if and only if min(𝑥𝑎,𝑥𝑏)≤𝑥𝑐≤max(𝑥𝑎,𝑥𝑏), min(𝑦𝑎,𝑦𝑏)≤𝑦𝑐≤max(𝑦𝑎,𝑦𝑏), and min(𝑧𝑎,𝑧𝑏)≤𝑧𝑐≤max(𝑧𝑎,𝑧𝑏). Note that the bounding box might be degenerate.</p>
+<p>Find a way to remove all points in 𝑛2 snaps.</p>
+<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤2000; 𝑛 is even), denoting the number of points.</p>
+<p>Each of the next 𝑛 lines contains three integers 𝑥𝑖, 𝑦𝑖, 𝑧𝑖 (−108≤𝑥𝑖,𝑦𝑖,𝑧𝑖≤108), denoting the coordinates of the 𝑖-th point.</p>
+<p>No two points coincide.</p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>Output 𝑛2 pairs of integers 𝑎𝑖,𝑏𝑖 (1≤𝑎𝑖,𝑏𝑖≤𝑛), denoting the indices of points removed on snap 𝑖. Every integer between 1 and 𝑛, inclusive, must appear in your output exactly once.</p>
+<p>We can show that it is always possible to remove all points. If there are many solutions, output any of them.</p>
+<h3 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">6<br>3 1 0<br>0 3 0<br>2 2 0<br>1 0 0<br>1 3 0<br>0 1 0<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">3 6<br>5 1<br>2 4<br></code></pre></td></tr></table></figure>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">8<br>0 1 1<br>1 0 1<br>1 1 0<br>1 1 1<br>2 2 2<br>3 2 2<br>2 3 2<br>2 2 3<br></code></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">4 5<br>1 6<br>2 7<br>3 8<br></code></pre></td></tr></table></figure>
+<h2 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h2><p>按线面体的顺序进行依次删除。即按xyz顺序进行排序，先删除xy相同的，再删除x相同的，然后再依次删除，注意每次删除后都要排序一次。</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;stdio.h&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;string&gt;<br>#include&lt;string.h&gt;<br>#include&lt;stack&gt;<br>#include&lt;queue&gt;<br>#include&lt;set&gt;<br>#include&lt;map&gt;<br>using namespace std;<br>struct point&#123;<br>    int x,y,z;<br>    int index;<br>&#125;;<br>point p[2010];<br>point tmp[2010];<br>bool cmp(point a, point b)&#123;<br>    if(a.x != b.x)&#123;<br>        return a.x &lt; b.x;<br>    &#125;<br>    else if(a.y != b.y)&#123;<br>        return a.y &lt; b.y;<br>    &#125;<br>    else&#123;<br>        return a.z &lt; b.z;<br>    &#125;<br>&#125;<br>bool used[2010];<br>int main()<br>&#123;<br>    int n;<br>    scanf(&quot;%d&quot;, &amp;n);<br>    for(int i = 1; i &lt;= n; i++)&#123;<br>        scanf(&quot;%d%d%d&quot;,&amp;p[i].x, &amp;p[i].y, &amp;p[i].z);<br>        p[i].index = i;<br>    &#125;<br>    sort(p + 1, p + n + 1, cmp);<br>    for(int i = 2 ; i &lt;= n; i++)<br>    &#123;<br>        if(p[i].x == p[i - 1].x &amp;&amp; p[i].y == p[i - 1].y)&#123;<br>            printf(&quot;%d %d\n&quot;,p[i].index, p[i - 1].index);<br>            used[p[i].index] = used[p[i - 1].index] = true;<br>            i++;<br>        &#125;<br>    &#125;<br>    int now = 1;<br>    for(int i = 1; i &lt;= n; i++)<br>    &#123;<br>        if(!used[p[i].index])<br>            tmp[now++] = p[i];<br>    &#125;<br>    now--;<br>    for(int i = 1; i &lt;= now; i++)<br>        p[i] = tmp[i];<br>    sort(p + 1, p + 1 + now,cmp);<br>   // printf(&quot;now %d\n&quot;,now);<br>    for(int i = 2 ; i &lt;= now; i++)<br>    &#123;<br>        if(p[i].x == p[i - 1].x)&#123;<br>            printf(&quot;%d %d\n&quot;,p[i].index, p[i - 1].index);<br>            used[p[i].index] = used[p[i - 1].index] = true;<br>            i++;<br>        &#125;<br>    &#125;<br>    int o = 1;<br>    for(int i = 1; i &lt;= now; i++)<br>    &#123;<br>        if(!used[p[i].index])<br>            tmp[o++] = p[i];<br>    &#125;<br>    o--;<br>    sort(tmp + 1, tmp + 1 + o,cmp);<br>    //printf(&quot;o %d\n&quot;,o);<br>    for(int i = 1; i &lt;= o; i++)&#123;<br>        printf(&quot;%d %d\n&quot;,tmp[i].index,tmp[i + 1].index);<br>        i++;<br>    &#125;<br>    return 0;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/">https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/10/22/cf-594-div2/" title="cf-594-div2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">cf-594-div2</div></div><div class="info-2"><div class="info-item-1">A: Integer Points题目：DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦&#x3D;𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛. Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦&#x3D;−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚. DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfort...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/19/cf-593-div2/" title="cf-593-div2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">cf-593-div2</div></div><div class="info-2"><div class="info-item-1">A:Stones题目：Alice is playing with some stones. Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains 𝑐 stones. Each time she can do one of two operations: take one stone from the first heap and two stones from the second heap (this operation can be done only if the first heap contains at least one stone and the second heap contains at least two stones); take one stone from the second heap and tw...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" title="51nod-1740 蜂巢迷宫"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-28</div><div class="info-item-2">51nod-1740 蜂巢迷宫</div></div><div class="info-2"><div class="info-item-1">题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http://www.51nod.com/Challenge/Problem.html#problemId=1740 题解：找规律即可（好久没刷题 太菜了 debug找了好久）代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879#include&lt;cmath&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123;    long long n;    scanf(&quot;%lld&quot;, &amp;n);    if(n ==...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/18/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/" title="51nod-1919-炮兵阵地"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-18</div><div class="info-item-2">51nod-1919-炮兵阵地</div></div><div class="info-2"><div class="info-item-1">题目：司令部的将军们打算在NN的网格地图上部署他们的炮兵部队。一个NN的地图由N行N列组成，地图的每一格可能是山地（用”X”表示），也可能是平原（用”.”表示）。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围是它所在位置的对应的行和列，但是大炮打出去之后如果被山地阻挡 了，那么攻击范围就到那块山地。 现在，将军们规划如何部署炮兵部队，在防止误伤的前提下（保证任何两支炮兵部队之间不能互相攻击，即任何一支炮兵部队都不在其他支炮兵部队的攻击范围内），在整个地图区域内最多能够摆放多少我军的炮兵部队。  样例解释： 上图中显示的是相同的地图中不同的放置大炮的方案。黑方块表示山地，白方块表示平原，黑圆表示对应的平原放置了大炮。第一张图是不放大炮的情况。第二张图和第三张图是合理的放置大炮的方案。最后两张图是不合理的放置大炮的方案。 对于这个地图来讲，最多能放置5门大炮。第二张图就是一种最优的放置方案，当然还有其它的最优放置方案。 输入单组测试数据。第一行有一个整数N(1&lt;&#x3D;N&lt;&#x3D;4)。接下来N行，每行有N个...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/11/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/" title="1906-字段统计"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-11</div><div class="info-item-2">1906-字段统计</div></div><div class="info-2"><div class="info-item-1">给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。 输入单组测试数据。第一行两个整数L和k。（L&gt;&#x3D;1，1&lt;&#x3D;k&lt;&#x3D;26,k^L&lt;&#x3D;2*10^7）第二行一个字符串S。（1&lt;&#x3D;|S|&lt;&#x3D;1000000）输出输出一个整数表示答案。 输入样例1 2ababab输出样例2解法：暴力即可代码： 1234567891011121314151617#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;set&gt;using namespace std;set&lt;string&gt; S;int main()&#123;    int l, k;    scanf(&quot;%d%d&quot;, &amp;l, &amp;k);    string s;    cin &gt;&gt; s;    for(int i = 0; i &lt;= s.leng...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/31/51nod-2529-%E7%A7%BB%E5%8A%A8/" title="51nod-2529-移动"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-31</div><div class="info-item-2">51nod-2529-移动</div></div><div class="info-2"><div class="info-item-1">题目：有𝑛个点，第𝑖号点在一维数轴的𝑖坐标位置。你现在在1号点，你需要走𝑘步，移动总长度为𝑆，问这样的方案是否存在。注意：每一步都至少移动1格，且每一步都必须从一个点移动到另一个点上。 输入第一行三个数n,k,s(2&lt;&#x3D;n&lt;&#x3D;10^9,1&lt;&#x3D;k&lt;&#x3D;2*10^5,1&lt;&#x3D;s&lt;&#x3D;10^18)。输出如果存在方案，输出YES，否则输出NO。输入样例10 2 15输出样例YES解法：太水了wr&gt;….. 直接贴代码代码： 123456789101112131415161718#include&lt;stdio.h&gt;using namespace std;int main()&#123;    long long n,k,s;    scanf(&quot;%lld%lld%lld&quot;, &amp;n, &amp;k, &amp;s);    if(n == 1 || s &lt; k)        &#123;            printf(&quot;NO\n...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/" title="51nod-1593-物理地址查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-12</div><div class="info-item-2">51nod-1593-物理地址查询</div></div><div class="info-2"><div class="info-item-1">题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。 输入单组测试数据。第一行有一个整数n(1 &lt;&#x3D; n &lt;&#x3D; 100)。接下来输入一个邻接矩阵A，A的大小是n x n。里面的元素要么是一个非负整数，或者是一个字符x。如果A[i][j]是x那么第i台计算机和第j台计算机没有直接相连。否则表示信号在第i台计算机和第j台计算机之间传播需要A[i][j]的时间。自己发给自己是不需要时间的所以对于所有的 1 &lt;&#x3D; i &lt;&#x3D; n，A[i][i] &#x3D; 0。输入的网络是一个无向图，所以A[i][j] &#x3D; A[j][i]。那么只需要输入矩阵的下三角部分即可。那么接下来给出n-1行，第一行有一个整数表示A[2][1]。第二...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/12/51nod-1925-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="51nod-1925-进制转换"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-12</div><div class="info-item-2">51nod-1925-进制转换</div></div><div class="info-2"><div class="info-item-1">题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&gt;&#x3D;0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有作为最低非0位出现，所以不符合要求，正确的转换是10120。 输入多组测试数据。第一行有一个整数T（1&lt;&#x3D;T&lt;&#x3D;5），表示测试数据的数目。接下来T行，每行一个整数n（0&lt;&#x3D;n&lt;&#x3D;1000000000）。 输出对于每一个n，输出它的变进制表示。 输入样例样例输入1 1234541234 输出样例样例输出1 1234121011 解法：暴力即可 代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-Balanced-Rating-Changes"><span class="toc-number">1.</span> <span class="toc-text">A:Balanced Rating Changes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-number">1.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B%EF%BC%9A-Balanced-Tunnel"><span class="toc-number">2.</span> <span class="toc-text">B： Balanced Tunnel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-1"><span class="toc-number">2.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-1"><span class="toc-number">2.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">代码:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C%EF%BC%9ABalanced-Removals-Easier"><span class="toc-number">3.</span> <span class="toc-text">C：Balanced Removals (Easier)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-2"><span class="toc-number">3.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-2"><span class="toc-number">3.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">3.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-2"><span class="toc-number">3.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-2"><span class="toc-number">3.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

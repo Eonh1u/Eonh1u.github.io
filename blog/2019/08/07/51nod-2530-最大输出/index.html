@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>51nod-2530-最大输出 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&lt;&#x3D;n&lt;&#x3D;2*10^5 ,1&lt;&#x3D;m,k&lt;&#x3D;10^9)第二行n个数a[1…n]，(1&lt;&#x3D;a[i]&lt;&#x3D;10^9)输出一个数，表示最大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51nod-2530-最大输出">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&lt;&#x3D;n&lt;&#x3D;2*10^5 ,1&lt;&#x3D;m,k&lt;&#x3D;10^9)第二行n个数a[1…n]，(1&lt;&#x3D;a[i]&lt;&#x3D;10^9)输出一个数，表示最大">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-08-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.879Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "51nod-2530-最大输出",
+  "url": "https://eonh1u.github.io/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-08-06T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.879Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '51nod-2530-最大输出',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">51nod-2530-最大输出</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">51nod-2530-最大输出</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-06T16:00:00.000Z" title="发表于 2019-08-07 00:00:00">2019-08-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.879Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。</p>
+<p>输入<br>第一行3个数n,m,k，(2&lt;&#x3D;n&lt;&#x3D;2*10^5 ,1&lt;&#x3D;m,k&lt;&#x3D;10^9)<br>第二行n个数a[1…n]，(1&lt;&#x3D;a[i]&lt;&#x3D;10^9)<br>输出<br>一个数，表示最大值。</p>
+<p>输入样例<br>6 9 2<br>1 3 3 7 4 2<br>输出样例<br>54<br>解法：<br>去top2，每次都是top1*k+top2,剩余的不足k就只去top1<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;algorithm&gt;<br>using namespace std;<br>int s[200010];<br>int main()<br>&#123;<br>    int n,m,k;<br>    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;k);<br>    for(int i = 0; i &lt; n; i++)<br>        scanf(&quot;%d&quot;, &amp;s[i]);<br>    sort(s, s+n);<br>    int s1 = s[n - 1];<br>    int s2 = s[n - 2];<br>    long long p = s1*k + s2;<br>    long long ans = m/(k+1)*p + m%(k+1)*s1;<br>    printf(&quot;%lld\n&quot;,ans);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/">https://eonh1u.github.io/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/08/08/51nod-2653-%E5%8C%BA%E9%97%B4xor/" title="51nod-2653-区间xor"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-2653-区间xor</div></div><div class="info-2"><div class="info-item-1">题目:给出区间(a,b)，b &gt;&#x3D; a，求𝑎 𝑥𝑜𝑟 (𝑎+1) 𝑥𝑜𝑟 (𝑎+2)…..𝑥𝑜𝑟 𝑏。输入输入2个数：a b，中间用空格分隔(1 &lt;&#x3D; a &lt;&#x3D; b &lt;&#x3D; 10^9)输出输出一个答案输入样例3 8输出样例11 解法：每个相邻的奇数与偶数xor之后的值是1，所以只要记录下a到b的长度，然后根据a的奇偶进行处理就可以了代码： 123456789101112131415161718192021222324252627282930313233#include&lt;stdlib.h&gt;#include&lt;cstring&gt;using namespace std;int f(int l)&#123;    l/=2;    return l % 2;&#125;int main()&#123;    int a,b;    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);    int l = b - a + 1;    //printf(&qu...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/" title="1393 01相等串"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">1393 01相等串</div></div><div class="info-2"><div class="info-item-1">题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2 解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031#include&lt;vector&gt;using namespace std;char a[1000010];vector&lt;int&gt; p[2000010];int main()&#123;    scanf(&quot;%s&quot;,a + 1);    int l = strlen(a + 1);    int sum = 0;    int Max = -999999999;    int Min = 999999999;    p[1000000].push_back(0);    for(int i = 1; i &lt;= l; i++)    &#123...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/" title="1393 01相等串"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-06</div><div class="info-item-2">1393 01相等串</div></div><div class="info-2"><div class="info-item-1">题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2 解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031#include&lt;vector&gt;using namespace std;char a[1000010];vector&lt;int&gt; p[2000010];int main()&#123;    scanf(&quot;%s&quot;,a + 1);    int l = strlen(a + 1);    int sum = 0;    int Max = -999999999;    int Min = 999999999;    p[1000000].push_back(0);    for(int i = 1; i &lt;= l; i++)    &#123...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/05/51nod-1890-%E6%96%B9%E5%9D%97%E5%A1%94/" title="51nod-1890-方块塔"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-05</div><div class="info-item-2">51nod-1890-方块塔</div></div><div class="info-2"><div class="info-item-1">题目：地上有n个方块，每一个方块高度都是H，第i（1&lt;&#x3D;i&lt;&#x3D;n）个方块的长和宽分别为L[i],W[i]。 现在开始堆方块塔，每次可以拿一个方块放到一个方块塔上，但是有一个要求，设当前塔顶的方块长度和宽度分别为Ltop,Wtop，当前拿到的方块长度和宽度分别为Lcur,Wcur，当满足Lcur&lt;&#x3D;Ltop&amp;&amp;Wcur&lt;&#x3D;Wtop的时候，这个方块才能被放到塔顶，并且取代之前的塔顶成为新塔顶。 由于土地比较贵，所以想要堆出来的塔的数目尽可能少，请计算最少的塔的数目。 例如，现在有5个方块，长度和宽度分别为：( 9 , 4 ) , ( 2 , 5 ) , ( 1 , 2 ) , ( 5 , 3 ) , ( 4 , 1 )。那么最少可以堆成两座塔：( 4 , 1 ) , ( 5 , 3 ) , ( 9 , 4 )分为一堆；( 1 , 2 ) , ( 2 , 5 )分为一堆。 输入单组测试数据。第一行给出一个整数n （1 &lt;&#x3D; n &lt;&#x3D; 5000）。第二行有2*n个整数L[1] ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/16/51nod-2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/" title="51nod-2594-括号之价"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-16</div><div class="info-item-2">51nod-2594-括号之价</div></div><div class="info-2"><div class="info-item-1">题目：小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的： 1、一对括号价值一分（比如”()”得一分） 2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如”()()”价值为1+1&#x3D;2） 3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如”((()))”价值为122&#x3D;4） 下课了，qz看到小Y写的括号序列，他一眼就推测出了规则并得到了括号序列的价值。那么问题来了，小Y写下的括号序列的价值是多少呢？ 输入一个只包含’(‘和’)’的合法的括号序列S，代表小Y写下的括号序列，一个合法的括号序列是这样定义的:1、（）是合法的括号序列2、若字符串A和B是合法的括号序列，那么AB也是合法的括号序列3、若字符串A是合法的括号序列，那么(A)也是合法的括号序列 2&lt;&#x3D; |S| &lt;&#x3D;50 输出一个字符串S，代表小Y所写的括号序列 输入样例1(()(())) 输出样例16 题解：用栈进行处...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/15/51nod-2531-%E6%9C%80%E5%A4%A7%E8%A6%86%E7%9B%96/" title="51nod-2531-最大覆盖"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-15</div><div class="info-item-2">51nod-2531-最大覆盖</div></div><div class="info-2"><div class="info-item-1">题目：现在有 𝑛 个位置 1…𝑛 。 给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。 输入第一行两个数n,q(3&lt;&#x3D;n,q&lt;&#x3D;5000)。接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&lt;&#x3D;x&lt;&#x3D;r[i]的位置x。 输出一个数表示最大值。 输入样例12344 31 12 23 4 输出样例12 题解：暴力即可 代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std;struct point&#123;    int l,r;&#125;;point p[5010];int sum[5010];int main()&#123; ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2500-%E5%90%8E%E9%9D%A2%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E/" title="51nod-2500-后面第一个大于"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2500-后面第一个大于</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个长度为n的序列t，现在她对于每个i，求最小的正数j满足𝑖+𝑗≤𝑛且𝑡𝑖+𝑗&gt;𝑡𝑖，输出j，如果不存在这样的j，则输出0。 样例解释： 对于i&#x3D;1，𝑡2&gt;𝑡1，所以最小的j&#x3D;1； 对于i&#x3D;7，不存在这样的j，所以输出0。 输入第一行输入一个数n；第二行输入n个数t1-tn，以空格隔开；其中1≤n≤30000，对于任意ti满足30≤ti≤100. 输出输出一行n个数，第i个数表示i的答案。 输入样例12873 74 75 71 69 72 76 73 输出样例11 1 4 2 1 1 0 0 解法：用set记录ti出现的位置下标，在处理每个ti时，在大于ti的数中找到下标大于i并且i+j&lt;n的最小值。 代码：123456789101112131415161718192021222324252627282930313233#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std;set&l...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/31/51nod-2529-%E7%A7%BB%E5%8A%A8/" title="51nod-2529-移动"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-31</div><div class="info-item-2">51nod-2529-移动</div></div><div class="info-2"><div class="info-item-1">题目：有𝑛个点，第𝑖号点在一维数轴的𝑖坐标位置。你现在在1号点，你需要走𝑘步，移动总长度为𝑆，问这样的方案是否存在。注意：每一步都至少移动1格，且每一步都必须从一个点移动到另一个点上。 输入第一行三个数n,k,s(2&lt;&#x3D;n&lt;&#x3D;10^9,1&lt;&#x3D;k&lt;&#x3D;2*10^5,1&lt;&#x3D;s&lt;&#x3D;10^18)。输出如果存在方案，输出YES，否则输出NO。输入样例10 2 15输出样例YES解法：太水了wr&gt;….. 直接贴代码代码： 123456789101112131415161718#include&lt;stdio.h&gt;using namespace std;int main()&#123;    long long n,k,s;    scanf(&quot;%lld%lld%lld&quot;, &amp;n, &amp;k, &amp;s);    if(n == 1 || s &lt; k)        &#123;            printf(&quot;NO\n...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>eonh1u Blog - Geek | Developer | Explorer</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="eonh1u 的极客博客 - 技术分享与探索">
+<meta property="og:type" content="website">
+<meta property="og:title" content="eonh1u Blog">
+<meta property="og:url" content="https://eonh1u.github.io/blog/page/4/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="eonh1u 的极客博客 - 技术分享与探索">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="geek">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="tech">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/page/4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'eonh1u Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">eonh1u Blog</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/25/51nod-2206-%E4%BD%8E%E4%B9%B0%E9%AB%98%E5%8D%96/" title="51nod-2206-低买高卖">51nod-2206-低买高卖</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-24T16:00:00.000Z" title="发表于 2019-09-25 00:00:00">2019-09-25</time></span></div><div class="content">题目:考虑股票市场，一共有n天。对于第i天，B君知道股票的价格是每单位a[i]元在每一天，B君可以选择买入一个单位的股票，卖出一个单位的股票，或者什么都不做。刚开始B君有无穷多的钱，但是没有任何股票。问n天之后B君最多可以赚多少钱。(1 &lt;&#x3D; n &lt;&#x3D; 200000)(1 &lt;&#x3D; a[i] &lt;&#x3D; 10000) 输入第一行一个整数n表示天数。接下来一行n个整数，表示每天的价钱。 输出一行一个整数表示最多可以赚的钱数。输入样例 12910 5 4 7 9 12 6 2 10 输出样例 120 题解：利用优先队列建立最小堆，遍历时，每次首先push当前a[i]两次，取堆中的最小值，若堆中最小值为a[i]，相当于未进行操作。下面解释一下为何要push两次1.堆里面存储的值，相当于已经买的股票，因此第一次push可以认为购买了当天的股票。2.从堆中取出最小值之后，ans加上当前a[i]与堆中最小元素的差值，此时第二次push的a[i]可以认为是堆中最小元素的一个跳板，以备以后出现利润更高的天数。例子：1 3 9day1: &lt...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/24/51nod-1649-%E9%BD%90%E5%A4%B4%E5%B9%B6%E8%BF%9B/" title="51nod-1649-齐头并进">51nod-1649-齐头并进</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-23T16:00:00.000Z" title="发表于 2019-09-24 00:00:00">2019-09-24</time></span></div><div class="content">题目在一个叫奥斯汀的城市，有n个小镇（从1到n编号），这些小镇通过m条双向火车铁轨相连。当然某些小镇之间也有公路相连。为了保证每两个小镇之间的人可以方便的相互访问，市长就在那些没有铁轨直接相连的小镇之间建造了公路。在两个直接通过公路或者铁路相连的小镇之间移动，要花费一个小时的时间。 现在有一辆火车和一辆汽车同时从小镇1出发。他们都要前往小镇n，但是他们中途不能同时停在同一个小镇（但是可以同时停在小镇n）。火车只能走铁路，汽车只能走公路。 现在请来为火车和汽车分别设计一条线路；所有的公路或者铁路可以被多次使用。使得火车和汽车尽可能快的到达小镇n。即要求他们中最后到达小镇n的时间要最短。输出这个最短时间。(最后火车和汽车可以同时到达小镇n，也可以先后到达。) 样例解释：在样例中，火车可以按照 1⟶3⟶4 行驶，汽车 1⟶2⟶4 按照行驶，经过2小时后他们同时到过小镇4。 输入单组测试数据。第一行有两个整数n 和 m (2≤n≤400, 0≤m≤n*(n-1)&#x2F;2) ，表示小镇的数目和铁轨的数目。接下来m行，每行有两个整数u 和 v，表示u和v之间有一条铁路。(1≤u,v≤n...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/22/cf-587-div3/" title="cf-587-div3">cf-587-div3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-21T16:00:00.000Z" title="发表于 2019-09-22 00:00:00">2019-09-22</time></span></div><div class="content">A题 Prefixes：题目：Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛. He wants to modify his string so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace ‘a’ with...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/19/cf-edu-73/" title="cf-edu-73">cf-edu-73</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-18T16:00:00.000Z" title="发表于 2019-09-19 00:00:00">2019-09-19</time></span></div><div class="content">昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。 A题 2048 Games：题目：You are playing a variation of game 2048. Initially you have a multiset 𝑠 of 𝑛 integers. Every integer in this multiset is a power of two. You may perform any number (possibly, zero) operations with this multiset. During each operation you choose two equal integers from 𝑠, remove them from 𝑠 and insert the number equal to their sum into 𝑠. For example, if 𝑠&#x3D;{1,2,1,1,4,2,2} and you choose integers 2 and 2, then the mu...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/18/51nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%97%E6%AE%B5%E5%92%8C/" title="51nod-1065-最小正字段和">51nod-1065-最小正字段和</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-17T16:00:00.000Z" title="发表于 2019-09-18 00:00:00">2019-09-18</time></span></div><div class="content">题目：N个整数组成的序列a[1],a[2],a[3],…,a[n]，从中选出一个子段（a[i],a[i+1],…a[j]），使这个子段的和&gt;0，并且这个和是所有和&gt;0的子序列中最小的。 例如：4，-1，5，-2，-1，2，6，-2。-1，5，-2，-1，序列和为1，是最小的。 输入第1行：整数序列的长度N（2 &lt;&#x3D; N &lt;&#x3D; 50000)第2 - N+1行：N个整数 输出输出最小正子段和。 输入样例 12345678984-15-2-126-2 输出样例 11 解法：遍历数组处理前缀和，同时记录前缀和，在遍历到a[i]时，找到与sum[i]相差最小的位置k，并且使得sum[i] - sum[k] &gt; 0 ，可以利用二分进行查找，总复杂度为nlogn。 代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;stdio.h&gt;#include&lt;set&gt;#i...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/18/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/" title="51nod-1919-炮兵阵地">51nod-1919-炮兵阵地</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-17T16:00:00.000Z" title="发表于 2019-09-18 00:00:00">2019-09-18</time></span></div><div class="content">题目：司令部的将军们打算在NN的网格地图上部署他们的炮兵部队。一个NN的地图由N行N列组成，地图的每一格可能是山地（用”X”表示），也可能是平原（用”.”表示）。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围是它所在位置的对应的行和列，但是大炮打出去之后如果被山地阻挡 了，那么攻击范围就到那块山地。 现在，将军们规划如何部署炮兵部队，在防止误伤的前提下（保证任何两支炮兵部队之间不能互相攻击，即任何一支炮兵部队都不在其他支炮兵部队的攻击范围内），在整个地图区域内最多能够摆放多少我军的炮兵部队。  样例解释： 上图中显示的是相同的地图中不同的放置大炮的方案。黑方块表示山地，白方块表示平原，黑圆表示对应的平原放置了大炮。第一张图是不放大炮的情况。第二张图和第三张图是合理的放置大炮的方案。最后两张图是不合理的放置大炮的方案。 对于这个地图来讲，最多能放置5门大炮。第二张图就是一种最优的放置方案，当然还有其它的最优放置方案。 输入单组测试数据。第一行有一个整数N(1&lt;&#x3D;N&lt;&#x3D;4)。接下来N行，每行有N个...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/17/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/" title="51nod-1942-安装监控">51nod-1942-安装监控</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-16T16:00:00.000Z" title="发表于 2019-09-17 00:00:00">2019-09-17</time></span></div><div class="content">题目：现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。 样例解释： 左边的图对应的是第一个样例，把摄像头安装在点的位置就可以监控到所有的地方了，右边的图对应第二个样例，这个办公室没有办法找到一个地方安装摄像头使得所有地方都被监控到，如果安装在点的位置，灰色的部分就不能被监控到了。 输入单组测试数据。第一行有一个整数n (4 &lt;&#x3D; n &lt;&#x3D; 100)，表示多边形的顶点数目。接下来n行，每行出两个整数x 和 y（-100000&lt;&#x3D;x,y&lt;&#x3D;100000），表示多边形的顶点，以顺时针的方向给出。所有的顶点都是不一样的。输出如果能够安装一个摄像头使得所有区域被监控到输出Yes，否则输出No。输入样例样例输入140 00 11 11 0 样例输入280 00 21 21 12 12 23 23 0输出样例样例输出1Yes样例输出2N...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/16/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/" title="51nod-2488-矩形面积并的面积">51nod-2488-矩形面积并的面积</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-15T16:00:00.000Z" title="发表于 2019-09-16 00:00:00">2019-09-16</time></span></div><div class="content">题目：在二维平面上，给定两个矩形，满足矩形的每条边分别和坐标轴平行，求这个两个矩形的并的面积。即它们重叠在一起之后的总的面积。 输入8个数，分别表示第一个矩形左下角坐标为(A,B)，右上角坐标为(C,D)；第二个矩形左下角坐标为(E,F)，右上角坐标为(G,H)。保证A&lt;C，B&lt;D，E&lt;G，F&lt;H。保证所有数的绝对值不超过210^9，矩形并的面积≤210^9。 输出输出一个数表示矩阵并的面积。输入样例-3 0 3 4 0 -1 9 2输出样例45解法：判断长与宽重合边长即可。代码： 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;algorithm&gt;using namespace std;long long f(long long x1, long long  x2, long long  y1, long long  y2)&#123;    if(x1 &lt; y1)    &#123;        if(y1 &gt;=...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/" title="51nod-1593-物理地址查询">51nod-1593-物理地址查询</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-11T16:00:00.000Z" title="发表于 2019-09-12 00:00:00">2019-09-12</time></span></div><div class="content">题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。 输入单组测试数据。第一行有一个整数n(1 &lt;&#x3D; n &lt;&#x3D; 100)。接下来输入一个邻接矩阵A，A的大小是n x n。里面的元素要么是一个非负整数，或者是一个字符x。如果A[i][j]是x那么第i台计算机和第j台计算机没有直接相连。否则表示信号在第i台计算机和第j台计算机之间传播需要A[i][j]的时间。自己发给自己是不需要时间的所以对于所有的 1 &lt;&#x3D; i &lt;&#x3D; n，A[i][i] &#x3D; 0。输入的网络是一个无向图，所以A[i][j] &#x3D; A[j][i]。那么只需要输入矩阵的下三角部分即可。那么接下来给出n-1行，第一行有一个整数表示A[2][1]。第二...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/blog/2019/09/11/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/" title="1906-字段统计">1906-字段统计</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-10T16:00:00.000Z" title="发表于 2019-09-11 00:00:00">2019-09-11</time></span></div><div class="content">给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。 输入单组测试数据。第一行两个整数L和k。（L&gt;&#x3D;1，1&lt;&#x3D;k&lt;&#x3D;26,k^L&lt;&#x3D;2*10^7）第二行一个字符串S。（1&lt;&#x3D;|S|&lt;&#x3D;1000000）输出输出一个整数表示答案。 输入样例1 2ababab输出样例2解法：暴力即可代码： 1234567891011121314151617#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;set&gt;using namespace std;set&lt;string&gt; S;int main()&#123;    int l, k;    scanf(&quot;%d%d&quot;, &amp;l, &amp;k);    string s;    cin &gt;&gt; s;    for(int i = 0; i &lt;= s.leng...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/blog/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/page/5/#content-inner">5</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/blog/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/tech/"><span class="card-category-list-name">tech</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/blog/categories/%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">日常</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">分布式机器学习</a> <a href="/blog/tags/ACM/" style="font-size: 1.5em; color: #99a9bf">ACM</a> <a href="/blog/tags/%E8%B5%B0%E8%B5%B0%E4%B8%8D%E5%81%9C/" style="font-size: 1.3em; color: #99a1ac">走走不停</a> <a href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 1.3em; color: #99a1ac">分布式</a> <a href="/blog/tags/%E6%AD%A4%E7%94%9F%E6%9C%80%E7%97%9B%E8%8B%A6%E7%9A%84%E9%85%8D%E7%8E%AF%E5%A2%83/" style="font-size: 1.3em; color: #99a1ac">此生最痛苦的配环境</a> <a href="/blog/tags/k8s/" style="font-size: 1.3em; color: #99a1ac">k8s</a> <a href="/blog/tags/linux/" style="font-size: 1.3em; color: #99a1ac">linux</a> <a href="/blog/tags/C/" style="font-size: 1.1em; color: #999">C++</a> <a href="/blog/tags/deployment/" style="font-size: 1.1em; color: #999">deployment</a> <a href="/blog/tags/blog/" style="font-size: 1.1em; color: #999">blog</a> <a href="/blog/tags/docker/" style="font-size: 1.3em; color: #99a1ac">docker</a> <a href="/blog/tags/horovod/" style="font-size: 1.1em; color: #999">horovod</a> <a href="/blog/tags/introduction/" style="font-size: 1.1em; color: #999">introduction</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/blog/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2021/09/">
+            <span class="card-archive-list-date">
+              九月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2020/12/">
+            <span class="card-archive-list-date">
+              十二月 2020
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2020/11/">
+            <span class="card-archive-list-date">
+              十一月 2020
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2020/10/">
+            <span class="card-archive-list-date">
+              十月 2020
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2020/08/">
+            <span class="card-archive-list-date">
+              八月 2020
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2020/07/">
+            <span class="card-archive-list-date">
+              七月 2020
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/blog/archives/2019/12/">
+            <span class="card-archive-list-date">
+              十二月 2019
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">73</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-03-13T09:25:00.083Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

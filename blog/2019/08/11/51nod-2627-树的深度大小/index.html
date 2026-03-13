@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>51nod-2627-树的深度大小 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="现在有一棵n个节点的树，节点1为这棵树的根，求出每个节点的深度以及每个节点的子树中的节点个数。 输入第1行：一个数字n，表示树中节点的个数。(1&lt;&#x3D;n&lt;&#x3D;100000)第2-n行：每行两个数字u,v，表示u与v之间有一条边。(1&lt;&#x3D;u,v&lt;&#x3D;n)输出输出n行，每行两个正整数，第i行的第一个正整数表示节点i的深度，第二个正整数表示以节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51nod-2627-树的深度大小">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/08/11/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="现在有一棵n个节点的树，节点1为这棵树的根，求出每个节点的深度以及每个节点的子树中的节点个数。 输入第1行：一个数字n，表示树中节点的个数。(1&lt;&#x3D;n&lt;&#x3D;100000)第2-n行：每行两个数字u,v，表示u与v之间有一条边。(1&lt;&#x3D;u,v&lt;&#x3D;n)输出输出n行，每行两个正整数，第i行的第一个正整数表示节点i的深度，第二个正整数表示以节点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-08-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.880Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "51nod-2627-树的深度大小",
+  "url": "https://eonh1u.github.io/blog/2019/08/11/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-08-10T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.880Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/08/11/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '51nod-2627-树的深度大小',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">51nod-2627-树的深度大小</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">51nod-2627-树的深度大小</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-10T16:00:00.000Z" title="发表于 2019-08-11 00:00:00">2019-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.880Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>现在有一棵n个节点的树，节点1为这棵树的根，求出每个节点的深度以及每个节点的子树中的节点个数。</p>
+<p>输入<br>第1行：一个数字n，表示树中节点的个数。(1&lt;&#x3D;n&lt;&#x3D;100000)<br>第2-n行：每行两个数字u,v，表示u与v之间有一条边。(1&lt;&#x3D;u,v&lt;&#x3D;n)<br>输出<br>输出n行，每行两个正整数，第i行的第一个正整数表示节点i的深度，第二个正整数表示以节点i为根的子树大小。</p>
+<p>解法：<br>水题。。。。。太水了这个<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;algorithm&gt;<br>using namespace std;<br>int p[1010];<br>int sum[2010];<br>int a[1010];<br>int main()<br>&#123;<br>    int n;<br>    scanf(&quot;%d&quot;,&amp;n);<br>    for(int i = 0; i &lt; n; i++)<br>    &#123;<br>        scanf(&quot;%d&quot;, &amp;a[i]);<br>    &#125;<br>    int ans = 0;<br>    for(int i = n - 1; i &gt;= 0; i--)&#123;<br>        if(a[i] == 0)<br>            continue;<br>        for(int j = a[i]; j &lt;=2005; j++)<br>            sum[j]++;<br>        for(int j = i - 1; j &gt;= 0; j--)&#123;<br>            if(a[j] == 0)<br>                continue;<br>            int l = abs(a[i] - a[j]);<br>            int r = a[i] + a[j];<br>            int s = sum[r - 1] - sum[l];<br>           // printf(&quot;%d %d s: %d \n&quot;,sum[r-1],sum[l],s);<br>            if(a[i] &gt; l &amp;&amp; a[i] &lt; r)<br>                s--;<br>               // printf(&quot;%d %d %d\n&quot;,l,r,s);<br>            if(s &gt; 0)<br>                ans += s;<br>        &#125;<br>    &#125;<br>    printf(&quot;%d\n&quot;, ans);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/08/11/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/">https://eonh1u.github.io/blog/2019/08/11/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/08/11/51node-2502-%E5%88%86%E5%9D%97/" title="51node-2502-分块"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51node-2502-分块</div></div><div class="info-2"><div class="info-item-1">题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。 保证a为0…n-1的一个排列。 样例解释： 将a分成2块或者更多块，都无法得到所需的结果。例如，分成 [4, 3], [2, 1, 0] ，排序得到的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 输入第一行一个数n；第二行n个数表示a[i]，以空格隔开。n&lt;&#x3D;10输出输出一个数表示划分块的数量输入样例54 3 2 1 0输出样例1解法：每个数字排序前排序后的下标为一段线段，相交的线段何为一段，最后求出剩下线段的个数即可。代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include&lt;set&gt;#include&l...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/09/51nod-2497-%E6%95%B0%E4%B8%89%E8%A7%92%E5%BD%A2/" title="51nod-2497-数三角形"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">51nod-2497-数三角形</div></div><div class="info-2"><div class="info-item-1">占坑。。。明天更。。。加油！！ps:00:53点交一发小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&lt;j&lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。 输入第一行输入一个正整数n，表示数组a中元素个数；第二行n个非负整数，表示a中元素，以空格隔开；其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。 输出输出一个数，表示满足题意的三元组个数输入样例42 2 3 4输出样例3解法：后缀记录一下每个数出现的次数，复杂度n^2，中间因为sum数组开小了wa了一发代码： 1234567891011121314151617181920212223242526272829303132333435#include&lt;algorithm&gt;using namespace std;int p[1010];int sum[2010];int a[1010];int main()&#123;    int n;    scanf(&quot;%d&quot;,&amp;n);    for(int i = 0;...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/08/03/51nod-2651-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E5%92%8C/" title="51nod-2651-区间和的和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-03</div><div class="info-item-2">51nod-2651-区间和的和</div></div><div class="info-2"><div class="info-item-1">题目:输入一个长度为𝑛的数组𝑎，𝑎包括(𝑛−1)𝑛&#x2F;2个区间。每个区间所有数的和，被称为区间和，求所有(𝑛−1)𝑛&#x2F;2个区间和的和。由于数值较大，输出mod 1e9+7的结果。 输入第一行一个整数n，表示数组长度(2&lt;&#x3D;n&lt;&#x3D;100000)接下来n行，每行一个整数ai，表示数组的内容。(0&lt;&#x3D;ai&lt;&#x3D;50000)输出输出答案mod 1e9+7输入样例3123输出样例20解法：统计每个数字出现的次数就好了，每个数字出现的次数为该数字左边数字的个数乘右边的。代码： 123456789101112131415161718using namespace std;int main()&#123;    long long ans = 0;    long long mod = 1e9+7;    long long  n;    scanf(&quot;%lld&quot;,&amp;n);    long long e = n;    for(int i = 1; i &lt;=n; i++...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/" title="51nod-2499-不降的数字"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2499-不降的数字</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个非负整数N，她想请你找出 ≤𝑁 的最大整数x，满足x各个位数上的数字是不降的。也就是说，设x的十进制表示为 𝑎1,𝑎2,…,𝑎𝑚，则对于任意 1≤𝑖&lt;𝑚，𝑎𝑖≤𝑎𝑖+1。 输入输入一个非负整数N。0≤N≤10^9 输出输出一个整数，表示答案 输入样例1332 输出样例1299 解法：记录出现降序的位置，然后反向处理，找到一个可以减1的位置，然后后面的部分全部置为9，注意处理前部分全部是1开头的情况。 代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&lt;stdio.h&gt;#include&lt;algorithm&gt;using namespace std;int num[30];int main()&#123;    int n;    scanf(&quot;%d&quot;, &amp;n);    int s = n;    int len = 0;    while(n...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2484-%E5%B0%8Fb%E5%92%8C%E6%8E%92%E5%BA%8F/" title="51nod-2484-小b和排序"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2484-小b和排序</div></div><div class="info-2"><div class="info-item-1">题目：小b有两个长度都为n的序列A,B。 现在她需要选择一些i，然后交换A[i]和B[i]，使得A和B都变成严格递增的序列。 你能帮小b求出最少交换次数吗？ 输入保证有解。 输入第一行输入一个正整数n，表示两个数组的长度；第二行输入n个数，表示A[i]，以空格隔开；第三行输入n个数，表示B[i]，以空格隔开；其中1≤n≤1000, 0≤A[i],B[i]≤2000 输出输出一个数，表示交换次数 输入样例12341 3 5 41 2 3 7 输出样例11 解法：dp,dp[i][0]代表处理到i时，不进行改变使得满足要求的最少交换次数，dp[i][1]代表交换使得满足要求的最少交换次数。进行状态转移时，进行a,b数组的比较，选最小值(具体看代码) 代码:1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std;int dp[1010][2];int a[1...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/22/cf-594-div2/" title="cf-594-div2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-22</div><div class="info-item-2">cf-594-div2</div></div><div class="info-2"><div class="info-item-1">A: Integer Points题目：DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦&#x3D;𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛. Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦&#x3D;−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚. DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfort...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/15/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/" title="51nod-2523-小b删列"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-15</div><div class="info-item-2">51nod-2523-小b删列</div></div><div class="info-2"><div class="info-item-1">题目：b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。 即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]&lt;&#x3D;ai+1。 请问小b最少要删多少列。 如A &#x3D; {“abcdef”, “uvwxyz”}，删除的列为第1,3,4列，删除后 A 为 {“bef”, “vyz”}，且 “bef” &lt;&#x3D; “vyz” 样例解释： 删掉第一列，剩下的是”a” “b” “c”，”a” &lt;&#x3D; “b” &lt;&#x3D; “c”，满足条件。 输入第一行输入一个正整数n，表示矩阵A的行数；之后n行每行输入一个字符串，其长度相等；1≤n,m≤100。 输出输出一个非负整数，表示删掉的列数 输入样例12343cabbac 输出样例11 题解：首先看第一列是否有降序字符，如果有，则第一列删除，否则，看时候有相同字符的行，记录这些有相同字符行的位置，再进行下一列的判断时，只判断每个相同字符的行即可。 代码：1234567891011121...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/16/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/" title="51nod-2488-矩形面积并的面积"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-16</div><div class="info-item-2">51nod-2488-矩形面积并的面积</div></div><div class="info-2"><div class="info-item-1">题目：在二维平面上，给定两个矩形，满足矩形的每条边分别和坐标轴平行，求这个两个矩形的并的面积。即它们重叠在一起之后的总的面积。 输入8个数，分别表示第一个矩形左下角坐标为(A,B)，右上角坐标为(C,D)；第二个矩形左下角坐标为(E,F)，右上角坐标为(G,H)。保证A&lt;C，B&lt;D，E&lt;G，F&lt;H。保证所有数的绝对值不超过210^9，矩形并的面积≤210^9。 输出输出一个数表示矩阵并的面积。输入样例-3 0 3 4 0 -1 9 2输出样例45解法：判断长与宽重合边长即可。代码： 1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;algorithm&gt;using namespace std;long long f(long long x1, long long  x2, long long  y1, long long  y2)&#123;    if(x1 &lt; y1)    &#123;        if(y1 &gt;=...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

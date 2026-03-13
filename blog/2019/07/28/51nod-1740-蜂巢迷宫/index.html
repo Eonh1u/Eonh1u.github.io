@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>51nod-1740 蜂巢迷宫 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http:&#x2F;&#x2F;www.51nod.com&#x2F;Challenge&#x2F;Problem.html#problemId&#x3D;1740 题解：找规律即可（好久没刷题 太菜了 debug找了好久）代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51nod-1740 蜂巢迷宫">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http:&#x2F;&#x2F;www.51nod.com&#x2F;Challenge&#x2F;Problem.html#problemId&#x3D;1740 题解：找规律即可（好久没刷题 太菜了 debug找了好久）代">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.873Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "51nod-1740 蜂巢迷宫",
+  "url": "https://eonh1u.github.io/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-07-27T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.873Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '51nod-1740 蜂巢迷宫',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">51nod-1740 蜂巢迷宫</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">51nod-1740 蜂巢迷宫</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-07-27T16:00:00.000Z" title="发表于 2019-07-28 00:00:00">2019-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.873Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。</p>
+<p>艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。<br>图片贴不上 这里附上原题目的链接：<br><a target="_blank" rel="noopener" href="http://www.51nod.com/Challenge/Problem.html#problemId=1740">http://www.51nod.com/Challenge/Problem.html#problemId=1740</a></p>
+<p>题解：<br>找规律即可（好久没刷题 太菜了 debug找了好久）<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;cmath&gt;<br>#include&lt;algorithm&gt;<br>using namespace std;<br>int main()<br>&#123;<br>    long long n;<br>    scanf(&quot;%lld&quot;, &amp;n);<br>    if(n == 0)<br>    &#123;<br>        printf(&quot;0 0&quot;);<br>        return 0;<br>    &#125;<br>   // for(int i = 1; i &lt; 20; i++)&#123;<br>     //   n = i;<br>    n++;<br>    long long len = 1;<br>    long long sum = len;<br>    while(sum &lt; n)<br>    &#123;<br>        sum += len*6;<br>        len++;<br>    &#125;<br>    long long now = n -1 - (len - 1)*(len-2)*3;<br>    //printf(&quot;now %d\n&quot;,now);<br>    long long  Time = now / (len - 1);<br>    now %= len - 1;<br>    long long x ,y;<br>   // printf(&quot;%d %d\n&quot;,Time, len);<br>    if(Time == 0)<br>    &#123;<br>        x = 2 * (len - 1);<br>        y = 0;<br>        while(now--)<br>            x--,y+=2;<br>    &#125;<br>    else if(Time == 1)<br>    &#123;<br>        x = len - 1;<br>        y = 2*(len - 1);<br>        while(now--)<br>            x-=2;<br>    &#125;<br>    else if(Time == 2)<br>    &#123;<br>        x = 1 - len;<br>        y = 2*(len - 1);<br>        while(now--)<br>            x--,y-=2;<br>    &#125;<br>    else if(Time == 3)<br>    &#123;<br>        x = 2*(1-len);<br>        y = 0;<br>        while(now--)<br>            x++,y-=2;<br>    &#125;<br>    else if(Time == 4)<br>    &#123;<br>        x = 1-len;<br>        y = 2*(1 - len);<br>        while(now--)<br>            x+=2;<br>    &#125;<br>    else if(Time == 5)<br>    &#123;<br>        x = len - 1;<br>        y = 2*(1 - len);<br>        while(now--)<br>            x++,y+=2;<br>    &#125;<br>    else<br>    &#123;<br>        x = 2*(len - 1);<br>        y = 0;<br>    &#125;<br>    printf(&quot;%lld %lld\n&quot;,x,y);<br>  //  &#125;<br>    return 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/">https://eonh1u.github.io/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/07/29/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/" title="51nod-1889-制铁棒"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-1889-制铁棒</div></div><div class="info-2"><div class="info-item-1">题目:工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。 输入单组测试数据。第一行给出两个整数n(1 &lt;&#x3D; n&lt;&#x3D; 10000)和m(1 &lt;&#x3D; m&lt; &#x3D; 10000)。接下来n行给出原始铁棒的长度L[1],L[2],L[3],…,L[n] ，(1&lt;&#x3D;L[i]&lt;&#x3D;100,000)。以米为单位，精确到小数点后两位。 输出输出一个小数表示答案，精确到小数点后两位。 输入样例样例输入14 118.027.434.575.39 输出样例样例输出12.00 解法：二分分情况讨论即可，因为题目有小数点限制，这里我直接*100 最后&#x2F;100处理了这个情况ps:(每天没时间刷题555555，选个一眼...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/" title="51nod-1886-叠加串"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">51nod-1886-叠加串</div></div><div class="info-2"><div class="info-item-1">今天周六，偷个懒选了个非常easy 的题目题目：有一个字符串S，下标从1开始，初始为S&#x3D;”0”。现在开始调用fun函数。 1234567891011121314151617181920212223242526272829&#123;    for(i=0;i&lt;100000;i++)    &#123;        tmp=change(S);               S=S+&quot;0&quot;+tmp;    &#125;&#125;change(s)&#123;    for(i=1;i&lt;=s.length();i++)    &#123;        if(s[i]==&#x27;0&#x27;)s[i]=&#x27;1&#x27;;        else s[i]=&#x27;0&#x27;;    &#125;     i=1;    j=s.length();     while(i&lt;=j)    &#123;        tmp=s[i];        s[i]=s[j];        s[j]=tmp;      ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/" title="ucas river and Longest Ordered Subsequence"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-08</div><div class="info-item-2">ucas river and Longest Ordered Subsequence</div></div><div class="info-2"><div class="info-item-1">今天在ucas oj上面尝试做了两道题 river：二分即可DescriptionTwo lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help. The width of the...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/12/51nod-1506-%E6%9C%80%E5%B0%8F%E5%AD%97%E5%85%B8%E5%BA%8F/" title="51nod-1506-最小字典序"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-12</div><div class="info-item-2">51nod-1506-最小字典序</div></div><div class="info-2"><div class="info-item-1">题目：给出一个字符串S，你需要从S中挑选一对字符进行一次交换（不可以不交换！！！！！！），并让得到的新字符字典序最小！ 例如：S &#x3D; “abacc”， 如果交换字符1(a)和4(c)，得到字符”cbaac”。 如果交换字符2(a)和3(b)，得到字符”aabcc”。 其中：”aabcc”的字典序小于”cbaac”。并且”aabcc”是所有交换方法中，字典序最小的。 例如：S &#x3D; “aaab”， 则交换1和2，交换1和3，得到的字符都是 “aaab”，并且 “aaab”是所有交换方法中，字典序最小的。 输出这个字典序最小的字符。 输入一个字符串S（S的只包括a到z的小写字符，2&lt;&#x3D;S的长度&lt;&#x3D;500000）。 输出字典序最小的新字符串。 输入样例1abacc 输出样例1aabcc 解法：原字符串与排序后字符串进行比较，如果相同的话并且有重复字符的话，结果就是原来字符，如果没有相同的字符，则将最后两个字符进行交换；如果不相同的话，则找到第一个不相同的字符，在原字符串找到最后一次出现的进行交换的字符进行交换（具体看代码） 代码：123...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/29/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/" title="51nod-1889-制铁棒"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-29</div><div class="info-item-2">51nod-1889-制铁棒</div></div><div class="info-2"><div class="info-item-1">题目:工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。 输入单组测试数据。第一行给出两个整数n(1 &lt;&#x3D; n&lt;&#x3D; 10000)和m(1 &lt;&#x3D; m&lt; &#x3D; 10000)。接下来n行给出原始铁棒的长度L[1],L[2],L[3],…,L[n] ，(1&lt;&#x3D;L[i]&lt;&#x3D;100,000)。以米为单位，精确到小数点后两位。 输出输出一个小数表示答案，精确到小数点后两位。 输入样例样例输入14 118.027.434.575.39 输出样例样例输出12.00 解法：二分分情况讨论即可，因为题目有小数点限制，这里我直接*100 最后&#x2F;100处理了这个情况ps:(每天没时间刷题555555，选个一眼...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/14/2673-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" title="2673-最短路径"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-14</div><div class="info-item-2">2673-最短路径</div></div><div class="info-2"><div class="info-item-1">最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！ 代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;queue&gt;#include&lt;vector&gt;using namespace std;struct Node&#123;    int to;    long long  len;    bool  operator&lt;(const Node &amp;a) const    &#123;        return len  &gt; a.len;    &#125;&#125;;bool isUsed[510];long long ans[510];vector&lt;Node&gt; ...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/18/51nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%97%E6%AE%B5%E5%92%8C/" title="51nod-1065-最小正字段和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-18</div><div class="info-item-2">51nod-1065-最小正字段和</div></div><div class="info-2"><div class="info-item-1">题目：N个整数组成的序列a[1],a[2],a[3],…,a[n]，从中选出一个子段（a[i],a[i+1],…a[j]），使这个子段的和&gt;0，并且这个和是所有和&gt;0的子序列中最小的。 例如：4，-1，5，-2，-1，2，6，-2。-1，5，-2，-1，序列和为1，是最小的。 输入第1行：整数序列的长度N（2 &lt;&#x3D; N &lt;&#x3D; 50000)第2 - N+1行：N个整数 输出输出最小正子段和。 输入样例 12345678984-15-2-126-2 输出样例 11 解法：遍历数组处理前缀和，同时记录前缀和，在遍历到a[i]时，找到与sum[i]相差最小的位置k，并且使得sum[i] - sum[k] &gt; 0 ，可以利用二分进行查找，总复杂度为nlogn。 代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;stdio.h&gt;#include&lt;set&gt;#i...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/" title="51nod-1593-物理地址查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-12</div><div class="info-item-2">51nod-1593-物理地址查询</div></div><div class="info-2"><div class="info-item-1">题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。 输入单组测试数据。第一行有一个整数n(1 &lt;&#x3D; n &lt;&#x3D; 100)。接下来输入一个邻接矩阵A，A的大小是n x n。里面的元素要么是一个非负整数，或者是一个字符x。如果A[i][j]是x那么第i台计算机和第j台计算机没有直接相连。否则表示信号在第i台计算机和第j台计算机之间传播需要A[i][j]的时间。自己发给自己是不需要时间的所以对于所有的 1 &lt;&#x3D; i &lt;&#x3D; n，A[i][i] &#x3D; 0。输入的网络是一个无向图，所以A[i][j] &#x3D; A[j][i]。那么只需要输入矩阵的下三角部分即可。那么接下来给出n-1行，第一行有一个整数表示A[2][1]。第二...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

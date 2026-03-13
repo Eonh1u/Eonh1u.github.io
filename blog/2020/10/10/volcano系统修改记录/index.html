@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>volcano ECS开机逻辑修改记录 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &gt;&#x3D; R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="volcano ECS开机逻辑修改记录">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2020/10/10/volcano%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="修改ECS开机逻辑问题记录修改原因之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &gt;&#x3D; R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2020-10-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.933Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="k8s">
+<meta property="article:tag" content="分布式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "volcano ECS开机逻辑修改记录",
+  "url": "https://eonh1u.github.io/blog/2020/10/10/volcano%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2020-10-09T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.933Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2020/10/10/volcano%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'volcano ECS开机逻辑修改记录',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">volcano ECS开机逻辑修改记录</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">volcano ECS开机逻辑修改记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-09T16:00:00.000Z" title="发表于 2020-10-10 00:00:00">2020-10-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.933Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="修改ECS开机逻辑问题记录"><a href="#修改ECS开机逻辑问题记录" class="headerlink" title="修改ECS开机逻辑问题记录"></a>修改ECS开机逻辑问题记录</h1><h2 id="修改原因"><a href="#修改原因" class="headerlink" title="修改原因"></a>修改原因</h2><p>之前的ECS开机在enqueue阶段实现。逻辑为：如果作业是pending状态，并且作业所需的资源大于集群的空闲资源。这个时候就为该任务开启一台ECS节点。<br>假设作业所需的资源为R1，目前集群的空闲资源为R2，在之前的逻辑中会选择一个资源为R3的ECS节点，使得R3 + R2 &gt;&#x3D; R1。这样就出现了一个问题，我们的想法是使得作业能在新开启的节点上运行的（目前只考虑单机作业), 即新开启的ECS必须满足R3 &gt;&#x3D; R1, 这样看来，之前的开机逻辑是存在问题的，在实际中我们也碰到了这种情况。<br>所以我们需要将ECS开机逻辑进行更改。</p>
+<h2 id="开机逻辑设计"><a href="#开机逻辑设计" class="headerlink" title="开机逻辑设计"></a>开机逻辑设计</h2><p>将开机逻辑移至enqueue的下一个阶段，allocate。<br>allocate阶段当初在进行分配node前会获取node列表，获取node列表时会只选择开启的node节点<br><code>allNodes := util.GetReadyNodeList(ssn.Nodes)</code><br>将此部分进行更改为返回所有的节点<br><code>allNodes := util.GetAllNodeList(ssn.Nodes)</code></p>
+<p>在predicate筛选阶段，因为对于未开启节点，在predicate阶段有几种方式都会将未开启的节点过滤，因此再此只判断node节点资源能够满足task要求，能够满足判断通过node筛选</p>
+<p>prioritize阶段对通过predicate筛选节点进行打分，选择最合适的节点。因为之前在此阶段的节点都是已经开启的节点，现在未开启的节点加入进来，需要对打分进行一些修改，目前我们修改打分机制使得优先选择已经开启的节点</p>
+<p>对节点打分之后，可以选择出来一个最高分的节点，如果此节点为未开启的节点，我们将此节点放入toStartNode中，toStartNode中的节点都会在判断job的所有task数目（或者满足最少task数目)都满足需求之后，在stmt.commit之前进行开启。<br><code>toStartNode = append(toStartNode, node)</code></p>
+<h2 id="碰到的问题"><a href="#碰到的问题" class="headerlink" title="碰到的问题"></a>碰到的问题</h2><h3 id="1-在node节点开启之后，马上进行commit，会出现Pod-Update-plugin-resources-failed-due-to-requested-number-of-devices-unavailable-for-nvidia-com-gpu-Requested-1-Available-0-which-is-unexpected-错误，"><a href="#1-在node节点开启之后，马上进行commit，会出现Pod-Update-plugin-resources-failed-due-to-requested-number-of-devices-unavailable-for-nvidia-com-gpu-Requested-1-Available-0-which-is-unexpected-错误，" class="headerlink" title="1.在node节点开启之后，马上进行commit，会出现Pod Update plugin resources failed due to requested number of devices unavailable for nvidia.com&#x2F;gpu. Requested: 1, Available: 0, which is unexpected.错误，"></a>1.在node节点开启之后，马上进行commit，会出现Pod Update plugin resources failed due to requested number of devices unavailable for nvidia.com&#x2F;gpu. Requested: 1, Available: 0, which is unexpected.错误，</h3><p>这里初次判断是因为在节点开启之前就进行allocate会产生一些错误，后面通过读代码发现问题不在这里，此问题产生的原因是因为在stmt.commit时，k8s将task提交至node时，获取的node gpu数目不足以满足作业需求，所以才产生了此错误。</p>
+<p>在判断节点是否满足需求时，我们已经得到了满足需求的结果，为什么进行提交之后会返回错误那，通过测试(在节点开启之后，sleep5分钟，然后再进行commit)发现作业commit之后能够成功的进行调度，所以感觉是k8s对于gpu资源的获取延迟产生的问题，所以我们需要在allocate部分感知到k8s什么时候能够获取的node上正确的gpu信息。</p>
+<p>在allocate部分，通过对代码进行修改使得能够通过session得到scheduler对应的kubeclient，我们通过kubeclient可以得到node信息(暴露私有成员，修改sheduler 部署权限）<br><code>nodeinfo, err := kubeclient.CoreV1().Nodes().Get(node.Name, metav1.GetOptions{})</code></p>
+<p>通过在程序中进行检测，发现在node节点从关闭状态至开启状态，然后开启之后的过程中，Allocatable的gpu数目会发生1-&gt;0-&gt;1的变化，k8s原生的资源则不会产生此变化，不会出现值变为0的情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">gpuinfo := nodeinfo.Status.Allocatable[&quot;nvidia.com/gpu&quot;].DeepCopy()<br>gpunum, f := gpuinfo.AsInt64(）<br></code></pre></td></tr></table></figure>
+<p>猜测出现此情况的原因是k8s通过Device Plugins来感知gpu资源，在节点开启之后，不能及时的更新gpu数目，但此处为何会产生这种变化尚不明确，以后可以再加深探索一下。</p>
+<p>目前的测试得到在1-&gt;0-&gt;1之后，进行commit则不会产生此种错误(在Node ready condition状态为true并且gpu num &#x3D;&#x3D; 1之后进行commit之后也不会出现错误)</p>
+<p>目前系统中判断node gpu信息准备完成是根据nodeinfo.Status.Conditions中NodeReady为true，并且gpu数目 &gt; 0 （对于cpu节点，等于0也判断为true)</p>
+<h2 id="修改具体细节"><a href="#修改具体细节" class="headerlink" title="修改具体细节"></a>修改具体细节</h2><h3 id="通过session获取kubeclient修改代码"><a href="#通过session获取kubeclient修改代码" class="headerlink" title="通过session获取kubeclient修改代码"></a>通过session获取kubeclient修改代码</h3><p>session中有cache信息,schedulerCache实现了cache并且其中含有kubeclient，因此可以通过session来得到client。</p>
+<p>因为kubeclient在cache中为私有成员，所以chche接口中添加GetKubeclient()方法<br>修改pkg&#x2F;scheduler&#x2F;cache&#x2F;cache.go文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//通过defaultBinder得到kubeclient<br>func (sc *SchedulerCache) GetKubeclient() *kubernetes.Clientset &#123;<br>	return sc.kubeclient<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>修改pkg&#x2F;scheduler&#x2F;framework&#x2F;session.go文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//GetClient Get client from session<br>func (ssn *Session) GetClient() *kubernetes.Clientset &#123;<br>	return ssn.cache.GetKubeclient()<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>修改完代码之后便可以通过session来得到kubeclient，从而可以访问node，pod等信息。</p>
+<p>在测试中发现通过kubeclient获取node信息失败，发现原因是在部署scheduler时限制了client的功能<br>修改installer&#x2F;volcano-development.yaml文件,添加对nodes的get操作，便可以获取node信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">resources: [&quot;nodes&quot;]<br>// verbs: [&quot;list&quot;, &quot;watch&quot;]<br>verbs: [&quot;list&quot;, &quot;watch&quot;, &quot;get&quot;]<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2020/10/10/volcano%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/">https://eonh1u.github.io/blog/2020/10/10/volcano%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/docker/">docker</a><a class="post-meta__tags" href="/blog/tags/k8s/">k8s</a><a class="post-meta__tags" href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2020/10/15/ssh-%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%B0%E5%BD%95/" title="ssh 私钥连接服务器记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">ssh 私钥连接服务器记录</div></div><div class="info-2"><div class="info-item-1">若执行ssh-add &#x2F;path&#x2F;to&#x2F;xxx.pem是出现这个错误:Could not open a connection to your authentication agent，则先执行如下命令即可：ssh-agent bash然后执行ssh-add xxx.pem如果出现ssh “permissions are too open” error，则执行chmod命令修改xx.pem文件权限chmod 400 ~&#x2F;.ssh&#x2F;id_rsa 或者 chmod 600 ~&#x2F;.ssh&#x2F;id_rsa 这样配置之后，有可能每次进来终端，都需要重新运行上述命令才能够连接上服务器所以在&#x2F;etc&#x2F;bash.bashrc 末尾添加 1234567891011121314151617181920212223if [ -f ~/.agent.env ];then    . ~/.agent.env &gt;/dev/null    if ! kill -0  $SSH_AGENT_PID &gt;/dev/nu...</div></div></div></a><a class="pagination-related" href="/blog/2020/08/27/STL-C/" title="STL-C++"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">STL-C++</div></div><div class="info-2"><div class="info-item-1">STL-C++本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。 vectorvector定义123456789101112template&lt;class _Ty,    class _Ax&gt;    class vector        : public _Vector_val&lt;_Ty, _Ax&gt;    &#123;   // varying size array of valuespublic:    /********/protected:    pointer _Myfirst;   // pointer to beginning of array    pointer _Mylast;    // pointer to current end of sequence    pointer _Myend; // pointer to end of array   ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/" title="k8s初体验"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2018-12-28</div><div class="info-item-2">k8s初体验</div></div><div class="info-2"><div class="info-item-1">此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。Master的作用是：对整个集群进行调度，并提供系统进行操作的接口Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。 2.Docker与PodDocker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker...</div></div></div></a><a class="pagination-related" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-12</div><div class="info-item-2">Docker Lightweight Deployment on 512MB Server</div></div><div class="info-2"><div class="info-item-1">When you only have a 2 CPU &#x2F; 512MB RAM server, how to deploy Docker services? Recommended Lightweight Services Nginx about 20MB for Reverse proxy Uptime Kuma about 80MB for Monitoring Umami about 120MB for Analytics API Server about 50MB for Custom API  Total about 350MB suitable for 512MB server. Not RecommendedWordPress, GitLab, Elasticsearch, Nextcloud are too heavy. Performance Target Page Load under 1 second TTFB under 200ms  </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9ECS%E5%BC%80%E6%9C%BA%E9%80%BB%E8%BE%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">修改ECS开机逻辑问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.1.</span> <span class="toc-text">修改原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.2.</span> <span class="toc-text">开机逻辑设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">碰到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8node%E8%8A%82%E7%82%B9%E5%BC%80%E5%90%AF%E4%B9%8B%E5%90%8E%EF%BC%8C%E9%A9%AC%E4%B8%8A%E8%BF%9B%E8%A1%8Ccommit%EF%BC%8C%E4%BC%9A%E5%87%BA%E7%8E%B0Pod-Update-plugin-resources-failed-due-to-requested-number-of-devices-unavailable-for-nvidia-com-gpu-Requested-1-Available-0-which-is-unexpected-%E9%94%99%E8%AF%AF%EF%BC%8C"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.在node节点开启之后，马上进行commit，会出现Pod Update plugin resources failed due to requested number of devices unavailable for nvidia.com&#x2F;gpu. Requested: 1, Available: 0, which is unexpected.错误，</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%85%B7%E4%BD%93%E7%BB%86%E8%8A%82"><span class="toc-number">1.4.</span> <span class="toc-text">修改具体细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87session%E8%8E%B7%E5%8F%96kubeclient%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">通过session获取kubeclient修改代码</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

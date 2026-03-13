@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>1393 01相等串 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2 解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1393 01相等串">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="题目：给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。 一个字符串，只包含01，长度不超过1000000。输出一行一个整数，最长的0与1的个数相等的子串的长度。输入样例1011输出样例2 解法：用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。代码： 12345678910111213141516171819202122232425262728293031">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-08-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.878Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "1393 01相等串",
+  "url": "https://eonh1u.github.io/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-08-05T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.878Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1393 01相等串',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">1393 01相等串</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">1393 01相等串</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-05T16:00:00.000Z" title="发表于 2019-08-06 00:00:00">2019-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.878Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。</p>
+<p>一个字符串，只包含01，长度不超过1000000。<br>输出<br>一行一个整数，最长的0与1的个数相等的子串的长度。<br>输入样例<br>1011<br>输出样例<br>2</p>
+<p>解法：<br>用vector记录前缀和，然后遍历求最长长度，注意处理前缀和为负数。<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;vector&gt;<br>using namespace std;<br>char a[1000010];<br>vector&lt;int&gt; p[2000010];<br>int main()<br>&#123;<br>    scanf(&quot;%s&quot;,a + 1);<br>    int l = strlen(a + 1);<br>    int sum = 0;<br>    int Max = -999999999;<br>    int Min = 999999999;<br>    p[1000000].push_back(0);<br>    for(int i = 1; i &lt;= l; i++)<br>    &#123;<br>        if(a[i] == &#x27;0&#x27;)<br>            sum++;<br>        else<br>            sum--;<br>        Max = max(sum, Max);<br>        Min = min(sum, Min);<br>        p[sum + 1000000].push_back(i); <br>    &#125;<br>    int ans = 0;<br>    <br>    //printf(&quot;%d %d\n&quot;, Min, Max);<br>    for(int i = Min + 1000000; i &lt;= Max + 1000000; i++)<br>    &#123;<br>        ans = max(p[i][p[i].size() - 1]-p[i][0], ans);<br>    &#125;<br>    printf(&quot;%d\n&quot;, ans);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>ps：懒惰又差点战胜了我 加油</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/">https://eonh1u.github.io/blog/2019/08/06/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/" title="51nod-2530-最大输出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-2530-最大输出</div></div><div class="info-2"><div class="info-item-1">题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&lt;&#x3D;n&lt;&#x3D;2*10^5 ,1&lt;&#x3D;m,k&lt;&#x3D;10^9)第二行n个数a[1…n]，(1&lt;&#x3D;a[i]&lt;&#x3D;10^9)输出一个数，表示最大值。 输入样例6 9 21 3 3 7 4 2输出样例54解法：去top2，每次都是top1*k+top2,剩余的不足k就只去top1代码： 12345678910111213141516#include&lt;algorithm&gt;using namespace std;int s[200010];int main()&#123;    int n,m,k;    scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;k);    for(int i = 0; i &lt; n; i++)        scanf(&quot;%d&quot...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/05/51nod-1890-%E6%96%B9%E5%9D%97%E5%A1%94/" title="51nod-1890-方块塔"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">51nod-1890-方块塔</div></div><div class="info-2"><div class="info-item-1">题目：地上有n个方块，每一个方块高度都是H，第i（1&lt;&#x3D;i&lt;&#x3D;n）个方块的长和宽分别为L[i],W[i]。 现在开始堆方块塔，每次可以拿一个方块放到一个方块塔上，但是有一个要求，设当前塔顶的方块长度和宽度分别为Ltop,Wtop，当前拿到的方块长度和宽度分别为Lcur,Wcur，当满足Lcur&lt;&#x3D;Ltop&amp;&amp;Wcur&lt;&#x3D;Wtop的时候，这个方块才能被放到塔顶，并且取代之前的塔顶成为新塔顶。 由于土地比较贵，所以想要堆出来的塔的数目尽可能少，请计算最少的塔的数目。 例如，现在有5个方块，长度和宽度分别为：( 9 , 4 ) , ( 2 , 5 ) , ( 1 , 2 ) , ( 5 , 3 ) , ( 4 , 1 )。那么最少可以堆成两座塔：( 4 , 1 ) , ( 5 , 3 ) , ( 9 , 4 )分为一堆；( 1 , 2 ) , ( 2 , 5 )分为一堆。 输入单组测试数据。第一行给出一个整数n （1 &lt;&#x3D; n &lt;&#x3D; 5000）。第二行有2*n个整数L[1] ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/10/12/51nod-1925-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="51nod-1925-进制转换"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-12</div><div class="info-item-2">51nod-1925-进制转换</div></div><div class="info-2"><div class="info-item-1">题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&gt;&#x3D;0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有作为最低非0位出现，所以不符合要求，正确的转换是10120。 输入多组测试数据。第一行有一个整数T（1&lt;&#x3D;T&lt;&#x3D;5），表示测试数据的数目。接下来T行，每行一个整数n（0&lt;&#x3D;n&lt;&#x3D;1000000000）。 输出对于每一个n，输出它的变进制表示。 输入样例样例输入1 1234541234 输出样例样例输出1 1234121011 解法：暴力即可 代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/19/cf-Global-Round-5/" title="cf-Global Round 5"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-19</div><div class="info-item-2">cf-Global Round 5</div></div><div class="info-2"><div class="info-item-1">A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0. Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two. There are two conditions though: For each participant 𝑖, their modified rating change 𝑏𝑖 must b...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/" title="51nod 1877 打包"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-26</div><div class="info-item-2">51nod 1877 打包</div></div><div class="info-2"><div class="info-item-1">题目：又到了一年毕业季，Noder也从学校毕业了。现在Noder要把东西进行打包，打包完成后，Noder的所有东西都被装进了若干个长方体形状的收纳盒中，这些收纳盒的高都是1024，底座是正方形且边长都是1到6之间的整数。现在Noder要进行搬家了，他有一辆车，这个车子的后备箱是一个长方体，高为1024，底座为边长是6的正方形，那么Noder想知道，他最少要运几趟才能把他所有的东西运完呢？ 解法：题目还是比较容易理解的，矩形里面套矩形，怎么使得次数最少，分情况讨论即可（代码也太不简洁了）直接贴代码了😂😂代码: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2500-%E5%90%8E%E9%9D%A2%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E/" title="51nod-2500-后面第一个大于"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2500-后面第一个大于</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个长度为n的序列t，现在她对于每个i，求最小的正数j满足𝑖+𝑗≤𝑛且𝑡𝑖+𝑗&gt;𝑡𝑖，输出j，如果不存在这样的j，则输出0。 样例解释： 对于i&#x3D;1，𝑡2&gt;𝑡1，所以最小的j&#x3D;1； 对于i&#x3D;7，不存在这样的j，所以输出0。 输入第一行输入一个数n；第二行输入n个数t1-tn，以空格隔开；其中1≤n≤30000，对于任意ti满足30≤ti≤100. 输出输出一行n个数，第i个数表示i的答案。 输入样例12873 74 75 71 69 72 76 73 输出样例11 1 4 2 1 1 0 0 解法：用set记录ti出现的位置下标，在处理每个ti时，在大于ti的数中找到下标大于i并且i+j&lt;n的最小值。 代码：123456789101112131415161718192021222324252627282930313233#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std;set&l...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/31/51nod-2529-%E7%A7%BB%E5%8A%A8/" title="51nod-2529-移动"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-31</div><div class="info-item-2">51nod-2529-移动</div></div><div class="info-2"><div class="info-item-1">题目：有𝑛个点，第𝑖号点在一维数轴的𝑖坐标位置。你现在在1号点，你需要走𝑘步，移动总长度为𝑆，问这样的方案是否存在。注意：每一步都至少移动1格，且每一步都必须从一个点移动到另一个点上。 输入第一行三个数n,k,s(2&lt;&#x3D;n&lt;&#x3D;10^9,1&lt;&#x3D;k&lt;&#x3D;2*10^5,1&lt;&#x3D;s&lt;&#x3D;10^18)。输出如果存在方案，输出YES，否则输出NO。输入样例10 2 15输出样例YES解法：太水了wr&gt;….. 直接贴代码代码： 123456789101112131415161718#include&lt;stdio.h&gt;using namespace std;int main()&#123;    long long n,k,s;    scanf(&quot;%lld%lld%lld&quot;, &amp;n, &amp;k, &amp;s);    if(n == 1 || s &lt; k)        &#123;            printf(&quot;NO\n...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/" title="凌波微步"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-15</div><div class="info-item-2">凌波微步</div></div><div class="info-2"><div class="info-item-1">题目：你在一个二维空间里的(𝑥𝑀𝑒,𝑦𝑀𝑒)位置，你的家在(𝑥𝐻𝑜𝑚𝑒,𝑦𝐻𝑜𝑚𝑒)位置。每一秒钟你可以选择从你当前位置向上下左右四个方向之一移动一个单位。你现在归心似箭，觉得这么走很慢，所幸你有技能“凌波微步”，在这片二维空间中，有3对传送门，每一对传送门以(𝑥𝑠,𝑦𝑠,𝑥𝑡,𝑦𝑡)的形式给出，表示你到达(𝑥𝑠,𝑦𝑠)点就可以发动“凌波微步”技能，花费10秒钟到达(𝑥𝑡,𝑦𝑡)点，相反你也可以花费10秒钟从(𝑥𝑡,𝑦𝑡)点发动“凌波微步”技能到达(𝑥𝑠,𝑦𝑠)点。“凌波微步”技能可以无限多次发动，但只能在所给出的3对传送门之间使用。请问你回家最短用时多少秒。 输入输入第一行4个整数，依次是xMe、yMe、xHome、yHome，表示当前你的位置和你家的位置。接下来三行，每行描述一对传送门(xs, ys, xt, yt)，含义见题面（0 &lt;&#x3D; xi, yi &lt;&#x3D; 10^9）输出输出仅一行，包含一个整数表示回家的最少用时输入样例0 0 20 201 1 18 201000...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

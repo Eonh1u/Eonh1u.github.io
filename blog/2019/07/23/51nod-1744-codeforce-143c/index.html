@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>51nod-1744 codeforce-143c | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目：羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。 在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="51nod-1744 codeforce-143c">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/07/23/51nod-1744-codeforce-143c/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="题目：羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。 在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-07-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.870Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "51nod-1744 codeforce-143c",
+  "url": "https://eonh1u.github.io/blog/2019/07/23/51nod-1744-codeforce-143c/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-07-22T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:24:44.870Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/07/23/51nod-1744-codeforce-143c/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '51nod-1744 codeforce-143c',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">51nod-1744 codeforce-143c</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">51nod-1744 codeforce-143c</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-07-22T16:00:00.000Z" title="发表于 2019-07-23 00:00:00">2019-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.870Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p><strong>题目：</strong><br>羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。</p>
+<p>在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一个面的食物，一个面的食物指的是紧贴着某个面食物。所以剩下只有 （𝐴−1）×（𝐵−2）×（𝐶−2） 块食物。为了隐藏罪证，小偷们把剩下的食物块，全部打乱，散落在小屋的四周。所以村长忘记了原来A，B，C到底是多少。</p>
+<p>现在给定n，表示剩下的食物数量。计算可能最小和最大被偷走的食物数量。</p>
+<p>样例解释：</p>
+<p>在样例中，如果原来的数量为32＝2×4×4，现在的数量是4＝（2-1）×（4-2）×（4-2），则被偷走的是32-4＝28块。<br>如果原来的数量为45＝5×3×3，现在的数量是4＝（5-1）×（3-2）×（3-2），则被偷走的是45-4＝41块。</p>
+<p><strong>解法：</strong><br>暴力遍历所有方法即可</p>
+<p>ps：初始想法错误，初始想法是想找方差最小的ABC，即为MIN；1，1，n即为MAX；并且abc中与1相乘的越大，最终得到的结果越小，此想法为错误的。最终选择了暴力的做法。复杂度为n的2&#x2F;3次方</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include &lt;cmath&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br>int main()<br>&#123;<br>    int n;<br>    long long a[3];<br>    long long Min = 9999999999999999, Max = 0;<br>    scanf(&quot;%d&quot;,&amp;n);<br>    long long x = pow(n, 1.0/3);<br>    for(int i = 1; i &lt;= x; i++)<br>    &#123;<br>        int p = n;<br>        if(p % i == 0)<br>        &#123;<br>            p /= i;<br>            a[0] = i;<br>            int k = sqrt(p);<br>            for(int j = 1; j &lt;= k; j++)&#123;<br>                if(p % j == 0)<br>                &#123;<br>                    a[1] = j;<br>                    a[2] = p/a[1];<br>                    //printf(&quot;%lld %lld %lld\n&quot;, a[0], a[1], a[2]);<br>                    Min = min(Min,(a[0]+1)*(a[1]+2)*(a[2]+2));<br>                    Min = min(Min,(a[1]+1)*(a[0]+2)*(a[2]+2));<br>                    Min = min(Min,(a[2]+1)*(a[1]+2)*(a[0]+2));<br>                    Max = max(Max,(a[0]+1)*(a[1]+2)*(a[2]+2));<br>                    Max = max(Max,(a[1]+1)*(a[0]+2)*(a[2]+2));<br>                    Max = max(Max,(a[2]+1)*(a[1]+2)*(a[0]+2));<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    printf(&quot;%lld %lld\n&quot;, Min - n, Max - n);<br>    return 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/07/23/51nod-1744-codeforce-143c/">https://eonh1u.github.io/blog/2019/07/23/51nod-1744-codeforce-143c/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/07/24/51nod-1770-%E6%95%B0%E6%95%B0%E5%AD%97/" title="51nod-1770"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-1770</div></div><div class="info-2"><div class="info-item-1">题目：统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。 样例解释： 3333333333*3&#x3D;9999999999，里面有10个9。 解法：打表可以得到，相乘的结果最多有4个不同的数字，如果n比较小暴力即可，如果n比较大的话，先求出这4个数字（可能有相同），然后根据n的大小得出。结果的表示方法sl*re l可能有多位。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;algorithm&gt;using namespace std;int main()&#123;    int t = 0;    scanf(&quot;%d&quot;,&amp;t);    while(t--)    &#123;        int a,b,d,n;        scanf(&quot;%d%d%d%d&quot;...</div></div></div></a><a class="pagination-related" href="/blog/2018/12/28/k8s%E5%88%9D%E4%BD%93%E9%AA%8C/" title="k8s初体验"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">k8s初体验</div></div><div class="info-2"><div class="info-item-1">此文将第一次对k8s的感受以及对k8s中的部分的作用进行解释，在解释的过程中不采用特别拗口专业的词汇，试着将其中的部件用实例的方式描述清楚。当然这只是简单的将自己的现在的理解（2018，12，28）用文字表述出来，肯定是有很多错误的，并且对其中各个部件具体的组成不会介绍。已经将会随着学习的深入，将描述变得清晰一点。 1.Master与NodeMaster与Node在现实中对的你可以理解为一台电脑，一个虚拟机，一台服务器这种例子，我们在进行配置的时候可以根据地址指定某台为Master或者Node。Master与Node可以共存，也就是说可以指定某台为Master的同时并将其当作Node。Master的作用是：对整个集群进行调度，并提供系统进行操作的接口Node的作用是：同劳动力一样，就是进行劳动，将Master所分配的任务完成就好。 2.Docker与PodDocker是一个容器，可以理解为Docker是我们需要运行某个程序所需要的环境以及资源，Docker是完全沙箱隔离的（陪环境什么的去死吧），比如我们向写一个简单的c语言的hello-world程序，我们便可以在一个docker...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/09/10/1880-%E5%8D%95%E8%AF%8D%E7%BA%A0%E9%94%99/" title="51nod-1880-单词纠错"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-10</div><div class="info-item-2">51nod-1880-单词纠错</div></div><div class="info-2"><div class="info-item-1">题目：现在大多数的文本编辑器都的单词究错功能，即你输入的单词不能够在词典中找到的话，他就会建议你修改，然后给出几个候选项。 现在我们就要来写一个生成候选项的算法。 具体算法是这样的，如果输入的单词能够在字典中找到，那么就不用推荐，否则就在字典中找那些能够通过修改一个字母得到目标单词的选项作为推荐。 修改一个字母包括删除一个字母，添加一个字母，以及把单词中的某个位置的字母进行替换。 输入单组测试数据。前面若干行给出字典中的单词，每行一个，遇到”#”表示字典中的单词输入结束。接下来若干行给出用户输入的单词，每行一个，遇到”#”结束。字典中单词不超过15000个。用户输入的单词不超过60个。每个单词只由小写字母组成，并且非空，长度不超过20。输出对于每一个用户的输入，如果在字典中能够找到就输出 “单词 is correct”。否则就输出”单词: 候选1 候选2 …”,候选项按照输入的顺序进行排列。如果找不到候选项，则输出”单词:”。具体可参见样例。输入样例样例输入1ihasbemoremeif^#memcontestooi^#输出样例样例输出1me is correctm: i mec...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/02/51nod-2281-%E6%A0%91%E7%9A%84size%E4%B9%8B%E5%92%8C/" title="51nod-2281-树的size之和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-02</div><div class="info-item-2">51nod-2281-树的size之和</div></div><div class="info-2"><div class="info-item-1">题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。 例如： 1─2─4─5└─3 其中节点5的子树只包括节点5，Size &#x3D; 1。节点4的子树包括节点4，5，Size &#x3D; 2。节点1的子树包括节点1，2，3，4，5，Size &#x3D; 5。 求以所有节点为根的子树的Size之和。上面例子中，节点1到5，对应的Size分别为5，3，1，2，1，所有Size的和 &#x3D; 5 + 3 + 1 + 2 + 1 &#x3D; 12 输入第一行：1个数n（1 &lt; n &lt;&#x3D; 1000），表示树的节点数量。后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &lt;&#x3D; x, y &lt;&#x3D; n）。输出输出1个数，表示以所有节点为根的子树的Size之和。输入样例51 21 32 44 5输出样例12 解法:暴力递归求解就可以，数据量再大的话可以加一下记忆化搜索。每日划水5555555代码: 1234567...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/11/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/" title="1906-字段统计"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-11</div><div class="info-item-2">1906-字段统计</div></div><div class="info-2"><div class="info-item-1">给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。 输入单组测试数据。第一行两个整数L和k。（L&gt;&#x3D;1，1&lt;&#x3D;k&lt;&#x3D;26,k^L&lt;&#x3D;2*10^7）第二行一个字符串S。（1&lt;&#x3D;|S|&lt;&#x3D;1000000）输出输出一个整数表示答案。 输入样例1 2ababab输出样例2解法：暴力即可代码： 1234567891011121314151617#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;set&gt;using namespace std;set&lt;string&gt; S;int main()&#123;    int l, k;    scanf(&quot;%d%d&quot;, &amp;l, &amp;k);    string s;    cin &gt;&gt; s;    for(int i = 0; i &lt;= s.leng...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/13/51nod-2562-%E9%98%BF%E5%85%8B%E6%9B%BC%E5%87%BD%E6%95%B0/" title="51nod-2562-阿克曼函数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-13</div><div class="info-item-2">51nod-2562-阿克曼函数</div></div><div class="info-2"><div class="info-item-1">题目:2656 阿克曼函数1.0 秒 131,072.0 KB 5 分 1级题阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&lt;&#x3D;3，n&lt;&#x3D;30。 函数的定义为：𝑎𝑘𝑚(𝑚,𝑛)&#x3D;⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚&#x3D;0)(𝑚&gt;0,𝑛&#x3D;0)(𝑚&gt;0,𝑛&gt;0) 输入两个整数 m n输出一个整数，akm(m,n)的结果输入样例1 1输出样例3解法：递归记忆化即可，注意数组范围，数组的大小代码: 1234567891011121314151617181920using namespace std;int a[13][1000000];int f(int m,int n)&#123;    if(a[m][n] != 0)&#123;        return a[m][n];    &#125;    if(m == 0)        return a[m][n] = n +...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/03/51nod-2651-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E5%92%8C/" title="51nod-2651-区间和的和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-03</div><div class="info-item-2">51nod-2651-区间和的和</div></div><div class="info-2"><div class="info-item-1">题目:输入一个长度为𝑛的数组𝑎，𝑎包括(𝑛−1)𝑛&#x2F;2个区间。每个区间所有数的和，被称为区间和，求所有(𝑛−1)𝑛&#x2F;2个区间和的和。由于数值较大，输出mod 1e9+7的结果。 输入第一行一个整数n，表示数组长度(2&lt;&#x3D;n&lt;&#x3D;100000)接下来n行，每行一个整数ai，表示数组的内容。(0&lt;&#x3D;ai&lt;&#x3D;50000)输出输出答案mod 1e9+7输入样例3123输出样例20解法：统计每个数字出现的次数就好了，每个数字出现的次数为该数字左边数字的个数乘右边的。代码： 123456789101112131415161718using namespace std;int main()&#123;    long long ans = 0;    long long mod = 1e9+7;    long long  n;    scanf(&quot;%lld&quot;,&amp;n);    long long e = n;    for(int i = 1; i &lt;=n; i++...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/18/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/" title="51nod-1919-炮兵阵地"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-18</div><div class="info-item-2">51nod-1919-炮兵阵地</div></div><div class="info-2"><div class="info-item-1">题目：司令部的将军们打算在NN的网格地图上部署他们的炮兵部队。一个NN的地图由N行N列组成，地图的每一格可能是山地（用”X”表示），也可能是平原（用”.”表示）。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围是它所在位置的对应的行和列，但是大炮打出去之后如果被山地阻挡 了，那么攻击范围就到那块山地。 现在，将军们规划如何部署炮兵部队，在防止误伤的前提下（保证任何两支炮兵部队之间不能互相攻击，即任何一支炮兵部队都不在其他支炮兵部队的攻击范围内），在整个地图区域内最多能够摆放多少我军的炮兵部队。  样例解释： 上图中显示的是相同的地图中不同的放置大炮的方案。黑方块表示山地，白方块表示平原，黑圆表示对应的平原放置了大炮。第一张图是不放大炮的情况。第二张图和第三张图是合理的放置大炮的方案。最后两张图是不合理的放置大炮的方案。 对于这个地图来讲，最多能放置5门大炮。第二张图就是一种最优的放置方案，当然还有其它的最优放置方案。 输入单组测试数据。第一行有一个整数N(1&lt;&#x3D;N&lt;&#x3D;4)。接下来N行，每行有N个...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
