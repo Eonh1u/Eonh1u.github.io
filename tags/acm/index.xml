@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>ACM on eonh1u Blog</title><link>https://eonh1u.github.io/tags/acm/</link><description>Recent content in ACM on eonh1u Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Nov 2020 11:20:02 +0000</lastBuildDate><atom:link href="https://eonh1u.github.io/tags/acm/index.xml" rel="self" type="application/rss+xml"/><item><title>leetcode</title><link>https://eonh1u.github.io/posts/leetcode/</link><pubDate>Mon, 23 Nov 2020 11:20:02 +0000</pubDate><guid>https://eonh1u.github.io/posts/leetcode/</guid><description>&lt;h1 id="leetcode"&gt;🏆leetcode&lt;/h1&gt;
+&lt;p&gt;记录leetcode中的题目🤡
+在此文件中更新🧐&lt;/p&gt;</description></item><item><title>cf-595-div3</title><link>https://eonh1u.github.io/posts/cf-595-div3/</link><pubDate>Wed, 23 Oct 2019 22:43:53 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-595-div3/</guid><description>&lt;h1 id="ayet-another-dividing-into-teams"&gt;A:Yet Another Dividing into Teams&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:&lt;/p&gt;
+&lt;p&gt;No two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1);
+the number of teams is the minimum possible.
+You have to answer 𝑞 independent queries.&lt;/p&gt;</description></item><item><title>cf-594-div2</title><link>https://eonh1u.github.io/posts/cf-594-div2/</link><pubDate>Tue, 22 Oct 2019 09:14:31 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-594-div2/</guid><description>&lt;h1 id="a-integer-points"&gt;A: Integer Points&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.&lt;/p&gt;
+&lt;p&gt;Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.&lt;/p&gt;
+&lt;p&gt;DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help.&lt;/p&gt;</description></item><item><title>cf-593-div2</title><link>https://eonh1u.github.io/posts/cf-593-div2/</link><pubDate>Sat, 19 Oct 2019 14:51:00 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-593-div2/</guid><description>&lt;h1 id="astones"&gt;A:Stones&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;Alice is playing with some stones.&lt;/p&gt;
+&lt;p&gt;Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains 𝑐 stones.&lt;/p&gt;
+&lt;p&gt;Each time she can do one of two operations:&lt;/p&gt;
+&lt;p&gt;take one stone from the first heap and two stones from the second heap (this operation can be done only if the first heap contains at least one stone and the second heap contains at least two stones);&lt;/p&gt;</description></item><item><title>cf-Global Round 5</title><link>https://eonh1u.github.io/posts/cf-global-round-5/</link><pubDate>Sat, 19 Oct 2019 13:25:01 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-global-round-5/</guid><description>&lt;h1 id="abalanced-rating-changes"&gt;A:Balanced Rating Changes&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.&lt;/p&gt;
+&lt;p&gt;Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.&lt;/p&gt;
+&lt;p&gt;There are two conditions though:&lt;/p&gt;</description></item><item><title>51nod-2594-括号之价</title><link>https://eonh1u.github.io/posts/51nod-2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/</link><pubDate>Wed, 16 Oct 2019 21:43:51 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小Y上数据结构课的时候摸鱼，听到老师在讲用栈做括号匹配，于是乎边随意写了一个合法的括号序列。但是光是写括号太无聊了，他现在想知道这个括号序列的价值。他是这样定义一个括号序列的价值的：&lt;/p&gt;
+&lt;p&gt;1、一对括号价值一分（比如&amp;quot;()&amp;ldquo;得一分）&lt;/p&gt;
+&lt;p&gt;2、两个合法的括号序列的拼接而成的括号序列的价值是他们的价值的和（比如&amp;rdquo;()()&amp;ldquo;价值为1+1=2）&lt;/p&gt;
+&lt;p&gt;3、嵌套的括号的序列的价值是，所嵌套的括号序列的价值的翻倍（比如&amp;rdquo;((()))&amp;ldquo;价值为1*2*2=4）&lt;/p&gt;
+&lt;p&gt;下课了，qz看到小Y写的括号序列，他一眼就推测出了规则并得到了括号序列的价值。那么问题来了，小Y写下的括号序列的价值是多少呢？&lt;/p&gt;</description></item><item><title>51nod-2531-最大覆盖</title><link>https://eonh1u.github.io/posts/51nod-2531-%E6%9C%80%E5%A4%A7%E8%A6%86%E7%9B%96/</link><pubDate>Tue, 15 Oct 2019 20:27:01 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2531-%E6%9C%80%E5%A4%A7%E8%A6%86%E7%9B%96/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;现在有 𝑛 个位置 1&amp;hellip;𝑛 。&lt;/p&gt;
+&lt;p&gt;给𝑞个区间，请你选出选𝑞−2个，使得覆盖位置个数最大。&lt;/p&gt;
+&lt;h2 id="输入"&gt;输入&lt;/h2&gt;
+&lt;p&gt;第一行两个数n,q(3&amp;lt;=n,q&amp;lt;=5000)。
+接下来q行，其中第i行两个数l[i],r[i]，表示第i个区间能覆盖所有满足l[i]&amp;lt;=x&amp;lt;=r[i]的位置x。&lt;/p&gt;</description></item><item><title>51nod-2523-小b删列</title><link>https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/</link><pubDate>Tue, 15 Oct 2019 20:18:47 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。&lt;/p&gt;
+&lt;p&gt;即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]&amp;lt;=a[i+1](i=1..n-1)。&lt;/p&gt;
+&lt;p&gt;请问小b最少要删多少列。&lt;/p&gt;
+&lt;p&gt;如A = {&amp;ldquo;abcdef&amp;rdquo;, &amp;ldquo;uvwxyz&amp;rdquo;}，删除的列为第1,3,4列，删除后 A 为 {&amp;ldquo;bef&amp;rdquo;, &amp;ldquo;vyz&amp;rdquo;}，且 &amp;ldquo;bef&amp;rdquo; &amp;lt;= &amp;ldquo;vyz&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;样例解释：&lt;/p&gt;
+&lt;p&gt;删掉第一列，剩下的是&amp;quot;a&amp;quot; &amp;ldquo;b&amp;rdquo; &amp;ldquo;c&amp;rdquo;，&amp;ldquo;a&amp;rdquo; &amp;lt;= &amp;ldquo;b&amp;rdquo; &amp;lt;= &amp;ldquo;c&amp;rdquo;，满足条件。&lt;/p&gt;</description></item><item><title>51nod-2522-和为k的倍数</title><link>https://eonh1u.github.io/posts/51nod-2522-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%80%8D%E6%95%B0/</link><pubDate>Tue, 15 Oct 2019 20:16:15 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2522-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%80%8D%E6%95%B0/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b喜欢和为K的倍数的序列。&lt;/p&gt;
+&lt;p&gt;现在有一个长度为n的序列A，请问A有多少个非空连续子序列是小b喜欢的。&lt;/p&gt;
+&lt;h2 id="输入"&gt;输入&lt;/h2&gt;
+&lt;p&gt;第一行输入一个正整数n；
+第二行输入n个整数，表示A[i]，以空格隔开；
+第三行输入一个正整数K；
+其中1≤n≤30000，对于任意A[i]有-10000≤A[i]≤10000，2≤K≤10000&lt;/p&gt;
+&lt;h2 id="输出"&gt;输出&lt;/h2&gt;
+&lt;p&gt;输出一个数，表示子序列的数目&lt;/p&gt;</description></item><item><title>51nod-2513-重排列</title><link>https://eonh1u.github.io/posts/51nod-2513-%E9%87%8D%E6%8E%92%E5%88%97/</link><pubDate>Tue, 15 Oct 2019 20:05:55 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2513-%E9%87%8D%E6%8E%92%E5%88%97/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;有两个长度为n的序列A,B，你需要重排列A，使得满足A[i]&amp;gt;B[i]的i的数目尽量大。
+只需输出这个最大个数即可。&lt;/p&gt;
+&lt;h2 id="输入"&gt;输入&lt;/h2&gt;
+&lt;p&gt;第一行输入一个正整数n；
+第二、三行分别输出n个非负整数，表示A、B中的元素，以空格隔开；
+其中1≤n≤10000，0≤A[i],B[i]≤10^9。&lt;/p&gt;
+&lt;h2 id="输出"&gt;输出&lt;/h2&gt;
+&lt;p&gt;输出一行一个数，表示最大个数&lt;/p&gt;</description></item><item><title>51nod-2512-重排列得到2的幂</title><link>https://eonh1u.github.io/posts/51nod-2512-%E9%87%8D%E6%8E%92%E5%88%97%E5%BE%97%E5%88%B02%E7%9A%84%E5%B9%82/</link><pubDate>Tue, 15 Oct 2019 20:00:43 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2512-%E9%87%8D%E6%8E%92%E5%88%97%E5%BE%97%E5%88%B02%E7%9A%84%E5%B9%82/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有一个数n，现在她想把n的每一位重排列，使得得到的结果为2的幂次。&lt;/p&gt;
+&lt;p&gt;请问小b能得到2的幂次吗？&lt;/p&gt;
+&lt;p&gt;注意重排列后不允许有前导0。&lt;/p&gt;
+&lt;p&gt;样例解释：46重排列成64，为2^6。&lt;/p&gt;
+&lt;h2 id="输入"&gt;输入&lt;/h2&gt;
+&lt;p&gt;输入一个数N，其中1≤N≤10^9&lt;/p&gt;
+&lt;h2 id="输出"&gt;输出&lt;/h2&gt;
+&lt;p&gt;满足条件，输出“true”；
+不满足，则输出“false”。&lt;/p&gt;</description></item><item><title>51nod-2510-顺子</title><link>https://eonh1u.github.io/posts/51nod-2510-%E9%A1%BA%E5%AD%90/</link><pubDate>Mon, 14 Oct 2019 23:37:52 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2510-%E9%A1%BA%E5%AD%90/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有n张牌。&lt;/p&gt;
+&lt;p&gt;现在她想把牌分组，使得每组都是长度为W的顺子，即由连续W个数组成。&lt;/p&gt;
+&lt;p&gt;请问小b能做到吗？&lt;/p&gt;</description></item><item><title>51nod-2500-后面第一个大于</title><link>https://eonh1u.github.io/posts/51nod-2500-%E5%90%8E%E9%9D%A2%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E/</link><pubDate>Mon, 14 Oct 2019 23:31:21 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2500-%E5%90%8E%E9%9D%A2%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有一个长度为n的序列t，现在她对于每个i，求最小的正数j满足𝑖+𝑗≤𝑛且𝑡𝑖+𝑗&amp;gt;𝑡𝑖，输出j，如果不存在这样的j，则输出0。&lt;/p&gt;
+&lt;p&gt;样例解释：&lt;/p&gt;
+&lt;p&gt;对于i=1，𝑡2&amp;gt;𝑡1，所以最小的j=1；&lt;/p&gt;
+&lt;p&gt;对于i=7，不存在这样的j，所以输出0。&lt;/p&gt;</description></item><item><title>51nod-2499-不降的数字</title><link>https://eonh1u.github.io/posts/51nod-2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link><pubDate>Mon, 14 Oct 2019 23:23:53 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2499-%E4%B8%8D%E9%99%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有一个非负整数N，她想请你找出 ≤𝑁 的最大整数x，满足x各个位数上的数字是不降的。也就是说，设x的十进制表示为 𝑎1,𝑎2,…,𝑎𝑚，则对于任意 1≤𝑖&amp;lt;𝑚，𝑎𝑖≤𝑎𝑖+1。&lt;/p&gt;</description></item><item><title>51nod-2494-最长配对</title><link>https://eonh1u.github.io/posts/51nod-2494-%E6%9C%80%E9%95%BF%E9%85%8D%E5%AF%B9/</link><pubDate>Mon, 14 Oct 2019 10:58:26 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2494-%E6%9C%80%E9%95%BF%E9%85%8D%E5%AF%B9/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。&lt;/p&gt;
+&lt;h2 id="输入"&gt;输入&lt;/h2&gt;
+&lt;p&gt;第一行一个正整数n，表示数组长度，其中0＜n≤50000；
+第二行n个0或1，以空格隔开。&lt;/p&gt;
+&lt;h2 id="输出"&gt;输出&lt;/h2&gt;
+&lt;p&gt;输出一个数，表示最长区间的长度&lt;/p&gt;</description></item><item><title>51nod-2484-小b和排序</title><link>https://eonh1u.github.io/posts/51nod-2484-%E5%B0%8Fb%E5%92%8C%E6%8E%92%E5%BA%8F/</link><pubDate>Mon, 14 Oct 2019 10:38:31 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2484-%E5%B0%8Fb%E5%92%8C%E6%8E%92%E5%BA%8F/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;小b有两个长度都为n的序列A,B。&lt;/p&gt;
+&lt;p&gt;现在她需要选择一些i，然后交换A[i]和B[i]，使得A和B都变成严格递增的序列。&lt;/p&gt;
+&lt;p&gt;你能帮小b求出最少交换次数吗？&lt;/p&gt;
+&lt;p&gt;输入保证有解。&lt;/p&gt;</description></item><item><title>51nod-2462-铺设道路</title><link>https://eonh1u.github.io/posts/51nod-2462-%E9%93%BA%E8%AE%BE%E9%81%93%E8%B7%AF/</link><pubDate>Sat, 12 Oct 2019 19:03:58 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2462-%E9%93%BA%E8%AE%BE%E9%81%93%E8%B7%AF/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;春春是一名道路工程师，负责铺设一条长度为 n 的道路。&lt;/p&gt;
+&lt;p&gt;铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 n 块首尾相连的区域，一开始，第 i 块区域下陷的深度为 𝑑𝑖 。&lt;/p&gt;
+&lt;p&gt;春春每天可以选择一段连续区间[L,R] ，填充这段区间中的每块区域，让其下陷深度减少 1。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 0 。&lt;/p&gt;
+&lt;p&gt;春春希望你能帮他设计一种方案，可以在最短的时间内将整段道路的下陷深度都变为 0 。&lt;/p&gt;</description></item><item><title>51nod-1925-进制转换</title><link>https://eonh1u.github.io/posts/51nod-1925-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</link><pubDate>Sat, 12 Oct 2019 19:01:05 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1925-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</guid><description>&lt;h1 id="题目"&gt;题目&lt;/h1&gt;
+&lt;p&gt;有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，&amp;hellip; 。即第i（i&amp;gt;=0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。&lt;/p&gt;
+&lt;p&gt;比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有作为最低非0位出现，所以不符合要求，正确的转换是10120。&lt;/p&gt;</description></item><item><title>51nod-1506-最小字典序</title><link>https://eonh1u.github.io/posts/51nod-1506-%E6%9C%80%E5%B0%8F%E5%AD%97%E5%85%B8%E5%BA%8F/</link><pubDate>Sat, 12 Oct 2019 18:48:48 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1506-%E6%9C%80%E5%B0%8F%E5%AD%97%E5%85%B8%E5%BA%8F/</guid><description>&lt;h1 id="题目"&gt;题目：&lt;/h1&gt;
+&lt;p&gt;给出一个字符串S，你需要从S中挑选一对字符进行一次交换（不可以不交换！！！！！！），并让得到的新字符字典序最小！&lt;/p&gt;
+&lt;p&gt;例如：S = &amp;ldquo;abacc&amp;rdquo;，&lt;/p&gt;
+&lt;p&gt;如果交换字符1(a)和4(c)，得到字符&amp;quot;cbaac&amp;quot;。&lt;/p&gt;
+&lt;p&gt;如果交换字符2(a)和3(b)，得到字符&amp;quot;aabcc&amp;quot;。&lt;/p&gt;
+&lt;p&gt;其中：&amp;ldquo;aabcc&amp;quot;的字典序小于&amp;quot;cbaac&amp;rdquo;。并且&amp;quot;aabcc&amp;quot;是所有交换方法中，字典序最小的。&lt;/p&gt;
+&lt;p&gt;例如：S = &amp;ldquo;aaab&amp;rdquo;，&lt;/p&gt;
+&lt;p&gt;则交换1和2，交换1和3，得到的字符都是 &amp;ldquo;aaab&amp;rdquo;，并且 &amp;ldquo;aaab&amp;quot;是所有交换方法中，字典序最小的。&lt;/p&gt;
+&lt;p&gt;输出这个字典序最小的字符。&lt;/p&gt;</description></item><item><title>cf-591-div2</title><link>https://eonh1u.github.io/posts/cf-591-div2/</link><pubDate>Mon, 07 Oct 2019 18:52:39 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-591-div2/</guid><description>&lt;h1 id="a-cme"&gt;A: CME&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s denote correct match equation (we will denote it as CME) an equation 𝑎+𝑏=𝑐 there all integers 𝑎, 𝑏 and 𝑐 are greater than zero.&lt;/p&gt;
+&lt;p&gt;For example, equations 2+2=4 (||+||=||||) and 1+2=3 (|+||=|||) are CME but equations 1+2=4 (|+||=||||), 2+2=3 (||+||=|||), and 0+1=1 (+|=|) are not.&lt;/p&gt;
+&lt;p&gt;Now, you have 𝑛 matches. You want to assemble a CME using all your matches. Unfortunately, it is possible that you can&amp;rsquo;t assemble the CME using all matches. But you can buy some extra matches and then assemble CME!&lt;/p&gt;</description></item><item><title>ucas 2小题</title><link>https://eonh1u.github.io/posts/ucas-2%E5%B0%8F%E9%A2%98/</link><pubDate>Sun, 06 Oct 2019 20:22:51 +0000</pubDate><guid>https://eonh1u.github.io/posts/ucas-2%E5%B0%8F%E9%A2%98/</guid><description>&lt;h1 id="a"&gt;A：&lt;/h1&gt;
+&lt;p&gt;Given an array of size n, ﬁnd the majority element. The majority element is the element that appears more than b n c times.You may assume that the array is non-empty and the majority 2 element always exist in the array.&lt;/p&gt;
+&lt;p&gt;INPUT:&lt;/p&gt;
+&lt;p&gt;Line 1: the length of array.&lt;/p&gt;
+&lt;p&gt;Line 2: the all elements in array and split by spaces OUTPUT:&lt;/p&gt;
+&lt;p&gt;Line 1: A single integer that is the majority element.&lt;/p&gt;</description></item><item><title>51nod-2206-低买高卖</title><link>https://eonh1u.github.io/posts/51nod-2206-%E4%BD%8E%E4%B9%B0%E9%AB%98%E5%8D%96/</link><pubDate>Wed, 25 Sep 2019 20:24:24 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2206-%E4%BD%8E%E4%B9%B0%E9%AB%98%E5%8D%96/</guid><description>&lt;h1 id="题目"&gt;题目:&lt;/h1&gt;
+&lt;p&gt;考虑股票市场，一共有n天。
+对于第i天，B君知道股票的价格是每单位a[i]元
+在每一天，B君可以选择买入一个单位的股票，卖出一个单位的股票，或者什么都不做。
+刚开始B君有无穷多的钱，但是没有任何股票。
+问n天之后B君最多可以赚多少钱。
+(1 &amp;lt;= n &amp;lt;= 200000)
+(1 &amp;lt;= a[i] &amp;lt;= 10000)&lt;/p&gt;</description></item><item><title>51nod-1649-齐头并进</title><link>https://eonh1u.github.io/posts/51nod-1649-%E9%BD%90%E5%A4%B4%E5%B9%B6%E8%BF%9B/</link><pubDate>Tue, 24 Sep 2019 22:36:25 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1649-%E9%BD%90%E5%A4%B4%E5%B9%B6%E8%BF%9B/</guid><description>&lt;h1 id="题目"&gt;题目&lt;/h1&gt;
+&lt;p&gt;在一个叫奥斯汀的城市，有n个小镇（从1到n编号），这些小镇通过m条双向火车铁轨相连。当然某些小镇之间也有公路相连。为了保证每两个小镇之间的人可以方便的相互访问，市长就在那些没有铁轨直接相连的小镇之间建造了公路。在两个直接通过公路或者铁路相连的小镇之间移动，要花费一个小时的时间。&lt;/p&gt;
+&lt;p&gt;现在有一辆火车和一辆汽车同时从小镇1出发。他们都要前往小镇n，但是他们中途不能同时停在同一个小镇（但是可以同时停在小镇n）。火车只能走铁路，汽车只能走公路。&lt;/p&gt;
+&lt;p&gt;现在请来为火车和汽车分别设计一条线路；所有的公路或者铁路可以被多次使用。使得火车和汽车尽可能快的到达小镇n。即要求他们中最后到达小镇n的时间要最短。输出这个最短时间。(最后火车和汽车可以同时到达小镇n，也可以先后到达。)&lt;/p&gt;</description></item><item><title>cf-587-div3</title><link>https://eonh1u.github.io/posts/cf-587-div3/</link><pubDate>Sun, 22 Sep 2019 13:28:44 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-587-div3/</guid><description>&lt;h1 id="a题-prefixes"&gt;A题 Prefixes：&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters &amp;lsquo;a&amp;rsquo; and &amp;lsquo;b&amp;rsquo;. Its positions are numbered from 1 to 𝑛.&lt;/p&gt;
+&lt;p&gt;He wants to modify his string so that every its prefix of even length has an equal amount of letters &amp;lsquo;a&amp;rsquo; and &amp;lsquo;b&amp;rsquo;. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace &amp;lsquo;a&amp;rsquo; with &amp;lsquo;b&amp;rsquo; or replace &amp;lsquo;b&amp;rsquo; with &amp;lsquo;a&amp;rsquo;). Nikolay can use no letters except &amp;lsquo;a&amp;rsquo; and &amp;lsquo;b&amp;rsquo;.&lt;/p&gt;</description></item><item><title>cf-edu-73</title><link>https://eonh1u.github.io/posts/cf-edu-73/</link><pubDate>Thu, 19 Sep 2019 23:04:18 +0000</pubDate><guid>https://eonh1u.github.io/posts/cf-edu-73/</guid><description>&lt;p&gt;昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。&lt;/p&gt;
+&lt;h1 id="a题-2048-games"&gt;A题 2048 Games：&lt;/h1&gt;
+&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;You are playing a variation of game 2048. Initially you have a multiset 𝑠 of 𝑛 integers. Every integer in this multiset is a power of two.&lt;/p&gt;
+&lt;p&gt;You may perform any number (possibly, zero) operations with this multiset.&lt;/p&gt;
+&lt;p&gt;During each operation you choose two equal integers from 𝑠, remove them from 𝑠 and insert the number equal to their sum into 𝑠.&lt;/p&gt;</description></item><item><title>51nod-1065-最小正字段和</title><link>https://eonh1u.github.io/posts/51nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%97%E6%AE%B5%E5%92%8C/</link><pubDate>Wed, 18 Sep 2019 23:37:12 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1065-%E6%9C%80%E5%B0%8F%E6%AD%A3%E5%AD%97%E6%AE%B5%E5%92%8C/</guid><description>&lt;h2 id="题目"&gt;题目：&lt;/h2&gt;
+&lt;p&gt;N个整数组成的序列a[1],a[2],a[3],…,a[n]，从中选出一个子段（a[i],a[i+1],…a[j]），使这个子段的和&amp;gt;0，并且这个和是所有和&amp;gt;0的子序列中最小的。&lt;/p&gt;
+&lt;p&gt;例如：4，-1，5，-2，-1，2，6，-2。-1，5，-2，-1，序列和为1，是最小的。&lt;/p&gt;
+&lt;h3 id="输入"&gt;输入&lt;/h3&gt;
+&lt;p&gt;第1行：整数序列的长度N（2 &amp;lt;= N &amp;lt;= 50000)
+第2 - N+1行：N个整数&lt;/p&gt;
+&lt;h3 id="输出"&gt;输出&lt;/h3&gt;
+&lt;p&gt;输出最小正子段和。&lt;/p&gt;</description></item><item><title>51nod-1919-炮兵阵地</title><link>https://eonh1u.github.io/posts/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/</link><pubDate>Wed, 18 Sep 2019 20:04:41 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/</guid><description>&lt;p&gt;题目：
+司令部的将军们打算在N*N的网格地图上部署他们的炮兵部队。一个N*N的地图由N行N列组成，地图的每一格可能是山地（用&amp;quot;X&amp;quot;表示），也可能是平原（用&amp;quot;.&amp;ldquo;表示）。在每一格平原地形上最多可以布置一支炮兵部队（山地上不能够部署炮兵部队）；一支炮兵部队在地图上的攻击范围是它所在位置的对应的行和列，但是大炮打出去之后如果被山地阻挡 了，那么攻击范围就到那块山地。&lt;/p&gt;</description></item><item><title>51nod-1942-安装监控</title><link>https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/</link><pubDate>Tue, 17 Sep 2019 23:37:52 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/</guid><description>&lt;p&gt;题目：
+现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。&lt;/p&gt;</description></item><item><title>51nod-2488-矩形面积并的面积</title><link>https://eonh1u.github.io/posts/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/</link><pubDate>Mon, 16 Sep 2019 21:38:40 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/</guid><description>&lt;p&gt;题目：
+在二维平面上，给定两个矩形，满足矩形的每条边分别和坐标轴平行，求这个两个矩形的并的面积。即它们重叠在一起之后的总的面积。&lt;/p&gt;
+&lt;p&gt;输入
+8个数，分别表示第一个矩形左下角坐标为(A,B)，右上角坐标为(C,D)；第二个矩形左下角坐标为(E,F)，右上角坐标为(G,H)。
+保证A&amp;lt;C，B&amp;lt;D，E&amp;lt;G，F&amp;lt;H。
+保证所有数的绝对值不超过2*10^9，矩形并的面积≤2*10^9。&lt;/p&gt;</description></item><item><title>51nod-1593-物理地址查询</title><link>https://eonh1u.github.io/posts/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/</link><pubDate>Thu, 12 Sep 2019 21:54:52 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/</guid><description>&lt;p&gt;题目:
+在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。
+现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。&lt;/p&gt;
+&lt;p&gt;输入的网络保证所有的计算机之间是可以相互通信的。&lt;/p&gt;</description></item><item><title>ucas Alice's Food</title><link>https://eonh1u.github.io/posts/ucas-alice-s-food/</link><pubDate>Wed, 11 Sep 2019 23:11:02 +0000</pubDate><guid>https://eonh1u.github.io/posts/ucas-alice-s-food/</guid><description>&lt;p&gt;题目：
+问题描述
+面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就是所吃食物的营养价值总和不能少于x, 而美味指数总和不能少于y. 精明的 Alice 当然想省下钱来明天再吃一顿, 所以她想花最少的钱实现她的目标.&lt;/p&gt;</description></item><item><title>1906-字段统计</title><link>https://eonh1u.github.io/posts/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/</link><pubDate>Wed, 11 Sep 2019 19:49:30 +0000</pubDate><guid>https://eonh1u.github.io/posts/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/</guid><description>&lt;p&gt;给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。&lt;/p&gt;
+&lt;p&gt;输入
+单组测试数据。
+第一行两个整数L和k。（L&amp;gt;=1，1&amp;lt;=k&amp;lt;=26,k^L&amp;lt;=2*10^7）
+第二行一个字符串S。（1&amp;lt;=|S|&amp;lt;=1000000）
+输出
+输出一个整数表示答案。&lt;/p&gt;</description></item><item><title>51nod-1880-单词纠错</title><link>https://eonh1u.github.io/posts/1880-%E5%8D%95%E8%AF%8D%E7%BA%A0%E9%94%99/</link><pubDate>Tue, 10 Sep 2019 22:47:29 +0000</pubDate><guid>https://eonh1u.github.io/posts/1880-%E5%8D%95%E8%AF%8D%E7%BA%A0%E9%94%99/</guid><description>&lt;p&gt;题目：
+现在大多数的文本编辑器都的单词究错功能，即你输入的单词不能够在词典中找到的话，他就会建议你修改，然后给出几个候选项。&lt;/p&gt;
+&lt;p&gt;现在我们就要来写一个生成候选项的算法。&lt;/p&gt;
+&lt;p&gt;具体算法是这样的，如果输入的单词能够在字典中找到，那么就不用推荐，否则就在字典中找那些能够通过修改一个字母得到目标单词的选项作为推荐。&lt;/p&gt;
+&lt;p&gt;修改一个字母包括删除一个字母，添加一个字母，以及把单词中的某个位置的字母进行替换。&lt;/p&gt;</description></item><item><title>逆序对数变形</title><link>https://eonh1u.github.io/posts/%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E5%8F%98%E5%BD%A2/</link><pubDate>Mon, 09 Sep 2019 23:16:22 +0000</pubDate><guid>https://eonh1u.github.io/posts/%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E5%8F%98%E5%BD%A2/</guid><description>&lt;p&gt;Problem Description
+Recall the problem of finding the number of inversions. As in the course, we are given a sequence of nn numbers a1,a2,⋯,ana1,a2,⋯,an, and we define an inversion to be a pair i&amp;lt;ji&lt;j such that ai&gt;ajai&amp;gt;aj.&lt;/p&gt;</description></item><item><title>ucas river and Longest Ordered Subsequence</title><link>https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/</link><pubDate>Sun, 08 Sep 2019 22:50:47 +0000</pubDate><guid>https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/</guid><description>&lt;p&gt;今天在ucas oj上面尝试做了两道题&lt;/p&gt;
+&lt;h1 id="river二分即可"&gt;river：二分即可&lt;/h1&gt;
+&lt;p&gt;Description
+Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help.&lt;/p&gt;</description></item><item><title>2518-和为S</title><link>https://eonh1u.github.io/posts/2518-%E5%92%8C%E4%B8%BAs/</link><pubDate>Sat, 07 Sep 2019 19:53:02 +0000</pubDate><guid>https://eonh1u.github.io/posts/2518-%E5%92%8C%E4%B8%BAs/</guid><description>&lt;p&gt;题目:
+小b有一个01序列A，她想知道A有多少个非空连续子序列和为S。&lt;/p&gt;
+&lt;p&gt;你能帮帮她吗？&lt;/p&gt;
+&lt;p&gt;输入
+第一行输入一个数n，表示A的长度；
+第二行输入n个数‘0’或‘1’，表示A中的元素，以空格隔开；
+第三行输入一个非负整数S；
+其中0≤S≤n≤30000。&lt;/p&gt;</description></item><item><title>凌波微步</title><link>https://eonh1u.github.io/posts/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/</link><pubDate>Thu, 15 Aug 2019 23:35:59 +0000</pubDate><guid>https://eonh1u.github.io/posts/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/</guid><description>&lt;p&gt;题目：
+你在一个二维空间里的(𝑥𝑀𝑒,𝑦𝑀𝑒)位置，你的家在(𝑥𝐻𝑜𝑚𝑒,𝑦𝐻𝑜𝑚𝑒)位置。每一秒钟你可以选择从你当前位置向上下左右四个方向之一移动一个单位。你现在归心似箭，觉得这么走很慢，所幸你有技能“凌波微步”，在这片二维空间中，有3对传送门，每一对传送门以(𝑥𝑠,𝑦𝑠,𝑥𝑡,𝑦𝑡)的形式给出，表示你到达(𝑥𝑠,𝑦𝑠)点就可以发动“凌波微步”技能，花费10秒钟到达(𝑥𝑡,𝑦𝑡)点，相反你也可以花费10秒钟从(𝑥𝑡,𝑦𝑡)点发动“凌波微步”技能到达(𝑥𝑠,𝑦𝑠)点。“凌波微步”技能可以无限多次发动，但只能在所给出的3对传送门之间使用。请问你回家最短用时多少秒。&lt;/p&gt;</description></item><item><title>2673-最短路径</title><link>https://eonh1u.github.io/posts/2673-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</link><pubDate>Wed, 14 Aug 2019 23:21:26 +0000</pubDate><guid>https://eonh1u.github.io/posts/2673-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</guid><description>&lt;p&gt;最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！&lt;/p&gt;</description></item><item><title>51nod-2562-阿克曼函数</title><link>https://eonh1u.github.io/posts/51nod-2562-%E9%98%BF%E5%85%8B%E6%9B%BC%E5%87%BD%E6%95%B0/</link><pubDate>Tue, 13 Aug 2019 22:24:14 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2562-%E9%98%BF%E5%85%8B%E6%9B%BC%E5%87%BD%E6%95%B0/</guid><description>&lt;p&gt;题目:
+2656 阿克曼函数
+1.0 秒 131,072.0 KB 5 分 1级题
+阿克曼（Arkmann）函数 𝐴(𝑚,𝑛) 中，m与n的定义域是非负整数且本题中m&amp;lt;=3，n&amp;lt;=30。&lt;/p&gt;
+&lt;p&gt;函数的定义为：
+𝑎𝑘𝑚(𝑚,𝑛)=⎧⎩⎨⎪⎪𝑛+1𝑎𝑘𝑚(𝑚−1,1)𝑎𝑘𝑚(𝑚−1,𝑎𝑘𝑚(𝑚,𝑛−1))(𝑚=0)(𝑚&amp;gt;0,𝑛=0)(𝑚&amp;gt;0,𝑛&amp;gt;0)&lt;/p&gt;</description></item><item><title>51nod-1884-变换字符串</title><link>https://eonh1u.github.io/posts/51nod-1884-%E5%8F%98%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Mon, 12 Aug 2019 21:20:11 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1884-%E5%8F%98%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;p&gt;题目:
+有一个字符串S，长度为n，现在要对其作变换。变换的规则如下：对于第i（1&amp;lt;=i&amp;lt;=n）个字符，可以保持不变，或者变换为第i-1个字符（如果有的话）或者第i+1个字符（如果有的话）。&lt;/p&gt;
+&lt;p&gt;请计算一下最多可以变换出多少种不同的字符串，最后总数对 1000000007(109+7) 取余后输出。&lt;/p&gt;</description></item><item><title>51node-2502-分块</title><link>https://eonh1u.github.io/posts/51node-2502-%E5%88%86%E5%9D%97/</link><pubDate>Sun, 11 Aug 2019 22:55:18 +0000</pubDate><guid>https://eonh1u.github.io/posts/51node-2502-%E5%88%86%E5%9D%97/</guid><description>&lt;p&gt;题目：
+小b有个长度为n的数组a，她想将这个数组排序。&lt;/p&gt;
+&lt;p&gt;然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。&lt;/p&gt;
+&lt;p&gt;请问你最多能把a分成多少块。&lt;/p&gt;</description></item><item><title>51nod-2627-树的深度大小</title><link>https://eonh1u.github.io/posts/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/</link><pubDate>Sun, 11 Aug 2019 21:54:29 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2627-%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%A4%A7%E5%B0%8F/</guid><description>&lt;p&gt;现在有一棵n个节点的树，节点1为这棵树的根，求出每个节点的深度以及每个节点的子树中的节点个数。&lt;/p&gt;
+&lt;p&gt;输入
+第1行：一个数字n，表示树中节点的个数。(1&amp;lt;=n&amp;lt;=100000)
+第2-n行：每行两个数字u,v，表示u与v之间有一条边。(1&amp;lt;=u,v&amp;lt;=n)
+输出
+输出n行，每行两个正整数，第i行的第一个正整数表示节点i的深度，第二个正整数表示以节点i为根的子树大小。&lt;/p&gt;</description></item><item><title>51nod-2497-数三角形</title><link>https://eonh1u.github.io/posts/51nod-2497-%E6%95%B0%E4%B8%89%E8%A7%92%E5%BD%A2/</link><pubDate>Fri, 09 Aug 2019 23:07:08 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2497-%E6%95%B0%E4%B8%89%E8%A7%92%E5%BD%A2/</guid><description>&lt;p&gt;占坑。。。明天更。。。加油！！
+ps:00:53点交一发
+小b有一个仅包含非负整数的数组a，她想知道有多少个三元组(i,j,k)，满足i&amp;lt;j&amp;lt;k且a[i],a[j],a[k]可能作为某个三角形的三条边的边长。&lt;/p&gt;
+&lt;p&gt;输入
+第一行输入一个正整数n，表示数组a中元素个数；
+第二行n个非负整数，表示a中元素，以空格隔开；
+其中0＜n≤1000，a中任意元素a[i]满足0≤a[i]≤1000。&lt;/p&gt;</description></item><item><title>51nod-2653-区间xor</title><link>https://eonh1u.github.io/posts/51nod-2653-%E5%8C%BA%E9%97%B4xor/</link><pubDate>Thu, 08 Aug 2019 20:54:14 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2653-%E5%8C%BA%E9%97%B4xor/</guid><description>&lt;p&gt;题目:
+给出区间(a,b)，b &amp;gt;= a，求𝑎 𝑥𝑜𝑟 (𝑎+1) 𝑥𝑜𝑟 (𝑎+2)&amp;hellip;..𝑥𝑜𝑟 𝑏。
+输入
+输入2个数：a b，中间用空格分隔(1 &amp;lt;= a &amp;lt;= b &amp;lt;= 10^9)
+输出
+输出一个答案
+输入样例
+3 8
+输出样例
+11&lt;/p&gt;</description></item><item><title>51nod-2530-最大输出</title><link>https://eonh1u.github.io/posts/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/</link><pubDate>Wed, 07 Aug 2019 19:11:10 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/</guid><description>&lt;p&gt;题目：
+给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。&lt;/p&gt;
+&lt;p&gt;输入
+第一行3个数n,m,k，(2&amp;lt;=n&amp;lt;=2*10^5 ,1&amp;lt;=m,k&amp;lt;=10^9)
+第二行n个数a[1&amp;hellip;n]，(1&amp;lt;=a[i]&amp;lt;=10^9)
+输出
+一个数，表示最大值。&lt;/p&gt;</description></item><item><title>1393 01相等串</title><link>https://eonh1u.github.io/posts/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/</link><pubDate>Tue, 06 Aug 2019 21:53:06 +0000</pubDate><guid>https://eonh1u.github.io/posts/1393-01%E7%9B%B8%E7%AD%89%E4%B8%B2/</guid><description>&lt;p&gt;题目：
+给定一个0-1串，请找到一个尽可能长的子串，其中包含的0与1的个数相等。&lt;/p&gt;
+&lt;p&gt;一个字符串，只包含01，长度不超过1000000。
+输出
+一行一个整数，最长的0与1的个数相等的子串的长度。
+输入样例
+1011
+输出样例
+2&lt;/p&gt;</description></item><item><title>51nod-1890-方块塔</title><link>https://eonh1u.github.io/posts/51nod-1890-%E6%96%B9%E5%9D%97%E5%A1%94/</link><pubDate>Mon, 05 Aug 2019 22:45:40 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1890-%E6%96%B9%E5%9D%97%E5%A1%94/</guid><description>&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt;
+ 地上有n个方块，每一个方块高度都是H，第i（1&amp;lt;=i&amp;lt;=n）个方块的长和宽分别为L[i],W[i]。&lt;/p&gt;
+&lt;p&gt; 现在开始堆方块塔，每次可以拿一个方块放到一个方块塔上，但是有一个要求，设当前塔顶的方块长度和宽度分别为Ltop,Wtop，当前拿到的方块长度和宽度分别为Lcur,Wcur，当满足Lcur&amp;lt;=Ltop&amp;amp;&amp;amp;Wcur&amp;lt;=Wtop的时候，这个方块才能被放到塔顶，并且取代之前的塔顶成为新塔顶。&lt;/p&gt;
+&lt;p&gt; 由于土地比较贵，所以想要堆出来的塔的数目尽可能少，请计算最少的塔的数目。&lt;/p&gt;</description></item><item><title>51nod-2652-阶乘0的数量</title><link>https://eonh1u.github.io/posts/51nod-2652-%E9%98%B6%E4%B9%980%E7%9A%84%E6%95%B0%E9%87%8F/</link><pubDate>Sun, 04 Aug 2019 23:28:18 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2652-%E9%98%B6%E4%B9%980%E7%9A%84%E6%95%B0%E9%87%8F/</guid><description>&lt;p&gt;给出一个数k，求最小的n，使得n的阶乘后面0的数量&amp;gt;=k。&lt;/p&gt;
+&lt;p&gt;例如k=1，&lt;/p&gt;
+&lt;p&gt;5的阶乘 = 1&lt;em&gt;2&lt;/em&gt;3&lt;em&gt;4&lt;/em&gt;5 = 120，120后面有1个0。并且4的阶乘后面没有0，所以5是最小的结果。&lt;/p&gt;</description></item><item><title>51nod-2651-区间和的和</title><link>https://eonh1u.github.io/posts/51nod-2651-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E5%92%8C/</link><pubDate>Sat, 03 Aug 2019 22:50:42 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2651-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E5%92%8C/</guid><description>&lt;p&gt;题目:
+输入一个长度为𝑛的数组𝑎，𝑎包括(𝑛−1)𝑛/2个区间。每个区间所有数的和，被称为区间和，求所有(𝑛−1)𝑛/2个区间和的和。由于数值较大，输出mod 1e9+7的结果。&lt;/p&gt;
+&lt;p&gt;输入
+第一行一个整数n，表示数组长度(2&amp;lt;=n&amp;lt;=100000)
+接下来n行，每行一个整数ai，表示数组的内容。(0&amp;lt;=ai&amp;lt;=50000)
+输出
+输出答案mod 1e9+7
+输入样例
+3
+1
+2
+3
+输出样例
+20
+解法：
+统计每个数字出现的次数就好了，每个数字出现的次数为该数字左边数字的个数乘右边的。
+代码：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-#include&lt;stdio.h&gt;" data-lang="#include&lt;stdio.h&gt;"&gt;using namespace std;
+int main()
+{
+long long ans = 0;
+long long mod = 1e9+7;
+long long n;
+scanf(&amp;#34;%lld&amp;#34;,&amp;amp;n);
+long long e = n;
+for(int i = 1; i &amp;lt;=n; i++,e--)
+{
+long long a;
+scanf(&amp;#34;%lld&amp;#34;, &amp;amp;a);
+long long now = (((a*i)%mod) * e) % mod;
+ans = (ans + now) % mod;
+}
+printf(&amp;#34;%lld&amp;#34;, ans);
+return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>51nod-2281-树的size之和</title><link>https://eonh1u.github.io/posts/51nod-2281-%E6%A0%91%E7%9A%84size%E4%B9%8B%E5%92%8C/</link><pubDate>Fri, 02 Aug 2019 23:21:36 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2281-%E6%A0%91%E7%9A%84size%E4%B9%8B%E5%92%8C/</guid><description>&lt;p&gt;题目：
+给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;1─2─4─5
+└─3&lt;/p&gt;
+&lt;p&gt;其中节点5的子树只包括节点5，Size = 1。节点4的子树包括节点4，5，Size = 2。节点1的子树包括节点1，2，3，4，5，Size = 5。&lt;/p&gt;
+&lt;p&gt;求以所有节点为根的子树的Size之和。上面例子中，节点1到5，对应的Size分别为5，3，1，2，1，所有Size的和 = 5 + 3 + 1 + 2 + 1 = 12&lt;/p&gt;</description></item><item><title>51node-2067-n皇后</title><link>https://eonh1u.github.io/posts/51node-2067-n%E7%9A%87%E5%90%8E/</link><pubDate>Thu, 01 Aug 2019 22:23:34 +0000</pubDate><guid>https://eonh1u.github.io/posts/51node-2067-n%E7%9A%87%E5%90%8E/</guid><description>&lt;p&gt;题目:
+n皇后。。。不多bb
+直接贴代码了：&lt;/p&gt;</description></item><item><title>51nod-2529-移动</title><link>https://eonh1u.github.io/posts/51nod-2529-%E7%A7%BB%E5%8A%A8/</link><pubDate>Wed, 31 Jul 2019 21:22:45 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2529-%E7%A7%BB%E5%8A%A8/</guid><description>&lt;p&gt;题目：
+ 有𝑛个点，第𝑖号点在一维数轴的𝑖坐标位置。你现在在1号点，你需要走𝑘步，移动总长度为𝑆，问这样的方案是否存在。注意：每一步都至少移动1格，且每一步都必须从一个点移动到另一个点上。&lt;/p&gt;</description></item><item><title>51nod-2423-叶子节点的数量</title><link>https://eonh1u.github.io/posts/51nod-2423-%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%95%B0%E9%87%8F/</link><pubDate>Tue, 30 Jul 2019 23:07:06 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-2423-%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E6%95%B0%E9%87%8F/</guid><description>&lt;p&gt;题目：
+给出一棵n个节点的树，节点编号为1-n（根节点编号为1），求这棵树叶子结点的数量。
+例如：&lt;/p&gt;
+&lt;p&gt;1─2─4─5
+└─3&lt;/p&gt;
+&lt;p&gt;其中3和5是叶子节点，输出2。&lt;/p&gt;</description></item><item><title>51nod-1889-制铁棒</title><link>https://eonh1u.github.io/posts/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/</link><pubDate>Mon, 29 Jul 2019 21:53:52 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/</guid><description>&lt;p&gt;&lt;strong&gt;题目:&lt;/strong&gt;
+ 工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。&lt;/p&gt;</description></item><item><title>51nod-1740 蜂巢迷宫</title><link>https://eonh1u.github.io/posts/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/</link><pubDate>Sun, 28 Jul 2019 22:43:23 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/</guid><description>&lt;p&gt;题目：
+有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。&lt;/p&gt;
+&lt;p&gt;艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。
+图片贴不上 这里附上原题目的链接：
+&lt;a href="http://www.51nod.com/Challenge/Problem.html#problemId=1740"&gt;http://www.51nod.com/Challenge/Problem.html#problemId=1740&lt;/a&gt;&lt;/p&gt;</description></item><item><title>51nod-1886-叠加串</title><link>https://eonh1u.github.io/posts/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/</link><pubDate>Sat, 27 Jul 2019 23:01:26 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/</guid><description>&lt;p&gt;今天周六，偷个懒选了个非常easy 的题目
+题目：
+有一个字符串S，下标从1开始，初始为S=&amp;ldquo;0&amp;rdquo;。现在开始调用fun函数。&lt;/p&gt;</description></item><item><title>51nod 1877 打包</title><link>https://eonh1u.github.io/posts/51nod-1877-%E6%89%93%E5%8C%85/</link><pubDate>Fri, 26 Jul 2019 23:22:25 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1877-%E6%89%93%E5%8C%85/</guid><description>&lt;p&gt;题目：
+又到了一年毕业季，Noder也从学校毕业了。现在Noder要把东西进行打包，打包完成后，Noder的所有东西都被装进了若干个长方体形状的收纳盒中，这些收纳盒的高都是1024，底座是正方形且边长都是1到6之间的整数。现在Noder要进行搬家了，他有一辆车，这个车子的后备箱是一个长方体，高为1024，底座为边长是6的正方形，那么Noder想知道，他最少要运几趟才能把他所有的东西运完呢？&lt;/p&gt;</description></item><item><title>51nod 奥林匹克年</title><link>https://eonh1u.github.io/posts/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/</link><pubDate>Thu, 25 Jul 2019 23:07:02 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/</guid><description>&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt;
+奥林匹克竞赛从1989年开始举行，每一个奥林匹克年都会有一个缩写IAO&amp;rsquo;y， y表示那一年的最后几位数字。 组织者会取一个之前未被用过的缩写来表示该年份，而且要尽可能的短。&lt;/p&gt;
+&lt;p&gt;例如，前三个奥林匹克年是1989，1990和1991，他们对应的缩写是IAO'9， IAO'0 和IAO'1，而2015的缩写是IAO'15，因为IAO'5已经被1995用过了。&lt;/p&gt;
+&lt;p&gt;现在给出一个缩写，请判断这个是代表哪一年的。&lt;/p&gt;</description></item><item><title>51nod-1770</title><link>https://eonh1u.github.io/posts/51nod-1770-%E6%95%B0%E6%95%B0%E5%AD%97/</link><pubDate>Wed, 24 Jul 2019 18:32:46 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1770-%E6%95%B0%E6%95%B0%E5%AD%97/</guid><description>&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt;
+统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。&lt;/p&gt;
+&lt;p&gt;样例解释：&lt;/p&gt;
+&lt;p&gt;3333333333*3=9999999999，里面有10个9。&lt;/p&gt;</description></item><item><title>51nod-1744 codeforce-143c</title><link>https://eonh1u.github.io/posts/51nod-1744-codeforce-143c/</link><pubDate>Tue, 23 Jul 2019 20:29:46 +0000</pubDate><guid>https://eonh1u.github.io/posts/51nod-1744-codeforce-143c/</guid><description>&lt;p&gt;&lt;strong&gt;题目：&lt;/strong&gt;
+羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。&lt;/p&gt;
+&lt;p&gt;在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一个面的食物，一个面的食物指的是紧贴着某个面食物。所以剩下只有 （𝐴−1）×（𝐵−2）×（𝐶−2） 块食物。为了隐藏罪证，小偷们把剩下的食物块，全部打乱，散落在小屋的四周。所以村长忘记了原来A，B，C到底是多少。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,321 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>cf-Global Round 5 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="A:Balanced Rating Changes
+题目：
+Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.
+Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.
+There are two conditions though:"><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/cf-global-round-5/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/cf-global-round-5/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/cf-global-round-5/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="cf-Global Round 5"><meta property="og:description" content="A:Balanced Rating Changes 题目： Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.
+Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.
+There are two conditions though:"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-10-19T13:25:01+00:00"><meta property="article:modified_time" content="2019-10-19T13:25:01+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="cf-Global Round 5"><meta name=twitter:description content="A:Balanced Rating Changes 题目： Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.
+Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.
+There are two conditions though:"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"cf-Global Round 5","item":"https://eonh1u.github.io/posts/cf-global-round-5/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"cf-Global Round 5","name":"cf-Global Round 5","description":"A:Balanced Rating Changes 题目： Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.\nUnfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.\nThere are two conditions though:\n","keywords":["ACM"],"articleBody":"A:Balanced Rating Changes 题目： Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.\nUnfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.\nThere are two conditions though:\nFor each participant 𝑖, their modified rating change 𝑏𝑖 must be integer, and as close to 𝑎𝑖/2 as possible. It means that either 𝑏𝑖=⌊𝑎𝑖/2⌋ or 𝑏𝑖=⌈𝑎𝑖/2⌉. In particular, if 𝑎𝑖 is even, 𝑏𝑖=𝑎𝑖2. Here ⌊𝑥⌋ denotes rounding down to the largest integer not greater than 𝑥, and ⌈𝑥⌉ denotes rounding up to the smallest integer not smaller than 𝑥. The modified rating changes must be perfectly balanced — their sum must be equal to 0. Can you help with that?\nInput The first line contains a single integer 𝑛 (2≤𝑛≤13845), denoting the number of participants.\nEach of the next 𝑛 lines contains a single integer 𝑎𝑖 (−336≤𝑎𝑖≤1164), denoting the rating change of the 𝑖-th participant.\nThe sum of all 𝑎𝑖 is equal to 0.\nOutput Output 𝑛 integers 𝑏𝑖, each denoting the modified rating change of the 𝑖-th participant in order of input.\nFor any 𝑖, it must be true that either 𝑏𝑖=⌊𝑎𝑖/2⌋ or 𝑏𝑖=⌈𝑎𝑖/2⌉. The sum of all 𝑏𝑖 must be equal to 0.\nIf there are multiple solutions, print any. We can show that a solution exists for any valid input.\nExamples input\n3 10 -5 -5 output\n5 -2 -3 input\n7 -7 -29 0 3 24 -29 38 output\n-3 -15 0 2 12 -15 19 题解： 统计正数与负数的奇数之差，然后在输出时进行处理即可。\n代码： #include #include #include #include #include #include #include #include int a[20010]; int main() { int n; scanf(\"%d\", \u0026n); int sum1 =0; int sum2 =0; for(int i = 0; i \u003c n; i++){ scanf(\"%d\", \u0026a[i]); if(a[i] \u003e 0 \u0026\u0026 a[i] % 2 == 1) sum1++; if(a[i] \u003c 0 \u0026\u0026 a[i] % 2 == -1) sum2++; } if(sum1 \u003c sum2){ sum1 = (sum2 - sum1) / 2; for(int i = 0; i \u003c n; i++){ if(a[i] \u003c 0 \u0026\u0026 a[i]%2 == -1 \u0026\u0026 sum1 \u003e 0){ printf(\"%d\\n\",a[i]/2 - 1); sum1--; } else { printf(\"%d\\n\",a[i]/2); } } } else { sum1 = (sum1 - sum2) / 2; for(int i = 0; i \u003c n; i++){ if(a[i] \u003e 0 \u0026\u0026 a[i]%2 == 1 \u0026\u0026 sum1 \u003e 0){ printf(\"%d\\n\",a[i]/2 + 1); sum1--; } else { printf(\"%d\\n\",a[i]/2); } } } return 0; } B： Balanced Tunnel 题目： Consider a tunnel on a one-way road. During a particular day, 𝑛 cars numbered from 1 to 𝑛 entered and exited the tunnel exactly once. All the cars passed through the tunnel at constant speeds.\nA traffic enforcement camera is mounted at the tunnel entrance. Another traffic enforcement camera is mounted at the tunnel exit. Perfectly balanced.\nThanks to the cameras, the order in which the cars entered and exited the tunnel is known. No two cars entered or exited at the same time.\nTraffic regulations prohibit overtaking inside the tunnel. If car 𝑖 overtakes any other car 𝑗 inside the tunnel, car 𝑖 must be fined. However, each car can be fined at most once.\nFormally, let’s say that car 𝑖 definitely overtook car 𝑗 if car 𝑖 entered the tunnel later than car 𝑗 and exited the tunnel earlier than car 𝑗. Then, car 𝑖 must be fined if and only if it definitely overtook at least one other car.\nFind the number of cars that must be fined.\nInput The first line contains a single integer 𝑛 (2≤𝑛≤105), denoting the number of cars.\nThe second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛), denoting the ids of cars in order of entering the tunnel. All 𝑎𝑖 are pairwise distinct.\nThe third line contains 𝑛 integers 𝑏1,𝑏2,…,𝑏𝑛 (1≤𝑏𝑖≤𝑛), denoting the ids of cars in order of exiting the tunnel. All 𝑏𝑖 are pairwise distinct.\nOutput Output the number of cars to be fined.\nExamples input\n5 3 5 2 1 4 4 3 2 5 1 output\n2 input\n7 5 2 3 6 7 1 4 2 3 6 7 1 4 5 output\n6 input\n2 1 2 1 2 output\n0 题解： 此代码用的归并排序进行处理，复杂度为nlogn 有复杂度为n的方法，以后补上。进行归并排布时，出现逆序时，将偏大的数字进行记录就可。\n代码: #include #include #include #include #include #include #include #include using namespace std; int p[100010]; int t[100010]; int a[100010]; int used[100010]; int sum=0; void solve(int l,int r) { //printf(\"%d %d\\n\",l,r); if(r-l\u003c2) { if(r-l == 1 \u0026\u0026 a[l] \u003e a[r]){ if(!used[a[l]]){ // printf(\"%d %d\\n\",a[l],a[r]); used[a[l]] = 1; // printf(\"2 used %d = true\\n\",a[l]); sum++; } swap(a[l], a[r]); } return ; } int m = (l + r) \u003e\u003e 1; solve(l , m); solve(m+1 , r); int now = m-l+1; int sz = l, sy = m+1; /* for(int i = l; i \u003c= r;i++) printf(\"%d \", a[i]); printf(\"\\n%d\\n\",used[6]); printf(\"\\n\");*/ for(int i = 0; i \u003c r - l + 1; i++) { // printf(\" i:%d used %d %d\\n\",i,a[sz],used[a[sz]]); if(sz \u003c= m \u0026\u0026 sy \u003c= r) { if(a[sz] \u003e a[sy]){ t[i] = a[sy]; sy++; if(!used[a[sz]]){ //printf(\"%d %d\\n\",a[sz],a[sy-1]); sum++; used[a[sz]] = 1; // printf(\"used %d %d\\n\",a[sz],used[a[sz]]); // printf(\"sy r %d %d\\n\", sy,r); } } else { t[i] = a[sz]; if(sy != m + 1 \u0026\u0026 !used[a[sz]]) { sum++; used[a[sz]] = 1; } sz++; now--; } } else if(sz == m+1) { while(sy \u003c= r) { t[i] = a[sy]; sy++; i++; } } else { // printf(\"sz %d\\n\",a[sz]); // printf(\"used %d %d \\n\",a[sz],used[a[sz]]); while(sz \u003c= m) { t[i] = a[sz]; // printf(\"sz %d\\n\",a[sz]); // printf(\"used %d %d \\n\",a[sz],used[a[sz]]); if(used[a[sz]] == 0){ sum++; used[a[sz]] = 1; } sz++; i++; } } } for(int i= l ; i \u003c= r; i++) a[i] = t[i-l]; } int main() { int n; scanf(\"%d\", \u0026n); for(int i = 1; i \u003c= n; i++){ int now ; scanf(\"%d\", \u0026now); p[now] = i; } for(int i = 1; i \u003c= n; i++){ scanf(\"%d\", \u0026a[i]); a[i] = p[a[i]]; } solve(1,n); printf(\"%d\\n\", sum); return 0; } C：Balanced Removals (Easier) 题目： This is an easier version of the problem. In this version, 𝑛≤2000.\nThere are 𝑛 distinct points in three-dimensional space numbered from 1 to 𝑛. The 𝑖-th point has coordinates (𝑥𝑖,𝑦𝑖,𝑧𝑖). The number of points 𝑛 is even.\nYou’d like to remove all 𝑛 points using a sequence of 𝑛2 snaps. In one snap, you can remove any two points 𝑎 and 𝑏 that have not been removed yet and form a perfectly balanced pair. A pair of points 𝑎 and 𝑏 is perfectly balanced if no other point 𝑐 (that has not been removed yet) lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏.\nFormally, point 𝑐 lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏 if and only if min(𝑥𝑎,𝑥𝑏)≤𝑥𝑐≤max(𝑥𝑎,𝑥𝑏), min(𝑦𝑎,𝑦𝑏)≤𝑦𝑐≤max(𝑦𝑎,𝑦𝑏), and min(𝑧𝑎,𝑧𝑏)≤𝑧𝑐≤max(𝑧𝑎,𝑧𝑏). Note that the bounding box might be degenerate.\nFind a way to remove all points in 𝑛2 snaps.\nInput The first line contains a single integer 𝑛 (2≤𝑛≤2000; 𝑛 is even), denoting the number of points.\nEach of the next 𝑛 lines contains three integers 𝑥𝑖, 𝑦𝑖, 𝑧𝑖 (−108≤𝑥𝑖,𝑦𝑖,𝑧𝑖≤108), denoting the coordinates of the 𝑖-th point.\nNo two points coincide.\nOutput Output 𝑛2 pairs of integers 𝑎𝑖,𝑏𝑖 (1≤𝑎𝑖,𝑏𝑖≤𝑛), denoting the indices of points removed on snap 𝑖. Every integer between 1 and 𝑛, inclusive, must appear in your output exactly once.\nWe can show that it is always possible to remove all points. If there are many solutions, output any of them.\nExamples input\n6 3 1 0 0 3 0 2 2 0 1 0 0 1 3 0 0 1 0 output\n3 6 5 1 2 4 input\n8 0 1 1 1 0 1 1 1 0 1 1 1 2 2 2 3 2 2 2 3 2 2 2 3 output\n4 5 1 6 2 7 3 8 题解： 按线面体的顺序进行依次删除。即按xyz顺序进行排序，先删除xy相同的，再删除x相同的，然后再依次删除，注意每次删除后都要排序一次。\n代码： #include #include #include #include #include #include #include #include using namespace std; struct point{ int x,y,z; int index; }; point p[2010]; point tmp[2010]; bool cmp(point a, point b){ if(a.x != b.x){ return a.x \u003c b.x; } else if(a.y != b.y){ return a.y \u003c b.y; } else{ return a.z \u003c b.z; } } bool used[2010]; int main() { int n; scanf(\"%d\", \u0026n); for(int i = 1; i \u003c= n; i++){ scanf(\"%d%d%d\",\u0026p[i].x, \u0026p[i].y, \u0026p[i].z); p[i].index = i; } sort(p + 1, p + n + 1, cmp); for(int i = 2 ; i \u003c= n; i++) { if(p[i].x == p[i - 1].x \u0026\u0026 p[i].y == p[i - 1].y){ printf(\"%d %d\\n\",p[i].index, p[i - 1].index); used[p[i].index] = used[p[i - 1].index] = true; i++; } } int now = 1; for(int i = 1; i \u003c= n; i++) { if(!used[p[i].index]) tmp[now++] = p[i]; } now--; for(int i = 1; i \u003c= now; i++) p[i] = tmp[i]; sort(p + 1, p + 1 + now,cmp); // printf(\"now %d\\n\",now); for(int i = 2 ; i \u003c= now; i++) { if(p[i].x == p[i - 1].x){ printf(\"%d %d\\n\",p[i].index, p[i - 1].index); used[p[i].index] = used[p[i - 1].index] = true; i++; } } int o = 1; for(int i = 1; i \u003c= now; i++) { if(!used[p[i].index]) tmp[o++] = p[i]; } o--; sort(tmp + 1, tmp + 1 + o,cmp); //printf(\"o %d\\n\",o); for(int i = 1; i \u003c= o; i++){ printf(\"%d %d\\n\",tmp[i].index,tmp[i + 1].index); i++; } return 0; } ","wordCount":"1541","inLanguage":"zh-cn","datePublished":"2019-10-19T13:25:01Z","dateModified":"2019-10-19T13:25:01Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/cf-global-round-5/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">cf-Global Round 5</h1><div class=post-meta><span title='2019-10-19 13:25:01 +0000 UTC'>October 19, 2019</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1541 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#题目>题目：</a><ul><li><a href=#input>Input</a></li><li><a href=#output>Output</a></li><li><a href=#examples>Examples</a></li></ul></li><li><a href=#题解>题解：</a></li><li><a href=#代码>代码：</a></li></ul><ul><li><a href=#题目-1>题目：</a><ul><li><a href=#input-1>Input</a></li><li><a href=#output-1>Output</a></li><li><a href=#examples-1>Examples</a></li></ul></li><li><a href=#题解-1>题解：</a></li><li><a href=#代码-1>代码:</a></li></ul><ul><li><a href=#题目-2>题目：</a><ul><li><a href=#input-2>Input</a></li><li><a href=#output-2>Output</a></li><li><a href=#examples-2>Examples</a></li></ul></li><li><a href=#题解-2>题解：</a></li><li><a href=#代码-2>代码：</a></li></ul></nav></div></details></div><div class=post-content><h1 id=abalanced-rating-changes>A:Balanced Rating Changes<a hidden class=anchor aria-hidden=true href=#abalanced-rating-changes>#</a></h1><h2 id=题目>题目：<a hidden class=anchor aria-hidden=true href=#题目>#</a></h2><p>Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.</p><p>Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.</p><p>There are two conditions though:</p><p>For each participant 𝑖, their modified rating change 𝑏𝑖 must be integer, and as close to 𝑎𝑖/2 as possible. It means that either 𝑏𝑖=⌊𝑎𝑖/2⌋ or 𝑏𝑖=⌈𝑎𝑖/2⌉. In particular, if 𝑎𝑖 is even, 𝑏𝑖=𝑎𝑖2. Here ⌊𝑥⌋ denotes rounding down to the largest integer not greater than 𝑥, and ⌈𝑥⌉ denotes rounding up to the smallest integer not smaller than 𝑥.
+The modified rating changes must be perfectly balanced — their sum must be equal to 0.
+Can you help with that?</p><h3 id=input>Input<a hidden class=anchor aria-hidden=true href=#input>#</a></h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤13845), denoting the number of participants.</p><p>Each of the next 𝑛 lines contains a single integer 𝑎𝑖 (−336≤𝑎𝑖≤1164), denoting the rating change of the 𝑖-th participant.</p><p>The sum of all 𝑎𝑖 is equal to 0.</p><h3 id=output>Output<a hidden class=anchor aria-hidden=true href=#output>#</a></h3><p>Output 𝑛 integers 𝑏𝑖, each denoting the modified rating change of the 𝑖-th participant in order of input.</p><p>For any 𝑖, it must be true that either 𝑏𝑖=⌊𝑎𝑖/2⌋ or 𝑏𝑖=⌈𝑎𝑖/2⌉. The sum of all 𝑏𝑖 must be equal to 0.</p><p>If there are multiple solutions, print any. We can show that a solution exists for any valid input.</p><h3 id=examples>Examples<a hidden class=anchor aria-hidden=true href=#examples>#</a></h3><p>input</p><pre tabindex=0><code>3
+10
+-5
+-5
+</code></pre><p>output</p><pre tabindex=0><code>5
+-2
+-3
+</code></pre><p>input</p><pre tabindex=0><code>7
+-7
+-29
+0
+3
+24
+-29
+38
+</code></pre><p>output</p><pre tabindex=0><code>-3
+-15
+0
+2
+12
+-15
+19
+</code></pre><h2 id=题解>题解：<a hidden class=anchor aria-hidden=true href=#题解>#</a></h2><p>统计正数与负数的奇数之差，然后在输出时进行处理即可。</p><h2 id=代码>代码：<a hidden class=anchor aria-hidden=true href=#代码>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+int a[20010];
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    int sum1 =0;
+    int sum2 =0;
+    for(int i = 0; i &lt; n; i++){
+        scanf(&#34;%d&#34;, &amp;a[i]);
+        if(a[i] &gt; 0 &amp;&amp; a[i] % 2 == 1)
+            sum1++;
+        if(a[i] &lt; 0 &amp;&amp; a[i] % 2 == -1)
+            sum2++;
+    }
+    if(sum1 &lt; sum2){
+        sum1 = (sum2 - sum1) / 2;
+        for(int i = 0; i &lt; n; i++){
+            if(a[i] &lt; 0 &amp;&amp; a[i]%2 == -1 &amp;&amp; sum1 &gt; 0){
+                printf(&#34;%d\n&#34;,a[i]/2 - 1);
+                sum1--;
+            }
+            else
+            {
+                printf(&#34;%d\n&#34;,a[i]/2);
+            }
+            
+        }
+    }
+    else
+    {
+        sum1 = (sum1 - sum2) / 2;
+        for(int i = 0; i &lt; n; i++){
+            if(a[i] &gt; 0 &amp;&amp; a[i]%2 == 1 &amp;&amp; sum1 &gt; 0){
+                printf(&#34;%d\n&#34;,a[i]/2 + 1);
+                sum1--;
+            }
+            else
+            {
+                printf(&#34;%d\n&#34;,a[i]/2);
+            }
+            
+        }
+    }
+    return 0;
+}
+</code></pre><h1 id=b-balanced-tunnel>B： Balanced Tunnel<a hidden class=anchor aria-hidden=true href=#b-balanced-tunnel>#</a></h1><h2 id=题目-1>题目：<a hidden class=anchor aria-hidden=true href=#题目-1>#</a></h2><p>Consider a tunnel on a one-way road. During a particular day, 𝑛 cars numbered from 1 to 𝑛 entered and exited the tunnel exactly once. All the cars passed through the tunnel at constant speeds.</p><p>A traffic enforcement camera is mounted at the tunnel entrance. Another traffic enforcement camera is mounted at the tunnel exit. Perfectly balanced.</p><p>Thanks to the cameras, the order in which the cars entered and exited the tunnel is known. No two cars entered or exited at the same time.</p><p>Traffic regulations prohibit overtaking inside the tunnel. If car 𝑖 overtakes any other car 𝑗 inside the tunnel, car 𝑖 must be fined. However, each car can be fined at most once.</p><p>Formally, let&rsquo;s say that car 𝑖 definitely overtook car 𝑗 if car 𝑖 entered the tunnel later than car 𝑗 and exited the tunnel earlier than car 𝑗. Then, car 𝑖 must be fined if and only if it definitely overtook at least one other car.</p><p>Find the number of cars that must be fined.</p><h3 id=input-1>Input<a hidden class=anchor aria-hidden=true href=#input-1>#</a></h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤105), denoting the number of cars.</p><p>The second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛), denoting the ids of cars in order of entering the tunnel. All 𝑎𝑖 are pairwise distinct.</p><p>The third line contains 𝑛 integers 𝑏1,𝑏2,…,𝑏𝑛 (1≤𝑏𝑖≤𝑛), denoting the ids of cars in order of exiting the tunnel. All 𝑏𝑖 are pairwise distinct.</p><h3 id=output-1>Output<a hidden class=anchor aria-hidden=true href=#output-1>#</a></h3><p>Output the number of cars to be fined.</p><h3 id=examples-1>Examples<a hidden class=anchor aria-hidden=true href=#examples-1>#</a></h3><p>input</p><pre tabindex=0><code>5
+3 5 2 1 4
+4 3 2 5 1
+</code></pre><p>output</p><pre tabindex=0><code>2
+</code></pre><p>input</p><pre tabindex=0><code>7
+5 2 3 6 7 1 4
+2 3 6 7 1 4 5
+</code></pre><p>output</p><pre tabindex=0><code>6
+</code></pre><p>input</p><pre tabindex=0><code>2
+1 2
+1 2
+</code></pre><p>output</p><pre tabindex=0><code>0
+</code></pre><h2 id=题解-1>题解：<a hidden class=anchor aria-hidden=true href=#题解-1>#</a></h2><p>此代码用的归并排序进行处理，复杂度为nlogn 有复杂度为n的方法，以后补上。进行归并排布时，出现逆序时，将偏大的数字进行记录就可。</p><h2 id=代码-1>代码:<a hidden class=anchor aria-hidden=true href=#代码-1>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int p[100010];
+int t[100010];
+int a[100010];
+int used[100010];
+int sum=0;
+void solve(int l,int r)
+{
+    //printf(&#34;%d %d\n&#34;,l,r);
+    if(r-l&lt;2)
+    {
+        if(r-l  ==  1 &amp;&amp;  a[l] &gt; a[r]){
+            if(!used[a[l]]){
+               // printf(&#34;%d %d\n&#34;,a[l],a[r]);
+                used[a[l]] = 1;
+               // printf(&#34;2 used %d = true\n&#34;,a[l]);
+                sum++;
+            }
+            swap(a[l], a[r]);
+        }
+        return ;
+    }
+    int m = (l + r) &gt;&gt; 1;
+    solve(l , m);
+    solve(m+1 , r);
+    int now  = m-l+1;
+    int sz = l, sy = m+1;
+   /* for(int i = l; i &lt;= r;i++)
+        printf(&#34;%d &#34;, a[i]);
+    printf(&#34;\n%d\n&#34;,used[6]);
+    printf(&#34;\n&#34;);*/
+    for(int i = 0; i &lt; r - l + 1; i++)
+    {   
+       // printf(&#34; i:%d used %d %d\n&#34;,i,a[sz],used[a[sz]]);
+        if(sz &lt;= m &amp;&amp; sy &lt;= r)
+            {
+                if(a[sz] &gt; a[sy]){
+                    t[i] = a[sy];
+                    sy++; 
+                    if(!used[a[sz]]){
+                        //printf(&#34;%d %d\n&#34;,a[sz],a[sy-1]);
+                        sum++;
+                        used[a[sz]] = 1;
+                       // printf(&#34;used %d %d\n&#34;,a[sz],used[a[sz]]);
+                       // printf(&#34;sy r %d %d\n&#34;, sy,r);
+                    }
+                }
+                else
+                {
+                    t[i] = a[sz];
+                    if(sy != m + 1 &amp;&amp; !used[a[sz]])
+                    {
+                        sum++;
+                        used[a[sz]] = 1;
+                    }
+                    sz++; 
+                    now--;
+                }
+            }
+        else if(sz == m+1)
+        {
+            while(sy &lt;= r)
+            {
+                t[i] = a[sy];
+                sy++; i++;
+            }
+        }
+        else
+        {
+           // printf(&#34;sz  %d\n&#34;,a[sz]);
+          //  printf(&#34;used %d %d \n&#34;,a[sz],used[a[sz]]);
+            while(sz &lt;= m)
+            {
+                t[i] = a[sz];
+               // printf(&#34;sz  %d\n&#34;,a[sz]);
+              //  printf(&#34;used %d %d \n&#34;,a[sz],used[a[sz]]);
+                if(used[a[sz]] == 0){
+                    sum++;
+                    used[a[sz]] = 1;
+                 }
+                sz++;
+                i++;
+            }
+        }
+    }
+    for(int i= l ; i &lt;= r; i++)
+        a[i] = t[i-l];
+   
+}
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    for(int i = 1; i &lt;= n; i++){
+        int now ;
+        scanf(&#34;%d&#34;, &amp;now);
+        p[now] = i;
+    }
+    for(int i = 1; i &lt;= n; i++){
+        scanf(&#34;%d&#34;, &amp;a[i]);
+        a[i] = p[a[i]];
+    }
+    solve(1,n);
+    printf(&#34;%d\n&#34;, sum);
+    return 0;
+}
+</code></pre><h1 id=cbalanced-removals-easier>C：Balanced Removals (Easier)<a hidden class=anchor aria-hidden=true href=#cbalanced-removals-easier>#</a></h1><h2 id=题目-2>题目：<a hidden class=anchor aria-hidden=true href=#题目-2>#</a></h2><p>This is an easier version of the problem. In this version, 𝑛≤2000.</p><p>There are 𝑛 distinct points in three-dimensional space numbered from 1 to 𝑛. The 𝑖-th point has coordinates (𝑥𝑖,𝑦𝑖,𝑧𝑖). The number of points 𝑛 is even.</p><p>You&rsquo;d like to remove all 𝑛 points using a sequence of 𝑛2 snaps. In one snap, you can remove any two points 𝑎 and 𝑏 that have not been removed yet and form a perfectly balanced pair. A pair of points 𝑎 and 𝑏 is perfectly balanced if no other point 𝑐 (that has not been removed yet) lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏.</p><p>Formally, point 𝑐 lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏 if and only if min(𝑥𝑎,𝑥𝑏)≤𝑥𝑐≤max(𝑥𝑎,𝑥𝑏), min(𝑦𝑎,𝑦𝑏)≤𝑦𝑐≤max(𝑦𝑎,𝑦𝑏), and min(𝑧𝑎,𝑧𝑏)≤𝑧𝑐≤max(𝑧𝑎,𝑧𝑏). Note that the bounding box might be degenerate.</p><p>Find a way to remove all points in 𝑛2 snaps.</p><h3 id=input-2>Input<a hidden class=anchor aria-hidden=true href=#input-2>#</a></h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤2000; 𝑛 is even), denoting the number of points.</p><p>Each of the next 𝑛 lines contains three integers 𝑥𝑖, 𝑦𝑖, 𝑧𝑖 (−108≤𝑥𝑖,𝑦𝑖,𝑧𝑖≤108), denoting the coordinates of the 𝑖-th point.</p><p>No two points coincide.</p><h3 id=output-2>Output<a hidden class=anchor aria-hidden=true href=#output-2>#</a></h3><p>Output 𝑛2 pairs of integers 𝑎𝑖,𝑏𝑖 (1≤𝑎𝑖,𝑏𝑖≤𝑛), denoting the indices of points removed on snap 𝑖. Every integer between 1 and 𝑛, inclusive, must appear in your output exactly once.</p><p>We can show that it is always possible to remove all points. If there are many solutions, output any of them.</p><h3 id=examples-2>Examples<a hidden class=anchor aria-hidden=true href=#examples-2>#</a></h3><p>input</p><pre tabindex=0><code>6
+3 1 0
+0 3 0
+2 2 0
+1 0 0
+1 3 0
+0 1 0
+</code></pre><p>output</p><pre tabindex=0><code>3 6
+5 1
+2 4
+</code></pre><p>input</p><pre tabindex=0><code>8
+0 1 1
+1 0 1
+1 1 0
+1 1 1
+2 2 2
+3 2 2
+2 3 2
+2 2 3
+</code></pre><p>output</p><pre tabindex=0><code>4 5
+1 6
+2 7
+3 8
+</code></pre><h2 id=题解-2>题解：<a hidden class=anchor aria-hidden=true href=#题解-2>#</a></h2><p>按线面体的顺序进行依次删除。即按xyz顺序进行排序，先删除xy相同的，再删除x相同的，然后再依次删除，注意每次删除后都要排序一次。</p><h2 id=代码-2>代码：<a hidden class=anchor aria-hidden=true href=#代码-2>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+struct point{
+    int x,y,z;
+    int index;
+};
+point p[2010];
+point tmp[2010];
+bool cmp(point a, point b){
+    if(a.x != b.x){
+        return a.x &lt; b.x;
+    }
+    else if(a.y != b.y){
+        return a.y &lt; b.y;
+    }
+    else{
+        return a.z &lt; b.z;
+    }
+}
+bool used[2010];
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    for(int i = 1; i &lt;= n; i++){
+        scanf(&#34;%d%d%d&#34;,&amp;p[i].x, &amp;p[i].y, &amp;p[i].z);
+        p[i].index = i;
+    }
+    sort(p + 1, p + n + 1, cmp);
+    for(int i = 2 ; i &lt;= n; i++)
+    {
+        if(p[i].x == p[i - 1].x &amp;&amp; p[i].y == p[i - 1].y){
+            printf(&#34;%d %d\n&#34;,p[i].index, p[i - 1].index);
+            used[p[i].index] = used[p[i - 1].index] = true;
+            i++;
+        }
+    }
+    int now = 1;
+    for(int i = 1; i &lt;= n; i++)
+    {
+        if(!used[p[i].index])
+            tmp[now++] = p[i];
+    }
+    now--;
+    for(int i = 1; i &lt;= now; i++)
+        p[i] = tmp[i];
+    sort(p + 1, p + 1 + now,cmp);
+   // printf(&#34;now %d\n&#34;,now);
+    for(int i = 2 ; i &lt;= now; i++)
+    {
+        if(p[i].x == p[i - 1].x){
+            printf(&#34;%d %d\n&#34;,p[i].index, p[i - 1].index);
+            used[p[i].index] = used[p[i - 1].index] = true;
+            i++;
+        }
+    }
+    int o = 1;
+    for(int i = 1; i &lt;= now; i++)
+    {
+        if(!used[p[i].index])
+            tmp[o++] = p[i];
+    }
+    o--;
+    sort(tmp + 1, tmp + 1 + o,cmp);
+    //printf(&#34;o %d\n&#34;,o);
+    for(int i = 1; i &lt;= o; i++){
+        printf(&#34;%d %d\n&#34;,tmp[i].index,tmp[i + 1].index);
+        i++;
+    }
+    return 0;
+ 
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/cf-593-div2/><span class=title>«</span><br><span>cf-593-div2</span>
+</a><a class=next href=https://eonh1u.github.io/posts/51nod-2594-%E6%8B%AC%E5%8F%B7%E4%B9%8B%E4%BB%B7/><span class=title>»</span><br><span>51nod-2594-括号之价</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

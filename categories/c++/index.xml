@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>C++ on eonh1u Blog</title><link>https://eonh1u.github.io/categories/c++/</link><description>Recent content in C++ on eonh1u Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Aug 2020 18:18:06 +0000</lastBuildDate><atom:link href="https://eonh1u.github.io/categories/c++/index.xml" rel="self" type="application/rss+xml"/><item><title>STL-C++</title><link>https://eonh1u.github.io/posts/stl-c++/</link><pubDate>Thu, 27 Aug 2020 18:18:06 +0000</pubDate><guid>https://eonh1u.github.io/posts/stl-c++/</guid><description>&lt;h1 id="stl-c"&gt;STL-C++&lt;/h1&gt;
+&lt;p&gt;本文是关于c++中STL库中的一些记录，主要是因为之前在网上找到关于STL的资料太过简洁，并且只停留在如何使用函数，对于底层具体实现较少，所以想自己对这些知识记录一下，当然我目前对STL库了解也不深入，以后如果会有新的了解的话，会继续更新。&lt;/p&gt;
+&lt;h2 id="vector"&gt;vector&lt;/h2&gt;
+&lt;h3 id="vector定义"&gt;vector定义&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;template&amp;lt;class _Ty,
+class _Ax&amp;gt;
+class vector
+: public _Vector_val&amp;lt;_Ty, _Ax&amp;gt;
+{ // varying size array of values
+public:
+/********/
+protected:
+pointer _Myfirst; // pointer to beginning of array
+pointer _Mylast; // pointer to current end of sequence
+pointer _Myend; // pointer to end of array
+};
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>

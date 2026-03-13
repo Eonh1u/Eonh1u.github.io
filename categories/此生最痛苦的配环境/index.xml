@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>此生最痛苦的配环境 on eonh1u Blog</title><link>https://eonh1u.github.io/categories/%E6%AD%A4%E7%94%9F%E6%9C%80%E7%97%9B%E8%8B%A6%E7%9A%84%E9%85%8D%E7%8E%AF%E5%A2%83/</link><description>Recent content in 此生最痛苦的配环境 on eonh1u Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Dec 2020 10:59:43 +0000</lastBuildDate><atom:link href="https://eonh1u.github.io/categories/%E6%AD%A4%E7%94%9F%E6%9C%80%E7%97%9B%E8%8B%A6%E7%9A%84%E9%85%8D%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml"/><item><title>nccl test 环境</title><link>https://eonh1u.github.io/posts/nccl-test-%E7%8E%AF%E5%A2%83/</link><pubDate>Wed, 30 Dec 2020 10:59:43 +0000</pubDate><guid>https://eonh1u.github.io/posts/nccl-test-%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;在之前的服务器上发现安装的nccl，不能正确的运行nccl test测试，在尝试了多种方法之后，发现需要重新编译安装nccl&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/nvidia/nccl"&gt;https://github.com/nvidia/nccl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按照官方github上说明进行编译安装&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt install build-essential devscripts debhelper fakeroot -y
+make -j pkg.debian.build
+dpkg -i build/pkg/deb/*.deb
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>ssh 私钥连接服务器记录</title><link>https://eonh1u.github.io/posts/ssh-%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%B0%E5%BD%95/</link><pubDate>Thu, 15 Oct 2020 14:29:11 +0000</pubDate><guid>https://eonh1u.github.io/posts/ssh-%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%B0%E5%BD%95/</guid><description>&lt;p&gt;若执行ssh-add /path/to/xxx.pem是出现这个错误:Could not open a connection to your authentication agent，则先执行如下命令即可：
+　　ssh-agent bash
+然后执行ssh-add xxx.pem
+如果出现ssh “permissions are too open” error，则执行chmod命令修改xx.pem文件权限
+chmod 400 ~/.ssh/id_rsa 或者 chmod 600 ~/.ssh/id_rsa&lt;/p&gt;</description></item></channel></rss>

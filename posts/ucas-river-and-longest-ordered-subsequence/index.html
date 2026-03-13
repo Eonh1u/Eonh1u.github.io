@@ -1,0 +1,104 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>ucas river and Longest Ordered Subsequence | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="今天在ucas oj上面尝试做了两道题
+river：二分即可
+Description
+Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help."><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="ucas river and Longest Ordered Subsequence"><meta property="og:description" content="今天在ucas oj上面尝试做了两道题
+river：二分即可 Description Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-08T22:50:47+00:00"><meta property="article:modified_time" content="2019-09-08T22:50:47+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="ucas river and Longest Ordered Subsequence"><meta name=twitter:description content="今天在ucas oj上面尝试做了两道题
+river：二分即可 Description Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"ucas river and Longest Ordered Subsequence","item":"https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ucas river and Longest Ordered Subsequence","name":"ucas river and Longest Ordered Subsequence","description":"今天在ucas oj上面尝试做了两道题\nriver：二分即可 Description Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help.\n","keywords":["ACM"],"articleBody":"今天在ucas oj上面尝试做了两道题\nriver：二分即可 Description Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help.\nThe width of the river is an integer L((1≤L≤1,000,000,000). We treat the river as a one-dimensional line segment,with two endpoints A (two frog’s home) and B (the other side of the river). Among the river, there are N stones (0≤N≤50,000). The distance from the i-th stone to side A is Di (0","wordCount":"648","inLanguage":"zh-cn","datePublished":"2019-09-08T22:50:47Z","dateModified":"2019-09-08T22:50:47Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/ucas-river-and-longest-ordered-subsequence/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">ucas river and Longest Ordered Subsequence</h1><div class=post-meta><span title='2019-09-08 22:50:47 +0000 UTC'>September 8, 2019</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>648 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents></nav></div></details></div><div class=post-content><p>今天在ucas oj上面尝试做了两道题</p><h1 id=river二分即可>river：二分即可<a hidden class=anchor aria-hidden=true href=#river二分即可>#</a></h1><p>Description
+Two lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help.</p><p>The width of the river is an integer L((1≤L≤1,000,000,000). We treat the river as a one-dimensional line segment,with two endpoints A (two frog’s home) and B (the other side of the river). Among the river, there are N stones (0≤N≤50,000). The distance from the i-th stone to side A is Di (0&lt;Di&lt;L). Alice would like to remove M stones in the river (0≤M≤N) so that with the rest of the stones, the minimum distance among all possible jumps for Bob is the largest.</p><p>Input
+Each instance contains two lines. The first line contains three integers L, N and M. The second line gives the positions of N stones. No two stones share the same position.</p><p>30% test cases guarantee that N &lt; 20.
+Output
+For each instance, output a single line with a single integer which is the maximum of the minimum distance among all possible jumps after removing M stones. In the example, Alice should remove stones with distance 2 and 14. After removing these two stones, the minimum distance of jumps is 4, and there are two jumps with distance 4: from 17 to 21, and from 21 to 25.</p><p>Sample Input
+25 5 2
+2 14 11 21 17
+Sample Output
+4
+<strong>代码:</strong></p><pre tabindex=0><code class="language-#include<stdio.h>" data-lang="#include<stdio.h>">#include&lt;algorithm&gt;
+using namespace std;
+int a[50010];
+int L,n,k;
+bool c(int x)
+{
+    int now = 0;
+    int p = 0;
+    for(int i = 0; i &lt;= n; i++)
+    {
+        if(a[i] - now &gt;= x)
+        {
+            now = a[i];
+        }
+        else
+        {
+            p++;
+            if(p &gt; k)
+                return false;
+        }
+    }
+    return true;
+}
+int main()
+{
+    
+    scanf(&#34;%d%d%d&#34;, &amp;L, &amp;n, &amp;k);
+    for(int i = 0; i &lt; n; i++){
+        scanf(&#34;%d&#34;, &amp;a[i]);
+    }
+    a[n] = L;
+    sort(a, a + n + 1);
+    int l = 1, r = L;
+    for(int i = 0; i &lt; 200; i++)
+    {
+        //printf(&#34;%d %d\n&#34;, l, r);
+        int m = (l + r)/2;
+        if(c(m))
+            l = m;
+        else
+            r = m -1;
+    }
+    if(c(r))
+     printf(&#34;%d\n&#34;, r);
+    else
+    {
+        printf(&#34;%d\n&#34;, l);
+    }
+    return 0;
+}
+</code></pre><h1 id=longest-ordered-subsequence-nlogn>Longest Ordered Subsequence: nlogn<a hidden class=anchor aria-hidden=true href=#longest-ordered-subsequence-nlogn>#</a></h1><p>Description
+A numeric sequence of aiai is ordered if a1&lt;a2&lt;⋯&lt;aNa1&lt;a2&lt;⋯&lt;aN. Let the subsequence of the given numeric sequence (a1,a2,…,aN)(a1,a2,…,aN) be any sequence (ai1,ai2,&mldr;,aiK)(ai1,ai2,&mldr;,aiK), where 1&lt;=i1&lt;i2&lt;⋯&lt;iK&lt;=N1&lt;=i1&lt;i2&lt;⋯&lt;iK&lt;=N. For example, sequence (1,7,3,5,9,4,8)(1,7,3,5,9,4,8) has ordered subsequences, e. g., (1,7)(1,7), (3,4,8)(3,4,8) and many others. All longest ordered subsequences are of length 44, e. g., (1,3,5,8)(1,3,5,8).</p><p>Your program, when given the numeric sequence, must find the length of its longest ordered subsequence.</p><p>Input
+The first line of input contains the length of sequence N. The second line contains the elements of sequence - N integers in the range from 0 to 10000 each, separated by spaces. 1 &lt;= N &lt;= 1000. But there is one test case with N = 1000000.</p><p>Output
+Output file must contain a single integer - the length of the longest ordered subsequence of the given sequence.</p><p>Sample Input
+7
+1 7 3 5 9 4 8
+Sample Output
+4
+<strong>代码：</strong></p><pre tabindex=0><code class="language-#include<stdio.h>" data-lang="#include<stdio.h>">#include&lt;algorithm&gt;
+using namespace std;
+const int MAX = 1000010;
+int a[MAX];
+int dp[MAX];
+int inf = 99999999;
+int n;
+void solve()
+{
+    fill(dp, dp + n, inf);
+    for(int i = 0; i &lt; n; i++)
+    {
+        *lower_bound(dp, dp + n, a[i]) = a[i];
+    }
+    printf(&#34;%d\n&#34;, lower_bound(dp, dp + n, inf) - dp);
+}
+int main()
+{
+    scanf(&#34;%d&#34;, &amp;n);
+    for(int i = 0; i &lt; n; i++)
+        scanf(&#34;%d&#34;, &amp;a[i]);
+    solve();
+    return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/%E9%80%86%E5%BA%8F%E5%AF%B9%E6%95%B0%E5%8F%98%E5%BD%A2/><span class=title>«</span><br><span>逆序对数变形</span>
+</a><a class=next href=https://eonh1u.github.io/posts/2518-%E5%92%8C%E4%B8%BAs/><span class=title>»</span><br><span>2518-和为S</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

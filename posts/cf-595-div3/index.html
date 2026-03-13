@@ -1,0 +1,362 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>cf-595-div3 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="A:Yet Another Dividing into Teams
+题目：
+You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:
+No two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1);
+the number of teams is the minimum possible.
+You have to answer 𝑞 independent queries."><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/cf-595-div3/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/cf-595-div3/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/cf-595-div3/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="cf-595-div3"><meta property="og:description" content="A:Yet Another Dividing into Teams 题目： You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:
+No two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1); the number of teams is the minimum possible. You have to answer 𝑞 independent queries."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-10-23T22:43:53+00:00"><meta property="article:modified_time" content="2019-10-23T22:43:53+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="cf-595-div3"><meta name=twitter:description content="A:Yet Another Dividing into Teams 题目： You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:
+No two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1); the number of teams is the minimum possible. You have to answer 𝑞 independent queries."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"cf-595-div3","item":"https://eonh1u.github.io/posts/cf-595-div3/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"cf-595-div3","name":"cf-595-div3","description":"A:Yet Another Dividing into Teams 题目： You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:\nNo two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1); the number of teams is the minimum possible. You have to answer 𝑞 independent queries.\n","keywords":["ACM"],"articleBody":"A:Yet Another Dividing into Teams 题目： You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:\nNo two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1); the number of teams is the minimum possible. You have to answer 𝑞 independent queries.\nInput The first line of the input contains one integer 𝑞 (1≤𝑞≤100) — the number of queries. Then 𝑞 queries follow.\nThe first line of the query contains one integer 𝑛 (1≤𝑛≤100) — the number of students in the query. The second line of the query contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤100, all 𝑎𝑖 are distinct), where 𝑎𝑖 is the programming skill of the 𝑖-th student.\nOutput For each query, print the answer on it — the minimum number of teams you can form if no two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 may belong to the same team (i.e. skills of each pair of students in the same team has the difference strictly greater than 1)\nExample input\n4 4 2 10 1 20 2 3 6 5 2 3 4 99 100 1 42 output\n2 1 2 1 题解 暴力即可\n代码 #include #include #include #include #include #include #include #include using namespace std; int a[110]; int main() { int t; scanf(\"%d\", \u0026t); while(t--){ int n; scanf(\"%d\", \u0026n); for(int i = 0; i ","wordCount":"2305","inLanguage":"zh-cn","datePublished":"2019-10-23T22:43:53Z","dateModified":"2019-10-23T22:43:53Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/cf-595-div3/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">cf-595-div3</h1><div class=post-meta><span title='2019-10-23 22:43:53 +0000 UTC'>October 23, 2019</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>2305 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#题目>题目：</a><ul><li><a href=#input>Input</a></li><li><a href=#output>Output</a></li><li><a href=#example>Example</a></li><li><a href=#题解>题解</a></li><li><a href=#代码>代码</a></li></ul></li></ul><ul><li><a href=#题目-1>题目</a><ul><li><a href=#input-1>Input</a></li><li><a href=#output-1>Output</a></li><li><a href=#example-1>Example</a></li></ul></li><li><a href=#题解-1>题解</a></li><li><a href=#代码-1>代码</a></li></ul><ul><li><a href=#题目-2>题目:</a><ul><li><a href=#input-2>Input</a></li><li><a href=#output-2>Output</a></li><li><a href=#example-2>Example</a></li></ul></li><li><a href=#题解-2>题解：</a></li><li><a href=#代码-2>代码：</a></li></ul><ul><li><a href=#题目-3>题目：</a><ul><li><a href=#input-3>Input</a></li><li><a href=#output-3>Output</a></li><li><a href=#examples>Examples</a></li></ul></li><li><a href=#题解-3>题解：</a></li><li><a href=#代码-3>代码：</a></li></ul><ul><li><a href=#题目-4>题目</a><ul><li><a href=#input-4>Input</a></li><li><a href=#output-4>Output</a></li><li><a href=#examples-1>Examples</a></li></ul></li><li><a href=#题解-4>题解</a></li><li><a href=#代码-4>代码：</a></li></ul></nav></div></details></div><div class=post-content><h1 id=ayet-another-dividing-into-teams>A:Yet Another Dividing into Teams<a hidden class=anchor aria-hidden=true href=#ayet-another-dividing-into-teams>#</a></h1><h2 id=题目>题目：<a hidden class=anchor aria-hidden=true href=#题目>#</a></h2><p>You are a coach of a group consisting of 𝑛 students. The 𝑖-th student has programming skill 𝑎𝑖. All students have distinct programming skills. You want to divide them into teams in such a way that:</p><p>No two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 belong to the same team (i.e. skills of each pair of students in the same team have the difference strictly greater than 1);
+the number of teams is the minimum possible.
+You have to answer 𝑞 independent queries.</p><h3 id=input>Input<a hidden class=anchor aria-hidden=true href=#input>#</a></h3><p>The first line of the input contains one integer 𝑞 (1≤𝑞≤100) — the number of queries. Then 𝑞 queries follow.</p><p>The first line of the query contains one integer 𝑛 (1≤𝑛≤100) — the number of students in the query. The second line of the query contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤100, all 𝑎𝑖 are distinct), where 𝑎𝑖 is the programming skill of the 𝑖-th student.</p><h3 id=output>Output<a hidden class=anchor aria-hidden=true href=#output>#</a></h3><p>For each query, print the answer on it — the minimum number of teams you can form if no two students 𝑖 and 𝑗 such that |𝑎𝑖−𝑎𝑗|=1 may belong to the same team (i.e. skills of each pair of students in the same team has the difference strictly greater than 1)</p><h3 id=example>Example<a hidden class=anchor aria-hidden=true href=#example>#</a></h3><p>input</p><pre tabindex=0><code>4
+4
+2 10 1 20
+2
+3 6
+5
+2 3 4 99 100
+1
+42
+</code></pre><p>output</p><pre tabindex=0><code>2
+1
+2
+1
+</code></pre><h3 id=题解>题解<a hidden class=anchor aria-hidden=true href=#题解>#</a></h3><p>暴力即可</p><h3 id=代码>代码<a hidden class=anchor aria-hidden=true href=#代码>#</a></h3><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int a[110];
+int main()
+{
+    int t;
+    scanf(&#34;%d&#34;, &amp;t);
+    while(t--){
+        int n;
+        scanf(&#34;%d&#34;, &amp;n);
+        for(int i = 0; i &lt;n; i++)
+        scanf(&#34;%d&#34;, &amp;a[i]);
+        int ans = 1;
+        sort(a,a +n);
+        for(int i = 1; i &lt; n;i++)
+            if(a[i] - a[i-1] == 1){
+                ans++;
+                break;
+            }
+        printf(&#34;%d\n&#34;,ans);
+    }
+    return 0;
+}
+</code></pre><h1 id=b--books-exchange>B Books Exchange<a hidden class=anchor aria-hidden=true href=#b--books-exchange>#</a></h1><h2 id=题目-1>题目<a hidden class=anchor aria-hidden=true href=#题目-1>#</a></h2><p>The only difference between easy and hard versions is constraints.</p><p>There are 𝑛 kids, each of them is reading a unique book. At the end of any day, the 𝑖-th kid will give his book to the 𝑝𝑖-th kid (in case of 𝑖=𝑝𝑖 the kid will give his book to himself). It is guaranteed that all values of 𝑝𝑖 are distinct integers from 1 to 𝑛 (i.e. 𝑝 is a permutation). The sequence 𝑝 doesn&rsquo;t change from day to day, it is fixed.</p><p>For example, if 𝑛=6 and 𝑝=[4,6,1,3,5,2] then at the end of the first day the book of the 1-st kid will belong to the 4-th kid, the 2-nd kid will belong to the 6-th kid and so on. At the end of the second day the book of the 1-st kid will belong to the 3-th kid, the 2-nd kid will belong to the 2-th kid and so on.</p><p>Your task is to determine the number of the day the book of the 𝑖-th child is returned back to him for the first time for every 𝑖 from 1 to 𝑛.</p><p>Consider the following example: 𝑝=[5,1,2,4,3]. The book of the 1-st kid will be passed to the following kids:</p><p>after the 1-st day it will belong to the 5-th kid,
+after the 2-nd day it will belong to the 3-rd kid,
+after the 3-rd day it will belong to the 2-nd kid,
+after the 4-th day it will belong to the 1-st kid.
+So after the fourth day, the book of the first kid will return to its owner. The book of the fourth kid will return to him for the first time after exactly one day.</p><p>You have to answer 𝑞 independent queries.</p><h3 id=input-1>Input<a hidden class=anchor aria-hidden=true href=#input-1>#</a></h3><p>The first line of the input contains one integer 𝑞 (1≤𝑞≤200) — the number of queries. Then 𝑞 queries follow.</p><p>The first line of the query contains one integer 𝑛 (1≤𝑛≤200) — the number of kids in the query. The second line of the query contains 𝑛 integers 𝑝1,𝑝2,…,𝑝𝑛 (1≤𝑝𝑖≤𝑛, all 𝑝𝑖 are distinct, i.e. 𝑝 is a permutation), where 𝑝𝑖 is the kid which will get the book of the 𝑖-th kid.</p><h3 id=output-1>Output<a hidden class=anchor aria-hidden=true href=#output-1>#</a></h3><p>For each query, print the answer on it: 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛, where 𝑎𝑖 is the number of the day the book of the 𝑖-th child is returned back to him for the first time in this query.</p><h3 id=example-1>Example<a hidden class=anchor aria-hidden=true href=#example-1>#</a></h3><p>input</p><pre tabindex=0><code>6
+5
+1 2 3 4 5
+3
+2 3 1
+6
+4 6 2 1 5 3
+1
+1
+4
+3 4 1 2
+5
+5 1 2 4 3
+</code></pre><p>output</p><pre tabindex=0><code>1 1 1 1 1 
+3 3 3 
+2 3 3 2 1 3 
+1 
+2 2 2 2 
+4 4 4 1 4 
+</code></pre><h2 id=题解-1>题解<a hidden class=anchor aria-hidden=true href=#题解-1>#</a></h2><p>并查集记录属于哪一个集合即可。</p><h2 id=代码-1>代码<a hidden class=anchor aria-hidden=true href=#代码-1>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int a[200010];
+int p[200010];
+int f[200010];
+set&lt;int&gt; s;
+int main()
+{
+    int t;
+    scanf(&#34;%d&#34;, &amp;t);
+    while(t--){
+        int n;
+        scanf(&#34;%d&#34;, &amp;n);
+        for(int i = 1; i &lt;= n; i++){
+            scanf(&#34;%d&#34;, &amp;a[i]);
+            f[i] = i;
+        }
+        for(int i = 1; i &lt;= n; i++)
+        {
+            if(f[i] != i)
+                continue;
+            int ans = 1;
+            int now = i;
+            while(a[now] != i){
+                f[now] = i;
+                now = a[now];
+                ans++;
+            }
+            p[i] = ans;
+        }
+        for(int i = 1; i &lt;= n; i++){
+            if(f[i] == i)
+                printf(&#34;%d &#34;, p[i]);
+            else{
+                printf(&#34;%d &#34;,p[f[i]]);
+            }
+        }
+        printf(&#34;\n&#34;);
+    }
+    return 0;
+}
+</code></pre><h1 id=c-good-numbers>C Good Numbers<a hidden class=anchor aria-hidden=true href=#c-good-numbers>#</a></h1><h2 id=题目-2>题目:<a hidden class=anchor aria-hidden=true href=#题目-2>#</a></h2><p>The only difference between easy and hard versions is the maximum value of 𝑛.</p><p>You are given a positive integer number 𝑛. You really love good numbers so you want to find the smallest good number greater than or equal to 𝑛.</p><p>The positive integer is called good if it can be represented as a sum of distinct powers of 3 (i.e. no duplicates of powers of 3 are allowed).</p><p>For example:</p><p>30 is a good number: 30=33+31,
+1 is a good number: 1=30,
+12 is a good number: 12=32+31,
+but 2 is not a good number: you can&rsquo;t represent it as a sum of distinct powers of 3 (2=30+30),
+19 is not a good number: you can&rsquo;t represent it as a sum of distinct powers of 3 (for example, the representations 19=32+32+30=32+31+31+31+30 are invalid),
+20 is also not a good number: you can&rsquo;t represent it as a sum of distinct powers of 3 (for example, the representation 20=32+32+30+30 is invalid).
+Note, that there exist other representations of 19 and 20 as sums of powers of 3 but none of them consists of distinct powers of 3.</p><p>For the given positive integer 𝑛 find such smallest 𝑚 (𝑛≤𝑚) that 𝑚 is a good number.</p><p>You have to answer 𝑞 independent queries.</p><h3 id=input-2>Input<a hidden class=anchor aria-hidden=true href=#input-2>#</a></h3><p>The first line of the input contains one integer 𝑞 (1≤𝑞≤500) — the number of queries. Then 𝑞 queries follow.</p><p>The only line of the query contains one integer 𝑛 (1≤𝑛≤1018).</p><h3 id=output-2>Output<a hidden class=anchor aria-hidden=true href=#output-2>#</a></h3><p>For each query, print such smallest integer 𝑚 (where 𝑛≤𝑚) that 𝑚 is a good number.</p><h3 id=example-2>Example<a hidden class=anchor aria-hidden=true href=#example-2>#</a></h3><p>input</p><pre tabindex=0><code>8
+1
+2
+6
+13
+14
+3620
+10000
+1000000000000000000
+</code></pre><p>output</p><pre tabindex=0><code>1
+3
+9
+13
+27
+6561
+19683
+1350851717672992089
+</code></pre><h2 id=题解-2>题解：<a hidden class=anchor aria-hidden=true href=#题解-2>#</a></h2><p>转换为三进制，找到第一个为2的位置，然后在2之前找到第一个为0的位置，然后置为1，后面的全部置为0</p><h2 id=代码-2>代码：<a hidden class=anchor aria-hidden=true href=#代码-2>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int a[100];
+long long POW(long long x, long long z)
+{
+    long long ans = 1;
+    long long now = x;
+    while(z){
+        if(z&amp;1)
+            ans *= now;
+        now = now * now;
+        z &gt;&gt;= 1;
+    }
+    return ans;
+}
+int main()
+{
+    int t;
+    scanf(&#34;%d&#34;, &amp;t);
+    while(t--){
+        long long  n;
+        scanf(&#34;%lld&#34;, &amp;n);
+        long long p = n;
+        int len = 0;
+        while(n){
+            a[len] =  n %3;
+            n /= 3;
+            len++;
+        }
+        int sta = -1;
+        for(int i = 0; i &lt; len; i++)
+        {
+            if(a[i] == 2)
+                sta = i;
+        }
+        if(sta == -1){
+            printf(&#34;%lld\n&#34;,p);
+        }
+        else{
+            int t = 0,i;
+            for(i = sta + 1; i &lt; len; i++){
+                if(a[i] == 0){
+                    t = i;
+                    a[i] = 1;
+                    break;
+                }
+            }
+            if(i == len)
+            {
+                printf(&#34;%lld\n&#34;, POW(3,i));
+            }
+            else{
+                long long ans = 0;
+                for(int j = t; j &lt; len; j++){
+                    if(a[j] == 1)
+                    {
+                        ans += POW(3,j);
+                    }
+                }
+                printf(&#34;%lld\n&#34;, ans);
+            }
+        }
+    }
+    return 0;
+}
+</code></pre><h1 id=d-too-many-segments>D Too Many Segments<a hidden class=anchor aria-hidden=true href=#d-too-many-segments>#</a></h1><h2 id=题目-3>题目：<a hidden class=anchor aria-hidden=true href=#题目-3>#</a></h2><p>The only difference between easy and hard versions is constraints.</p><p>You are given 𝑛 segments on the coordinate axis 𝑂𝑋. Segments can intersect, lie inside each other and even coincide. The 𝑖-th segment is [𝑙𝑖;𝑟𝑖] (𝑙𝑖≤𝑟𝑖) and it covers all integer points 𝑗 such that 𝑙𝑖≤𝑗≤𝑟𝑖.</p><p>The integer point is called bad if it is covered by strictly more than 𝑘 segments.</p><p>Your task is to remove the minimum number of segments so that there are no bad points at all.</p><h3 id=input-3>Input<a hidden class=anchor aria-hidden=true href=#input-3>#</a></h3><p>The first line of the input contains two integers 𝑛 and 𝑘 (1≤𝑘≤𝑛≤200) — the number of segments and the maximum number of segments by which each integer point can be covered.</p><p>The next 𝑛 lines contain segments. The 𝑖-th line contains two integers 𝑙𝑖 and 𝑟𝑖 (1≤𝑙𝑖≤𝑟𝑖≤200) — the endpoints of the 𝑖-th segment.</p><h3 id=output-3>Output<a hidden class=anchor aria-hidden=true href=#output-3>#</a></h3><p>In the first line print one integer 𝑚 (0≤𝑚≤𝑛) — the minimum number of segments you need to remove so that there are no bad points.</p><p>In the second line print 𝑚 distinct integers 𝑝1,𝑝2,…,𝑝𝑚 (1≤𝑝𝑖≤𝑛) — indices of segments you remove in any order. If there are multiple answers, you can print any of them.</p><h3 id=examples>Examples<a hidden class=anchor aria-hidden=true href=#examples>#</a></h3><p>input</p><pre tabindex=0><code>7 2
+11 11
+9 11
+7 8
+8 9
+7 8
+9 11
+7 9
+</code></pre><p>output</p><pre tabindex=0><code>3
+1 4 7 
+</code></pre><p>input</p><pre tabindex=0><code>5 1
+29 30
+30 30
+29 29
+28 30
+30 30
+</code></pre><p>output</p><pre tabindex=0><code>3
+1 2 4 
+</code></pre><p>input</p><pre tabindex=0><code>6 1
+2 3
+3 3
+2 3
+2 2
+2 3
+2 3
+</code></pre><p>output</p><pre tabindex=0><code>4
+1 3 5 6 
+</code></pre><h2 id=题解-3>题解：<a hidden class=anchor aria-hidden=true href=#题解-3>#</a></h2><p>贪心按照lr增序进行排序，然后记录最大的出现次数为k次的位置，只通过了easy版本，暴力进行统计的，hard版本可以用线段树或优先队列A，待补题。</p><h2 id=代码-3>代码：<a hidden class=anchor aria-hidden=true href=#代码-3>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+struct point{
+    int l,r;
+    int status;
+    int sum;
+};
+point p[200010];
+bool cmp(point a, point b){
+    if(a.r != b.r)
+        return a.r &lt; b.r;
+    else{
+        return a.l &lt; b.l;
+    }
+}
+set&lt;int&gt; s;
+int main()
+{
+    int n,k;
+    scanf(&#34;%d%d&#34;, &amp;n, &amp;k);
+    for(int i = 1; i &lt;= n; i++){
+        scanf(&#34;%d%d&#34;, &amp;p[i].l, &amp;p[i].r);
+        p[i].status = i;
+    }
+    sort(p + 1, p + n + 1, cmp);
+    int now  = 0;
+    int ans = 0;
+    int end = 0;
+    for(int i = 1; i &lt;= n; i++){
+       // printf(&#34;l %d r %d\n&#34;, p[i].l, p[i].r);
+        if(p[i].l &lt;= now)
+        {
+            ans++;
+            s.insert(p[i].status);
+          // printf(&#34;insert\n&#34;);
+        }
+        else{
+            for(int j = i - 1; j &gt; end; j--){
+                if(p[j].r &gt;= p[i].l){
+                    p[j].sum++;
+                    if(p[j].sum == k){
+                        now = p[j].r;
+                        end = j;
+                        break;
+                    }
+                }
+            }
+            p[i].sum++;
+            if(p[i].sum == k){
+                now = p[i].r;
+                end = i;
+            }
+        }
+      //  printf(&#34;now %d\n&#34;, now);
+    }
+    set&lt;int&gt;::iterator it;
+    printf(&#34;%d\n&#34;, ans);
+    for(it = s.begin(); it != s.end(); it++)
+        printf(&#34;%d &#34;, *it);
+    return 0;
+}
+</code></pre><h1 id=e-by-elevator-or-stairs>E By Elevator or Stairs<a hidden class=anchor aria-hidden=true href=#e-by-elevator-or-stairs>#</a></h1><h2 id=题目-4>题目<a hidden class=anchor aria-hidden=true href=#题目-4>#</a></h2><p>You are planning to buy an apartment in a 𝑛-floor building. The floors are numbered from 1 to 𝑛 from the bottom to the top. At first for each floor you want to know the minimum total time to reach it from the first (the bottom) floor.</p><p>Let:</p><p>𝑎𝑖 for all 𝑖 from 1 to 𝑛−1 be the time required to go from the 𝑖-th floor to the (𝑖+1)-th one (and from the (𝑖+1)-th to the 𝑖-th as well) using the stairs;
+𝑏𝑖 for all 𝑖 from 1 to 𝑛−1 be the time required to go from the 𝑖-th floor to the (𝑖+1)-th one (and from the (𝑖+1)-th to the 𝑖-th as well) using the elevator, also there is a value 𝑐 — time overhead for elevator usage (you need to wait for it, the elevator doors are too slow!).
+In one move, you can go from the floor you are staying at 𝑥 to any floor 𝑦 (𝑥≠𝑦) in two different ways:</p><p>If you are using the stairs, just sum up the corresponding values of 𝑎𝑖. Formally, it will take ∑𝑖=𝑚𝑖𝑛(𝑥,𝑦)𝑚𝑎𝑥(𝑥,𝑦)−1𝑎𝑖 time units.
+If you are using the elevator, just sum up 𝑐 and the corresponding values of 𝑏𝑖. Formally, it will take 𝑐+∑𝑖=𝑚𝑖𝑛(𝑥,𝑦)𝑚𝑎𝑥(𝑥,𝑦)−1𝑏𝑖 time units.
+You can perform as many moves as you want (possibly zero).</p><p>So your task is for each 𝑖 to determine the minimum total time it takes to reach the 𝑖-th floor from the 1-st (bottom) floor.</p><h3 id=input-4>Input<a hidden class=anchor aria-hidden=true href=#input-4>#</a></h3><p>The first line of the input contains two integers 𝑛 and 𝑐 (2≤𝑛≤2⋅105,1≤𝑐≤1000) — the number of floors in the building and the time overhead for the elevator rides.</p><p>The second line of the input contains 𝑛−1 integers 𝑎1,𝑎2,…,𝑎𝑛−1 (1≤𝑎𝑖≤1000), where 𝑎𝑖 is the time required to go from the 𝑖-th floor to the (𝑖+1)-th one (and from the (𝑖+1)-th to the 𝑖-th as well) using the stairs.</p><p>The third line of the input contains 𝑛−1 integers 𝑏1,𝑏2,…,𝑏𝑛−1 (1≤𝑏𝑖≤1000), where 𝑏𝑖 is the time required to go from the 𝑖-th floor to the (𝑖+1)-th one (and from the (𝑖+1)-th to the 𝑖-th as well) using the elevator.</p><h3 id=output-4>Output<a hidden class=anchor aria-hidden=true href=#output-4>#</a></h3><p>Print 𝑛 integers 𝑡1,𝑡2,…,𝑡𝑛, where 𝑡𝑖 is the minimum total time to reach the 𝑖-th floor from the first floor if you can perform as many moves as you want.</p><h3 id=examples-1>Examples<a hidden class=anchor aria-hidden=true href=#examples-1>#</a></h3><p>input</p><pre tabindex=0><code>10 2
+7 6 18 6 16 18 1 17 17
+6 9 3 10 9 1 10 1 5
+</code></pre><p>output</p><pre tabindex=0><code>0 7 13 18 24 35 36 37 40 45 
+</code></pre><p>input</p><pre tabindex=0><code>10 1
+3 2 3 1 3 3 1 4 1
+1 2 3 4 4 1 2 1 3
+</code></pre><p>output</p><pre tabindex=0><code>0 2 4 7 8 11 13 14 16 17 
+</code></pre><h2 id=题解-4>题解<a hidden class=anchor aria-hidden=true href=#题解-4>#</a></h2><p>dp 状态转移看代码</p><h2 id=代码-4>代码：<a hidden class=anchor aria-hidden=true href=#代码-4>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int a[200010];
+int b[200010];
+int dp[200010][2];
+int main()
+{
+    int n,c;
+    scanf(&#34;%d%d&#34;, &amp;n,&amp;c);
+    for(int i = 1; i &lt; n; i++)
+        scanf(&#34;%d&#34;, &amp;a[i]);
+    for(int i = 1; i &lt; n; i++)
+        scanf(&#34;%d&#34;, &amp;b[i]);
+    dp[0][1] = c;
+    for(int i = 1; i &lt; n; i++){
+        dp[i][0] = min(dp[i - 1][0] + a[i], dp[i-1][1] + a[i]);
+        dp[i][1] = min(dp[i - 1][0] + b[i] + c, dp[i - 1][1] + b[i]);
+    }
+    for(int i = 0; i &lt; n;i++)
+        printf(&#34;%d &#34;,min(dp[i][0],dp[i][1]));
+    return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/%E6%88%91%E6%83%B3%E6%88%90%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A0%B7/><span class=title>«</span><br><span>我想成为什么样</span>
+</a><a class=next href=https://eonh1u.github.io/posts/cf-594-div2/><span class=title>»</span><br><span>cf-594-div2</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

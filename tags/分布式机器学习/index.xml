@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>分布式机器学习 on eonh1u Blog</title><link>https://eonh1u.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 分布式机器学习 on eonh1u Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 30 Dec 2020 10:59:43 +0000</lastBuildDate><atom:link href="https://eonh1u.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>nccl test 环境</title><link>https://eonh1u.github.io/posts/nccl-test-%E7%8E%AF%E5%A2%83/</link><pubDate>Wed, 30 Dec 2020 10:59:43 +0000</pubDate><guid>https://eonh1u.github.io/posts/nccl-test-%E7%8E%AF%E5%A2%83/</guid><description>&lt;p&gt;在之前的服务器上发现安装的nccl，不能正确的运行nccl test测试，在尝试了多种方法之后，发现需要重新编译安装nccl&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/nvidia/nccl"&gt;https://github.com/nvidia/nccl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按照官方github上说明进行编译安装&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt install build-essential devscripts debhelper fakeroot -y
+make -j pkg.debian.build
+dpkg -i build/pkg/deb/*.deb
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>

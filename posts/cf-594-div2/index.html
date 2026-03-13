@@ -1,0 +1,202 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>cf-594-div2 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="A: Integer Points
+题目：
+DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.
+Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.
+DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help."><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/cf-594-div2/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/cf-594-div2/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/cf-594-div2/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="cf-594-div2"><meta property="og:description" content="A: Integer Points 题目： DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.
+Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.
+DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-10-22T09:14:31+00:00"><meta property="article:modified_time" content="2019-10-22T09:14:31+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="cf-594-div2"><meta name=twitter:description content="A: Integer Points 题目： DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.
+Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.
+DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"cf-594-div2","item":"https://eonh1u.github.io/posts/cf-594-div2/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"cf-594-div2","name":"cf-594-div2","description":"A: Integer Points 题目： DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.\nThen JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.\nDLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help.\n","keywords":["ACM"],"articleBody":"A: Integer Points 题目： DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.\nThen JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.\nDLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help.\nInput The first line contains one integer 𝑡 (1≤𝑡≤1000), the number of test cases in the input. Then follow the test case descriptions.\nThe first line of a test case contains an integer 𝑛 (1≤𝑛≤10^5), the number of lines drawn by DLS.\nThe second line of a test case contains 𝑛 distinct integers 𝑝𝑖 (0≤𝑝𝑖≤10^9) describing the lines drawn by DLS. The integer 𝑝𝑖 describes a line given by the equation 𝑦=𝑥+𝑝𝑖.\nThe third line of a test case contains an integer 𝑚 (1≤𝑚≤10^5), the number of lines drawn by JLS.\nThe fourth line of a test case contains 𝑚 distinct integers 𝑞𝑖 (0≤𝑞𝑖≤10^9) describing the lines drawn by JLS. The integer 𝑞𝑖 describes a line given by the equation 𝑦=−𝑥+𝑞𝑖.\nThe sum of the values of 𝑛 over all test cases in the input does not exceed 105. Similarly, the sum of the values of 𝑚 over all test cases in the input does not exceed 105.\nIn hacks it is allowed to use only one test case in the input, so 𝑡=1 should be satisfied.\nOutput For each test case in the input print a single integer — the number of line pairs with integer intersection points.\nExample input\n3 3 1 3 2 2 0 3 1 1 1 1 1 2 1 1 output\n3 1 0 Note The picture shows the lines from the first test case of the example. Black circles denote intersection points with integer coordinates. 题解： pi与qi同为奇数或者同为偶数时才会有整数的交点。\n代码： #include #include #include #include #include #include #include #include using namespace std; int main() { int t; scanf(\"%d\", \u0026t); while(t--) { long long ans = 0; long long sum[2][2]; sum[0][0]=0;sum[0][1]=0; sum[1][0]=0;sum[1][1]=0; int n; scanf(\"%d\", \u0026n); while(n--) { int a; scanf(\"%d\", \u0026a); if(a%2==1){ sum[0][0]++; //printf(\"%d\\n\",sum[0][0]); } else sum[0][1]++; } int m; scanf(\"%d\", \u0026m); while(m--) { int a; scanf(\"%d\", \u0026a); if(a%2==1) sum[1][0]++; else sum[1][1]++; } ans = sum[0][0]*sum[1][0] + sum[0][1] * sum[1][1]; printf(\"%lld\\n\", ans); } return 0; } B Grow The Tree 题目： Gardener Alexey teaches competitive programming to high school students. To congratulate Alexey on the Teacher’s Day, the students have gifted him a collection of wooden sticks, where every stick has an integer length. Now Alexey wants to grow a tree from them.\nThe tree looks like a polyline on the plane, consisting of all sticks. The polyline starts at the point (0,0). While constructing the polyline, Alexey will attach sticks to it one by one in arbitrary order. Each stick must be either vertical or horizontal (that is, parallel to 𝑂𝑋 or 𝑂𝑌 axis). It is not allowed for two consecutive sticks to be aligned simultaneously horizontally or simultaneously vertically. See the images below for clarification.\nAlexey wants to make a polyline in such a way that its end is as far as possible from (0,0). Please help him to grow the tree this way.\nNote that the polyline defining the form of the tree may have self-intersections and self-touches, but it can be proved that the optimal answer does not contain any self-intersections or self-touches.\nInput The first line contains an integer 𝑛 (1≤𝑛≤100000) — the number of sticks Alexey got as a present.\nThe second line contains 𝑛 integers 𝑎1,…,𝑎𝑛 (1≤𝑎𝑖≤10000) — the lengths of the sticks.\nOutput Print one integer — the square of the largest possible distance from (0,0) to the tree end.\nExamples input\n3 1 2 3 output\n26 input\n4 1 1 2 2 output\n20 Note The following pictures show optimal trees for example tests. The squared distance in the first example equals 5⋅5+1⋅1=26, and in the second example 4⋅4+2⋅2=20. 题解： 对数组排序，前n/2的总和与剩余的总和即是ans\n代码： #include #include #include #include #include #include #include #include using namespace std; int a[100010]; int main() { int n; scanf(\"%d\", \u0026n); long long p1 = 0,sum =0; for(int i = 0; i \u003c n ;i++){ scanf(\"%d\", \u0026a[i]); sum +=a[i]; } sort(a, a+n); for(int i = 0; i \u003c n/2;i++) { p1 += a[i]; } sum -= p1; long long ans = p1*p1+sum*sum; printf(\"%lld\",ans); return 0; } D1. The World Is Just a Programming Task (Easy Version) 题目： This is an easier version of the problem. In this version, 𝑛≤500.\nVasya is an experienced developer of programming competitions’ problems. As all great minds at some time, Vasya faced a creative crisis. To improve the situation, Petya gifted him a string consisting of opening and closing brackets only. Petya believes, that the beauty of the bracket string is a number of its cyclical shifts, which form a correct bracket sequence.\nTo digress from his problems, Vasya decided to select two positions of the string (not necessarily distinct) and swap characters located at this positions with each other. Vasya will apply this operation exactly once. He is curious what is the maximum possible beauty he can achieve this way. Please help him.\nWe remind that bracket sequence 𝑠 is called correct if:\n𝑠 is empty; 𝑠 is equal to “(𝑡)”, where 𝑡 is correct bracket sequence; 𝑠 is equal to 𝑡1𝑡2, i.e. concatenation of 𝑡1 and 𝑡2, where 𝑡1 and 𝑡2 are correct bracket sequences. For example, “(()())”, “()” are correct, while “)(” and “())” are not.\nThe cyclical shift of the string 𝑠 of length 𝑛 by 𝑘 (0≤𝑘\u003c𝑛) is a string formed by a concatenation of the last 𝑘 symbols of the string 𝑠 with the first 𝑛−𝑘 symbols of string 𝑠. For example, the cyclical shift of string “(())()” by 2 equals “()(())”.\nCyclical shifts 𝑖 and 𝑗 are considered different, if 𝑖≠𝑗.\nInput The first line contains an integer 𝑛 (1≤𝑛≤500), the length of the string.\nThe second line contains a string, consisting of exactly 𝑛 characters, where each of the characters is either “(” or “)”.\nOutput The first line should contain a single integer — the largest beauty of the string, which can be achieved by swapping some two characters.\nThe second line should contain integers 𝑙 and 𝑟 (1≤𝑙,𝑟≤𝑛) — the indices of two characters, which should be swapped in order to maximize the string’s beauty.\nIn case there are several possible swaps, print any of them.\nExamples input\n10 ()()())(() output\n5 8 7 input\n12 )(()(()())() output\n4 5 10 input\n6 )))(() output\n0 1 1 Note In the first example, we can swap 7-th and 8-th character, obtaining a string “()()()()()”. The cyclical shifts by 0,2,4,6,8 of this string form a correct bracket sequence.\nIn the second example, after swapping 5-th and 10-th character, we obtain a string “)(())()()(()”. The cyclical shifts by 11,7,5,3 of this string form a correct bracket sequence.\nIn the third example, swap of any two brackets results in 0 cyclical shifts being correct bracket sequences.\n题解： 暴力求解，在交换ij之后，计算前缀和，计算最小值，求出最小值出现的次数，即为每种交换后，所得到的值，取最大值即可。\n代码： #include #include #include #include #include #include #include #include using namespace std; char s[510]; char tmp[510]; int main() { int n; scanf(\"%d\", \u0026n); scanf(\"%s\", s); int now = 0; for(int i = 0; i \u003c n; i++){ if(s[i] == '(') now++; else { now--; } } if(now != 0){ printf(\"0\\n1 1\"); return 0; } int x=0, y= 0, ans = 0; for(int i = 0; i \u003c n; i++) for(int j = 0; j ","wordCount":"1351","inLanguage":"zh-cn","datePublished":"2019-10-22T09:14:31Z","dateModified":"2019-10-22T09:14:31Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/cf-594-div2/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">cf-594-div2</h1><div class=post-meta><span title='2019-10-22 09:14:31 +0000 UTC'>October 22, 2019</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1351 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#题目>题目：</a><ul><li><a href=#input>Input</a></li><li><a href=#output>Output</a></li><li><a href=#example>Example</a></li><li><a href=#note>Note</a></li></ul></li><li><a href=#题解>题解：</a></li><li><a href=#代码>代码：</a></li></ul><ul><li><a href=#题目-1>题目：</a><ul><li><a href=#input-1>Input</a></li><li><a href=#output-1>Output</a></li><li><a href=#examples>Examples</a></li></ul></li><li><a href=#题解-1>题解：</a></li><li><a href=#代码-1>代码：</a></li></ul><ul><li><a href=#题目-2>题目：</a><ul><li><a href=#input-2>Input</a></li><li><a href=#output-2>Output</a></li><li><a href=#examples-1>Examples</a></li><li><a href=#note-1>Note</a></li></ul></li><li><a href=#题解-2>题解：</a></li><li><a href=#代码-2>代码：</a></li></ul></nav></div></details></div><div class=post-content><h1 id=a-integer-points>A: Integer Points<a hidden class=anchor aria-hidden=true href=#a-integer-points>#</a></h1><h2 id=题目>题目：<a hidden class=anchor aria-hidden=true href=#题目>#</a></h2><p>DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦=𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛.</p><p>Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦=−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚.</p><p>DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfortunately, the lesson will end up soon, so DLS and JLS are asking for your help.</p><h3 id=input>Input<a hidden class=anchor aria-hidden=true href=#input>#</a></h3><p>The first line contains one integer 𝑡 (1≤𝑡≤1000), the number of test cases in the input. Then follow the test case descriptions.</p><p>The first line of a test case contains an integer 𝑛 (1≤𝑛≤10^5), the number of lines drawn by DLS.</p><p>The second line of a test case contains 𝑛 distinct integers 𝑝𝑖 (0≤𝑝𝑖≤10^9) describing the lines drawn by DLS. The integer 𝑝𝑖 describes a line given by the equation 𝑦=𝑥+𝑝𝑖.</p><p>The third line of a test case contains an integer 𝑚 (1≤𝑚≤10^5), the number of lines drawn by JLS.</p><p>The fourth line of a test case contains 𝑚 distinct integers 𝑞𝑖 (0≤𝑞𝑖≤10^9) describing the lines drawn by JLS. The integer 𝑞𝑖 describes a line given by the equation 𝑦=−𝑥+𝑞𝑖.</p><p>The sum of the values of 𝑛 over all test cases in the input does not exceed 105. Similarly, the sum of the values of 𝑚 over all test cases in the input does not exceed 105.</p><p>In hacks it is allowed to use only one test case in the input, so 𝑡=1 should be satisfied.</p><h3 id=output>Output<a hidden class=anchor aria-hidden=true href=#output>#</a></h3><p>For each test case in the input print a single integer — the number of line pairs with integer intersection points.</p><h3 id=example>Example<a hidden class=anchor aria-hidden=true href=#example>#</a></h3><p>input</p><pre tabindex=0><code>3
+3
+1 3 2
+2
+0 3
+1
+1
+1
+1
+1
+2
+1
+1
+</code></pre><p>output</p><pre tabindex=0><code>3
+1
+0
+</code></pre><h3 id=note>Note<a hidden class=anchor aria-hidden=true href=#note>#</a></h3><p>The picture shows the lines from the first test case of the example. Black circles denote intersection points with integer coordinates.
+<img loading=lazy src=/posts/cf-594-div2/a.png></p><h2 id=题解>题解：<a hidden class=anchor aria-hidden=true href=#题解>#</a></h2><p>pi与qi同为奇数或者同为偶数时才会有整数的交点。</p><h2 id=代码>代码：<a hidden class=anchor aria-hidden=true href=#代码>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int main()
+{
+    int t;
+    scanf(&#34;%d&#34;, &amp;t);
+    while(t--)
+    {
+        long long ans  = 0;
+        long long sum[2][2];
+        sum[0][0]=0;sum[0][1]=0;
+        sum[1][0]=0;sum[1][1]=0;
+        int n;
+        scanf(&#34;%d&#34;, &amp;n);
+        while(n--)
+        {
+            int a;
+            scanf(&#34;%d&#34;, &amp;a);
+            if(a%2==1){
+                sum[0][0]++;
+                //printf(&#34;%d\n&#34;,sum[0][0]);
+            }
+            else 
+                sum[0][1]++;                
+        }
+        int m;
+        scanf(&#34;%d&#34;, &amp;m);
+  
+        while(m--)
+        {
+            int a;
+            scanf(&#34;%d&#34;, &amp;a);
+            if(a%2==1)
+                sum[1][0]++;
+            else 
+                sum[1][1]++;                
+        }
+       
+        ans = sum[0][0]*sum[1][0] + sum[0][1] * sum[1][1];
+        printf(&#34;%lld\n&#34;, ans);
+    }
+    return 0;
+
+}
+</code></pre><h1 id=b-grow-the-tree>B Grow The Tree<a hidden class=anchor aria-hidden=true href=#b-grow-the-tree>#</a></h1><h2 id=题目-1>题目：<a hidden class=anchor aria-hidden=true href=#题目-1>#</a></h2><p>Gardener Alexey teaches competitive programming to high school students. To congratulate Alexey on the Teacher&rsquo;s Day, the students have gifted him a collection of wooden sticks, where every stick has an integer length. Now Alexey wants to grow a tree from them.</p><p>The tree looks like a polyline on the plane, consisting of all sticks. The polyline starts at the point (0,0). While constructing the polyline, Alexey will attach sticks to it one by one in arbitrary order. Each stick must be either vertical or horizontal (that is, parallel to 𝑂𝑋 or 𝑂𝑌 axis). It is not allowed for two consecutive sticks to be aligned simultaneously horizontally or simultaneously vertically. See the images below for clarification.</p><p>Alexey wants to make a polyline in such a way that its end is as far as possible from (0,0). Please help him to grow the tree this way.</p><p>Note that the polyline defining the form of the tree may have self-intersections and self-touches, but it can be proved that the optimal answer does not contain any self-intersections or self-touches.</p><h3 id=input-1>Input<a hidden class=anchor aria-hidden=true href=#input-1>#</a></h3><p>The first line contains an integer 𝑛 (1≤𝑛≤100000) — the number of sticks Alexey got as a present.</p><p>The second line contains 𝑛 integers 𝑎1,…,𝑎𝑛 (1≤𝑎𝑖≤10000) — the lengths of the sticks.</p><h3 id=output-1>Output<a hidden class=anchor aria-hidden=true href=#output-1>#</a></h3><p>Print one integer — the square of the largest possible distance from (0,0) to the tree end.</p><h3 id=examples>Examples<a hidden class=anchor aria-hidden=true href=#examples>#</a></h3><p>input</p><pre tabindex=0><code>3
+1 2 3
+</code></pre><p>output</p><pre tabindex=0><code>26
+</code></pre><p>input</p><pre tabindex=0><code>4
+1 1 2 2
+</code></pre><p>output</p><pre tabindex=0><code>20
+</code></pre><p>Note
+The following pictures show optimal trees for example tests. The squared distance in the first example equals 5⋅5+1⋅1=26, and in the second example 4⋅4+2⋅2=20.
+<img loading=lazy src=/posts/cf-594-div2/b.png></p><h2 id=题解-1>题解：<a hidden class=anchor aria-hidden=true href=#题解-1>#</a></h2><p>对数组排序，前n/2的总和与剩余的总和即是ans</p><h2 id=代码-1>代码：<a hidden class=anchor aria-hidden=true href=#代码-1>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+int a[100010];
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    long long p1 = 0,sum =0;
+    for(int i = 0; i &lt; n ;i++){
+        scanf(&#34;%d&#34;, &amp;a[i]);
+        sum +=a[i];
+    }
+    sort(a, a+n);
+    for(int i = 0; i &lt; n/2;i++)
+    {
+        p1 += a[i];
+    }
+    sum -= p1;
+    long long ans  = p1*p1+sum*sum;
+    printf(&#34;%lld&#34;,ans);
+    return 0;
+
+}
+</code></pre><h1 id=d1-the-world-is-just-a-programming-task-easy-version>D1. The World Is Just a Programming Task (Easy Version)<a hidden class=anchor aria-hidden=true href=#d1-the-world-is-just-a-programming-task-easy-version>#</a></h1><h2 id=题目-2>题目：<a hidden class=anchor aria-hidden=true href=#题目-2>#</a></h2><p>This is an easier version of the problem. In this version, 𝑛≤500.</p><p>Vasya is an experienced developer of programming competitions&rsquo; problems. As all great minds at some time, Vasya faced a creative crisis. To improve the situation, Petya gifted him a string consisting of opening and closing brackets only. Petya believes, that the beauty of the bracket string is a number of its cyclical shifts, which form a correct bracket sequence.</p><p>To digress from his problems, Vasya decided to select two positions of the string (not necessarily distinct) and swap characters located at this positions with each other. Vasya will apply this operation exactly once. He is curious what is the maximum possible beauty he can achieve this way. Please help him.</p><p>We remind that bracket sequence 𝑠 is called correct if:</p><p>𝑠 is empty;
+𝑠 is equal to &ldquo;(𝑡)&rdquo;, where 𝑡 is correct bracket sequence;
+𝑠 is equal to 𝑡1𝑡2, i.e. concatenation of 𝑡1 and 𝑡2, where 𝑡1 and 𝑡2 are correct bracket sequences.
+For example, &ldquo;(()())&rdquo;, &ldquo;()&rdquo; are correct, while &ldquo;)(&rdquo; and &ldquo;())&rdquo; are not.</p><p>The cyclical shift of the string 𝑠 of length 𝑛 by 𝑘 (0≤𝑘&lt;𝑛) is a string formed by a concatenation of the last 𝑘 symbols of the string 𝑠 with the first 𝑛−𝑘 symbols of string 𝑠. For example, the cyclical shift of string &ldquo;(())()&rdquo; by 2 equals &ldquo;()(())&rdquo;.</p><p>Cyclical shifts 𝑖 and 𝑗 are considered different, if 𝑖≠𝑗.</p><h3 id=input-2>Input<a hidden class=anchor aria-hidden=true href=#input-2>#</a></h3><p>The first line contains an integer 𝑛 (1≤𝑛≤500), the length of the string.</p><p>The second line contains a string, consisting of exactly 𝑛 characters, where each of the characters is either &ldquo;(&rdquo; or &ldquo;)&rdquo;.</p><h3 id=output-2>Output<a hidden class=anchor aria-hidden=true href=#output-2>#</a></h3><p>The first line should contain a single integer — the largest beauty of the string, which can be achieved by swapping some two characters.</p><p>The second line should contain integers 𝑙 and 𝑟 (1≤𝑙,𝑟≤𝑛) — the indices of two characters, which should be swapped in order to maximize the string&rsquo;s beauty.</p><p>In case there are several possible swaps, print any of them.</p><h3 id=examples-1>Examples<a hidden class=anchor aria-hidden=true href=#examples-1>#</a></h3><p>input</p><pre tabindex=0><code>10
+()()())(()
+</code></pre><p>output</p><pre tabindex=0><code>5
+8 7
+</code></pre><p>input</p><pre tabindex=0><code>12
+)(()(()())()
+</code></pre><p>output</p><pre tabindex=0><code>4
+5 10
+</code></pre><p>input</p><pre tabindex=0><code>6
+)))(()
+</code></pre><p>output</p><pre tabindex=0><code>0
+1 1
+</code></pre><h3 id=note-1>Note<a hidden class=anchor aria-hidden=true href=#note-1>#</a></h3><p>In the first example, we can swap 7-th and 8-th character, obtaining a string &ldquo;()()()()()&rdquo;. The cyclical shifts by 0,2,4,6,8 of this string form a correct bracket sequence.</p><p>In the second example, after swapping 5-th and 10-th character, we obtain a string &ldquo;)(())()()(()&rdquo;. The cyclical shifts by 11,7,5,3 of this string form a correct bracket sequence.</p><p>In the third example, swap of any two brackets results in 0 cyclical shifts being correct bracket sequences.</p><h2 id=题解-2>题解：<a hidden class=anchor aria-hidden=true href=#题解-2>#</a></h2><p>暴力求解，在交换ij之后，计算前缀和，计算最小值，求出最小值出现的次数，即为每种交换后，所得到的值，取最大值即可。</p><h2 id=代码-2>代码：<a hidden class=anchor aria-hidden=true href=#代码-2>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string&gt;
+#include&lt;string.h&gt;
+#include&lt;stack&gt;
+#include&lt;queue&gt;
+#include&lt;set&gt;
+#include&lt;map&gt;
+using namespace std;
+char s[510];
+char tmp[510];
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    scanf(&#34;%s&#34;, s);
+    int now = 0;
+    for(int i = 0; i &lt; n; i++){
+        if(s[i] == &#39;(&#39;)
+            now++;
+        else
+        {
+            now--;
+        }
+    }
+    if(now != 0){
+        printf(&#34;0\n1 1&#34;);
+        return 0;
+    }
+    int x=0, y= 0, ans = 0;
+    for(int i = 0; i &lt; n; i++)
+        for(int j = 0; j &lt;n;j++){
+            int p = 0;
+            strcpy(tmp,s);
+            swap(tmp[i],tmp[j]);
+            int MIN = 999;
+            now = 0;
+            for(int k = 0; k &lt; n ;k++){
+                if(tmp[k] == &#39;(&#39;)
+                    now++;
+                else{
+                    now--;
+                }
+                MIN  = min(now,MIN);
+            }
+            now = 0;
+            for(int k = 0; k &lt; n ;k++){
+                if(tmp[k] == &#39;(&#39;)
+                    now++;
+                else{
+                    now--;
+                }
+                if(now == MIN)
+                    p++;
+            }
+            if(p &gt; ans){
+                ans = p;
+                x = i;
+                y = j;
+            }
+        }
+    printf(&#34;%d\n&#34;,ans);
+    printf(&#34;%d %d&#34;,x+1,y+1);
+    return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/cf-595-div3/><span class=title>«</span><br><span>cf-595-div3</span>
+</a><a class=next href=https://eonh1u.github.io/posts/cf-593-div2/><span class=title>»</span><br><span>cf-593-div2</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,113 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>51nod-2523-小b删列 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content='题目：
+b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。
+即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]<=a[i+1](i=1..n-1)。
+请问小b最少要删多少列。
+如A = {&ldquo;abcdef&rdquo;, &ldquo;uvwxyz&rdquo;}，删除的列为第1,3,4列，删除后 A 为 {&ldquo;bef&rdquo;, &ldquo;vyz&rdquo;}，且 &ldquo;bef&rdquo; <= &ldquo;vyz&rdquo;
+样例解释：
+删掉第一列，剩下的是"a" &ldquo;b&rdquo; &ldquo;c&rdquo;，&ldquo;a&rdquo; <= &ldquo;b&rdquo; <= &ldquo;c&rdquo;，满足条件。'><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="51nod-2523-小b删列"><meta property="og:description" content='题目： b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。
+即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]<=a[i+1](i=1..n-1)。
+请问小b最少要删多少列。
+如A = {“abcdef”, “uvwxyz”}，删除的列为第1,3,4列，删除后 A 为 {“bef”, “vyz”}，且 “bef” <= “vyz”
+样例解释：
+删掉第一列，剩下的是"a" “b” “c”，“a” <= “b” <= “c”，满足条件。'><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-10-15T20:18:47+00:00"><meta property="article:modified_time" content="2019-10-15T20:18:47+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="51nod-2523-小b删列"><meta name=twitter:description content='题目： b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。
+即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]<=a[i+1](i=1..n-1)。
+请问小b最少要删多少列。
+如A = {“abcdef”, “uvwxyz”}，删除的列为第1,3,4列，删除后 A 为 {“bef”, “vyz”}，且 “bef” <= “vyz”
+样例解释：
+删掉第一列，剩下的是"a" “b” “c”，“a” <= “b” <= “c”，满足条件。'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"51nod-2523-小b删列","item":"https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"51nod-2523-小b删列","name":"51nod-2523-小b删列","description":"题目： b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。\n即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]\u0026lt;=a[i+1](i=1..n-1)。\n请问小b最少要删多少列。\n如A = {\u0026ldquo;abcdef\u0026rdquo;, \u0026ldquo;uvwxyz\u0026rdquo;}，删除的列为第1,3,4列，删除后 A 为 {\u0026ldquo;bef\u0026rdquo;, \u0026ldquo;vyz\u0026rdquo;}，且 \u0026ldquo;bef\u0026rdquo; \u0026lt;= \u0026ldquo;vyz\u0026rdquo;\n样例解释：\n删掉第一列，剩下的是\u0026quot;a\u0026quot; \u0026ldquo;b\u0026rdquo; \u0026ldquo;c\u0026rdquo;，\u0026ldquo;a\u0026rdquo; \u0026lt;= \u0026ldquo;b\u0026rdquo; \u0026lt;= \u0026ldquo;c\u0026rdquo;，满足条件。\n","keywords":["ACM"],"articleBody":"题目： b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。\n即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]\u003c=a[i+1](i=1..n-1)。\n请问小b最少要删多少列。\n如A = {“abcdef”, “uvwxyz”}，删除的列为第1,3,4列，删除后 A 为 {“bef”, “vyz”}，且 “bef” \u003c= “vyz”\n样例解释：\n删掉第一列，剩下的是\"a\" “b” “c”，“a” \u003c= “b” \u003c= “c”，满足条件。\n输入 第一行输入一个正整数n，表示矩阵A的行数； 之后n行每行输入一个字符串，其长度相等； 1≤n,m≤100。\n输出 输出一个非负整数，表示删掉的列数\n输入样例 3 ca bb ac 输出样例 1 题解： 首先看第一列是否有降序字符，如果有，则第一列删除，否则，看时候有相同字符的行，记录这些有相同字符行的位置，再进行下一列的判断时，只判断每个相同字符的行即可。\n代码： #include #include #include #include #include using namespace std; char a[110][110]; vector s[26]; vector tmp[26]; bool isR() { for(int i = 0; i \u003c 26; i++){ if(s[i].size() \u003e 1) return true; } return false; } int main() { int n; scanf(\"%d\", \u0026n); for(int i = 0; i \u003c n; i++) scanf(\"%s\", a[i]); int m = strlen(a[0]); for(int i = 0; i \u003c n; i++) s[0].push_back(i); int ans = 0; int p = 0; //printf(\"m %d\\n\",m); // for(int i = 0; i \u003c n; i++) // printf(\"%s\\n\", a[i]); // for(int i = 0; i \u003c 26; i++) // printf(\"%d:%d\\n\", i,s[i].size()); while(isR() \u0026\u0026 p \u003c m){ //printf(\"p %d\\n\", p); bool flag = true; for(int i = 0; i \u003c 26; i++){ if(s[i].size() \u003e 1){ int l = s[i].size(); for(int j = 1; j \u003c l; j++){ if(a[s[i][j]][p] \u003c a[s[i][j - 1]][p]){ flag = false; break; } } } if(!flag) break; } if(flag == false){ ans++; // printf(\"ans : %d\\n\", ans); } else{ for(int i = 0; i \u003c 26; i++){ if(s[i].size() \u003e 1){ int l = s[i].size(); // printf(\"l %d\\n\", l); for(int j = 1; j \u003c l; j++){ if(a[s[i][j]][p] == a[s[i][j - 1]][p]){ tmp[a[s[i][j]][p] - 'a'].push_back(s[i][j - 1]); while(j\u003c l \u0026\u0026 a[s[i][j]][p] == a[s[i][j - 1]][p]){ tmp[a[s[i][j]][p] - 'a'].push_back(s[i][j]); j++; } } } } } for(int i = 0; i \u003c 26;i++){ s[i] = tmp[i]; tmp[i].clear(); } //for(int i = 0; i \u003c 26; i++) // printf(\"%d:%d\\n\", i,s[i].size()); } p++; } printf(\"%d\",ans); return 0; } ","wordCount":"282","inLanguage":"zh-cn","datePublished":"2019-10-15T20:18:47Z","dateModified":"2019-10-15T20:18:47Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/51nod-2523-%E5%B0%8Fb%E5%88%A0%E5%88%97/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">51nod-2523-小b删列</h1><div class=post-meta><span title='2019-10-15 20:18:47 +0000 UTC'>October 15, 2019</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>282 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#输入>输入</a></li><li><a href=#输出>输出</a></li><li><a href=#输入样例>输入样例</a></li><li><a href=#输出样例>输出样例</a></li></ul></nav></div></details></div><div class=post-content><h1 id=题目>题目：<a hidden class=anchor aria-hidden=true href=#题目>#</a></h1><p>b有一个n*m的矩阵A，矩阵的每个元素为一个字符，现在她希望删除其中的一些列，使得剩下的列在每一行形成的字符串的字典序不降。</p><p>即对于第i行，将剩下的列上的字符顺序拼接，形成一个字符串，字符串记作a[i]。要求a[i]&lt;=a[i+1](i=1..n-1)。</p><p>请问小b最少要删多少列。</p><p>如A = {&ldquo;abcdef&rdquo;, &ldquo;uvwxyz&rdquo;}，删除的列为第1,3,4列，删除后 A 为 {&ldquo;bef&rdquo;, &ldquo;vyz&rdquo;}，且 &ldquo;bef&rdquo; &lt;= &ldquo;vyz&rdquo;</p><p>样例解释：</p><p>删掉第一列，剩下的是"a" &ldquo;b&rdquo; &ldquo;c&rdquo;，&ldquo;a&rdquo; &lt;= &ldquo;b&rdquo; &lt;= &ldquo;c&rdquo;，满足条件。</p><h2 id=输入>输入<a hidden class=anchor aria-hidden=true href=#输入>#</a></h2><p>第一行输入一个正整数n，表示矩阵A的行数；
+之后n行每行输入一个字符串，其长度相等；
+1≤n,m≤100。</p><h2 id=输出>输出<a hidden class=anchor aria-hidden=true href=#输出>#</a></h2><p>输出一个非负整数，表示删掉的列数</p><h2 id=输入样例>输入样例<a hidden class=anchor aria-hidden=true href=#输入样例>#</a></h2><pre tabindex=0><code>3
+ca
+bb
+ac
+</code></pre><h2 id=输出样例>输出样例<a hidden class=anchor aria-hidden=true href=#输出样例>#</a></h2><pre tabindex=0><code>1
+</code></pre><h1 id=题解>题解：<a hidden class=anchor aria-hidden=true href=#题解>#</a></h1><p>首先看第一列是否有降序字符，如果有，则第一列删除，否则，看时候有相同字符的行，记录这些有相同字符行的位置，再进行下一列的判断时，只判断每个相同字符的行即可。</p><h1 id=代码>代码：<a hidden class=anchor aria-hidden=true href=#代码>#</a></h1><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;string.h&gt;
+#include&lt;set&gt;
+#include&lt;vector&gt;
+using namespace std;
+char a[110][110];
+vector&lt;int&gt; s[26];
+vector&lt;int&gt; tmp[26];
+bool isR()
+{
+    for(int i = 0; i &lt; 26; i++){
+        if(s[i].size() &gt; 1)
+            return true;
+    }
+    return false;
+}
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    for(int i = 0; i &lt; n; i++)  
+        scanf(&#34;%s&#34;, a[i]);
+    int m = strlen(a[0]);
+    for(int i = 0; i &lt; n; i++)
+        s[0].push_back(i);
+    int ans = 0;
+    int p = 0;
+    //printf(&#34;m %d\n&#34;,m);
+   // for(int i = 0; i &lt; n; i++)  
+      //  printf(&#34;%s\n&#34;, a[i]);
+   // for(int i = 0; i &lt; 26; i++)
+       // printf(&#34;%d:%d\n&#34;, i,s[i].size());
+    while(isR() &amp;&amp; p &lt; m){
+        //printf(&#34;p %d\n&#34;, p);
+        bool flag = true;
+        for(int i = 0; i &lt; 26; i++){
+            if(s[i].size() &gt; 1){
+                int l = s[i].size();
+                for(int j = 1; j &lt; l; j++){
+                    if(a[s[i][j]][p] &lt; a[s[i][j - 1]][p]){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if(!flag)
+                break;
+        }
+        if(flag == false){
+            ans++;
+           // printf(&#34;ans : %d\n&#34;, ans);
+        }
+        else{
+            
+            for(int i = 0; i &lt; 26; i++){
+                if(s[i].size() &gt; 1){
+                    int l = s[i].size();
+                  //  printf(&#34;l %d\n&#34;, l);
+                    for(int j = 1; j &lt; l; j++){
+                        if(a[s[i][j]][p] == a[s[i][j - 1]][p]){
+                            tmp[a[s[i][j]][p] - &#39;a&#39;].push_back(s[i][j - 1]);
+                            while(j&lt; l &amp;&amp; a[s[i][j]][p] == a[s[i][j - 1]][p]){
+                                tmp[a[s[i][j]][p] - &#39;a&#39;].push_back(s[i][j]);
+                                j++;
+                            }
+                        }
+                    }
+                }
+            }
+            for(int i = 0; i &lt; 26;i++){
+                s[i] = tmp[i];
+                tmp[i].clear();
+            }
+             //for(int i = 0; i &lt; 26; i++)
+            // printf(&#34;%d:%d\n&#34;, i,s[i].size());
+        }
+        p++;
+    }
+    printf(&#34;%d&#34;,ans);
+    return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/51nod-2531-%E6%9C%80%E5%A4%A7%E8%A6%86%E7%9B%96/><span class=title>«</span><br><span>51nod-2531-最大覆盖</span>
+</a><a class=next href=https://eonh1u.github.io/posts/51nod-2522-%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%80%8D%E6%95%B0/><span class=title>»</span><br><span>51nod-2522-和为k的倍数</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

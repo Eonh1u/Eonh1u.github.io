@@ -1,0 +1,83 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>51nod-1942-安装监控 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="题目：
+现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。"><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="51nod-1942-安装监控"><meta property="og:description" content="题目： 现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-17T23:37:52+00:00"><meta property="article:modified_time" content="2019-09-17T23:37:52+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="51nod-1942-安装监控"><meta name=twitter:description content="题目： 现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"51nod-1942-安装监控","item":"https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"51nod-1942-安装监控","name":"51nod-1942-安装监控","description":"题目： 现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。\n","keywords":["ACM"],"articleBody":"题目： 现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。\n样例解释：\n左边的图对应的是第一个样例，把摄像头安装在点的位置就可以监控到所有的地方了，右边的图对应第二个样例，这个办公室没有办法找到一个地方安装摄像头使得所有地方都被监控到，如果安装在点的位置，灰色的部分就不能被监控到了。\n输入 单组测试数据。 第一行有一个整数n (4 \u003c= n \u003c= 100)，表示多边形的顶点数目。 接下来n行，每行出两个整数x 和 y（-100000\u003c=x,y\u003c=100000），表示多边形的顶点，以顺时针的方向给出。 所有的顶点都是不一样的。 输出 如果能够安装一个摄像头使得所有区域被监控到输出Yes，否则输出No。 输入样例 样例输入1 4 0 0 0 1 1 1 1 0\n样例输入2 8 0 0 0 2 1 2 1 1 2 1 2 2 3 2 3 0 输出样例 样例输出1 Yes 样例输出2 No 解法： 循环每条线段得到最终满足条件区域，最后判断区域是否为空即可 代码：\n#include using namespace std; const int inf = 99999999; int main() { int n; scanf(\"%d\", \u0026n); n--; int X,Y; scanf(\"%d%d\", \u0026X, \u0026Y); int px = X, py = Y; int lx = -inf,rx = inf, ly = -inf, ry = inf; while(n--) { int x,y; scanf(\"%d%d\", \u0026x, \u0026y); if(y \u003c Y) rx= min(rx, X); if(y \u003e Y) lx = max(lx, X); if(x \u003e X) ry = min(ry, Y); if(x \u003c X) ly = max(ly, Y); X = x; Y = y; } if(py \u003c Y) rx= min(rx, X); if(py \u003e Y) lx = max(lx, X); if(px \u003e X) ry = min(ry, Y); if(px \u003c X) ly = max(ly, Y); //printf(\"%d %d %d %d\\n\", lx, rx, ly, ry); if(ly \u003e ry || lx \u003e rx) printf(\"No\"); else { printf(\"Yes\"); } return 0; } ","wordCount":"188","inLanguage":"zh-cn","datePublished":"2019-09-17T23:37:52Z","dateModified":"2019-09-17T23:37:52Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">51nod-1942-安装监控</h1><div class=post-meta><span title='2019-09-17 23:37:52 +0000 UTC'>September 17, 2019</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>188 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=post-content><p>题目：
+现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。</p><p>样例解释：</p><p>左边的图对应的是第一个样例，把摄像头安装在点的位置就可以监控到所有的地方了，右边的图对应第二个样例，这个办公室没有办法找到一个地方安装摄像头使得所有地方都被监控到，如果安装在点的位置，灰色的部分就不能被监控到了。</p><p>输入
+单组测试数据。
+第一行有一个整数n (4 &lt;= n &lt;= 100)，表示多边形的顶点数目。
+接下来n行，每行出两个整数x 和 y（-100000&lt;=x,y&lt;=100000），表示多边形的顶点，以顺时针的方向给出。
+所有的顶点都是不一样的。
+输出
+如果能够安装一个摄像头使得所有区域被监控到输出Yes，否则输出No。
+输入样例
+样例输入1
+4
+0 0
+0 1
+1 1
+1 0</p><p>样例输入2
+8
+0 0
+0 2
+1 2
+1 1
+2 1
+2 2
+3 2
+3 0
+输出样例
+样例输出1
+Yes
+样例输出2
+No
+解法：
+循环每条线段得到最终满足条件区域，最后判断区域是否为空即可
+代码：</p><pre tabindex=0><code class="language-#include<stdio.h>" data-lang="#include<stdio.h>">#include&lt;algorithm&gt;
+using namespace std;
+const int inf = 99999999;
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    n--;
+    int X,Y;
+    scanf(&#34;%d%d&#34;, &amp;X, &amp;Y);
+    int px = X, py = Y;
+    int lx = -inf,rx = inf, ly = -inf, ry = inf;
+    while(n--)
+    {
+        int x,y;
+        scanf(&#34;%d%d&#34;, &amp;x, &amp;y);
+        if(y &lt; Y)
+            rx= min(rx, X);
+        if(y &gt; Y)
+            lx = max(lx, X);
+        if(x &gt; X)
+            ry = min(ry, Y);
+        if(x &lt; X)
+            ly = max(ly, Y);
+        X = x; Y = y;
+    }
+    if(py &lt; Y)
+        rx= min(rx, X);
+    if(py &gt; Y)
+        lx = max(lx, X);
+    if(px &gt; X)
+        ry = min(ry, Y);
+    if(px &lt; X)
+        ly = max(ly, Y);
+    //printf(&#34;%d %d %d %d\n&#34;, lx, rx, ly, ry);
+     if(ly &gt; ry || lx &gt; rx)
+        printf(&#34;No&#34;);
+     else
+     {
+         printf(&#34;Yes&#34;);
+     }
+     return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/51nod-1919-%E7%82%AE%E5%85%B5%E9%98%B5%E5%9C%B0/><span class=title>«</span><br><span>51nod-1919-炮兵阵地</span>
+</a><a class=next href=https://eonh1u.github.io/posts/51nod-2488-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9A%84%E9%9D%A2%E7%A7%AF/><span class=title>»</span><br><span>51nod-2488-矩形面积并的面积</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

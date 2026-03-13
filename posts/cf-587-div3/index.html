@@ -1,0 +1,454 @@
+<!doctype html><html lang=zh-cn dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>cf-587-div3 | eonh1u Blog</title><meta name=keywords content="ACM"><meta name=description content="A题 Prefixes：
+题目：
+Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters &lsquo;a&rsquo; and &lsquo;b&rsquo;. Its positions are numbered from 1 to 𝑛.
+He wants to modify his string so that every its prefix of even length has an equal amount of letters &lsquo;a&rsquo; and &lsquo;b&rsquo;. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace &lsquo;a&rsquo; with &lsquo;b&rsquo; or replace &lsquo;b&rsquo; with &lsquo;a&rsquo;). Nikolay can use no letters except &lsquo;a&rsquo; and &lsquo;b&rsquo;."><meta name=author content="eonh1u"><link rel=canonical href=https://eonh1u.github.io/posts/cf-587-div3/><link crossorigin=anonymous href=/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as=style><link rel=icon href=https://eonh1u.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://eonh1u.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://eonh1u.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://eonh1u.github.io/apple-touch-icon.png><link rel=mask-icon href=https://eonh1u.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://eonh1u.github.io/posts/cf-587-div3/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://%e4%bd%a0%e7%9a%84umami%e5%9f%9f%e5%90%8d/script.js data-website-id="<从 Umami 后台获取>"></script><meta property="og:url" content="https://eonh1u.github.io/posts/cf-587-div3/"><meta property="og:site_name" content="eonh1u Blog"><meta property="og:title" content="cf-587-div3"><meta property="og:description" content="A题 Prefixes： 题目： Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛.
+He wants to modify his string so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace ‘a’ with ‘b’ or replace ‘b’ with ‘a’). Nikolay can use no letters except ‘a’ and ‘b’."><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-22T13:28:44+00:00"><meta property="article:modified_time" content="2019-09-22T13:28:44+00:00"><meta property="article:tag" content="ACM"><meta name=twitter:card content="summary"><meta name=twitter:title content="cf-587-div3"><meta name=twitter:description content="A题 Prefixes： 题目： Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛.
+He wants to modify his string so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace ‘a’ with ‘b’ or replace ‘b’ with ‘a’). Nikolay can use no letters except ‘a’ and ‘b’."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://eonh1u.github.io/posts/"},{"@type":"ListItem","position":2,"name":"cf-587-div3","item":"https://eonh1u.github.io/posts/cf-587-div3/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"cf-587-div3","name":"cf-587-div3","description":"A题 Prefixes： 题目： Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters \u0026lsquo;a\u0026rsquo; and \u0026lsquo;b\u0026rsquo;. Its positions are numbered from 1 to 𝑛.\nHe wants to modify his string so that every its prefix of even length has an equal amount of letters \u0026lsquo;a\u0026rsquo; and \u0026lsquo;b\u0026rsquo;. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace \u0026lsquo;a\u0026rsquo; with \u0026lsquo;b\u0026rsquo; or replace \u0026lsquo;b\u0026rsquo; with \u0026lsquo;a\u0026rsquo;). Nikolay can use no letters except \u0026lsquo;a\u0026rsquo; and \u0026lsquo;b\u0026rsquo;.\n","keywords":["ACM"],"articleBody":"A题 Prefixes： 题目： Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛.\nHe wants to modify his string so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace ‘a’ with ‘b’ or replace ‘b’ with ‘a’). Nikolay can use no letters except ‘a’ and ‘b’.\nThe prefix of string 𝑠 of length 𝑙 (1≤𝑙≤𝑛) is a string 𝑠[1..𝑙].\nFor example, for the string 𝑠=“abba” there are two prefixes of the even length. The first is 𝑠[1…2]=“ab” and the second 𝑠[1…4]=“abba”. Both of them have the same number of ‘a’ and ‘b’.\nYour task is to calculate the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’.\nInput The first line of the input contains one even integer 𝑛 (2≤𝑛≤2⋅105) — the length of string 𝑠.\nThe second line of the input contains the string 𝑠 of length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’.\nOutput In the first line print the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’.\nIn the second line print the string Nikolay obtains after applying all the operations. If there are multiple answers, you can print any of them.\nExamples input\n4 bbbb output\n2 abba input\n6 ababab output\n0 ababab input\n2 aa output\n1 ba Note In the first example Nikolay has to perform two operations. For example, he can replace the first ‘b’ with ‘a’ and the last ‘b’ with ‘a’.\nIn the second example Nikolay doesn’t need to do anything because each prefix of an even length of the initial string already contains an equal amount of letters ‘a’ and ‘b’.\n解法： 每两个字符判断是否相同，如果相同则需要更改一个字母。\n代码： #include #include #include #include #include #include using namespace std; int main() { string s; int n; scanf(\"%d\", \u0026n); cin \u003e\u003e s; int l = s.length(); //printf(\"%d\\n\",l); int l1 = 0, l2 = 0; for(int i = 0; i \u003c l/2; i++) { if(s[2*i] == s[2*i+1]) { l1++; if(s[2*i] == 'a') s[2*i] = 'b'; else { s[2*i]='a'; } } } printf(\"%d\\n\",l1); cout\u003c","wordCount":"2541","inLanguage":"zh-cn","datePublished":"2019-09-22T13:28:44Z","dateModified":"2019-09-22T13:28:44Z","author":{"@type":"Person","name":"eonh1u"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://eonh1u.github.io/posts/cf-587-div3/"},"publisher":{"@type":"Organization","name":"eonh1u Blog","logo":{"@type":"ImageObject","url":"https://eonh1u.github.io/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://eonh1u.github.io/ accesskey=h title="eonh1u Blog (Alt + H)">eonh1u Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://eonh1u.github.io/ title=首页><span>首页</span></a></li><li><a href=https://eonh1u.github.io/archives/ title=归档><span>归档</span></a></li><li><a href=https://eonh1u.github.io/tags/ title=标签><span>标签</span></a></li><li><a href=https://eonh1u.github.io/categories/ title=分类><span>分类</span></a></li><li><a href=https://eonh1u.github.io/search/ title=搜索><span>搜索</span></a></li><li><a href=https://eonh1u.github.io/about/ title=关于><span>关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://eonh1u.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://eonh1u.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">cf-587-div3</h1><div class=post-meta><span title='2019-09-22 13:28:44 +0000 UTC'>September 22, 2019</span>&nbsp;·&nbsp;<span>12 min</span>&nbsp;·&nbsp;<span>2541 words</span>&nbsp;·&nbsp;<span>eonh1u</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#题目>题目：</a><ul><li><a href=#input>Input</a></li><li><a href=#output>Output</a></li><li><a href=#examples>Examples</a></li><li><a href=#note>Note</a></li></ul></li><li><a href=#解法>解法：</a></li><li><a href=#代码>代码：</a></li></ul><ul><li><a href=#题目-1>题目：</a><ul><li><a href=#input-1>Input</a></li><li><a href=#output-1>Output</a></li><li><a href=#examples-1>Examples</a></li><li><a href=#note-1>Note</a></li></ul></li><li><a href=#解法-1>解法：</a></li><li><a href=#代码-1>代码：</a></li></ul><ul><li><a href=#题目-2>题目：</a><ul><li><a href=#input-2>Input</a></li><li><a href=#output-2>Output</a></li><li><a href=#examples-2>Examples</a></li><li><a href=#note-2>Note</a></li></ul></li><li><a href=#解法-2>解法：</a></li><li><a href=#代码-2>代码：</a></li></ul><ul><li><a href=#题目-3>题目:</a><ul><li><a href=#input-3>Input</a></li><li><a href=#output-3>Output</a></li><li><a href=#examples-3>Examples</a></li><li><a href=#note-3>Note</a></li></ul></li><li><a href=#解法-3>解法：</a></li><li><a href=#代码-3>代码：</a></li></ul></nav></div></details></div><div class=post-content><h1 id=a题-prefixes>A题 Prefixes：<a hidden class=anchor aria-hidden=true href=#a题-prefixes>#</a></h1><h2 id=题目>题目：<a hidden class=anchor aria-hidden=true href=#题目>#</a></h2><p>Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters &lsquo;a&rsquo; and &lsquo;b&rsquo;. Its positions are numbered from 1 to 𝑛.</p><p>He wants to modify his string so that every its prefix of even length has an equal amount of letters &lsquo;a&rsquo; and &lsquo;b&rsquo;. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace &lsquo;a&rsquo; with &lsquo;b&rsquo; or replace &lsquo;b&rsquo; with &lsquo;a&rsquo;). Nikolay can use no letters except &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><p>The prefix of string 𝑠 of length 𝑙 (1≤𝑙≤𝑛) is a string 𝑠[1..𝑙].</p><p>For example, for the string 𝑠=&ldquo;abba&rdquo; there are two prefixes of the even length. The first is 𝑠[1…2]=&ldquo;ab&rdquo; and the second 𝑠[1…4]=&ldquo;abba&rdquo;. Both of them have the same number of &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><p>Your task is to calculate the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><h3 id=input>Input<a hidden class=anchor aria-hidden=true href=#input>#</a></h3><p>The first line of the input contains one even integer 𝑛 (2≤𝑛≤2⋅105) — the length of string 𝑠.</p><p>The second line of the input contains the string 𝑠 of length 𝑛, which consists only of lowercase Latin letters &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><h3 id=output>Output<a hidden class=anchor aria-hidden=true href=#output>#</a></h3><p>In the first line print the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><p>In the second line print the string Nikolay obtains after applying all the operations. If there are multiple answers, you can print any of them.</p><h3 id=examples>Examples<a hidden class=anchor aria-hidden=true href=#examples>#</a></h3><p>input</p><pre tabindex=0><code>4
+bbbb
+</code></pre><p>output</p><pre tabindex=0><code>2
+abba
+</code></pre><p>input</p><pre tabindex=0><code>6
+ababab
+</code></pre><p>output</p><pre tabindex=0><code>0
+ababab
+</code></pre><p>input</p><pre tabindex=0><code>2
+aa
+</code></pre><p>output</p><pre tabindex=0><code>1
+ba
+</code></pre><h3 id=note>Note<a hidden class=anchor aria-hidden=true href=#note>#</a></h3><p>In the first example Nikolay has to perform two operations. For example, he can replace the first &lsquo;b&rsquo; with &lsquo;a&rsquo; and the last &lsquo;b&rsquo; with &lsquo;a&rsquo;.</p><p>In the second example Nikolay doesn&rsquo;t need to do anything because each prefix of an even length of the initial string already contains an equal amount of letters &lsquo;a&rsquo; and &lsquo;b&rsquo;.</p><h2 id=解法>解法：<a hidden class=anchor aria-hidden=true href=#解法>#</a></h2><p>每两个字符判断是否相同，如果相同则需要更改一个字母。</p><h2 id=代码>代码：<a hidden class=anchor aria-hidden=true href=#代码>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+using namespace std;
+int main()
+{
+    string s;
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    cin &gt;&gt; s;
+    int l = s.length();
+    //printf(&#34;%d\n&#34;,l);
+    int l1 = 0, l2 = 0;
+    for(int i = 0; i &lt; l/2; i++)
+    {
+        if(s[2*i] == s[2*i+1])
+        {
+            l1++;
+            if(s[2*i] == &#39;a&#39;)
+                s[2*i] = &#39;b&#39;;
+            else
+            {
+                s[2*i]=&#39;a&#39;;
+            }
+            
+        }
+    }
+    printf(&#34;%d\n&#34;,l1);
+    cout&lt;&lt;s;
+    return 0;
+}
+</code></pre><h1 id=b题shooting>B题：Shooting<a hidden class=anchor aria-hidden=true href=#b题shooting>#</a></h1><h2 id=题目-1>题目：<a hidden class=anchor aria-hidden=true href=#题目-1>#</a></h2><p>Recently Vasya decided to improve his pistol shooting skills. Today his coach offered him the following exercise. He placed 𝑛 cans in a row on a table. Cans are numbered from left to right from 1 to 𝑛. Vasya has to knock down each can exactly once to finish the exercise. He is allowed to choose the order in which he will knock the cans down.</p><p>Vasya knows that the durability of the 𝑖-th can is 𝑎𝑖. It means that if Vasya has already knocked 𝑥 cans down and is now about to start shooting the 𝑖-th one, he will need (𝑎𝑖⋅𝑥+1) shots to knock it down. You can assume that if Vasya starts shooting the 𝑖-th can, he will be shooting it until he knocks it down.</p><p>Your task is to choose such an order of shooting so that the number of shots required to knock each of the 𝑛 given cans down exactly once is minimum possible.</p><h3 id=input-1>Input<a hidden class=anchor aria-hidden=true href=#input-1>#</a></h3><p>The first line of the input contains one integer 𝑛 (2≤𝑛≤1000) — the number of cans.</p><p>The second line of the input contains the sequence 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤1000), where 𝑎𝑖 is the durability of the 𝑖-th can.</p><h3 id=output-1>Output<a hidden class=anchor aria-hidden=true href=#output-1>#</a></h3><p>In the first line print the minimum number of shots required to knock each of the 𝑛 given cans down exactly once.</p><p>In the second line print the sequence consisting of 𝑛 distinct integers from 1 to 𝑛 — the order of indices of cans that minimizes the number of shots required. If there are several answers, you can print any of them.</p><h3 id=examples-1>Examples<a hidden class=anchor aria-hidden=true href=#examples-1>#</a></h3><pre tabindex=0><code>3
+20 10 20
+43
+1 3 2
+
+4
+10 10 10 10
+64
+2 1 4 3
+
+6
+5 4 5 4 4 5
+69
+6 1 3 5 2 4 
+
+2
+1 4
+3
+2 1 
+</code></pre><h3 id=note-1>Note<a hidden class=anchor aria-hidden=true href=#note-1>#</a></h3><p>In the first example Vasya can start shooting from the first can. He knocks it down with the first shot because he haven&rsquo;t knocked any other cans down before. After that he has to shoot the third can. To knock it down he shoots 20⋅1+1=21 times. After that only second can remains. To knock it down Vasya shoots 10⋅2+1=21 times. So the total number of shots is 1+21+21=43.</p><p>In the second example the order of shooting does not matter because all cans have the same durability.</p><h2 id=解法-1>解法：<a hidden class=anchor aria-hidden=true href=#解法-1>#</a></h2><p>从大到小排序即可</p><h2 id=代码-1>代码：<a hidden class=anchor aria-hidden=true href=#代码-1>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;vector&gt;
+using namespace std;
+struct point{
+    int x,status;
+};
+bool cmp(point a, point b){
+    return a.x &gt; b.x;
+}
+point p[10010];
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    for(int i = 0; i &lt; n; i++){
+        scanf(&#34;%d&#34;, &amp;p[i].x);
+        p[i].status = i + 1;
+    }
+    sort(p, p + n, cmp);
+    long long ans = 0;
+    for(int i = 0; i &lt; n; i++)
+        ans += i * p[i].x + 1;
+    printf(&#34;%lld\n&#34;, ans);
+    for(int i = 0; i &lt; n; i++)
+        printf(&#34;%d &#34;, p[i].status);
+    return 0;
+}
+</code></pre><h1 id=c题-white-sheet>C题 White Sheet<a hidden class=anchor aria-hidden=true href=#c题-white-sheet>#</a></h1><h2 id=题目-2>题目：<a hidden class=anchor aria-hidden=true href=#题目-2>#</a></h2><p>There is a white sheet of paper lying on a rectangle table. The sheet is a rectangle with its sides parallel to the sides of the table. If you will take a look from above and assume that the bottom left corner of the table has coordinates (0,0), and coordinate axes are left and bottom sides of the table, then the bottom left corner of the white sheet has coordinates (𝑥1,𝑦1), and the top right — (𝑥2,𝑦2).</p><p>After that two black sheets of paper are placed on the table. Sides of both black sheets are also parallel to the sides of the table. Coordinates of the bottom left corner of the first black sheet are (𝑥3,𝑦3), and the top right — (𝑥4,𝑦4). Coordinates of the bottom left corner of the second black sheet are (𝑥5,𝑦5), and the top right — (𝑥6,𝑦6).
+<img loading=lazy src=/posts/cf-587-div3/cf-587-div3-c.png>
+Determine if some part of the white sheet can be seen from the above after the two black sheets are placed. The part of the white sheet can be seen if there is at least one point lying not strictly inside the white sheet and strictly outside of both black sheets.</p><h3 id=input-2>Input<a hidden class=anchor aria-hidden=true href=#input-2>#</a></h3><p>The first line of the input contains four integers 𝑥1,𝑦1,𝑥2,𝑦2 (0≤𝑥1&lt;𝑥2≤106,0≤𝑦1&lt;𝑦2≤106) — coordinates of the bottom left and the top right corners of the white sheet.</p><p>The second line of the input contains four integers 𝑥3,𝑦3,𝑥4,𝑦4 (0≤𝑥3&lt;𝑥4≤106,0≤𝑦3&lt;𝑦4≤106) — coordinates of the bottom left and the top right corners of the first black sheet.</p><p>The third line of the input contains four integers 𝑥5,𝑦5,𝑥6,𝑦6 (0≤𝑥5&lt;𝑥6≤106,0≤𝑦5&lt;𝑦6≤106) — coordinates of the bottom left and the top right corners of the second black sheet.</p><p>The sides of each sheet of paper are parallel (perpendicular) to the coordinate axes.</p><h3 id=output-2>Output<a hidden class=anchor aria-hidden=true href=#output-2>#</a></h3><p>If some part of the white sheet can be seen from the above after the two black sheets are placed, print &ldquo;YES&rdquo; (without quotes). Otherwise print &ldquo;NO&rdquo;.</p><h3 id=examples-2>Examples<a hidden class=anchor aria-hidden=true href=#examples-2>#</a></h3><p>input</p><pre tabindex=0><code>2 2 4 4
+1 1 3 5
+3 1 5 5
+</code></pre><p>output</p><pre tabindex=0><code>NO
+</code></pre><p>input</p><pre tabindex=0><code>3 3 7 5
+0 0 4 6
+0 0 7 4
+</code></pre><p>output</p><pre tabindex=0><code>YES
+</code></pre><p>input</p><pre tabindex=0><code>5 2 10 5
+3 1 7 6
+8 1 11 7
+</code></pre><p>output</p><pre tabindex=0><code>YES
+</code></pre><p>input</p><pre tabindex=0><code>0 0 1000000 1000000
+0 0 499999 1000000
+500000 0 1000000 1000000
+</code></pre><p>output</p><pre tabindex=0><code>YES
+</code></pre><h3 id=note-2>Note<a hidden class=anchor aria-hidden=true href=#note-2>#</a></h3><p>In the first example the white sheet is fully covered by black sheets.</p><p>In the second example the part of the white sheet can be seen after two black sheets are placed. For example, the point (6.5,4.5) lies not strictly inside the white sheet and lies strictly outside of both black sheets.</p><h2 id=解法-2>解法：<a hidden class=anchor aria-hidden=true href=#解法-2>#</a></h2><p>此文用到的解法，求出两个黑块与白块分别的共同面积，再求出两个黑块在白块中共同的面积，这里要注意，必须是在白块中的共同面积，而不是两个黑块所有的共同面积，白块外的共同面积是无效的。</p><h2 id=代码-2>代码：<a hidden class=anchor aria-hidden=true href=#代码-2>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;vector&gt;
+using namespace std;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+long long f(long long x1, long long  x2, long long  y1, long long  y2)
+{
+    if(x1 &lt; y1)
+    {
+        if(y1 &gt;= x2)
+            return 0;
+        else{
+            if(y2 &gt;= x2)
+                return x2 - y1;
+            else
+                return y2 - y1;
+            
+        }
+    }
+    else
+    {
+        if(x1 &gt;= y2)
+            return 0;
+        else{
+            if(x2 &gt;= y2)
+                return y2 - x1;
+            else
+            {
+                return x2 - x1;
+            }
+            
+        }
+    }
+}
+long long  s(long long x1, long long x2,long long x3,long long x4,long long y1,long long y2,long long y3,long long y4)
+{
+    long long  X = f(x1,x2,x3,x4);
+    long long  Y = f(y1,y2,y3,y4);
+    long long ans = X*Y;
+    return ans;
+}
+int main()
+{
+    long long x[6],y[6];
+    for(int i = 0; i &lt; 6; i++)
+        scanf(&#34;%lld%lld&#34;, &amp;x[i], &amp;y[i]);
+    long long now = (x[1] - x[0]) * (y[1] - y[0]);
+    long long s1 = s(x[0],x[1],x[2],x[3],y[0],y[1],y[2],y[3]);
+    long long s3 = s(x[0],x[1],x[4],x[5],y[0],y[1],y[4],y[5]);
+
+   // printf(&#34;%lld %lld %lld %lld\n&#34;, now ,s1,s2,s3);
+    long long ans = now - s1 - s3;
+    if(s1 &gt; 0 &amp;&amp; s3 &gt; 0)
+    {
+        long long Ax[4], Ay[4];
+        //s1
+        if(x[0] &lt; x[2])
+        {
+            Ax[0] = x[2];
+            if(x[1] &lt; x[3])
+                Ax[1] = x[1];
+            else
+            {
+                Ax[1] = x[3];
+            }
+        }
+        else
+        {
+            Ax[0] = x[0];
+            if(x[3] &lt; x[1])
+                Ax[1] = x[3];
+            else
+            {
+                Ax[1] = x[1];
+            }
+        }
+
+        if(y[0] &lt; y[2])
+        {
+            Ay[0] = y[2];
+            if(y[1] &lt; y[3])
+                Ay[1] = y[1];
+            else
+            {
+                Ay[1] = y[3];
+            }
+        }
+        else
+        {
+            Ay[0] = y[0];
+            if(y[3] &lt; y[1])
+                Ay[1] = y[3];
+            else
+            {
+                Ay[1] = y[1];
+            }
+        }
+
+        //s2
+        if(x[0] &lt; x[4])
+        {
+            Ax[2] = x[4];
+            if(x[1] &lt; x[5])
+                Ax[3] = x[1];
+            else
+            {
+                Ax[3] = x[5];
+            }
+        }
+        else
+        {
+            Ax[2] = x[0];
+            if(x[5] &lt; x[1])
+                Ax[3] = x[5];
+            else
+            {
+                Ax[3] = x[1];
+            }
+        }
+
+        if(y[0] &lt; y[4])
+        {
+            Ay[2] = y[4];
+            if(y[1] &lt; y[5])
+                Ay[3] = y[1];
+            else
+            {
+                Ay[3] = y[5];
+            }
+        }
+        else
+        {
+            Ay[2] = y[0];
+            if(y[5] &lt; y[1])
+                Ay[3] = y[5];
+            else
+            {
+                Ay[3] = y[1];
+            }
+        }
+        long long p = s(Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);
+        //printf(&#34;%lld %lld %lld %lld %lld %lld %lld %lld\n&#34;,Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);
+       // printf(&#34;%lld\n&#34;, p);
+        ans += p;
+    }
+    if(ans &gt; 0)
+        printf(&#34;YES&#34;);
+    else
+    {
+        printf(&#34;NO&#34;);
+    }
+    return 0;
+}
+</code></pre><h1 id=d题-swords>D题 Swords<a hidden class=anchor aria-hidden=true href=#d题-swords>#</a></h1><h2 id=题目-3>题目:<a hidden class=anchor aria-hidden=true href=#题目-3>#</a></h2><p>There were 𝑛 types of swords in the theater basement which had been used during the plays. Moreover there were exactly 𝑥 swords of each type. 𝑦 people have broken into the theater basement and each of them has taken exactly 𝑧 swords of some single type. Note that different people might have taken different types of swords. Note that the values 𝑥,𝑦 and 𝑧 are unknown for you.</p><p>The next morning the director of the theater discovers the loss. He counts all swords — exactly 𝑎𝑖 swords of the 𝑖-th type are left untouched.</p><p>The director has no clue about the initial number of swords of each type in the basement, the number of people who have broken into the basement and how many swords each of them have taken.</p><p>For example, if 𝑛=3, 𝑎=[3,12,6] then one of the possible situations is 𝑥=12, 𝑦=5 and 𝑧=3. Then the first three people took swords of the first type and the other two people took swords of the third type. Note that you don&rsquo;t know values 𝑥,𝑦 and 𝑧 beforehand but know values of 𝑛 and 𝑎.</p><p>Thus he seeks for your help. Determine the minimum number of people 𝑦, which could have broken into the theater basement, and the number of swords 𝑧 each of them has taken.</p><h3 id=input-3>Input<a hidden class=anchor aria-hidden=true href=#input-3>#</a></h3><p>The first line of the input contains one integer 𝑛 (2≤𝑛≤2⋅105) — the number of types of swords.</p><p>The second line of the input contains the sequence 𝑎1,𝑎2,…,𝑎𝑛 (0≤𝑎𝑖≤109), where 𝑎𝑖 equals to the number of swords of the 𝑖-th type, which have remained in the basement after the theft. It is guaranteed that there exists at least one such pair of indices (𝑗,𝑘) that 𝑎𝑗≠𝑎𝑘.</p><h3 id=output-3>Output<a hidden class=anchor aria-hidden=true href=#output-3>#</a></h3><p>Print two integers 𝑦 and 𝑧 — the minimum number of people which could have broken into the basement and the number of swords each of them has taken.</p><h3 id=examples-3>Examples<a hidden class=anchor aria-hidden=true href=#examples-3>#</a></h3><p>input</p><pre tabindex=0><code>3
+3 12 6
+</code></pre><p>output</p><pre tabindex=0><code>5 3
+</code></pre><p>input</p><pre tabindex=0><code>2
+2 9
+</code></pre><p>output</p><pre tabindex=0><code>1 7
+</code></pre><p>input</p><pre tabindex=0><code>7
+2 1000000000 4 6 8 4 2
+</code></pre><p>outputCopy
+2999999987 2
+inputCopy
+6
+13 52 0 13 26 52
+output</p><pre tabindex=0><code>12 13
+</code></pre><h3 id=note-3>Note<a hidden class=anchor aria-hidden=true href=#note-3>#</a></h3><p>In the first example the minimum value of 𝑦 equals to 5, i.e. the minimum number of people who could have broken into the basement, is 5. Each of them has taken 3 swords: three of them have taken 3 swords of the first type, and two others have taken 3 swords of the third type.</p><p>In the second example the minimum value of 𝑦 is 1, i.e. the minimum number of people who could have broken into the basement, equals to 1. He has taken 7 swords of the first type</p><h2 id=解法-3>解法：<a hidden class=anchor aria-hidden=true href=#解法-3>#</a></h2><p>循环遍历数组，得到max，数组中不为max的数与max的差值，求出最大公约数，最大公约数即为每个人取走的数目。</p><h2 id=代码-3>代码：<a hidden class=anchor aria-hidden=true href=#代码-3>#</a></h2><pre tabindex=0><code>#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;vector&gt;
+using namespace std;
+#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+long long f(long long x1, long long  x2, long long  y1, long long  y2)
+{
+    if(x1 &lt; y1)
+    {
+        if(y1 &gt;= x2)
+            return 0;
+        else{
+            if(y2 &gt;= x2)
+                return x2 - y1;
+            else
+                return y2 - y1;
+            
+        }
+    }
+    else
+    {
+        if(x1 &gt;= y2)
+            return 0;
+        else{
+            if(x2 &gt;= y2)
+                return y2 - x1;
+            else
+            {
+                return x2 - x1;
+            }
+            
+        }
+    }
+}
+long long  s(long long x1, long long x2,long long x3,long long x4,long long y1,long long y2,long long y3,long long y4)
+{
+    long long  X = f(x1,x2,x3,x4);
+    long long  Y = f(y1,y2,y3,y4);
+    long long ans = X*Y;
+    return ans;
+}
+int main()
+{
+    long long x[6],y[6];
+    for(int i = 0; i &lt; 6; i++)
+        scanf(&#34;%lld%lld&#34;, &amp;x[i], &amp;y[i]);
+    long long now = (x[1] - x[0]) * (y[1] - y[0]);
+    long long s1 = s(x[0],x[1],x[2],x[3],y[0],y[1],y[2],y[3]);
+    long long s3 = s(x[0],x[1],x[4],x[5],y[0],y[1],y[4],y[5]);
+
+   // printf(&#34;%lld %lld %lld %lld\n&#34;, now ,s1,s2,s3);
+    long long ans = now - s1 - s3;
+    if(s1 &gt; 0 &amp;&amp; s3 &gt; 0)
+    {
+        long long Ax[4], Ay[4];
+        //s1
+        if(x[0] &lt; x[2])
+        {
+            Ax[0] = x[2];
+            if(x[1] &lt; x[3])
+                Ax[1] = x[1];
+            else
+            {
+                Ax[1] = x[3];
+            }
+        }
+        else
+        {
+            Ax[0] = x[0];
+            if(x[3] &lt; x[1])
+                Ax[1] = x[3];
+            else
+            {
+                Ax[1] = x[1];
+            }
+        }
+
+        if(y[0] &lt; y[2])
+        {
+            Ay[0] = y[2];
+            if(y[1] &lt; y[3])
+                Ay[1] = y[1];
+            else
+            {
+                Ay[1] = y[3];
+            }
+        }
+        else
+        {
+            Ay[0] = y[0];
+            if(y[3] &lt; y[1])
+                Ay[1] = y[3];
+            else
+            {
+                Ay[1] = y[1];
+            }
+        }
+
+        //s2
+        if(x[0] &lt; x[4])
+        {
+            Ax[2] = x[4];
+            if(x[1] &lt; x[5])
+                Ax[3] = x[1];
+            else
+            {
+                Ax[3] = x[5];
+            }
+        }
+        else
+        {
+            Ax[2] = x[0];
+            if(x[5] &lt; x[1])
+                Ax[3] = x[5];
+            else
+            {
+                Ax[3] = x[1];
+            }
+        }
+
+        if(y[0] &lt; y[4])
+        {
+            Ay[2] = y[4];
+            if(y[1] &lt; y[5])
+                Ay[3] = y[1];
+            else
+            {
+                Ay[3] = y[5];
+            }
+        }
+        else
+        {
+            Ay[2] = y[0];
+            if(y[5] &lt; y[1])
+                Ay[3] = y[5];
+            else
+            {
+                Ay[3] = y[1];
+            }
+        }
+        long long p = s(Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);
+        //printf(&#34;%lld %lld %lld %lld %lld %lld %lld %lld\n&#34;,Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);
+       // printf(&#34;%lld\n&#34;, p);
+        ans += p;
+    }
+    if(ans &gt; 0)
+        printf(&#34;YES&#34;);
+    else
+    {
+        printf(&#34;NO&#34;);
+    }
+    return 0;
+}
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://eonh1u.github.io/tags/acm/>ACM</a></li></ul><nav class=paginav><a class=prev href=https://eonh1u.github.io/posts/51nod-1649-%E9%BD%90%E5%A4%B4%E5%B9%B6%E8%BF%9B/><span class=title>«</span><br><span>51nod-1649-齐头并进</span>
+</a><a class=next href=https://eonh1u.github.io/posts/cf-edu-73/><span class=title>»</span><br><span>cf-edu-73</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=Eonh1u/Eonh1u.github.io data-repo-id="<从 giscus.app 获取>" data-category=Announcements data-category-id="<从 giscus.app 获取>" data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://eonh1u.github.io/>eonh1u Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
