@@ -2,7 +2,7 @@ name: Deploy Hugo Blog
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 permissions:
   contents: write
