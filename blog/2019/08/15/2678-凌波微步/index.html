@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
 <meta property="article:published_time" content="2019-08-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-13T09:17:59.287Z">
+<meta property="article:modified_time" content="2026-03-13T09:24:44.883Z">
 <meta property="article:author" content="eonh1u">
 <meta property="article:tag" content="ACM">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://eonh1u.github.io/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/",
   "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
   "datePublished": "2019-08-14T16:00:00.000Z",
-  "dateModified": "2026-03-13T09:17:59.287Z",
+  "dateModified": "2026-03-13T09:24:44.883Z",
   "author": [
     {
       "@type": "Person",
@@ -159,222 +159,11 @@
   isHighlightShrink: false,
   isToc: false,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">凌波微步</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">凌波微步</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-14T16:00:00.000Z" title="发表于 2019-08-15 00:00:00">2019-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:17:59.287Z" title="更新于 2026-03-13 17:17:59">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>你在一个二维空间里的(𝑥𝑀𝑒,𝑦𝑀𝑒)位置，你的家在(𝑥𝐻𝑜𝑚𝑒,𝑦𝐻𝑜𝑚𝑒)位置。每一秒钟你可以选择从你当前位置向上下左右四个方向之一移动一个单位。你现在归心似箭，觉得这么走很慢，所幸你有技能“凌波微步”，在这片二维空间中，有3对传送门，每一对传送门以(𝑥𝑠,𝑦𝑠,𝑥𝑡,𝑦𝑡)的形式给出，表示你到达(𝑥𝑠,𝑦𝑠)点就可以发动“凌波微步”技能，花费10秒钟到达(𝑥𝑡,𝑦𝑡)点，相反你也可以花费10秒钟从(𝑥𝑡,𝑦𝑡)点发动“凌波微步”技能到达(𝑥𝑠,𝑦𝑠)点。“凌波微步”技能可以无限多次发动，但只能在所给出的3对传送门之间使用。请问你回家最短用时多少秒。</p>
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">凌波微步</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">凌波微步</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-14T16:00:00.000Z" title="发表于 2019-08-15 00:00:00">2019-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:24:44.883Z" title="更新于 2026-03-13 17:24:44">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>你在一个二维空间里的(𝑥𝑀𝑒,𝑦𝑀𝑒)位置，你的家在(𝑥𝐻𝑜𝑚𝑒,𝑦𝐻𝑜𝑚𝑒)位置。每一秒钟你可以选择从你当前位置向上下左右四个方向之一移动一个单位。你现在归心似箭，觉得这么走很慢，所幸你有技能“凌波微步”，在这片二维空间中，有3对传送门，每一对传送门以(𝑥𝑠,𝑦𝑠,𝑥𝑡,𝑦𝑡)的形式给出，表示你到达(𝑥𝑠,𝑦𝑠)点就可以发动“凌波微步”技能，花费10秒钟到达(𝑥𝑡,𝑦𝑡)点，相反你也可以花费10秒钟从(𝑥𝑡,𝑦𝑡)点发动“凌波微步”技能到达(𝑥𝑠,𝑦𝑠)点。“凌波微步”技能可以无限多次发动，但只能在所给出的3对传送门之间使用。请问你回家最短用时多少秒。</p>
 <p>输入<br>输入第一行4个整数，依次是xMe、yMe、xHome、yHome，表示当前你的位置和你家的位置。<br>接下来三行，每行描述一对传送门(xs, ys, xt, yt)，含义见题面（0 &lt;&#x3D; xi, yi &lt;&#x3D; 10^9）<br>输出<br>输出仅一行，包含一个整数表示回家的最少用时<br>输入样例<br>0 0 20 20<br>1 1 18 20<br>1000 1003 1000 1004<br>1000 1005 1000 1006<br>输出样例<br>14<br>解法:<br>最短路径的一个变形，就坐标映射为点就可以<br>代码:</p>
-<pre><code>1  
-2  
-3  
-4  
-5  
-6  
-7  
-8  
-9  
-10  
-11  
-12  
-13  
-14  
-15  
-16  
-17  
-18  
-19  
-20  
-21  
-22  
-23  
-24  
-25  
-26  
-27  
-28  
-29  
-30  
-31  
-32  
-33  
-34  
-35  
-36  
-37  
-38  
-39  
-40  
-41  
-42  
-43  
-44  
-45  
-46  
-47  
-48  
-49  
-50  
-51  
-52  
-53  
-54  
-55  
-56  
-57  
-58  
-59  
-60  
-61  
-62  
-63  
-64  
-65  
-66  
-67  
-68  
-69  
-70  
-71  
-72  
-73  
-74  
-75  
-76  
-77  
-78  
-79  
-80  
-81  
-82  
-83  
-84  
-85  
-86  
-87  
-88  
-89  
-90  
-91  
-92  
-93  
-94  
-95  
-96  
-97  
-98  
-99  
-100  
-101  
-102  
-103  
-104  
-</code></pre>
-<p>| </p>
-<pre><code>#include&lt;algorithm&gt;  
-#include&lt;cmath&gt;  
-#include&lt;queue&gt;  
-#include&lt;vector&gt;  
-#include&lt;map&gt;  
-using namespace std;  
-struct Node  
-{  
-    int to;  
-    long long  len;  
-    bool  operator&lt;(const Node &amp;a) const  
-    {  
-        return len  &gt; a.len;  
-    }  
-};  
-struct xy  
-{  
-    int x;  
-    int y;  
-    bool  operator&lt;(const xy &amp;a) const  
-    {  
-        if(x == a.x)  
-            return y &lt; a.y;  
-        else  
-        {  
-            return x &lt; a.x;  
-        }  
-          
-    }  
-};  
-bool isUsed[510];  
-long long ans[510];  
-vector&lt;Node&gt; NodeQueue[510];  
-void addEdge(int s, int e, int len)  
-{  
-    NodeQueue[s].push_back((Node){e,len});  
-    NodeQueue[e].push_back((Node){s,len});  
-}  
-map&lt;xy,int&gt; m;  
-priority_queue&lt;Node&gt; PriNodeQueue;  
-  
-int main()  
-{  
-    int sum = 0;  
-    int xme, yme, xhome, yhome;  
-    scanf(&quot;%d%d%d%d&quot;, &amp;xme, &amp;yme, &amp;xhome, &amp;yhome);  
-    m[(xy){xme,yme}] = sum++;  
-    m[(xy){xhome,yhome}] = sum++;  
-    addEdge(0,1,abs(xme-xhome) + abs(yme - yhome));  
-    for(int i = 1; i &lt; 4; i++)  
-    {     
-        int x1,y1,x2,y2;  
-        scanf(&quot;%d%d%d%d&quot;, &amp;x1, &amp;y1, &amp;x2, &amp;y2);  
-        map&lt;xy,int&gt; :: iterator it;  
-        if(m.find((xy){x1,y1}) == m.end()){  
-            sum++;  
-            for(it = m.begin(); it != m.end(); it++)  
-            {  
-                int v = (*it).second;  
-                addEdge(sum,v,abs(x1-(*it).first.x) + abs(y1-(*it).first.y));  
-            }  
-            m[(xy){x1,y1}] = sum;  
-        }  
-        if(m.find((xy){x2,y2}) == m.end())  
-        {  
-            sum++;  
-            for(it = m.begin(); it != m.end(); it++)  
-            {  
-                int v = (*it).second;  
-                addEdge(sum,v,abs(x2-(*it).first.x) + abs(y2-(*it).first.y));  
-            }  
-            m[(xy){x2,y2}] = sum;  
-        }  
-        int l = abs(x1-x2) + abs(y1-y2);  
-        addEdge(m[(xy){x1,y1}],m[(xy){x2,y2}],min(10,l));  
-    }  
-    for(int i = 0; i &lt; 10; i++)  
-        ans[i] = 9999999999;  
-    ans[0] = 0;  
-    PriNodeQueue.push((Node){0,0});  
-    while(!PriNodeQueue.empty()){  
-        Node now = PriNodeQueue.top();  
-        PriNodeQueue.pop();  
-        int u = now.to;  
-        if(!isUsed[u]){  
-            isUsed[u] = true;  
-           // printf(&quot;%d %d\n&quot;,u,ans[u]);  
-            for(int i = 0; i &lt; NodeQueue[u].size(); i++){  
-                if(!isUsed[NodeQueue[u][i].to]){  
-                    int v = NodeQueue[u][i].to;  
-                    int len = NodeQueue[u][i].len;  
-                    if(ans[v] &gt; ans[u] + len)  
-                    {  
-                        ans[v] = ans[u] + len;  
-                        PriNodeQueue.push((Node){v,ans[v]});  
-                    }  
-                }  
-            }  
-        }  
-    }  
-    printf(&quot;%lld&quot;,ans[1]);  
-    return 0;  
-      
-}  
-  
-</code></pre>
-<p>—|—</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/">https://eonh1u.github.io/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/09/07/2518-%E5%92%8C%E4%B8%BAS/" title="2518-和为S"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2518-和为S</div></div><div class="info-2"><div class="info-item-1">题目:小b有一个01序列A，她想知道A有多少个非空连续子序列和为S。 你能帮帮她吗？ 输入第一行输入一个数n，表示A的长度；第二行输入n个数‘0’或‘1’，表示A中的元素，以空格隔开；第三行输入一个非负整数S；其中0≤S≤n≤30000。 输出输出一个数，表示子数组的个数输入样例51 0 1 0 12解法:统计每个1之前0的个数即可，然后组合计算一下乘积，注意处理S为0的情况。代码: 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39    |  using namespace std;   int sum[30010];   int main()   {       int n;       scanf(&quot;%d&quot;, &amp;n);       i...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/14/2673-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" title="2673-最短路径"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2673-最短路径</div></div><div class="info-2"><div class="info-item-1">最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！ 代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50   51   52   53   54   55   56   57   58   59   60   61   62   63    |  #include&lt;algorithm&gt;   #include&lt;cmath&gt;   #include&lt;queue&gt;   #include&lt;vector&gt;   using namespace std;  ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/07/28/51nod-1740-%E8%9C%82%E5%B7%A2%E8%BF%B7%E5%AE%AB/" title="51nod-1740 蜂巢迷宫"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-28</div><div class="info-item-2">51nod-1740 蜂巢迷宫</div></div><div class="info-2"><div class="info-item-1">题目：有一个无限大的蜂巢迷宫，为了方便表示每一个六边形格子，现在把座标引入到这个迷宫中，如上图年示。 艾瑞特在这个迷宫中街，刚开始他在(0,0)的位置，按照下图所示的路线在这个迷宫中行走。图片贴不上 这里附上原题目的链接：http://www.51nod.com/Challenge/Problem.html#problemId=1740 题解：找规律即可（好久没刷题 太菜了 debug找了好久）代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50   51   52   53   54   55   56   57   58   59   60   61 ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2494-%E6%9C%80%E9%95%BF%E9%85%8D%E5%AF%B9/" title="51nod-2494-最长配对"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2494-最长配对</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个01序列，她想找到一个最长的区间使得这个区间的01能两两配对，即0的个数和1的个数相等。求最长区间的长度。 输入第一行一个正整数n，表示数组长度，其中0＜n≤50000；第二行n个0或1，以空格隔开。 输出输出一个数，表示最长区间的长度 输入样例1   2    |  3   0 1 0       —|—   输出样例1    |  2       —|—   解法：将0当做-1处理，处理前缀和，记录前缀和相同的位置，计算出前缀和相同位置的最长距离。 代码：1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35    |  #include&lt;stdio.h&gt;   #include&lt;vector&gt;   #include&lt;cstring&gt;   using name...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/23/51nod-1744-codeforce-143c/" title="51nod-1744 codeforce-143c"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-23</div><div class="info-item-2">51nod-1744 codeforce-143c</div></div><div class="info-2"><div class="info-item-1">题目：羊村的羊们为了过冬，他们要在夏天的时候存储一些食物。等到冬天时拿出来吃。他们把食物包装成1×1×1的小方块，以便存储和取出来食用。经过了一个夏天后，小羊们存储了A·B·C块食物。他们把食物放到一个长方体的小屋里，A层高，每层有B行，每行有C块食物。 在秋天过后，村长来到小屋，要打开门分发食物了。但是，很不幸，小屋的四周都散落着食物块。经过查证，小偷们从小屋的顶层，前面，后面，和侧面都偷走了一个面的食物，一个面的食物指的是紧贴着某个面食物。所以剩下只有 （𝐴−1）×（𝐵−2）×（𝐶−2） 块食物。为了隐藏罪证，小偷们把剩下的食物块，全部打乱，散落在小屋的四周。所以村长忘记了原来A，B，C到底是多少。 现在给定n，表示剩下的食物数量。计算可能最小和最大被偷走的食物数量。 样例解释： 在样例中，如果原来的数量为32＝2×4×4，现在的数量是4＝（2-1）×（4-2）×（4-2），则被偷走的是32-4＝28块。如果原来的数量为45＝5×3×3，现在的数量是4＝（5-1）×（3-2）×（3-2），则被偷走的是45-4＝41块。 解法：暴力遍历所有方法即可 ps：初始想法错误，初...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/12/51nod-2462-%E9%93%BA%E8%AE%BE%E9%81%93%E8%B7%AF/" title="51nod-2462-铺设道路"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-12</div><div class="info-item-2">51nod-2462-铺设道路</div></div><div class="info-2"><div class="info-item-1">题目：春春是一名道路工程师，负责铺设一条长度为 n 的道路。 铺设道路的主要工作是填平下陷的地表。整段道路可以看作是 n 块首尾相连的区域，一开始，第 i 块区域下陷的深度为 𝑑𝑖 。 春春每天可以选择一段连续区间[L,R] ，填充这段区间中的每块区域，让其下陷深度减少 1。在选择区间时，需要保证，区间内的每块区域在填充前下陷深度均不为 0 。 春春希望你能帮他设计一种方案，可以在最短的时间内将整段道路的下陷深度都变为 0 。 输入输入文件包含两行，第一行包含一个整数 n，表示道路的长度。 第二行包含 n个整数，相邻两数间用一个空格隔开，第 i 个整数为 d_i。n&lt;&#x3D;100000，d_i&lt;&#x3D;10000 输出输出文件仅包含一个整数，即最少需要多少天才能完成任务。 输入样例1   2    |  6      4 3 2 5 3 5       —|—   输出样例1    |  9       —|—   解法:依次扫描，如果后一个大于前一个，则将差值进行累加，最后的总和即为ans 代码：1   2   3   4   5   6   7   ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/15/51nod-2513-%E9%87%8D%E6%8E%92%E5%88%97/" title="51nod-2513-重排列"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-15</div><div class="info-item-2">51nod-2513-重排列</div></div><div class="info-2"><div class="info-item-1">题目：有两个长度为n的序列A,B，你需要重排列A，使得满足A[i]&gt;B[i]的i的数目尽量大。只需输出这个最大个数即可。 输入第一行输入一个正整数n；第二、三行分别输出n个非负整数，表示A、B中的元素，以空格隔开；其中1≤n≤10000，0≤A[i],B[i]≤10^9。 输出输出一行一个数，表示最大个数 输入样例42 7 11 151 10 4 11 输出样例4 题解：田忌赛马。将两个数组排序，对于b数组中b[i]，从a中找到第一个大于b[i]的即可（排序后，ab数组都为升序）。 代码：1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29    |  #include&lt;stdio.h&gt;   #include&lt;algorithm&gt;   #include&lt;cmath&gt;   using namespace std;   int a[...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/19/cf-Global-Round-5/" title="cf-Global Round 5"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-19</div><div class="info-item-2">cf-Global Round 5</div></div><div class="info-2"><div class="info-item-1">A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0. Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two. There are two conditions though: For each participant 𝑖, their modified rating change 𝑏𝑖 must b...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">#include&lt;algorithm&gt;<br>#include&lt;cmath&gt;<br>#include&lt;queue&gt;<br>#include&lt;vector&gt;<br>#include&lt;map&gt;<br>using namespace std;<br>struct Node<br>&#123;<br>    int to;<br>    long long  len;<br>    bool  operator&lt;(const Node &amp;a) const<br>    &#123;<br>        return len  &gt; a.len;<br>    &#125;<br>&#125;;<br>struct xy<br>&#123;<br>    int x;<br>    int y;<br>    bool  operator&lt;(const xy &amp;a) const<br>    &#123;<br>        if(x == a.x)<br>            return y &lt; a.y;<br>        else<br>        &#123;<br>            return x &lt; a.x;<br>        &#125;<br>        <br>    &#125;<br>&#125;;<br>bool isUsed[510];<br>long long ans[510];<br>vector&lt;Node&gt; NodeQueue[510];<br>void addEdge(int s, int e, int len)<br>&#123;<br>    NodeQueue[s].push_back((Node)&#123;e,len&#125;);<br>    NodeQueue[e].push_back((Node)&#123;s,len&#125;);<br>&#125;<br>map&lt;xy,int&gt; m;<br>priority_queue&lt;Node&gt; PriNodeQueue;<br><br>int main()<br>&#123;<br>    int sum = 0;<br>    int xme, yme, xhome, yhome;<br>    scanf(&quot;%d%d%d%d&quot;, &amp;xme, &amp;yme, &amp;xhome, &amp;yhome);<br>    m[(xy)&#123;xme,yme&#125;] = sum++;<br>    m[(xy)&#123;xhome,yhome&#125;] = sum++;<br>    addEdge(0,1,abs(xme-xhome) + abs(yme - yhome));<br>    for(int i = 1; i &lt; 4; i++)<br>    &#123;   <br>        int x1,y1,x2,y2;<br>        scanf(&quot;%d%d%d%d&quot;, &amp;x1, &amp;y1, &amp;x2, &amp;y2);<br>        map&lt;xy,int&gt; :: iterator it;<br>        if(m.find((xy)&#123;x1,y1&#125;) == m.end())&#123;<br>            sum++;<br>            for(it = m.begin(); it != m.end(); it++)<br>            &#123;<br>                int v = (*it).second;<br>                addEdge(sum,v,abs(x1-(*it).first.x) + abs(y1-(*it).first.y));<br>            &#125;<br>            m[(xy)&#123;x1,y1&#125;] = sum;<br>        &#125;<br>        if(m.find((xy)&#123;x2,y2&#125;) == m.end())<br>        &#123;<br>            sum++;<br>            for(it = m.begin(); it != m.end(); it++)<br>            &#123;<br>                int v = (*it).second;<br>                addEdge(sum,v,abs(x2-(*it).first.x) + abs(y2-(*it).first.y));<br>            &#125;<br>            m[(xy)&#123;x2,y2&#125;] = sum;<br>        &#125;<br>        int l = abs(x1-x2) + abs(y1-y2);<br>        addEdge(m[(xy)&#123;x1,y1&#125;],m[(xy)&#123;x2,y2&#125;],min(10,l));<br>    &#125;<br>    for(int i = 0; i &lt; 10; i++)<br>        ans[i] = 9999999999;<br>    ans[0] = 0;<br>    PriNodeQueue.push((Node)&#123;0,0&#125;);<br>    while(!PriNodeQueue.empty())&#123;<br>        Node now = PriNodeQueue.top();<br>        PriNodeQueue.pop();<br>        int u = now.to;<br>        if(!isUsed[u])&#123;<br>            isUsed[u] = true;<br>           // printf(&quot;%d %d\n&quot;,u,ans[u]);<br>            for(int i = 0; i &lt; NodeQueue[u].size(); i++)&#123;<br>                if(!isUsed[NodeQueue[u][i].to])&#123;<br>                    int v = NodeQueue[u][i].to;<br>                    int len = NodeQueue[u][i].len;<br>                    if(ans[v] &gt; ans[u] + len)<br>                    &#123;<br>                        ans[v] = ans[u] + len;<br>                        PriNodeQueue.push((Node)&#123;v,ans[v]&#125;);<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    printf(&quot;%lld&quot;,ans[1]);<br>    return 0;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/">https://eonh1u.github.io/blog/2019/08/15/2678-%E5%87%8C%E6%B3%A2%E5%BE%AE%E6%AD%A5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/09/07/2518-%E5%92%8C%E4%B8%BAS/" title="2518-和为S"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2518-和为S</div></div><div class="info-2"><div class="info-item-1">题目:小b有一个01序列A，她想知道A有多少个非空连续子序列和为S。 你能帮帮她吗？ 输入第一行输入一个数n，表示A的长度；第二行输入n个数‘0’或‘1’，表示A中的元素，以空格隔开；第三行输入一个非负整数S；其中0≤S≤n≤30000。 输出输出一个数，表示子数组的个数输入样例51 0 1 0 12解法:统计每个1之前0的个数即可，然后组合计算一下乘积，注意处理S为0的情况。代码: 123456789101112131415161718192021222324252627282930313233343536373839using namespace std;int sum[30010];int main()&#123;    int n;    scanf(&quot;%d&quot;, &amp;n);    int now = 0;    int l = 0;    for(int i = 0;i &lt; n; i++)    &#123;        int s;        scanf(&quot;%d&quot;, &amp;s);        if(s ==...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/14/2673-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" title="2673-最短路径"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2673-最短路径</div></div><div class="info-2"><div class="info-item-1">最短路径的裸题，用了nlogn的写法，优先队列，好久没写代码了，中间没bug出乎我的意料，以后每天一题不会落下，加油！ 代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;queue&gt;#include&lt;vector&gt;using namespace std;struct Node&#123;    int to;    long long  len;    bool  operator&lt;(const Node &amp;a) const    &#123;        return len  &gt; a.len;    &#125;&#125;;bool isUsed[510];long long ans[510];vector&lt;Node&gt; ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/10/14/51nod-2500-%E5%90%8E%E9%9D%A2%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E/" title="51nod-2500-后面第一个大于"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2500-后面第一个大于</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个长度为n的序列t，现在她对于每个i，求最小的正数j满足𝑖+𝑗≤𝑛且𝑡𝑖+𝑗&gt;𝑡𝑖，输出j，如果不存在这样的j，则输出0。 样例解释： 对于i&#x3D;1，𝑡2&gt;𝑡1，所以最小的j&#x3D;1； 对于i&#x3D;7，不存在这样的j，所以输出0。 输入第一行输入一个数n；第二行输入n个数t1-tn，以空格隔开；其中1≤n≤30000，对于任意ti满足30≤ti≤100. 输出输出一行n个数，第i个数表示i的答案。 输入样例12873 74 75 71 69 72 76 73 输出样例11 1 4 2 1 1 0 0 解法：用set记录ti出现的位置下标，在处理每个ti时，在大于ti的数中找到下标大于i并且i+j&lt;n的最小值。 代码：123456789101112131415161718192021222324252627282930313233#include&lt;stdio.h&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std;set&l...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/01/51node-2067-n%E7%9A%87%E5%90%8E/" title="51node-2067-n皇后"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-01</div><div class="info-item-2">51node-2067-n皇后</div></div><div class="info-2"><div class="info-item-1">题目:n皇后。。。不多bb直接贴代码了： 123456789101112131415161718192021222324252627282930313233343536#include&lt;cmath&gt;using namespace std;int f[10];int sum = 0;int n;bool c(int x)&#123;    for(int j = 1; j &lt; x; j++)    &#123;          if(f[j] == f[x])            return  false;          if(abs(1.0*(f[j] - f[x])/(j - x)) == 1.0)            return false;    &#125;    return true;&#125;void solve(int x)&#123;    for(int i = 1; i &lt;= n; i++)    &#123;        f[x] = i;        if(c(x))        &#123;        ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/19/cf-Global-Round-5/" title="cf-Global Round 5"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-19</div><div class="info-item-2">cf-Global Round 5</div></div><div class="info-2"><div class="info-item-1">A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0. Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two. There are two conditions though: For each participant 𝑖, their modified rating change 𝑏𝑖 must b...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/25/51nod-2206-%E4%BD%8E%E4%B9%B0%E9%AB%98%E5%8D%96/" title="51nod-2206-低买高卖"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-25</div><div class="info-item-2">51nod-2206-低买高卖</div></div><div class="info-2"><div class="info-item-1">题目:考虑股票市场，一共有n天。对于第i天，B君知道股票的价格是每单位a[i]元在每一天，B君可以选择买入一个单位的股票，卖出一个单位的股票，或者什么都不做。刚开始B君有无穷多的钱，但是没有任何股票。问n天之后B君最多可以赚多少钱。(1 &lt;&#x3D; n &lt;&#x3D; 200000)(1 &lt;&#x3D; a[i] &lt;&#x3D; 10000) 输入第一行一个整数n表示天数。接下来一行n个整数，表示每天的价钱。 输出一行一个整数表示最多可以赚的钱数。输入样例 12910 5 4 7 9 12 6 2 10 输出样例 120 题解：利用优先队列建立最小堆，遍历时，每次首先push当前a[i]两次，取堆中的最小值，若堆中最小值为a[i]，相当于未进行操作。下面解释一下为何要push两次1.堆里面存储的值，相当于已经买的股票，因此第一次push可以认为购买了当天的股票。2.从堆中取出最小值之后，ans加上当前a[i]与堆中最小元素的差值，此时第二次push的a[i]可以认为是堆中最小元素的一个跳板，以备以后出现利润更高的天数。例子：1 3 9day1: &lt...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/02/51nod-2281-%E6%A0%91%E7%9A%84size%E4%B9%8B%E5%92%8C/" title="51nod-2281-树的size之和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-02</div><div class="info-item-2">51nod-2281-树的size之和</div></div><div class="info-2"><div class="info-item-1">题目：给出一棵n个节点的树，节点编号为1-n（根节点编号为1），每一个节点作为根节点与他所有的子孙节点形成一棵子树，而这棵子树包含节点的数量，称作子树的Size。 例如： 1─2─4─5└─3 其中节点5的子树只包括节点5，Size &#x3D; 1。节点4的子树包括节点4，5，Size &#x3D; 2。节点1的子树包括节点1，2，3，4，5，Size &#x3D; 5。 求以所有节点为根的子树的Size之和。上面例子中，节点1到5，对应的Size分别为5，3，1，2，1，所有Size的和 &#x3D; 5 + 3 + 1 + 2 + 1 &#x3D; 12 输入第一行：1个数n（1 &lt; n &lt;&#x3D; 1000），表示树的节点数量。后面n-1行：每行2个数x y，表示节点x是节点y的父节点（1 &lt;&#x3D; x, y &lt;&#x3D; n）。输出输出1个数，表示以所有节点为根的子树的Size之和。输入样例51 21 32 44 5输出样例12 解法:暴力递归求解就可以，数据量再大的话可以加一下记忆化搜索。每日划水5555555代码: 1234567...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/11/51node-2502-%E5%88%86%E5%9D%97/" title="51node-2502-分块"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-11</div><div class="info-item-2">51node-2502-分块</div></div><div class="info-2"><div class="info-item-1">题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。 保证a为0…n-1的一个排列。 样例解释： 将a分成2块或者更多块，都无法得到所需的结果。例如，分成 [4, 3], [2, 1, 0] ，排序得到的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 输入第一行一个数n；第二行n个数表示a[i]，以空格隔开。n&lt;&#x3D;10输出输出一个数表示划分块的数量输入样例54 3 2 1 0输出样例1解法：每个数字排序前排序后的下标为一段线段，相交的线段何为一段，最后求出剩下线段的个数即可。代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include&lt;set&gt;#include&l...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
   const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
   const option = null
 
