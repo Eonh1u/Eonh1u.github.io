@@ -67,7 +67,7 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: false
-  comments: true
+  comments: false
 
   assets:
     disableHLJS: true
