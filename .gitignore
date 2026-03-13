@@ -1,0 +1,12 @@
+public/
+hugo_public/
+resources/
+.hugo_build.lock
+node_modules/
+.tools/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+.deploy*/
