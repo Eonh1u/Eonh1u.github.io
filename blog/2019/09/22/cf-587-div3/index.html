@@ -1,0 +1,1295 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>cf-587-div3 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="A题 Prefixes：题目：Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛. He wants to modify his string so that eve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf-587-div3">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/09/22/cf-587-div3/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="A题 Prefixes：题目：Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛. He wants to modify his string so that eve">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-09-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:17:59.346Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "cf-587-div3",
+  "url": "https://eonh1u.github.io/blog/2019/09/22/cf-587-div3/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-09-21T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:17:59.346Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/09/22/cf-587-div3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cf-587-div3',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">cf-587-div3</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">cf-587-div3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-09-21T16:00:00.000Z" title="发表于 2019-09-22 00:00:00">2019-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:17:59.346Z" title="更新于 2026-03-13 17:17:59">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="A题-Prefixes："><a href="#A题-Prefixes：" class="headerlink" title="A题 Prefixes："></a>A题 Prefixes：</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>Nikolay got a string 𝑠 of even length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’. Its positions are numbered from 1 to 𝑛.</p>
+<p>He wants to modify his string so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’. To achieve that, Nikolay can perform the following operation arbitrary number of times (possibly, zero): choose some position in his string and replace the letter on this position with the other letter (i.e. replace ‘a’ with ‘b’ or replace ‘b’ with ‘a’). Nikolay can use no letters except ‘a’ and ‘b’.</p>
+<p>The prefix of string 𝑠 of length 𝑙 (1≤𝑙≤𝑛) is a string 𝑠[1..𝑙].</p>
+<p>For example, for the string 𝑠&#x3D;”abba” there are two prefixes of the even length. The first is 𝑠[1…2]&#x3D;”ab” and the second 𝑠[1…4]&#x3D;”abba”. Both of them have the same number of ‘a’ and ‘b’.</p>
+<p>Your task is to calculate the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’.</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input contains one even integer 𝑛 (2≤𝑛≤2⋅105) — the length of string 𝑠.</p>
+<p>The second line of the input contains the string 𝑠 of length 𝑛, which consists only of lowercase Latin letters ‘a’ and ‘b’.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>In the first line print the minimum number of operations Nikolay has to perform with the string 𝑠 to modify it so that every its prefix of even length has an equal amount of letters ‘a’ and ‘b’.</p>
+<p>In the second line print the string Nikolay obtains after applying all the operations. If there are multiple answers, you can print any of them.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>4  
+bbbb  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>2  
+abba  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>6  
+ababab  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>0  
+ababab  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>2  
+aa  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>1  
+ba  
+  
+</code></pre>
+<p>—|—  </p>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>In the first example Nikolay has to perform two operations. For example, he can replace the first ‘b’ with ‘a’ and the last ‘b’ with ‘a’.</p>
+<p>In the second example Nikolay doesn’t need to do anything because each prefix of an even length of the initial string already contains an equal amount of letters ‘a’ and ‘b’.</p>
+<h2 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h2><p>每两个字符判断是否相同，如果相同则需要更改一个字母。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;iostream&gt;  
+#include&lt;set&gt;  
+#include&lt;vector&gt;  
+#include&lt;string&gt;  
+using namespace std;  
+int main()  
+{  
+    string s;  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    cin &gt;&gt; s;  
+    int l = s.length();  
+    //printf(&quot;%d\n&quot;,l);  
+    int l1 = 0, l2 = 0;  
+    for(int i = 0; i &lt; l/2; i++)  
+    {  
+        if(s[2*i] == s[2*i+1])  
+        {  
+            l1++;  
+            if(s[2*i] == &#39;a&#39;)  
+                s[2*i] = &#39;b&#39;;  
+            else  
+            {  
+                s[2*i]=&#39;a&#39;;  
+            }  
+              
+        }  
+    }  
+    printf(&quot;%d\n&quot;,l1);  
+    cout&lt;&lt;s;  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—  </p>
+<h1 id="B题：Shooting"><a href="#B题：Shooting" class="headerlink" title="B题：Shooting"></a>B题：Shooting</h1><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>Recently Vasya decided to improve his pistol shooting skills. Today his coach offered him the following exercise. He placed 𝑛 cans in a row on a table. Cans are numbered from left to right from 1 to 𝑛. Vasya has to knock down each can exactly once to finish the exercise. He is allowed to choose the order in which he will knock the cans down.</p>
+<p>Vasya knows that the durability of the 𝑖-th can is 𝑎𝑖. It means that if Vasya has already knocked 𝑥 cans down and is now about to start shooting the 𝑖-th one, he will need (𝑎𝑖⋅𝑥+1) shots to knock it down. You can assume that if Vasya starts shooting the 𝑖-th can, he will be shooting it until he knocks it down.</p>
+<p>Your task is to choose such an order of shooting so that the number of shots required to knock each of the 𝑛 given cans down exactly once is minimum possible.</p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input contains one integer 𝑛 (2≤𝑛≤1000) — the number of cans.</p>
+<p>The second line of the input contains the sequence 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤1000), where 𝑎𝑖 is the durability of the 𝑖-th can.</p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>In the first line print the minimum number of shots required to knock each of the 𝑛 given cans down exactly once.</p>
+<p>In the second line print the sequence consisting of 𝑛 distinct integers from 1 to 𝑛 — the order of indices of cans that minimizes the number of shots required. If there are several answers, you can print any of them.</p>
+<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h3><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+</code></pre>
+<p>| </p>
+<pre><code>3  
+20 10 20  
+43  
+1 3 2  
+  
+4  
+10 10 10 10  
+64  
+2 1 4 3  
+  
+6  
+5 4 5 4 4 5  
+69  
+6 1 3 5 2 4   
+  
+2  
+1 4  
+3  
+2 1   
+  
+</code></pre>
+<p>—|—  </p>
+<h3 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h3><p>In the first example Vasya can start shooting from the first can. He knocks it down with the first shot because he haven’t knocked any other cans down before. After that he has to shoot the third can. To knock it down he shoots 20⋅1+1&#x3D;21 times. After that only second can remains. To knock it down Vasya shoots 10⋅2+1&#x3D;21 times. So the total number of shots is 1+21+21&#x3D;43.</p>
+<p>In the second example the order of shooting does not matter because all cans have the same durability.</p>
+<h2 id="解法：-1"><a href="#解法：-1" class="headerlink" title="解法："></a>解法：</h2><p>从大到小排序即可</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;iostream&gt;  
+#include&lt;set&gt;  
+#include&lt;vector&gt;  
+using namespace std;  
+struct point{  
+    int x,status;  
+};  
+bool cmp(point a, point b){  
+    return a.x &gt; b.x;  
+}  
+point p[10010];  
+int main()  
+{  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    for(int i = 0; i &lt; n; i++){  
+        scanf(&quot;%d&quot;, &amp;p[i].x);  
+        p[i].status = i + 1;  
+    }  
+    sort(p, p + n, cmp);  
+    long long ans = 0;  
+    for(int i = 0; i &lt; n; i++)  
+        ans += i * p[i].x + 1;  
+    printf(&quot;%lld\n&quot;, ans);  
+    for(int i = 0; i &lt; n; i++)  
+        printf(&quot;%d &quot;, p[i].status);  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—  </p>
+<h1 id="C题-White-Sheet"><a href="#C题-White-Sheet" class="headerlink" title="C题 White Sheet"></a>C题 White Sheet</h1><h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>There is a white sheet of paper lying on a rectangle table. The sheet is a rectangle with its sides parallel to the sides of the table. If you will take a look from above and assume that the bottom left corner of the table has coordinates (0,0), and coordinate axes are left and bottom sides of the table, then the bottom left corner of the white sheet has coordinates (𝑥1,𝑦1), and the top right — (𝑥2,𝑦2).</p>
+<p>After that two black sheets of paper are placed on the table. Sides of both black sheets are also parallel to the sides of the table. Coordinates of the bottom left corner of the first black sheet are (𝑥3,𝑦3), and the top right — (𝑥4,𝑦4). Coordinates of the bottom left corner of the second black sheet are (𝑥5,𝑦5), and the top right — (𝑥6,𝑦6).<br><img src="/blog/cf-587-div3-c.png"><br>Determine if some part of the white sheet can be seen from the above after the two black sheets are placed. The part of the white sheet can be seen if there is at least one point lying not strictly inside the white sheet and strictly outside of both black sheets.</p>
+<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input contains four integers 𝑥1,𝑦1,𝑥2,𝑦2 (0≤𝑥1&lt;𝑥2≤106,0≤𝑦1&lt;𝑦2≤106) — coordinates of the bottom left and the top right corners of the white sheet.</p>
+<p>The second line of the input contains four integers 𝑥3,𝑦3,𝑥4,𝑦4 (0≤𝑥3&lt;𝑥4≤106,0≤𝑦3&lt;𝑦4≤106) — coordinates of the bottom left and the top right corners of the first black sheet.</p>
+<p>The third line of the input contains four integers 𝑥5,𝑦5,𝑥6,𝑦6 (0≤𝑥5&lt;𝑥6≤106,0≤𝑦5&lt;𝑦6≤106) — coordinates of the bottom left and the top right corners of the second black sheet.</p>
+<p>The sides of each sheet of paper are parallel (perpendicular) to the coordinate axes.</p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>If some part of the white sheet can be seen from the above after the two black sheets are placed, print “YES” (without quotes). Otherwise print “NO”.</p>
+<h3 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>2 2 4 4  
+1 1 3 5  
+3 1 5 5  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>NO  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>3 3 7 5  
+0 0 4 6  
+0 0 7 4  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>YES  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+4  
+</code></pre>
+<p>| </p>
+<pre><code>5 2 10 5  
+3 1 7 6  
+8 1 11 7  
+  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>YES  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>0 0 1000000 1000000  
+0 0 499999 1000000  
+500000 0 1000000 1000000  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>YES  
+  
+</code></pre>
+<p>—|—  </p>
+<h3 id="Note-2"><a href="#Note-2" class="headerlink" title="Note"></a>Note</h3><p>In the first example the white sheet is fully covered by black sheets.</p>
+<p>In the second example the part of the white sheet can be seen after two black sheets are placed. For example, the point (6.5,4.5) lies not strictly inside the white sheet and lies strictly outside of both black sheets.</p>
+<h2 id="解法：-2"><a href="#解法：-2" class="headerlink" title="解法："></a>解法：</h2><p>此文用到的解法，求出两个黑块与白块分别的共同面积，再求出两个黑块在白块中共同的面积，这里要注意，必须是在白块中的共同面积，而不是两个黑块所有的共同面积，白块外的共同面积是无效的。</p>
+<h2 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+37  
+38  
+39  
+40  
+41  
+42  
+43  
+44  
+45  
+46  
+47  
+48  
+49  
+50  
+51  
+52  
+53  
+54  
+55  
+56  
+57  
+58  
+59  
+60  
+61  
+62  
+63  
+64  
+65  
+66  
+67  
+68  
+69  
+70  
+71  
+72  
+73  
+74  
+75  
+76  
+77  
+78  
+79  
+80  
+81  
+82  
+83  
+84  
+85  
+86  
+87  
+88  
+89  
+90  
+91  
+92  
+93  
+94  
+95  
+96  
+97  
+98  
+99  
+100  
+101  
+102  
+103  
+104  
+105  
+106  
+107  
+108  
+109  
+110  
+111  
+112  
+113  
+114  
+115  
+116  
+117  
+118  
+119  
+120  
+121  
+122  
+123  
+124  
+125  
+126  
+127  
+128  
+129  
+130  
+131  
+132  
+133  
+134  
+135  
+136  
+137  
+138  
+139  
+140  
+141  
+142  
+143  
+144  
+145  
+146  
+147  
+148  
+149  
+150  
+151  
+152  
+153  
+154  
+155  
+156  
+157  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;iostream&gt;  
+#include&lt;set&gt;  
+#include&lt;vector&gt;  
+using namespace std;  
+#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+using namespace std;  
+long long f(long long x1, long long  x2, long long  y1, long long  y2)  
+{  
+    if(x1 &lt; y1)  
+    {  
+        if(y1 &gt;= x2)  
+            return 0;  
+        else{  
+            if(y2 &gt;= x2)  
+                return x2 - y1;  
+            else  
+                return y2 - y1;  
+              
+        }  
+    }  
+    else  
+    {  
+        if(x1 &gt;= y2)  
+            return 0;  
+        else{  
+            if(x2 &gt;= y2)  
+                return y2 - x1;  
+            else  
+            {  
+                return x2 - x1;  
+            }  
+              
+        }  
+    }  
+}  
+long long  s(long long x1, long long x2,long long x3,long long x4,long long y1,long long y2,long long y3,long long y4)  
+{  
+    long long  X = f(x1,x2,x3,x4);  
+    long long  Y = f(y1,y2,y3,y4);  
+    long long ans = X*Y;  
+    return ans;  
+}  
+int main()  
+{  
+    long long x[6],y[6];  
+    for(int i = 0; i &lt; 6; i++)  
+        scanf(&quot;%lld%lld&quot;, &amp;x[i], &amp;y[i]);  
+    long long now = (x[1] - x[0]) * (y[1] - y[0]);  
+    long long s1 = s(x[0],x[1],x[2],x[3],y[0],y[1],y[2],y[3]);  
+    long long s3 = s(x[0],x[1],x[4],x[5],y[0],y[1],y[4],y[5]);  
+  
+   // printf(&quot;%lld %lld %lld %lld\n&quot;, now ,s1,s2,s3);  
+    long long ans = now - s1 - s3;  
+    if(s1 &gt; 0 &amp;&amp; s3 &gt; 0)  
+    {  
+        long long Ax[4], Ay[4];  
+        //s1  
+        if(x[0] &lt; x[2])  
+        {  
+            Ax[0] = x[2];  
+            if(x[1] &lt; x[3])  
+                Ax[1] = x[1];  
+            else  
+            {  
+                Ax[1] = x[3];  
+            }  
+        }  
+        else  
+        {  
+            Ax[0] = x[0];  
+            if(x[3] &lt; x[1])  
+                Ax[1] = x[3];  
+            else  
+            {  
+                Ax[1] = x[1];  
+            }  
+        }  
+  
+        if(y[0] &lt; y[2])  
+        {  
+            Ay[0] = y[2];  
+            if(y[1] &lt; y[3])  
+                Ay[1] = y[1];  
+            else  
+            {  
+                Ay[1] = y[3];  
+            }  
+        }  
+        else  
+        {  
+            Ay[0] = y[0];  
+            if(y[3] &lt; y[1])  
+                Ay[1] = y[3];  
+            else  
+            {  
+                Ay[1] = y[1];  
+            }  
+        }  
+  
+        //s2  
+        if(x[0] &lt; x[4])  
+        {  
+            Ax[2] = x[4];  
+            if(x[1] &lt; x[5])  
+                Ax[3] = x[1];  
+            else  
+            {  
+                Ax[3] = x[5];  
+            }  
+        }  
+        else  
+        {  
+            Ax[2] = x[0];  
+            if(x[5] &lt; x[1])  
+                Ax[3] = x[5];  
+            else  
+            {  
+                Ax[3] = x[1];  
+            }  
+        }  
+  
+        if(y[0] &lt; y[4])  
+        {  
+            Ay[2] = y[4];  
+            if(y[1] &lt; y[5])  
+                Ay[3] = y[1];  
+            else  
+            {  
+                Ay[3] = y[5];  
+            }  
+        }  
+        else  
+        {  
+            Ay[2] = y[0];  
+            if(y[5] &lt; y[1])  
+                Ay[3] = y[5];  
+            else  
+            {  
+                Ay[3] = y[1];  
+            }  
+        }  
+        long long p = s(Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);  
+        //printf(&quot;%lld %lld %lld %lld %lld %lld %lld %lld\n&quot;,Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);  
+       // printf(&quot;%lld\n&quot;, p);  
+        ans += p;  
+    }  
+    if(ans &gt; 0)  
+        printf(&quot;YES&quot;);  
+    else  
+    {  
+        printf(&quot;NO&quot;);  
+    }  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—  </p>
+<h1 id="D题-Swords"><a href="#D题-Swords" class="headerlink" title="D题 Swords"></a>D题 Swords</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h2><p>There were 𝑛 types of swords in the theater basement which had been used during the plays. Moreover there were exactly 𝑥 swords of each type. 𝑦 people have broken into the theater basement and each of them has taken exactly 𝑧 swords of some single type. Note that different people might have taken different types of swords. Note that the values 𝑥,𝑦 and 𝑧 are unknown for you.</p>
+<p>The next morning the director of the theater discovers the loss. He counts all swords — exactly 𝑎𝑖 swords of the 𝑖-th type are left untouched.</p>
+<p>The director has no clue about the initial number of swords of each type in the basement, the number of people who have broken into the basement and how many swords each of them have taken.</p>
+<p>For example, if 𝑛&#x3D;3, 𝑎&#x3D;[3,12,6] then one of the possible situations is 𝑥&#x3D;12, 𝑦&#x3D;5 and 𝑧&#x3D;3. Then the first three people took swords of the first type and the other two people took swords of the third type. Note that you don’t know values 𝑥,𝑦 and 𝑧 beforehand but know values of 𝑛 and 𝑎.</p>
+<p>Thus he seeks for your help. Determine the minimum number of people 𝑦, which could have broken into the theater basement, and the number of swords 𝑧 each of them has taken.</p>
+<h3 id="Input-3"><a href="#Input-3" class="headerlink" title="Input"></a>Input</h3><p>The first line of the input contains one integer 𝑛 (2≤𝑛≤2⋅105) — the number of types of swords.</p>
+<p>The second line of the input contains the sequence 𝑎1,𝑎2,…,𝑎𝑛 (0≤𝑎𝑖≤109), where 𝑎𝑖 equals to the number of swords of the 𝑖-th type, which have remained in the basement after the theft. It is guaranteed that there exists at least one such pair of indices (𝑗,𝑘) that 𝑎𝑗≠𝑎𝑘.</p>
+<h3 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h3><p>Print two integers 𝑦 and 𝑧 — the minimum number of people which could have broken into the basement and the number of swords each of them has taken.</p>
+<h3 id="Examples-3"><a href="#Examples-3" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>3  
+3 12 6  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>5 3  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>2  
+2 9  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>1 7  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+</code></pre>
+<p>| </p>
+<pre><code>7  
+2 1000000000 4 6 8 4 2  
+  
+</code></pre>
+<p>—|—  </p>
+<p>outputCopy<br>2999999987 2<br>inputCopy<br>6<br>13 52 0 13 26 52<br>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>12 13  
+  
+</code></pre>
+<p>—|—  </p>
+<h3 id="Note-3"><a href="#Note-3" class="headerlink" title="Note"></a>Note</h3><p>In the first example the minimum value of 𝑦 equals to 5, i.e. the minimum number of people who could have broken into the basement, is 5. Each of them has taken 3 swords: three of them have taken 3 swords of the first type, and two others have taken 3 swords of the third type.</p>
+<p>In the second example the minimum value of 𝑦 is 1, i.e. the minimum number of people who could have broken into the basement, equals to 1. He has taken 7 swords of the first type</p>
+<h2 id="解法：-3"><a href="#解法：-3" class="headerlink" title="解法："></a>解法：</h2><p>循环遍历数组，得到max，数组中不为max的数与max的差值，求出最大公约数，最大公约数即为每个人取走的数目。</p>
+<h2 id="代码：-3"><a href="#代码：-3" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+37  
+38  
+39  
+40  
+41  
+42  
+43  
+44  
+45  
+46  
+47  
+48  
+49  
+50  
+51  
+52  
+53  
+54  
+55  
+56  
+57  
+58  
+59  
+60  
+61  
+62  
+63  
+64  
+65  
+66  
+67  
+68  
+69  
+70  
+71  
+72  
+73  
+74  
+75  
+76  
+77  
+78  
+79  
+80  
+81  
+82  
+83  
+84  
+85  
+86  
+87  
+88  
+89  
+90  
+91  
+92  
+93  
+94  
+95  
+96  
+97  
+98  
+99  
+100  
+101  
+102  
+103  
+104  
+105  
+106  
+107  
+108  
+109  
+110  
+111  
+112  
+113  
+114  
+115  
+116  
+117  
+118  
+119  
+120  
+121  
+122  
+123  
+124  
+125  
+126  
+127  
+128  
+129  
+130  
+131  
+132  
+133  
+134  
+135  
+136  
+137  
+138  
+139  
+140  
+141  
+142  
+143  
+144  
+145  
+146  
+147  
+148  
+149  
+150  
+151  
+152  
+153  
+154  
+155  
+156  
+157  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;iostream&gt;  
+#include&lt;set&gt;  
+#include&lt;vector&gt;  
+using namespace std;  
+#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+using namespace std;  
+long long f(long long x1, long long  x2, long long  y1, long long  y2)  
+{  
+    if(x1 &lt; y1)  
+    {  
+        if(y1 &gt;= x2)  
+            return 0;  
+        else{  
+            if(y2 &gt;= x2)  
+                return x2 - y1;  
+            else  
+                return y2 - y1;  
+              
+        }  
+    }  
+    else  
+    {  
+        if(x1 &gt;= y2)  
+            return 0;  
+        else{  
+            if(x2 &gt;= y2)  
+                return y2 - x1;  
+            else  
+            {  
+                return x2 - x1;  
+            }  
+              
+        }  
+    }  
+}  
+long long  s(long long x1, long long x2,long long x3,long long x4,long long y1,long long y2,long long y3,long long y4)  
+{  
+    long long  X = f(x1,x2,x3,x4);  
+    long long  Y = f(y1,y2,y3,y4);  
+    long long ans = X*Y;  
+    return ans;  
+}  
+int main()  
+{  
+    long long x[6],y[6];  
+    for(int i = 0; i &lt; 6; i++)  
+        scanf(&quot;%lld%lld&quot;, &amp;x[i], &amp;y[i]);  
+    long long now = (x[1] - x[0]) * (y[1] - y[0]);  
+    long long s1 = s(x[0],x[1],x[2],x[3],y[0],y[1],y[2],y[3]);  
+    long long s3 = s(x[0],x[1],x[4],x[5],y[0],y[1],y[4],y[5]);  
+  
+   // printf(&quot;%lld %lld %lld %lld\n&quot;, now ,s1,s2,s3);  
+    long long ans = now - s1 - s3;  
+    if(s1 &gt; 0 &amp;&amp; s3 &gt; 0)  
+    {  
+        long long Ax[4], Ay[4];  
+        //s1  
+        if(x[0] &lt; x[2])  
+        {  
+            Ax[0] = x[2];  
+            if(x[1] &lt; x[3])  
+                Ax[1] = x[1];  
+            else  
+            {  
+                Ax[1] = x[3];  
+            }  
+        }  
+        else  
+        {  
+            Ax[0] = x[0];  
+            if(x[3] &lt; x[1])  
+                Ax[1] = x[3];  
+            else  
+            {  
+                Ax[1] = x[1];  
+            }  
+        }  
+  
+        if(y[0] &lt; y[2])  
+        {  
+            Ay[0] = y[2];  
+            if(y[1] &lt; y[3])  
+                Ay[1] = y[1];  
+            else  
+            {  
+                Ay[1] = y[3];  
+            }  
+        }  
+        else  
+        {  
+            Ay[0] = y[0];  
+            if(y[3] &lt; y[1])  
+                Ay[1] = y[3];  
+            else  
+            {  
+                Ay[1] = y[1];  
+            }  
+        }  
+  
+        //s2  
+        if(x[0] &lt; x[4])  
+        {  
+            Ax[2] = x[4];  
+            if(x[1] &lt; x[5])  
+                Ax[3] = x[1];  
+            else  
+            {  
+                Ax[3] = x[5];  
+            }  
+        }  
+        else  
+        {  
+            Ax[2] = x[0];  
+            if(x[5] &lt; x[1])  
+                Ax[3] = x[5];  
+            else  
+            {  
+                Ax[3] = x[1];  
+            }  
+        }  
+  
+        if(y[0] &lt; y[4])  
+        {  
+            Ay[2] = y[4];  
+            if(y[1] &lt; y[5])  
+                Ay[3] = y[1];  
+            else  
+            {  
+                Ay[3] = y[5];  
+            }  
+        }  
+        else  
+        {  
+            Ay[2] = y[0];  
+            if(y[5] &lt; y[1])  
+                Ay[3] = y[5];  
+            else  
+            {  
+                Ay[3] = y[1];  
+            }  
+        }  
+        long long p = s(Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);  
+        //printf(&quot;%lld %lld %lld %lld %lld %lld %lld %lld\n&quot;,Ax[0],Ax[1],Ax[2],Ax[3],Ay[0],Ay[1],Ay[2],Ay[3]);  
+       // printf(&quot;%lld\n&quot;, p);  
+        ans += p;  
+    }  
+    if(ans &gt; 0)  
+        printf(&quot;YES&quot;);  
+    else  
+    {  
+        printf(&quot;NO&quot;);  
+    }  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/09/22/cf-587-div3/">https://eonh1u.github.io/blog/2019/09/22/cf-587-div3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/09/24/51nod-1649-%E9%BD%90%E5%A4%B4%E5%B9%B6%E8%BF%9B/" title="51nod-1649-齐头并进"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-1649-齐头并进</div></div><div class="info-2"><div class="info-item-1">题目在一个叫奥斯汀的城市，有n个小镇（从1到n编号），这些小镇通过m条双向火车铁轨相连。当然某些小镇之间也有公路相连。为了保证每两个小镇之间的人可以方便的相互访问，市长就在那些没有铁轨直接相连的小镇之间建造了公路。在两个直接通过公路或者铁路相连的小镇之间移动，要花费一个小时的时间。 现在有一辆火车和一辆汽车同时从小镇1出发。他们都要前往小镇n，但是他们中途不能同时停在同一个小镇（但是可以同时停在小镇n）。火车只能走铁路，汽车只能走公路。 现在请来为火车和汽车分别设计一条线路；所有的公路或者铁路可以被多次使用。使得火车和汽车尽可能快的到达小镇n。即要求他们中最后到达小镇n的时间要最短。输出这个最短时间。(最后火车和汽车可以同时到达小镇n，也可以先后到达。) 样例解释：在样例中，火车可以按照 1⟶3⟶4 行驶，汽车 1⟶2⟶4 按照行驶，经过2小时后他们同时到过小镇4。 输入单组测试数据。第一行有两个整数n 和 m (2≤n≤400, 0≤m≤n*(n-1)&#x2F;2) ，表示小镇的数目和铁轨的数目。接下来m行，每行有两个整数u 和 v，表示u和v之间有一条铁路。(1≤u,v≤n...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/19/cf-edu-73/" title="cf-edu-73"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">cf-edu-73</div></div><div class="info-2"><div class="info-item-1">昨天参加了cf—edu-73 div2。嗯 很菜 以后有时间多参加一下cf，提一下rating。 A题 2048 Games：题目：You are playing a variation of game 2048. Initially you have a multiset 𝑠 of 𝑛 integers. Every integer in this multiset is a power of two. You may perform any number (possibly, zero) operations with this multiset. During each operation you choose two equal integers from 𝑠, remove them from 𝑠 and insert the number equal to their sum into 𝑠. For example, if 𝑠&#x3D;{1,2,1,1,4,2,2} and you choose integers 2 and 2, then the mu...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/08/04/51nod-2652-%E9%98%B6%E4%B9%980%E7%9A%84%E6%95%B0%E9%87%8F/" title="51nod-2652-阶乘0的数量"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-04</div><div class="info-item-2">51nod-2652-阶乘0的数量</div></div><div class="info-2"><div class="info-item-1">给出一个数k，求最小的n，使得n的阶乘后面0的数量&gt;&#x3D;k。 例如k&#x3D;1， 5的阶乘 &#x3D; 1 2 3 4 5 &#x3D; 120，120后面有1个0。并且4的阶乘后面没有0，所以5是最小的结果。 输入一个数k(1 &lt;&#x3D; k &lt;&#x3D; 10^9)输出输出最小的满足条件的n。输入样例1输出样例5解法：每个0都是由2*5求得出来的，因而每个5之前肯定有存在足量的2，因此只需计算5的个数即可，当碰到25，50，125这种可以分解为多个5的数，便需要多计算，采用二分快速计算，二分时注意边界情况，0的个数不是连续的代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   4...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/03/51nod-2651-%E5%8C%BA%E9%97%B4%E5%92%8C%E7%9A%84%E5%92%8C/" title="51nod-2651-区间和的和"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-03</div><div class="info-item-2">51nod-2651-区间和的和</div></div><div class="info-2"><div class="info-item-1">题目:输入一个长度为𝑛的数组𝑎，𝑎包括(𝑛−1)𝑛&#x2F;2个区间。每个区间所有数的和，被称为区间和，求所有(𝑛−1)𝑛&#x2F;2个区间和的和。由于数值较大，输出mod 1e9+7的结果。 输入第一行一个整数n，表示数组长度(2&lt;&#x3D;n&lt;&#x3D;100000)接下来n行，每行一个整数ai，表示数组的内容。(0&lt;&#x3D;ai&lt;&#x3D;50000)输出输出答案mod 1e9+7输入样例3123输出样例20解法：统计每个数字出现的次数就好了，每个数字出现的次数为该数字左边数字的个数乘右边的。代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18    |  using namespace std;   int main()   {       long long ans = 0;       long long mod = 1e9+7;       long long  n;       scanf(&quot;...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/29/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/" title="51nod-1889-制铁棒"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-29</div><div class="info-item-2">51nod-1889-制铁棒</div></div><div class="info-2"><div class="info-item-1">题目:工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。 输入单组测试数据。第一行给出两个整数n(1 &lt;&#x3D; n&lt;&#x3D; 10000)和m(1 &lt;&#x3D; m&lt; &#x3D; 10000)。接下来n行给出原始铁棒的长度L[1],L[2],L[3],…,L[n] ，(1&lt;&#x3D;L[i]&lt;&#x3D;100,000)。以米为单位，精确到小数点后两位。 输出输出一个小数表示答案，精确到小数点后两位。 输入样例样例输入14 118.027.434.575.39 输出样例样例输出12.00 解法：二分分情况讨论即可，因为题目有小数点限制，这里我直接*100 最后&#x2F;100处理了这个情况ps:(每天没时间刷题555555，选个一眼...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/27/51nod-1886-%E5%8F%A0%E5%8A%A0%E4%B8%B2/" title="51nod-1886-叠加串"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-27</div><div class="info-item-2">51nod-1886-叠加串</div></div><div class="info-2"><div class="info-item-1">今天周六，偷个懒选了个非常easy 的题目题目：有一个字符串S，下标从1开始，初始为S&#x3D;”0”。现在开始调用fun函数。 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29    |  {       for(i=0;i&lt;100000;i++)       {           tmp=change(S);                     S=S+&quot;0&quot;+tmp;       }   }   change(s)   {       for(i=1;i&lt;=s.length();i++)       {           if(s[i]==&#39;0&#39;)s[i]=&#39;1&#39;;           else s[i]=&#39;0&#39;;       }           i=1;      ...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/14/51nod-2484-%E5%B0%8Fb%E5%92%8C%E6%8E%92%E5%BA%8F/" title="51nod-2484-小b和排序"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-14</div><div class="info-item-2">51nod-2484-小b和排序</div></div><div class="info-2"><div class="info-item-1">题目：小b有两个长度都为n的序列A,B。 现在她需要选择一些i，然后交换A[i]和B[i]，使得A和B都变成严格递增的序列。 你能帮小b求出最少交换次数吗？ 输入保证有解。 输入第一行输入一个正整数n，表示两个数组的长度；第二行输入n个数，表示A[i]，以空格隔开；第三行输入n个数，表示B[i]，以空格隔开；其中1≤n≤1000, 0≤A[i],B[i]≤2000 输出输出一个数，表示交换次数 输入样例1   2   3    |  4   1 3 5 4   1 2 3 7       —|—   输出样例1    |  1       —|—   解法：dp,dp[i][0]代表处理到i时，不进行改变使得满足要求的最少交换次数，dp[i][1]代表交换使得满足要求的最少交换次数。进行状态转移时，进行a,b数组的比较，选最小值(具体看代码) 代码:1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   2...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/24/51nod-1770-%E6%95%B0%E6%95%B0%E5%AD%97/" title="51nod-1770"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-24</div><div class="info-item-2">51nod-1770</div></div><div class="info-2"><div class="info-item-1">题目：统计一下 𝑎𝑎𝑎 ⋯ 𝑎𝑎𝑎（𝑛个𝑎） × 𝑏 的结果里面有多少个数字d，a,b,d均为一位数。 样例解释： 3333333333*3&#x3D;9999999999，里面有10个9。 解法：打表可以得到，相乘的结果最多有4个不同的数字，如果n比较小暴力即可，如果n比较大的话，先求出这4个数字（可能有相同），然后根据n的大小得出。结果的表示方法sl*re l可能有多位。 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50   51   52   53   54   55   56   57   58   59   60    |  #in...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A%E9%A2%98-Prefixes%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">A题 Prefixes：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-number">1.1.3.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Note"><span class="toc-number">1.1.4.</span> <span class="toc-text">Note</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B%E9%A2%98%EF%BC%9AShooting"><span class="toc-number">2.</span> <span class="toc-text">B题：Shooting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-1"><span class="toc-number">2.1.3.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Note-1"><span class="toc-number">2.1.4.</span> <span class="toc-text">Note</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%EF%BC%9A-1"><span class="toc-number">2.2.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="toc-number">2.3.</span> <span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E9%A2%98-White-Sheet"><span class="toc-number">3.</span> <span class="toc-text">C题 White Sheet</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-2"><span class="toc-number">3.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-2"><span class="toc-number">3.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">3.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-2"><span class="toc-number">3.1.3.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Note-2"><span class="toc-number">3.1.4.</span> <span class="toc-text">Note</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%EF%BC%9A-2"><span class="toc-number">3.2.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-2"><span class="toc-number">3.3.</span> <span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#D%E9%A2%98-Swords"><span class="toc-number">4.</span> <span class="toc-text">D题 Swords</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">4.1.</span> <span class="toc-text">题目:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-3"><span class="toc-number">4.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-3"><span class="toc-number">4.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-3"><span class="toc-number">4.1.3.</span> <span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Note-3"><span class="toc-number">4.1.4.</span> <span class="toc-text">Note</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%EF%BC%9A-3"><span class="toc-number">4.2.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-3"><span class="toc-number">4.3.</span> <span class="toc-text">代码：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

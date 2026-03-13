@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ucas Alice&amp;#39;s Food | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目：问题描述面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ucas Alice&#39;s Food">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/09/11/ucas-Alice-s-Food/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="题目：问题描述面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-09-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:17:59.302Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ucas Alice&#39;s Food",
+  "url": "https://eonh1u.github.io/blog/2019/09/11/ucas-Alice-s-Food/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-09-10T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:17:59.302Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/09/11/ucas-Alice-s-Food/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ucas Alice&#39;s Food',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">ucas Alice&amp;#39;s Food</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">ucas Alice&amp;#39;s Food</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-09-10T16:00:00.000Z" title="发表于 2019-09-11 00:00:00">2019-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:17:59.302Z" title="更新于 2026-03-13 17:17:59">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>题目：<br>问题描述<br>面对夜市上琳琅满目的美食, 吃货 Alice 正在犯难. 夜市上有 n 种食物. 每种都是不可分割地一份一份出售的. Alice 是一个珍惜食物的好孩子(吃货), 所以买到的食物她都会吃完不浪费. Alice 当然想尝试尽量多不同的的美味, 所以同一种食物她不会重复购买, 即最多只会买一份. 每份食物都有一个营养价值和美味指数. Alice当然想吃得又健康又美味, 所以她今晚的目标就是所吃食物的营养价值总和不能少于x, 而美味指数总和不能少于y. 精明的 Alice 当然想省下钱来明天再吃一顿, 所以她想花最少的钱实现她的目标.</p>
+<p>所以 Alice 来求助同班的天才程序员 Bob, 就是你啦. 她告诉你 n 种食物的营养价值, 美味指数和价格, 以及她的目标 x 和 y. 你要告诉她最少要花多少钱才能达到目标.</p>
+<p>输入<br>从标准文件输入, 第一行包括两个整数x和y, 由一个空格隔开(1&lt;&#x3D;x&lt;&#x3D;21,1&lt;&#x3D;y&lt;&#x3D;79)，表示 Alice 今晚的营养目标和美味目标。第二行包括一个整数n(1&lt;&#x3D;n&lt;&#x3D;1000)表示可选择的食物数量. 以下n行包括每种食物的描述：第i+2行包括三个整数xi、yi、pi,(1&lt;&#x3D;xi&lt;&#x3D;21,1&lt;&#x3D;yi&lt;&#x3D;79,1&lt;&#x3D;pi&lt;&#x3D;800)，分别为该种食物的营养价值, 美味指数和价格.</p>
+<p>输出<br>你的程序应该输出一个整数，表示所选食物的最小总价格, 且其营养价值总和不小于x, 美味指数总和不小于y.</p>
+<p>输入样例<br>5 60<br>5<br>3 36 120<br>10 25 129<br>5 50 250<br>1 45 130<br>4 20 119<br>输出样例<br>249<br>题解：01背包的变形，dp[i][j]代表营养价值为i，美味指数为j时的最小价格，因为必须满足营养价值与美味指数的要求，因此在状态转移时，dp[i][j]必须是有实际意义的值，因为x&lt;&#x3D;21 y&lt;&#x3D;79，因此dp数组的大小最多为dp[2 <em>21][2</em> 79],循环得到dp的值之后，选取最优的解即可。<br>代码：</p>
+<pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;algorithm&gt;  
+using namespace std;  
+int dp[55][205];  
+int xi[1010];  
+int yi[1010];  
+int pi[1010];  
+int main()  
+{  
+    int x,y;  
+    scanf(&quot;%d%d&quot;, &amp;x, &amp;y);  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    for(int i = 0; i &lt; n; i++)  
+    {  
+        scanf(&quot;%d%d%d&quot;, &amp;xi[i], &amp;yi[i], &amp;pi[i]);  
+    }  
+    for(int i = 0; i &lt; 50; i++)  
+        for(int j = 0; j &lt; 200; j++)  
+            dp[i][j] = 99999999;  
+    dp[0][0] = 0;  
+    for(int i = 0; i &lt; n; i++){  
+        for(int x = 50; x - xi[i] &gt;= 0; x--){  
+            for(int y = 200; y - yi[i] &gt;= 0; y--){  
+                if(dp[x-xi[i]][y-yi[i]] != 99999999){  
+                    dp[x][y] = min(dp[x][y], dp[x-xi[i]][y-yi[i]] + pi[i]);  
+                }  
+            }  
+        }  
+    }  
+    int ans = 99999999;  
+    for(int i = x; i &lt; 50; i++)  
+        for(int j = y; j &lt; 200; j++)  
+            ans = min(ans, dp[i][j]);  
+    printf(&quot;%d\n&quot;, ans);  
+}  
+  
+  
+</code></pre>
+<p>—|—</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/09/11/ucas-Alice-s-Food/">https://eonh1u.github.io/blog/2019/09/11/ucas-Alice-s-Food/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/09/12/51nod-1593-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E6%9F%A5%E8%AF%A2/" title="51nod-1593-物理地址查询"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">51nod-1593-物理地址查询</div></div><div class="info-2"><div class="info-item-1">题目:在网络中，发送一个包需要知道对方的物理地址，当不知道物理地趣的时候，就要向网络中广播发送对方的IP地址，然后每一台计算会收到这个广播，如果IP和自己的计算对上，就把自己的物理地址发送出去。现在有n台计算，编号从1到n，现在1号计算向网络中发送广播，问经过多少时间后所有的计算机都会收到这个广播。 输入的网络保证所有的计算机之间是可以相互通信的。 输入单组测试数据。第一行有一个整数n(1 &lt;&#x3D; n &lt;&#x3D; 100)。接下来输入一个邻接矩阵A，A的大小是n x n。里面的元素要么是一个非负整数，或者是一个字符x。如果A[i][j]是x那么第i台计算机和第j台计算机没有直接相连。否则表示信号在第i台计算机和第j台计算机之间传播需要A[i][j]的时间。自己发给自己是不需要时间的所以对于所有的 1 &lt;&#x3D; i &lt;&#x3D; n，A[i][i] &#x3D; 0。输入的网络是一个无向图，所以A[i][j] &#x3D; A[j][i]。那么只需要输入矩阵的下三角部分即可。那么接下来给出n-1行，第一行有一个整数表示A[2][1]。第二...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/11/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/" title="1906-字段统计"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">1906-字段统计</div></div><div class="info-2"><div class="info-item-1">给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。 输入单组测试数据。第一行两个整数L和k。（L&gt;&#x3D;1，1&lt;&#x3D;k&lt;&#x3D;26,k^L&lt;&#x3D;2*10^7）第二行一个字符串S。（1&lt;&#x3D;|S|&lt;&#x3D;1000000）输出输出一个整数表示答案。 输入样例1 2ababab输出样例2解法：暴力即可代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17    |  #include&lt;iostream&gt;   #include&lt;string&gt;   #include&lt;set&gt;   using namespace std;   set&lt;string&gt; S;   int main()   {       int l, k;       scanf(&quot;%d%d&quot;, &amp;l,...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/10/12/51nod-1925-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="51nod-1925-进制转换"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-12</div><div class="info-item-2">51nod-1925-进制转换</div></div><div class="info-2"><div class="info-item-1">题目有一个变进制系统从低位到高位的权值依次是 1，3，7，15，31，… 。即第i（i&gt;&#x3D;0）位的权值是 2𝑖+1−1 。每一位数字是0，1，或者2。现在有一个十进制的数字n，想要把它转换成变进制系统下面的表示。由于有2的存在，这种转换可能会有多种可能，现在规定2只能作为最低非0位出现，这种情况下，表示就唯一了。 比如44可能用15+15+7+7(2200)来表示，但是这样前面那个2就没有作为最低非0位出现，所以不符合要求，正确的转换是10120。 输入多组测试数据。第一行有一个整数T（1&lt;&#x3D;T&lt;&#x3D;5），表示测试数据的数目。接下来T行，每行一个整数n（0&lt;&#x3D;n&lt;&#x3D;1000000000）。 输出对于每一个n，输出它的变进制表示。 输入样例样例输入1 1   2   3   4   5   6    |  4   1   2   3   4          —|—   输出样例样例输出1 1   2   3   4    |  1   2   10   11       —|—   解法：暴力即可 代...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/07/2518-%E5%92%8C%E4%B8%BAS/" title="2518-和为S"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-07</div><div class="info-item-2">2518-和为S</div></div><div class="info-2"><div class="info-item-1">题目:小b有一个01序列A，她想知道A有多少个非空连续子序列和为S。 你能帮帮她吗？ 输入第一行输入一个数n，表示A的长度；第二行输入n个数‘0’或‘1’，表示A中的元素，以空格隔开；第三行输入一个非负整数S；其中0≤S≤n≤30000。 输出输出一个数，表示子数组的个数输入样例51 0 1 0 12解法:统计每个1之前0的个数即可，然后组合计算一下乘积，注意处理S为0的情况。代码: 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39    |  using namespace std;   int sum[30010];   int main()   {       int n;       scanf(&quot;%d&quot;, &amp;n);       i...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/" title="51nod 1877 打包"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-26</div><div class="info-item-2">51nod 1877 打包</div></div><div class="info-2"><div class="info-item-1">题目：又到了一年毕业季，Noder也从学校毕业了。现在Noder要把东西进行打包，打包完成后，Noder的所有东西都被装进了若干个长方体形状的收纳盒中，这些收纳盒的高都是1024，底座是正方形且边长都是1到6之间的整数。现在Noder要进行搬家了，他有一辆车，这个车子的后备箱是一个长方体，高为1024，底座为边长是6的正方形，那么Noder想知道，他最少要运几趟才能把他所有的东西运完呢？ 解法：题目还是比较容易理解的，矩形里面套矩形，怎么使得次数最少，分情况讨论即可（代码也太不简洁了）直接贴代码了😂😂代码: 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/15/51nod-2512-%E9%87%8D%E6%8E%92%E5%88%97%E5%BE%97%E5%88%B02%E7%9A%84%E5%B9%82/" title="51nod-2512-重排列得到2的幂"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-15</div><div class="info-item-2">51nod-2512-重排列得到2的幂</div></div><div class="info-2"><div class="info-item-1">题目：小b有一个数n，现在她想把n的每一位重排列，使得得到的结果为2的幂次。 请问小b能得到2的幂次吗？ 注意重排列后不允许有前导0。 样例解释：46重排列成64，为2^6。 输入输入一个数N，其中1≤N≤10^9 输出满足条件，输出“true”；不满足，则输出“false”。 输入样例1    |  46       —|—   输出样例1    |  true       —|—   题解：当n的数字个数与某2的次幂数字个数相同时，比较各个数字出现的次数，如果相同则为true 代码：1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50   51   52   ...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/11/51node-2502-%E5%88%86%E5%9D%97/" title="51node-2502-分块"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-11</div><div class="info-item-2">51node-2502-分块</div></div><div class="info-2"><div class="info-item-1">题目：小b有个长度为n的数组a，她想将这个数组排序。 然而小b很懒，她觉得对整个数组排序太累了，因此她请你将a分成一些块，使得她只需要对每一块分别排序，就能将整个数组排序。 请问你最多能把a分成多少块。 保证a为0…n-1的一个排列。 样例解释： 将a分成2块或者更多块，都无法得到所需的结果。例如，分成 [4, 3], [2, 1, 0] ，排序得到的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 输入第一行一个数n；第二行n个数表示a[i]，以空格隔开。n&lt;&#x3D;10输出输出一个数表示划分块的数量输入样例54 3 2 1 0输出样例1解法：每个数字排序前排序后的下标为一段线段，相交的线段何为一段，最后求出剩下线段的个数即可。代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35 ...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/08/ucas-river-and-Longest-Ordered-Subsequence/" title="ucas river and Longest Ordered Subsequence"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-08</div><div class="info-item-2">ucas river and Longest Ordered Subsequence</div></div><div class="info-2"><div class="info-item-1">今天在ucas oj上面尝试做了两道题 river：二分即可DescriptionTwo lovely frogs Alice and Bob live by a river. There are several stones in this river. Every morning, they will go to the other side of the river to have fun. They cross the river by jumping from one stone to another. One day, Alice decides to play tricks on Bob. She plans to remove some stones so that there is no “easy jump” for Bob to across the river any more. But she has no idea which stones she should remove. She needs your help. The width of the...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

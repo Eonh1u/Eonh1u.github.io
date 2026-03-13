@@ -1,0 +1,975 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>cf-Global Round 5 | eonh1u Blog</title><meta name="author" content="eonh1u"><meta name="copyright" content="eonh1u"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These ratin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cf-Global Round 5">
+<meta property="og:url" content="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/index.html">
+<meta property="og:site_name" content="eonh1u Blog">
+<meta property="og:description" content="A:Balanced Rating Changes题目：Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These ratin">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png">
+<meta property="article:published_time" content="2019-10-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-13T09:17:59.425Z">
+<meta property="article:author" content="eonh1u">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eonh1u.github.io/blog/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "cf-Global Round 5",
+  "url": "https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/",
+  "image": "https://eonh1u.github.io/blog/img/butterfly-icon.png",
+  "datePublished": "2019-10-18T16:00:00.000Z",
+  "dateModified": "2026-03-13T09:17:59.425Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "eonh1u",
+      "url": "https://eonh1u.github.io/blog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="canonical" href="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cf-Global Round 5',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/eonh1u" alt="Logo"><span class="site-name">eonh1u Blog</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">cf-Global Round 5</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">cf-Global Round 5</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-10-18T16:00:00.000Z" title="发表于 2019-10-19 00:00:00">2019-10-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-13T09:17:59.425Z" title="更新于 2026-03-13 17:17:59">2026-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="A-Balanced-Rating-Changes"><a href="#A-Balanced-Rating-Changes" class="headerlink" title="A:Balanced Rating Changes"></a>A:Balanced Rating Changes</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>Another Codeforces Round has just finished! It has gathered 𝑛 participants, and according to the results, the expected rating change of participant 𝑖 is 𝑎𝑖. These rating changes are perfectly balanced — their sum is equal to 0.</p>
+<p>Unfortunately, due to minor technical glitches, the round is declared semi-rated. It means that all rating changes must be divided by two.</p>
+<p>There are two conditions though:</p>
+<p>For each participant 𝑖, their modified rating change 𝑏𝑖 must be integer, and as close to 𝑎𝑖&#x2F;2 as possible. It means that either 𝑏𝑖&#x3D;⌊𝑎𝑖&#x2F;2⌋ or 𝑏𝑖&#x3D;⌈𝑎𝑖&#x2F;2⌉. In particular, if 𝑎𝑖 is even, 𝑏𝑖&#x3D;𝑎𝑖2. Here ⌊𝑥⌋ denotes rounding down to the largest integer not greater than 𝑥, and ⌈𝑥⌉ denotes rounding up to the smallest integer not smaller than 𝑥.<br>The modified rating changes must be perfectly balanced — their sum must be equal to 0.<br>Can you help with that?</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤13845), denoting the number of participants.</p>
+<p>Each of the next 𝑛 lines contains a single integer 𝑎𝑖 (−336≤𝑎𝑖≤1164), denoting the rating change of the 𝑖-th participant.</p>
+<p>The sum of all 𝑎𝑖 is equal to 0.</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output 𝑛 integers 𝑏𝑖, each denoting the modified rating change of the 𝑖-th participant in order of input.</p>
+<p>For any 𝑖, it must be true that either 𝑏𝑖&#x3D;⌊𝑎𝑖&#x2F;2⌋ or 𝑏𝑖&#x3D;⌈𝑎𝑖&#x2F;2⌉. The sum of all 𝑏𝑖 must be equal to 0.</p>
+<p>If there are multiple solutions, print any. We can show that a solution exists for any valid input.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+3  
+4  
+</code></pre>
+<p>| </p>
+<pre><code>3  
+10  
+-5  
+-5  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>5  
+-2  
+-3  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+</code></pre>
+<p>| </p>
+<pre><code>7  
+-7  
+-29  
+0  
+3  
+24  
+-29  
+38  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+</code></pre>
+<p>| </p>
+<pre><code>-3  
+-15  
+0  
+2  
+12  
+-15  
+19  
+  
+</code></pre>
+<p>—|—  </p>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>统计正数与负数的奇数之差，然后在输出时进行处理即可。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+37  
+38  
+39  
+40  
+41  
+42  
+43  
+44  
+45  
+46  
+47  
+48  
+49  
+50  
+51  
+52  
+53  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;string&gt;  
+#include&lt;string.h&gt;  
+#include&lt;stack&gt;  
+#include&lt;queue&gt;  
+#include&lt;set&gt;  
+#include&lt;map&gt;  
+int a[20010];  
+int main()  
+{  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    int sum1 =0;  
+    int sum2 =0;  
+    for(int i = 0; i &lt; n; i++){  
+        scanf(&quot;%d&quot;, &amp;a[i]);  
+        if(a[i] &gt; 0 &amp;&amp; a[i] % 2 == 1)  
+            sum1++;  
+        if(a[i] &lt; 0 &amp;&amp; a[i] % 2 == -1)  
+            sum2++;  
+    }  
+    if(sum1 &lt; sum2){  
+        sum1 = (sum2 - sum1) / 2;  
+        for(int i = 0; i &lt; n; i++){  
+            if(a[i] &lt; 0 &amp;&amp; a[i]%2 == -1 &amp;&amp; sum1 &gt; 0){  
+                printf(&quot;%d\n&quot;,a[i]/2 - 1);  
+                sum1--;  
+            }  
+            else  
+            {  
+                printf(&quot;%d\n&quot;,a[i]/2);  
+            }  
+              
+        }  
+    }  
+    else  
+    {  
+        sum1 = (sum1 - sum2) / 2;  
+        for(int i = 0; i &lt; n; i++){  
+            if(a[i] &gt; 0 &amp;&amp; a[i]%2 == 1 &amp;&amp; sum1 &gt; 0){  
+                printf(&quot;%d\n&quot;,a[i]/2 + 1);  
+                sum1--;  
+            }  
+            else  
+            {  
+                printf(&quot;%d\n&quot;,a[i]/2);  
+            }  
+              
+        }  
+    }  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—  </p>
+<h1 id="B：-Balanced-Tunnel"><a href="#B：-Balanced-Tunnel" class="headerlink" title="B： Balanced Tunnel"></a>B： Balanced Tunnel</h1><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>Consider a tunnel on a one-way road. During a particular day, 𝑛 cars numbered from 1 to 𝑛 entered and exited the tunnel exactly once. All the cars passed through the tunnel at constant speeds.</p>
+<p>A traffic enforcement camera is mounted at the tunnel entrance. Another traffic enforcement camera is mounted at the tunnel exit. Perfectly balanced.</p>
+<p>Thanks to the cameras, the order in which the cars entered and exited the tunnel is known. No two cars entered or exited at the same time.</p>
+<p>Traffic regulations prohibit overtaking inside the tunnel. If car 𝑖 overtakes any other car 𝑗 inside the tunnel, car 𝑖 must be fined. However, each car can be fined at most once.</p>
+<p>Formally, let’s say that car 𝑖 definitely overtook car 𝑗 if car 𝑖 entered the tunnel later than car 𝑗 and exited the tunnel earlier than car 𝑗. Then, car 𝑖 must be fined if and only if it definitely overtook at least one other car.</p>
+<p>Find the number of cars that must be fined.</p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤105), denoting the number of cars.</p>
+<p>The second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛), denoting the ids of cars in order of entering the tunnel. All 𝑎𝑖 are pairwise distinct.</p>
+<p>The third line contains 𝑛 integers 𝑏1,𝑏2,…,𝑏𝑛 (1≤𝑏𝑖≤𝑛), denoting the ids of cars in order of exiting the tunnel. All 𝑏𝑖 are pairwise distinct.</p>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>Output the number of cars to be fined.</p>
+<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>5  
+3 5 2 1 4  
+4 3 2 5 1  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>2  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>7  
+5 2 3 6 7 1 4  
+2 3 6 7 1 4 5  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>6  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>2  
+1 2  
+1 2  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+</code></pre>
+<p>| </p>
+<pre><code>0  
+  
+</code></pre>
+<p>—|—  </p>
+<h2 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h2><p>此代码用的归并排序进行处理，复杂度为nlogn 有复杂度为n的方法，以后补上。进行归并排布时，出现逆序时，将偏大的数字进行记录就可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+37  
+38  
+39  
+40  
+41  
+42  
+43  
+44  
+45  
+46  
+47  
+48  
+49  
+50  
+51  
+52  
+53  
+54  
+55  
+56  
+57  
+58  
+59  
+60  
+61  
+62  
+63  
+64  
+65  
+66  
+67  
+68  
+69  
+70  
+71  
+72  
+73  
+74  
+75  
+76  
+77  
+78  
+79  
+80  
+81  
+82  
+83  
+84  
+85  
+86  
+87  
+88  
+89  
+90  
+91  
+92  
+93  
+94  
+95  
+96  
+97  
+98  
+99  
+100  
+101  
+102  
+103  
+104  
+105  
+106  
+107  
+108  
+109  
+110  
+111  
+112  
+113  
+114  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;string&gt;  
+#include&lt;string.h&gt;  
+#include&lt;stack&gt;  
+#include&lt;queue&gt;  
+#include&lt;set&gt;  
+#include&lt;map&gt;  
+using namespace std;  
+int p[100010];  
+int t[100010];  
+int a[100010];  
+int used[100010];  
+int sum=0;  
+void solve(int l,int r)  
+{  
+    //printf(&quot;%d %d\n&quot;,l,r);  
+    if(r-l&lt;2)  
+    {  
+        if(r-l  ==  1 &amp;&amp;  a[l] &gt; a[r]){  
+            if(!used[a[l]]){  
+               // printf(&quot;%d %d\n&quot;,a[l],a[r]);  
+                used[a[l]] = 1;  
+               // printf(&quot;2 used %d = true\n&quot;,a[l]);  
+                sum++;  
+            }  
+            swap(a[l], a[r]);  
+        }  
+        return ;  
+    }  
+    int m = (l + r) &gt;&gt; 1;  
+    solve(l , m);  
+    solve(m+1 , r);  
+    int now  = m-l+1;  
+    int sz = l, sy = m+1;  
+   /* for(int i = l; i &lt;= r;i++)  
+        printf(&quot;%d &quot;, a[i]);  
+    printf(&quot;\n%d\n&quot;,used[6]);  
+    printf(&quot;\n&quot;);*/  
+    for(int i = 0; i &lt; r - l + 1; i++)  
+    {     
+       // printf(&quot; i:%d used %d %d\n&quot;,i,a[sz],used[a[sz]]);  
+        if(sz &lt;= m &amp;&amp; sy &lt;= r)  
+            {  
+                if(a[sz] &gt; a[sy]){  
+                    t[i] = a[sy];  
+                    sy++;   
+                    if(!used[a[sz]]){  
+                        //printf(&quot;%d %d\n&quot;,a[sz],a[sy-1]);  
+                        sum++;  
+                        used[a[sz]] = 1;  
+                       // printf(&quot;used %d %d\n&quot;,a[sz],used[a[sz]]);  
+                       // printf(&quot;sy r %d %d\n&quot;, sy,r);  
+                    }  
+                }  
+                else  
+                {  
+                    t[i] = a[sz];  
+                    if(sy != m + 1 &amp;&amp; !used[a[sz]])  
+                    {  
+                        sum++;  
+                        used[a[sz]] = 1;  
+                    }  
+                    sz++;   
+                    now--;  
+                }  
+            }  
+        else if(sz == m+1)  
+        {  
+            while(sy &lt;= r)  
+            {  
+                t[i] = a[sy];  
+                sy++; i++;  
+            }  
+        }  
+        else  
+        {  
+           // printf(&quot;sz  %d\n&quot;,a[sz]);  
+          //  printf(&quot;used %d %d \n&quot;,a[sz],used[a[sz]]);  
+            while(sz &lt;= m)  
+            {  
+                t[i] = a[sz];  
+               // printf(&quot;sz  %d\n&quot;,a[sz]);  
+              //  printf(&quot;used %d %d \n&quot;,a[sz],used[a[sz]]);  
+                if(used[a[sz]] == 0){  
+                    sum++;  
+                    used[a[sz]] = 1;  
+                 }  
+                sz++;  
+                i++;  
+            }  
+        }  
+    }  
+    for(int i= l ; i &lt;= r; i++)  
+        a[i] = t[i-l];  
+     
+}  
+int main()  
+{  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    for(int i = 1; i &lt;= n; i++){  
+        int now ;  
+        scanf(&quot;%d&quot;, &amp;now);  
+        p[now] = i;  
+    }  
+    for(int i = 1; i &lt;= n; i++){  
+        scanf(&quot;%d&quot;, &amp;a[i]);  
+        a[i] = p[a[i]];  
+    }  
+    solve(1,n);  
+    printf(&quot;%d\n&quot;, sum);  
+    return 0;  
+}  
+  
+</code></pre>
+<p>—|—  </p>
+<h1 id="C：Balanced-Removals-Easier"><a href="#C：Balanced-Removals-Easier" class="headerlink" title="C：Balanced Removals (Easier)"></a>C：Balanced Removals (Easier)</h1><h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>This is an easier version of the problem. In this version, 𝑛≤2000.</p>
+<p>There are 𝑛 distinct points in three-dimensional space numbered from 1 to 𝑛. The 𝑖-th point has coordinates (𝑥𝑖,𝑦𝑖,𝑧𝑖). The number of points 𝑛 is even.</p>
+<p>You’d like to remove all 𝑛 points using a sequence of 𝑛2 snaps. In one snap, you can remove any two points 𝑎 and 𝑏 that have not been removed yet and form a perfectly balanced pair. A pair of points 𝑎 and 𝑏 is perfectly balanced if no other point 𝑐 (that has not been removed yet) lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏.</p>
+<p>Formally, point 𝑐 lies within the axis-aligned minimum bounding box of points 𝑎 and 𝑏 if and only if min(𝑥𝑎,𝑥𝑏)≤𝑥𝑐≤max(𝑥𝑎,𝑥𝑏), min(𝑦𝑎,𝑦𝑏)≤𝑦𝑐≤max(𝑦𝑎,𝑦𝑏), and min(𝑧𝑎,𝑧𝑏)≤𝑧𝑐≤max(𝑧𝑎,𝑧𝑏). Note that the bounding box might be degenerate.</p>
+<p>Find a way to remove all points in 𝑛2 snaps.</p>
+<h3 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h3><p>The first line contains a single integer 𝑛 (2≤𝑛≤2000; 𝑛 is even), denoting the number of points.</p>
+<p>Each of the next 𝑛 lines contains three integers 𝑥𝑖, 𝑦𝑖, 𝑧𝑖 (−108≤𝑥𝑖,𝑦𝑖,𝑧𝑖≤108), denoting the coordinates of the 𝑖-th point.</p>
+<p>No two points coincide.</p>
+<h3 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h3><p>Output 𝑛2 pairs of integers 𝑎𝑖,𝑏𝑖 (1≤𝑎𝑖,𝑏𝑖≤𝑛), denoting the indices of points removed on snap 𝑖. Every integer between 1 and 𝑛, inclusive, must appear in your output exactly once.</p>
+<p>We can show that it is always possible to remove all points. If there are many solutions, output any of them.</p>
+<h3 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h3><p>input</p>
+<pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+</code></pre>
+<p>| </p>
+<pre><code>6  
+3 1 0  
+0 3 0  
+2 2 0  
+1 0 0  
+1 3 0  
+0 1 0  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+3  
+</code></pre>
+<p>| </p>
+<pre><code>3 6  
+5 1  
+2 4  
+  
+</code></pre>
+<p>—|—  </p>
+<p>input</p>
+<pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+</code></pre>
+<p>| </p>
+<pre><code>8  
+0 1 1  
+1 0 1  
+1 1 0  
+1 1 1  
+2 2 2  
+3 2 2  
+2 3 2  
+2 2 3  
+  
+</code></pre>
+<p>—|—  </p>
+<p>output</p>
+<pre><code>1  
+2  
+3  
+4  
+</code></pre>
+<p>| </p>
+<pre><code>4 5  
+1 6  
+2 7  
+3 8  
+  
+</code></pre>
+<p>—|—  </p>
+<h2 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h2><p>按线面体的顺序进行依次删除。即按xyz顺序进行排序，先删除xy相同的，再删除x相同的，然后再依次删除，注意每次删除后都要排序一次。</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre><code>1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+22  
+23  
+24  
+25  
+26  
+27  
+28  
+29  
+30  
+31  
+32  
+33  
+34  
+35  
+36  
+37  
+38  
+39  
+40  
+41  
+42  
+43  
+44  
+45  
+46  
+47  
+48  
+49  
+50  
+51  
+52  
+53  
+54  
+55  
+56  
+57  
+58  
+59  
+60  
+61  
+62  
+63  
+64  
+65  
+66  
+67  
+68  
+69  
+70  
+71  
+72  
+73  
+74  
+75  
+76  
+77  
+78  
+79  
+</code></pre>
+<p>| </p>
+<pre><code>#include&lt;stdio.h&gt;  
+#include&lt;algorithm&gt;  
+#include&lt;string&gt;  
+#include&lt;string.h&gt;  
+#include&lt;stack&gt;  
+#include&lt;queue&gt;  
+#include&lt;set&gt;  
+#include&lt;map&gt;  
+using namespace std;  
+struct point{  
+    int x,y,z;  
+    int index;  
+};  
+point p[2010];  
+point tmp[2010];  
+bool cmp(point a, point b){  
+    if(a.x != b.x){  
+        return a.x &lt; b.x;  
+    }  
+    else if(a.y != b.y){  
+        return a.y &lt; b.y;  
+    }  
+    else{  
+        return a.z &lt; b.z;  
+    }  
+}  
+bool used[2010];  
+int main()  
+{  
+    int n;  
+    scanf(&quot;%d&quot;, &amp;n);  
+    for(int i = 1; i &lt;= n; i++){  
+        scanf(&quot;%d%d%d&quot;,&amp;p[i].x, &amp;p[i].y, &amp;p[i].z);  
+        p[i].index = i;  
+    }  
+    sort(p + 1, p + n + 1, cmp);  
+    for(int i = 2 ; i &lt;= n; i++)  
+    {  
+        if(p[i].x == p[i - 1].x &amp;&amp; p[i].y == p[i - 1].y){  
+            printf(&quot;%d %d\n&quot;,p[i].index, p[i - 1].index);  
+            used[p[i].index] = used[p[i - 1].index] = true;  
+            i++;  
+        }  
+    }  
+    int now = 1;  
+    for(int i = 1; i &lt;= n; i++)  
+    {  
+        if(!used[p[i].index])  
+            tmp[now++] = p[i];  
+    }  
+    now--;  
+    for(int i = 1; i &lt;= now; i++)  
+        p[i] = tmp[i];  
+    sort(p + 1, p + 1 + now,cmp);  
+   // printf(&quot;now %d\n&quot;,now);  
+    for(int i = 2 ; i &lt;= now; i++)  
+    {  
+        if(p[i].x == p[i - 1].x){  
+            printf(&quot;%d %d\n&quot;,p[i].index, p[i - 1].index);  
+            used[p[i].index] = used[p[i - 1].index] = true;  
+            i++;  
+        }  
+    }  
+    int o = 1;  
+    for(int i = 1; i &lt;= now; i++)  
+    {  
+        if(!used[p[i].index])  
+            tmp[o++] = p[i];  
+    }  
+    o--;  
+    sort(tmp + 1, tmp + 1 + o,cmp);  
+    //printf(&quot;o %d\n&quot;,o);  
+    for(int i = 1; i &lt;= o; i++){  
+        printf(&quot;%d %d\n&quot;,tmp[i].index,tmp[i + 1].index);  
+        i++;  
+    }  
+    return 0;  
+   
+}  
+  
+</code></pre>
+<p>—|—</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog">eonh1u</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/">https://eonh1u.github.io/blog/2019/10/19/cf-Global-Round-5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eonh1u.github.io/blog" target="_blank">eonh1u Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/ACM/">ACM</a></div><div class="post-share"><div class="social-share" data-image="/blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/blog/2019/10/22/cf-594-div2/" title="cf-594-div2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">cf-594-div2</div></div><div class="info-2"><div class="info-item-1">A: Integer Points题目：DLS and JLS are bored with a Math lesson. In order to entertain themselves, DLS took a sheet of paper and drew 𝑛 distinct lines, given by equations 𝑦&#x3D;𝑥+𝑝𝑖 for some distinct 𝑝1,𝑝2,…,𝑝𝑛. Then JLS drew on the same paper sheet 𝑚 distinct lines given by equations 𝑦&#x3D;−𝑥+𝑞𝑖 for some distinct 𝑞1,𝑞2,…,𝑞𝑚. DLS and JLS are interested in counting how many line pairs have integer intersection points, i.e. points with both coordinates that are integers. Unfort...</div></div></div></a><a class="pagination-related" href="/blog/2019/10/19/cf-593-div2/" title="cf-593-div2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">cf-593-div2</div></div><div class="info-2"><div class="info-item-1">A:Stones题目：Alice is playing with some stones. Now there are three numbered heaps of stones. The first of them contains 𝑎 stones, the second of them contains 𝑏 stones and the third of them contains 𝑐 stones. Each time she can do one of two operations: take one stone from the first heap and two stones from the second heap (this operation can be done only if the first heap contains at least one stone and the second heap contains at least two stones); take one stone from the second heap and tw...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2019/07/26/51nod-1877-%E6%89%93%E5%8C%85/" title="51nod 1877 打包"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-26</div><div class="info-item-2">51nod 1877 打包</div></div><div class="info-2"><div class="info-item-1">题目：又到了一年毕业季，Noder也从学校毕业了。现在Noder要把东西进行打包，打包完成后，Noder的所有东西都被装进了若干个长方体形状的收纳盒中，这些收纳盒的高都是1024，底座是正方形且边长都是1到6之间的整数。现在Noder要进行搬家了，他有一辆车，这个车子的后备箱是一个长方体，高为1024，底座为边长是6的正方形，那么Noder想知道，他最少要运几趟才能把他所有的东西运完呢？ 解法：题目还是比较容易理解的，矩形里面套矩形，怎么使得次数最少，分情况讨论即可（代码也太不简洁了）直接贴代码了😂😂代码: 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39   40   41   42   43   44   45   46   47   48   49   50...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/11/1906-%E5%AD%97%E6%AE%B5%E7%BB%9F%E8%AE%A1/" title="1906-字段统计"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-11</div><div class="info-item-2">1906-字段统计</div></div><div class="info-2"><div class="info-item-1">给定一个字符串S，只由k种小写字母组成。现在给定一个长度L，要求统计一下S有多少种不同的长度为L的子段(S中连续的几个字符)。 输入单组测试数据。第一行两个整数L和k。（L&gt;&#x3D;1，1&lt;&#x3D;k&lt;&#x3D;26,k^L&lt;&#x3D;2*10^7）第二行一个字符串S。（1&lt;&#x3D;|S|&lt;&#x3D;1000000）输出输出一个整数表示答案。 输入样例1 2ababab输出样例2解法：暴力即可代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17    |  #include&lt;iostream&gt;   #include&lt;string&gt;   #include&lt;set&gt;   using namespace std;   set&lt;string&gt; S;   int main()   {       int l, k;       scanf(&quot;%d%d&quot;, &amp;l,...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/25/51nod-%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E5%B9%B4/" title="51nod 奥林匹克年"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-25</div><div class="info-item-2">51nod 奥林匹克年</div></div><div class="info-2"><div class="info-item-1">题目：奥林匹克竞赛从1989年开始举行，每一个奥林匹克年都会有一个缩写IAO’y， y表示那一年的最后几位数字。 组织者会取一个之前未被用过的缩写来表示该年份，而且要尽可能的短。 例如，前三个奥林匹克年是1989，1990和1991，他们对应的缩写是IAO’9， IAO’0 和IAO’1，而2015的缩写是IAO’15，因为IAO’5已经被1995用过了。 现在给出一个缩写，请判断这个是代表哪一年的。 多组测试数据。 输入第一行有一个整数n (1≤n≤1000) ，表示要处理n组数据。接下来n行，每一行有一个缩写。每一个缩写最多包含9位数字。 输出对于每一个缩写，请输出对应的年份。 样例5IAO’15IAO’2015IAO’1IAO’9IAO’0 201512015199119891990 做法：经过思考并且打表找规律后。可以先预处理将位数比较小的数进行存储，用map映射即可，对于位数比较大的，全部预处理肯定不现实，规律如下：对于输入的每个数，数字的变化发生在1(*)3099处，举个例子，如果输入的是六位数，则113098之前的（包括113098），则ans为1113098，即之...</div></div></div></a><a class="pagination-related" href="/blog/2019/07/29/51nod-1889-%E5%88%B6%E9%93%81%E6%A3%92/" title="51nod-1889-制铁棒"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-29</div><div class="info-item-2">51nod-1889-制铁棒</div></div><div class="info-2"><div class="info-item-1">题目:工厂里面，有n根待加工的铁棒，长度以米为单位，精确到小数点后两位（即厘米），现在市场上需求量是m根相同长度的铁棒。现在厂长想把这n根铁棒进行切割，切割的时候要精确到厘米，比如说，原来铁棒是1.00米的，那么可以切成0.50和0.50的，但是不能切成0.499和0.501的。并且不能将两根铁棒拼成一根铁棒。现在厂长想知道切出来的m根铁棒最长能有多长。 输入单组测试数据。第一行给出两个整数n(1 &lt;&#x3D; n&lt;&#x3D; 10000)和m(1 &lt;&#x3D; m&lt; &#x3D; 10000)。接下来n行给出原始铁棒的长度L[1],L[2],L[3],…,L[n] ，(1&lt;&#x3D;L[i]&lt;&#x3D;100,000)。以米为单位，精确到小数点后两位。 输出输出一个小数表示答案，精确到小数点后两位。 输入样例样例输入14 118.027.434.575.39 输出样例样例输出12.00 解法：二分分情况讨论即可，因为题目有小数点限制，这里我直接*100 最后&#x2F;100处理了这个情况ps:(每天没时间刷题555555，选个一眼...</div></div></div></a><a class="pagination-related" href="/blog/2019/08/07/51nod-2530-%E6%9C%80%E5%A4%A7%E8%BE%93%E5%87%BA/" title="51nod-2530-最大输出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-07</div><div class="info-item-2">51nod-2530-最大输出</div></div><div class="info-2"><div class="info-item-1">题目：给定𝑛个技能，每个技能能打掉对手𝑎𝑖的血，你一共有𝑚次发招的机会，你不能连续使用某一个技能超过𝑘次。问你最多能打掉对手多少血。 输入第一行3个数n,m,k，(2&lt;&#x3D;n&lt;&#x3D;2*10^5 ,1&lt;&#x3D;m,k&lt;&#x3D;10^9)第二行n个数a[1…n]，(1&lt;&#x3D;a[i]&lt;&#x3D;10^9)输出一个数，表示最大值。 输入样例6 9 21 3 3 7 4 2输出样例54解法：去top2，每次都是top1*k+top2,剩余的不足k就只去top1代码： 1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16    |  #include&lt;algorithm&gt;   using namespace std;   int s[200010];   int main()   {       int n,m,k;       scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &am...</div></div></div></a><a class="pagination-related" href="/blog/2019/09/17/51nod-1942-%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7/" title="51nod-1942-安装监控"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-17</div><div class="info-item-2">51nod-1942-安装监控</div></div><div class="info-2"><div class="info-item-1">题目：现在要在办公室里面安装监控， 由于预算有限，现在只能安装一个摄像头，这个摄像头是可以360度旋转的。现在就要选择一个位置安装这个摄像头，使得它能够监控到办公室中的所有地方。办公室的边界以多边形给出，这个多边的所有边都是平行于座标轴的，并且不自交。 样例解释： 左边的图对应的是第一个样例，把摄像头安装在点的位置就可以监控到所有的地方了，右边的图对应第二个样例，这个办公室没有办法找到一个地方安装摄像头使得所有地方都被监控到，如果安装在点的位置，灰色的部分就不能被监控到了。 输入单组测试数据。第一行有一个整数n (4 &lt;&#x3D; n &lt;&#x3D; 100)，表示多边形的顶点数目。接下来n行，每行出两个整数x 和 y（-100000&lt;&#x3D;x,y&lt;&#x3D;100000），表示多边形的顶点，以顺时针的方向给出。所有的顶点都是不一样的。输出如果能够安装一个摄像头使得所有区域被监控到输出Yes，否则输出No。输入样例样例输入140 00 11 11 0 样例输入280 00 21 21 12 12 23 23 0输出样例样例输出1Yes样例输出2N...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">eonh1u</div><div class="author-info-description">Geek | Developer | Explorer</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/eonh1u" target="_blank" title="Github"><i class="fas fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 eonh1u 的极客博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-Balanced-Rating-Changes"><span class="toc-number">1.</span> <span class="toc-text">A:Balanced Rating Changes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-number">1.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B%EF%BC%9A-Balanced-Tunnel"><span class="toc-number">2.</span> <span class="toc-text">B： Balanced Tunnel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-number">2.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-1"><span class="toc-number">2.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-1"><span class="toc-number">2.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">代码:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C%EF%BC%9ABalanced-Removals-Easier"><span class="toc-number">3.</span> <span class="toc-text">C：Balanced Removals (Easier)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-2"><span class="toc-number">3.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-2"><span class="toc-number">3.1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-2"><span class="toc-number">3.1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-2"><span class="toc-number">3.1.3.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-2"><span class="toc-number">3.2.</span> <span class="toc-text">题解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/13/hello-world/" title="Hello World - 欢迎来到 eonh1u 博客">Hello World - 欢迎来到 eonh1u 博客</a><time datetime="2026-03-12T16:00:00.000Z" title="发表于 2026-03-13 00:00:00">2026-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2026/03/12/docker-lightweight-deployment/" title="Docker Lightweight Deployment on 512MB Server">Docker Lightweight Deployment on 512MB Server</a><time datetime="2026-03-11T16:00:00.000Z" title="发表于 2026-03-12 00:00:00">2026-03-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2021/09/22/plantUML/" title="plantUML">plantUML</a><time datetime="2021-09-21T16:00:00.000Z" title="发表于 2021-09-22 00:00:00">2021-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/12/30/nccl-test-%E7%8E%AF%E5%A2%83/" title="nccl test 环境">nccl test 环境</a><time datetime="2020-12-29T16:00:00.000Z" title="发表于 2020-12-30 00:00:00">2020-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/blog/2020/11/23/leetcode/" title="leetcode">leetcode</a><time datetime="2020-11-22T16:00:00.000Z" title="发表于 2020-11-23 00:00:00">2020-11-23</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By eonh1u</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div><div class="footer_custom_text">Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js?v=5.5.4"></script><script src="/blog/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
