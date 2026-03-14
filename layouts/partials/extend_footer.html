@@ -1,0 +1,38 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var blocks = document.querySelectorAll(
+    "pre code.language-puml, pre code.language-plantuml"
+  );
+  if (!blocks.length) return;
+
+  blocks.forEach(function (code) {
+    var src = (code.textContent || "").trim();
+    if (!src) return;
+
+    var pre = code.closest("pre");
+    if (!pre || !pre.parentNode) return;
+
+    var wrap = document.createElement("div");
+    wrap.className = "puml-diagram";
+    wrap.textContent = "PlantUML rendering...";
+    pre.parentNode.insertBefore(wrap, pre.nextSibling);
+
+    fetch("https://kroki.io/plantuml/svg", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: src
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.text();
+      })
+      .then(function (svg) {
+        wrap.innerHTML = svg;
+        pre.style.display = "none";
+      })
+      .catch(function () {
+        wrap.textContent = "PlantUML render failed. Please check network/Kroki.";
+      });
+  });
+});
+</script>

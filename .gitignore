@@ -10,3 +10,9 @@ Thumbs.db
 .idea/
 *.log
 .deploy*/
+
+# Legacy Hexo npm manifests are kept only locally.
+package.json
+package-lock.json
+themes/next/package.json
+themes/landscape/package.json
