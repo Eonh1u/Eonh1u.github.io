@@ -1,0 +1,15 @@
+.first-entry.home-info {
+  min-height: 180px;
+  margin: var(--gap) 0 var(--gap) 0;
+  justify-content: flex-start;
+}
+
+.first-entry.home-info .entry-content {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .first-entry.home-info {
+    min-height: 140px;
+  }
+}
